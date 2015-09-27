@@ -1,10 +1,10 @@
 package com.assets.derivates.service.impl;
 
-import java.math.BigDecimal;
-
 import com.assets.derivates.service.ComputeExitsService;
-import com.assets.portfolio.correlation.entities.stock.StockList;
-import com.assets.portfolio.correlation.entities.stock.StockPrice;
+import com.assets.entities.StockPrice;
+import com.assets.statistic.list.StockList;
+
+import java.math.BigDecimal;
 
 public class ComputeExitsDynamicStopLoss implements ComputeExitsService {
 

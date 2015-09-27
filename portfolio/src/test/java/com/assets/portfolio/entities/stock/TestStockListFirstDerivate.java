@@ -1,16 +1,14 @@
 package com.assets.portfolio.entities.stock;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import com.assets.entities.StockPrice;
+import com.assets.statistic.list.StockList;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.time.Instant;
 
-import org.junit.Before;
-import org.junit.Test;
-
-import com.assets.portfolio.correlation.entities.stock.StockList;
-import com.assets.portfolio.correlation.entities.stock.StockPrice;
+import static org.junit.Assert.assertEquals;
 
 public class TestStockListFirstDerivate {
 private final String TICKER = "TEST";

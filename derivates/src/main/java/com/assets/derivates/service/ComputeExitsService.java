@@ -1,6 +1,6 @@
 package com.assets.derivates.service;
 
-import com.assets.portfolio.correlation.entities.stock.StockList;
+import com.assets.statistic.list.StockList;
 
 public interface ComputeExitsService {
 

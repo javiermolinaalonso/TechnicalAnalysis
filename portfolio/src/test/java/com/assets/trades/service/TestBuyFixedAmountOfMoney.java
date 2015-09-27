@@ -1,15 +1,15 @@
 package com.assets.trades.service;
 
-import static org.junit.Assert.assertEquals;
+import com.assets.entities.StockPrice;
+import com.assets.trades.BuyStrategy;
+import com.assets.trades.service.impl.BuyFixedAmountOfMoney;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.time.Instant;
 
-import org.junit.Before;
-import org.junit.Test;
-
-import com.assets.portfolio.correlation.entities.stock.StockPrice;
-import com.assets.trades.service.impl.BuyFixedAmountOfMoney;
+import static org.junit.Assert.assertEquals;
 
 public class TestBuyFixedAmountOfMoney {
 

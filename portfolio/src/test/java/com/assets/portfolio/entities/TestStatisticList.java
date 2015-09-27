@@ -1,18 +1,16 @@
 package com.assets.portfolio.entities;
 
-import static org.junit.Assert.assertEquals;
+import com.assets.entities.StatisticListType;
+import com.assets.statistic.entities.FactoryStatisticList;
+import com.assets.statistic.entities.StatisticList;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.Before;
-import org.junit.Test;
-
-import com.assets.portfolio.correlation.entities.FactoryStatisticList;
-import com.assets.portfolio.correlation.entities.StatisticList;
-import com.assets.portfolio.correlation.entities.enums.StatisticListType;
-import com.assets.portfolio.correlation.entities.statistic.LambdaStatisticList;
+import static org.junit.Assert.assertEquals;
 
 public class TestStatisticList {
 

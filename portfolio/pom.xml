@@ -14,7 +14,22 @@
 	<version>0.0.1</version>
 	
 	<dependencies>
-		<!-- PostgreSQL driver -->
+		<dependency>
+			<groupId>com.assets</groupId>
+			<artifactId>entities</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+		</dependency>
+        <dependency>
+            <groupId>com.assets</groupId>
+            <artifactId>statistics</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.assets</groupId>
+            <artifactId>correlation</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <!-- PostgreSQL driver -->
 		<dependency>
 			<groupId>postgresql</groupId>
 			<artifactId>postgresql</artifactId>

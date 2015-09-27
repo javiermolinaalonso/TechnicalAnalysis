@@ -1,9 +1,9 @@
 package com.assets.derivates.service.impl;
 
-import java.math.BigDecimal;
-
 import com.assets.derivates.service.ComputeEntranceService;
-import com.assets.portfolio.correlation.entities.stock.StockList;
+import com.assets.statistic.list.StockList;
+
+import java.math.BigDecimal;
 
 public class ComputeEntriesServiceDerivateTendToZero implements ComputeEntranceService {
 

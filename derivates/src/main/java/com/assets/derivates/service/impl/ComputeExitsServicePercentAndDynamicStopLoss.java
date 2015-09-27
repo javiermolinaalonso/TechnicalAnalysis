@@ -1,16 +1,16 @@
 package com.assets.derivates.service.impl;
 
+import com.assets.derivates.service.ComputeExitsService;
+import com.assets.entities.StatisticListType;
+import com.assets.entities.StockPrice;
+import com.assets.statistic.entities.FactoryStatisticList;
+import com.assets.statistic.entities.StatisticList;
+import com.assets.statistic.list.StockList;
+
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import com.assets.derivates.service.ComputeExitsService;
-import com.assets.portfolio.correlation.entities.FactoryStatisticList;
-import com.assets.portfolio.correlation.entities.StatisticList;
-import com.assets.portfolio.correlation.entities.enums.StatisticListType;
-import com.assets.portfolio.correlation.entities.stock.StockList;
-import com.assets.portfolio.correlation.entities.stock.StockPrice;
 
 public class ComputeExitsServicePercentAndDynamicStopLoss implements ComputeExitsService {
 

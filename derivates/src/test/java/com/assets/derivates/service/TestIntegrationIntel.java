@@ -1,23 +1,22 @@
 package com.assets.derivates.service;
 
-import static org.junit.Assert.*;
+import com.assets.derivates.service.impl.ComputeBasicEntranceServiceImpl;
+import com.assets.derivates.service.impl.ComputeExitsServiceBasicPercent;
+import com.assets.entities.StockPrice;
+import com.assets.investment.entities.InvestmentActions;
+import com.assets.portfolio.data.loader.DataLoader;
+import com.assets.portfolio.data.loader.impl.DataLoaderCsv;
+import com.assets.statistic.list.StockList;
+import com.assets.trades.service.impl.BuyFixedAmountOfMoney;
+import com.assets.trades.service.impl.BuyOneStockStrategy;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.stream.Collectors;
 
-import org.junit.Before;
-import org.junit.Test;
-
-import com.assets.derivates.service.impl.ComputeBasicEntranceServiceImpl;
-import com.assets.derivates.service.impl.ComputeExitsServiceBasicPercent;
-import com.assets.portfolio.correlation.entities.investment.InvestmentActions;
-import com.assets.portfolio.correlation.entities.stock.StockList;
-import com.assets.portfolio.correlation.entities.stock.StockPrice;
-import com.assets.portfolio.data.loader.DataLoader;
-import com.assets.portfolio.data.loader.impl.DataLoaderCsv;
-import com.assets.trades.service.impl.BuyFixedAmountOfMoney;
-import com.assets.trades.service.impl.BuyOneStockStrategy;
+import static org.junit.Assert.assertEquals;
 
 public class TestIntegrationIntel {
 

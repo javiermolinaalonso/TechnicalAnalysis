@@ -1,27 +1,22 @@
 package com.assets.portfolio.entities;
 
-import static org.junit.Assert.*;
-
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Random;
-import java.util.Vector;
-
+import com.assets.entities.StatisticListType;
+import com.assets.statistic.entities.FactoryStatisticList;
+import com.assets.statistic.entities.StatisticList;
+import com.carrotsearch.junitbenchmarks.BenchmarkOptions;
+import com.carrotsearch.junitbenchmarks.BenchmarkRule;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestRule;
 
-import com.assets.portfolio.correlation.entities.FactoryStatisticList;
-import com.assets.portfolio.correlation.entities.StatisticList;
-import com.assets.portfolio.correlation.entities.enums.StatisticListType;
-import com.carrotsearch.junitbenchmarks.BenchmarkOptions;
-import com.carrotsearch.junitbenchmarks.BenchmarkRule;
+import java.math.BigDecimal;
+import java.util.*;
 
-@BenchmarkOptions(benchmarkRounds=100, warmupRounds=10)
+import static org.junit.Assert.assertTrue;
+
+@BenchmarkOptions(benchmarkRounds=1, warmupRounds=1)
 public class TestBenchmarkStatisticList {
 
     private static final int MAX_VALUES = 1000000;

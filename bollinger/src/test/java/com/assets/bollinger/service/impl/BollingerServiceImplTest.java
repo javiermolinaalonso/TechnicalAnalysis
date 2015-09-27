@@ -1,15 +1,11 @@
 package com.assets.bollinger.service.impl;
 
-import static org.junit.Assert.fail;
+import com.assets.entities.StockPrice;
+import com.assets.statistic.list.StockList;
+import org.junit.Before;
 
 import java.math.BigDecimal;
 import java.time.Instant;
-
-import org.junit.Before;
-import org.junit.Test;
-
-import com.assets.portfolio.correlation.entities.stock.StockList;
-import com.assets.portfolio.correlation.entities.stock.StockPrice;
 
 public class BollingerServiceImplTest {
 
@@ -27,12 +23,6 @@ public class BollingerServiceImplTest {
 		values.add(new StockPrice(TICKER, Instant.ofEpochSecond(120), BigDecimal.valueOf(12d)));
 		values.add(new StockPrice(TICKER, Instant.ofEpochSecond(130), BigDecimal.valueOf(13d)));
 		values.add(new StockPrice(TICKER, Instant.ofEpochSecond(140), BigDecimal.valueOf(12d)));
-	}
-
-	@Test(expected=)
-	public void testInstantNotExist() {
-		boll
-		fail("Not yet implemented");
 	}
 
 }

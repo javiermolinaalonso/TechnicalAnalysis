@@ -185,5 +185,11 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>bollinger</module>
+		<module>derivates</module>
+		<module>portfolio</module>
+		<module>entities</module>
+		<module>StatisticList</module>
+		<module>correlation</module>
+		<module>investment-entities</module>
 	</modules>
 </project>

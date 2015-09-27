@@ -1,10 +1,14 @@
 package com.assets.portfolio.data.loader.impl;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import com.assets.entities.StockPrice;
+import com.assets.portfolio.data.exceptions.DataLoaderEmptyFileException;
+import com.assets.portfolio.data.exceptions.DataLoaderFileNotFoundException;
+import com.assets.portfolio.data.exceptions.DataLoaderIOException;
+import com.assets.portfolio.data.loader.DataLoader;
+import com.assets.statistic.list.StockList;
+import org.apache.log4j.Logger;
+
+import java.io.*;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -13,15 +17,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import org.apache.log4j.Logger;
-
-import com.assets.portfolio.correlation.entities.stock.StockList;
-import com.assets.portfolio.correlation.entities.stock.StockPrice;
-import com.assets.portfolio.data.exceptions.DataLoaderEmptyFileException;
-import com.assets.portfolio.data.exceptions.DataLoaderFileNotFoundException;
-import com.assets.portfolio.data.exceptions.DataLoaderIOException;
-import com.assets.portfolio.data.loader.DataLoader;
 
 public class DataLoaderCsv implements DataLoader {
     

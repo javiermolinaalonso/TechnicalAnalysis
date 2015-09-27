@@ -1,9 +1,9 @@
 package com.assets.bollinger.service;
 
-import java.time.Instant;
-
 import com.assets.bollinger.data.entities.BollingerValue;
-import com.assets.portfolio.correlation.entities.stock.StockList;
+import com.assets.statistic.list.StockList;
+
+import java.time.Instant;
 
 public interface BollingerService {
 

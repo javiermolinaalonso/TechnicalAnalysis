@@ -1,16 +1,15 @@
 package com.assets.portfolio.entities.investment;
 
-import static org.junit.Assert.assertEquals;
+import com.assets.investment.entities.InvestmentAction;
+import com.assets.investment.entities.InvestmentActionEnum;
+import com.assets.investment.entities.InvestmentActions;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.time.Instant;
 
-import org.junit.Before;
-import org.junit.Test;
-
-import com.assets.portfolio.correlation.entities.investment.InvestmentAction;
-import com.assets.portfolio.correlation.entities.investment.InvestmentActionEnum;
-import com.assets.portfolio.correlation.entities.investment.InvestmentActions;
+import static org.junit.Assert.assertEquals;
 
 public class TestInvestmentActions {
 

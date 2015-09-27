@@ -1,10 +1,10 @@
 package com.assets.trades.service.impl;
 
+import com.assets.entities.StockPrice;
+import com.assets.trades.BuyStrategy;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-
-import com.assets.portfolio.correlation.entities.stock.StockPrice;
-import com.assets.trades.service.BuyStrategy;
 
 public class BuyFixedAmountOfMoney implements BuyStrategy {
 

@@ -1,12 +1,11 @@
 package com.assets.portfolio;
 
-import java.util.Map;
-
-import org.apache.log4j.Logger;
-
-import com.assets.portfolio.correlation.entities.stock.StockList;
 import com.assets.portfolio.data.loader.DataLoader;
 import com.assets.portfolio.data.loader.impl.DataLoaderCsv;
+import com.assets.statistic.list.StockList;
+import org.apache.log4j.Logger;
+
+import java.util.Map;
 
 public class AssetPortfolio {
 

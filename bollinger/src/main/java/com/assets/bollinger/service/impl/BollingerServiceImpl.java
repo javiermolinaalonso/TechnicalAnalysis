@@ -1,10 +1,10 @@
 package com.assets.bollinger.service.impl;
 
-import java.time.Instant;
-
 import com.assets.bollinger.data.entities.BollingerValue;
 import com.assets.bollinger.service.BollingerService;
-import com.assets.portfolio.correlation.entities.stock.StockList;
+import com.assets.statistic.list.StockList;
+
+import java.time.Instant;
 
 public class BollingerServiceImpl implements BollingerService {
 
