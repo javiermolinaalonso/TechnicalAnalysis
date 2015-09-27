@@ -25,7 +25,7 @@ public class TestStatisticList {
         prices.add(BigDecimal.valueOf(12d));
         prices.add(BigDecimal.valueOf(13d));
         prices.add(BigDecimal.valueOf(14d));
-        sList = FactoryStatisticList.getStatisticList(prices, StatisticListType.LAMBDA_MULTI);
+        sList = FactoryStatisticList.getStatisticList(prices, StatisticListType.LAMBDA);
     }
 
     @Test
@@ -34,13 +34,8 @@ public class TestStatisticList {
     }
     
     @Test
-    public void testMeanEmptyList(){
-        assertEquals(0d, sList.getMean().doubleValue(), 0.00d);
-    }
-    
-    @Test
     public void testMaximum() {
-        assertEquals(BigDecimal.valueOf(12d), sList.getHighest());
+        assertEquals(BigDecimal.valueOf(14d), sList.getHighest());
     }
     
     @Test
@@ -50,6 +45,6 @@ public class TestStatisticList {
     
     @Test
     public void testStdDev() {
-        assertEquals(0.748d, sList.getStdDev().doubleValue(), 0.001d);
+        assertEquals(1.414213562d, sList.getStdDev().doubleValue(), 0.001d);
     }
 }
