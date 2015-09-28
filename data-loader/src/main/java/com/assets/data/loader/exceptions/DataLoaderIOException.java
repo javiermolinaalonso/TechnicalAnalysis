@@ -1,4 +1,4 @@
-package com.assets.portfolio.data.exceptions;
+package com.assets.data.loader.exceptions;
 
 public class DataLoaderIOException extends RuntimeException {
 

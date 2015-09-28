@@ -65,11 +65,19 @@
         <processorPath useClasspath="true" />
         <module name="investment-entities" />
       </profile>
+      <profile default="false" name="Annotation profile for data-loader" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="data-loader" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="assets.derivates" target="1.8" />
       <module name="bollinger" target="1.8" />
       <module name="correlation" target="1.8" />
+      <module name="data-loader" target="1.8" />
       <module name="entities" target="1.8" />
       <module name="investment-entities" target="1.8" />
       <module name="portfolio" target="1.8" />

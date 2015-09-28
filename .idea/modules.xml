@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/derivates/assets.derivates.iml" filepath="$PROJECT_DIR$/derivates/assets.derivates.iml" />
       <module fileurl="file://$PROJECT_DIR$/bollinger/bollinger.iml" filepath="$PROJECT_DIR$/bollinger/bollinger.iml" />
       <module fileurl="file://$PROJECT_DIR$/correlation/correlation.iml" filepath="$PROJECT_DIR$/correlation/correlation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/data-loader/data-loader.iml" filepath="$PROJECT_DIR$/data-loader/data-loader.iml" />
       <module fileurl="file://$PROJECT_DIR$/entities/entities.iml" filepath="$PROJECT_DIR$/entities/entities.iml" />
       <module fileurl="file://$PROJECT_DIR$/investment-entities/investment-entities.iml" filepath="$PROJECT_DIR$/investment-entities/investment-entities.iml" />
       <module fileurl="file://$PROJECT_DIR$/portfolio/portfolio.iml" filepath="$PROJECT_DIR$/portfolio/portfolio.iml" />

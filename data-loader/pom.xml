@@ -9,19 +9,18 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>entities</artifactId>
-
-    <properties>
-        <commons-validator.version>1.4.1</commons-validator.version>
-        <commons-lang3.version>3.3.2</commons-lang3.version>
-    </properties>
+    <artifactId>data-loader</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>${commons-lang3.version}</version>
+            <groupId>com.assets</groupId>
+            <artifactId>entities</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.assets</groupId>
+            <artifactId>statistics</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 </project>

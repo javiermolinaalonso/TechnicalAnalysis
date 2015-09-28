@@ -1,7 +1,7 @@
 package com.assets.portfolio;
 
-import com.assets.portfolio.data.loader.DataLoader;
-import com.assets.portfolio.data.loader.impl.DataLoaderCsv;
+import com.assets.data.loader.DataLoader;
+import com.assets.data.loader.impl.DataLoaderCsv;
 import com.assets.statistic.list.StockList;
 import org.apache.log4j.Logger;
 

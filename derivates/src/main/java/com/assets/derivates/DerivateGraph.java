@@ -7,8 +7,8 @@ import com.assets.derivates.service.impl.ComputeExitsServicePercentAndDynamicSto
 import com.assets.investment.entities.InvestmentAction;
 import com.assets.investment.entities.InvestmentActionEnum;
 import com.assets.investment.entities.InvestmentActions;
-import com.assets.portfolio.data.loader.DataLoader;
-import com.assets.portfolio.data.loader.impl.DataLoaderCsv;
+import com.assets.data.loader.DataLoader;
+import com.assets.data.loader.impl.DataLoaderCsv;
 import com.assets.statistic.list.StockList;
 import com.assets.trades.service.impl.BuyFixedAmountOfMoney;
 import org.apache.log4j.Logger;

@@ -1,10 +1,10 @@
-package com.assets.portfolio.data.loader.impl;
+package com.assets.data.loader.impl;
 
 import com.assets.entities.StockPrice;
-import com.assets.portfolio.data.exceptions.DataLoaderEmptyFileException;
-import com.assets.portfolio.data.exceptions.DataLoaderFileNotFoundException;
-import com.assets.portfolio.data.exceptions.DataLoaderIOException;
-import com.assets.portfolio.data.loader.DataLoader;
+import com.assets.data.loader.exceptions.DataLoaderEmptyFileException;
+import com.assets.data.loader.exceptions.DataLoaderFileNotFoundException;
+import com.assets.data.loader.exceptions.DataLoaderIOException;
+import com.assets.data.loader.DataLoader;
 import com.assets.statistic.list.StockList;
 import org.apache.log4j.Logger;
 
@@ -118,7 +118,7 @@ public class DataLoaderCsv implements DataLoader {
         return data.get(ticker);
     }
 
-    @Override
+//    @Override
     public void setDataFile(String dataFile) {
         this.dataFile = dataFile;
     }

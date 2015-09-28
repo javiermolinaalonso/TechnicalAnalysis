@@ -1,4 +1,4 @@
-package com.assets.portfolio.data.loader;
+package com.assets.data.loader;
 
 import com.assets.statistic.list.StockList;
 
@@ -12,6 +12,5 @@ public interface DataLoader {
     Map<String, StockList> loadData(Integer amount);
     
     StockList loadStockList(String ticker);
-    
-    void setDataFile(String dataFile);
+
 }
