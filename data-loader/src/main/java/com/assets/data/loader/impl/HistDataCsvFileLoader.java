@@ -2,40 +2,23 @@ package com.assets.data.loader.impl;
 
 import com.assets.entities.Candlestick;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by javier on 28/09/15.
  */
-public class HistDataCsvFileLoader {
+public class HistDataCsvFileLoader extends AbstractCsvLoader {
 
     /*
         The format of the HistData is
         YYYY.MM.DD,HH:mm,open,max,min,close
      */
-    public List<Candlestick> loadData(String csvFile) throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader(csvFile));
-        String line;
-        List<Candlestick> list = new ArrayList<>();
-        while ((line = br.readLine()) != null) {
-            String[] data = line.split(",");
-            Candlestick candlestick = parseLine(data);
-            list.add(candlestick);
-        }
-        return list;
-    }
-
-    private Candlestick parseLine(String[] data) {
+    protected Candlestick parseLine(String[] data) {
 
         int year = Integer.valueOf(data[0].split("\\.")[0]);
         int month = Integer.valueOf(data[0].split("\\.")[1]);

@@ -72,6 +72,13 @@
         <processorPath useClasspath="true" />
         <module name="data-loader" />
       </profile>
+      <profile default="false" name="Annotation profile for options" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="options" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="assets.derivates" target="1.8" />
@@ -80,6 +87,7 @@
       <module name="data-loader" target="1.8" />
       <module name="entities" target="1.8" />
       <module name="investment-entities" target="1.8" />
+      <module name="options" target="1.8" />
       <module name="portfolio" target="1.8" />
       <module name="StatisticList" target="1.8" />
       <module name="techAnalysis" target="1.8" />

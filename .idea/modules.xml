@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/data-loader/data-loader.iml" filepath="$PROJECT_DIR$/data-loader/data-loader.iml" />
       <module fileurl="file://$PROJECT_DIR$/entities/entities.iml" filepath="$PROJECT_DIR$/entities/entities.iml" />
       <module fileurl="file://$PROJECT_DIR$/investment-entities/investment-entities.iml" filepath="$PROJECT_DIR$/investment-entities/investment-entities.iml" />
+      <module fileurl="file://$PROJECT_DIR$/options/options.iml" filepath="$PROJECT_DIR$/options/options.iml" />
       <module fileurl="file://$PROJECT_DIR$/portfolio/portfolio.iml" filepath="$PROJECT_DIR$/portfolio/portfolio.iml" />
       <module fileurl="file://$PROJECT_DIR$/techAnalysis.iml" filepath="$PROJECT_DIR$/techAnalysis.iml" />
     </modules>

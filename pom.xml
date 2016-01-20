@@ -192,5 +192,6 @@
 		<module>correlation</module>
 		<module>investment-entities</module>
 		<module>data-loader</module>
+		<module>options</module>
 	</modules>
 </project>
