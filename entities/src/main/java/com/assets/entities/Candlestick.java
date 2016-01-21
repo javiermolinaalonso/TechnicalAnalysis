@@ -2,6 +2,7 @@ package com.assets.entities;
 
 import com.assets.entities.exceptions.InvalidCandlestickValueException;
 import org.apache.commons.lang3.Validate;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.math.BigDecimal;
 import java.time.Duration;
@@ -60,6 +61,19 @@ public class Candlestick {
     public Instant getInitialInstant() {
         return initialInstant;
     }
+
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this)
+                .append("initialPrice", initialPrice)
+                .append("finalPrice", finalPrice)
+                .append("maxPrice", maxPrice)
+                .append("minPrice", minPrice)
+                .append("duration", duration)
+                .append("initialInstant", initialInstant)
+                .toString();
+    }
+
 
     public static final class Builder {
 

@@ -1,7 +1,7 @@
-package com.assets.options;
+package com.assets.options.impl;
 
 import com.assets.entities.Candlestick;
-import org.apache.commons.lang3.ArrayUtils;
+import com.assets.options.OptionsCalculator;
 import org.apache.commons.math3.stat.descriptive.moment.StandardDeviation;
 
 import java.time.LocalDate;
@@ -10,12 +10,21 @@ import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 
-public class PutCalculator {
+public class OptionsCalculatorCandlestick implements OptionsCalculator<Candlestick> {
 
     private static final double DAYS_OF_YEAR = 252d;
 
-    public double getPutPrice(List<Candlestick> history, LocalDate expirationTime, Double strike) {
-        double volatility = getAnnualizedVolatility(history, 22);
+    @Override
+    public double call(List<Candlestick> values, LocalDate expiration, double strike) {
+        return blackScholes(values, expiration, strike)[0];
+    }
+
+    public double put(List<Candlestick> values, LocalDate expiration, double strike) {
+        return blackScholes(values, expiration, strike)[1];
+    }
+
+    private double[] blackScholes(List<Candlestick> history, LocalDate expirationTime, double strike) {
+        double volatility = getAnnualizedVolatility(history);
         LocalDate currentDate = LocalDateTime.ofInstant(history.get(history.size() - 1).getInitialInstant(), ZoneId.of("UTC")).toLocalDate();
         double currentPrice = history.get(history.size() - 1).getFinalPrice().doubleValue();
         double tax = 0.02;
@@ -30,10 +39,10 @@ public class PutCalculator {
         double warrant = normdist(d2) * actualValue;
         double call = delta * currentPrice - warrant;
         double put = call + actualValue - currentPrice;
-        return put;
+        return new double[]{call, put};
     }
 
-    private double getAnnualizedVolatility(List<Candlestick> history, int periods) {
+    private double getAnnualizedVolatility(List<Candlestick> history) {
         StandardDeviation standardDeviation = new StandardDeviation();
 
         double[] endValues = history
@@ -46,7 +55,7 @@ public class PutCalculator {
             percentDifferences[i - 1] = (endValues[i] - endValues[i - 1]) / endValues[i - 1];
         }
 
-        double stdev = standardDeviation.evaluate(ArrayUtils.subarray(percentDifferences, percentDifferences.length - periods, percentDifferences.length));
+        double stdev = standardDeviation.evaluate(percentDifferences);
 
         return stdev * Math.sqrt(DAYS_OF_YEAR);
     }
