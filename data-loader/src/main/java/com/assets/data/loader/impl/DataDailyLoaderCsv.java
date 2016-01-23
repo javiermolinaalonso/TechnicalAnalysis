@@ -20,7 +20,7 @@ public class DataDailyLoaderCsv extends AbstractCsvLoader {
     private final SimpleDateFormat dateFormat;
 
     public DataDailyLoaderCsv() {
-        dateFormat = new SimpleDateFormat("YYYY-MM-dd");
+        dateFormat = new SimpleDateFormat("yyyy-MM-dd");
     }
 
     @Override

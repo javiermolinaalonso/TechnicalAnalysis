@@ -2,11 +2,8 @@ package com.assets.options.impl;
 
 import com.assets.entities.Candlestick;
 import com.assets.options.OptionsCalculator;
-import org.apache.commons.math3.stat.descriptive.moment.StandardDeviation;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 
@@ -14,19 +11,36 @@ public class OptionsCalculatorCandlestick implements OptionsCalculator<Candlesti
 
     private static final double DAYS_OF_YEAR = 252d;
 
+    private final VolatilityCalculator volatilityCalculator;
+
+    public OptionsCalculatorCandlestick(VolatilityCalculator volatilityCalculator) {
+        this.volatilityCalculator = volatilityCalculator;
+    }
+
     @Override
     public double call(List<Candlestick> values, LocalDate expiration, double strike) {
-        return blackScholes(values, expiration, strike)[0];
+        double volatility = volatilityCalculator.getAnnualizedVolatility(values);
+        return blackScholes(values.get(values.size() - 1), expiration, strike, volatility)[0];
+    }
+
+    @Override
+    public double call(Candlestick value, LocalDate expiration, double strike, double volatility) {
+        return blackScholes(value, expiration, strike, volatility)[0];
+    }
+
+    @Override
+    public double put(Candlestick value, LocalDate expiration, double strike, double volatility) {
+        return blackScholes(value, expiration, strike, volatility)[1];
     }
 
     public double put(List<Candlestick> values, LocalDate expiration, double strike) {
-        return blackScholes(values, expiration, strike)[1];
+        double volatility = volatilityCalculator.getAnnualizedVolatility(values);
+        return blackScholes(values.get(values.size() - 1), expiration, strike, volatility)[1];
     }
 
-    private double[] blackScholes(List<Candlestick> history, LocalDate expirationTime, double strike) {
-        double volatility = getAnnualizedVolatility(history);
-        LocalDate currentDate = LocalDateTime.ofInstant(history.get(history.size() - 1).getInitialInstant(), ZoneId.of("UTC")).toLocalDate();
-        double currentPrice = history.get(history.size() - 1).getFinalPrice().doubleValue();
+    private double[] blackScholes(Candlestick value, LocalDate expirationTime, double strike, double volatility) {
+        LocalDate currentDate = value.getDate();
+        double currentPrice = value.getFinalPrice().doubleValue();
         double tax = 0.02;
 
         double years = (double) ChronoUnit.DAYS.between(currentDate, expirationTime) / DAYS_OF_YEAR;
@@ -40,24 +54,6 @@ public class OptionsCalculatorCandlestick implements OptionsCalculator<Candlesti
         double call = delta * currentPrice - warrant;
         double put = call + actualValue - currentPrice;
         return new double[]{call, put};
-    }
-
-    private double getAnnualizedVolatility(List<Candlestick> history) {
-        StandardDeviation standardDeviation = new StandardDeviation();
-
-        double[] endValues = history
-                .stream()
-                .mapToDouble(candlestick -> candlestick.getFinalPrice().doubleValue())
-                .toArray();
-
-        double[] percentDifferences = new double[endValues.length - 1];
-        for (int i = 1; i < endValues.length; i++) {
-            percentDifferences[i - 1] = (endValues[i] - endValues[i - 1]) / endValues[i - 1];
-        }
-
-        double stdev = standardDeviation.evaluate(percentDifferences);
-
-        return stdev * Math.sqrt(DAYS_OF_YEAR);
     }
 
     double normdist(double x) {

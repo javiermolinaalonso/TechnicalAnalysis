@@ -5,8 +5,7 @@ import org.apache.commons.lang3.Validate;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.math.BigDecimal;
-import java.time.Duration;
-import java.time.Instant;
+import java.time.*;
 
 /**
  * Created by javier on 27/09/15.
@@ -62,6 +61,10 @@ public class Candlestick {
         return initialInstant;
     }
 
+    public LocalDate getDate() {
+        LocalDateTime localDateTime = LocalDateTime.ofInstant(initialInstant, ZoneId.systemDefault());
+        return localDateTime.toLocalDate();
+    }
     @Override
     public String toString() {
         return new ToStringBuilder(this)

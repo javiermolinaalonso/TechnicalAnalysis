@@ -18,6 +18,12 @@
 			<artifactId>portfolio</artifactId>
 			<version>${portfolio.version}</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.assets</groupId>
+			<artifactId>options</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 		<!-- PostgreSQL driver -->
 		<dependency>
 			<groupId>postgresql</groupId>

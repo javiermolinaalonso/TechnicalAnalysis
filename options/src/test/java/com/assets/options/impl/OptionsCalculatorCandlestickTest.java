@@ -1,7 +1,7 @@
-package com.assets.data.loader.impl;
+package com.assets.options.impl;
 
+import com.assets.data.loader.impl.DataDailyLoaderCsv;
 import com.assets.entities.Candlestick;
-import com.assets.options.impl.OptionsCalculatorCandlestick;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -26,7 +26,8 @@ public class OptionsCalculatorCandlestickTest {
         loader = new DataDailyLoaderCsv();
         candlesticks = loader.loadData(resource.getPath());
 
-        calculator = new OptionsCalculatorCandlestick();
+        VolatilityCalculator volatilityCalculator = new VolatilityCalculator();
+        calculator = new OptionsCalculatorCandlestick(volatilityCalculator);
     }
 
     @Test
@@ -37,7 +38,7 @@ public class OptionsCalculatorCandlestickTest {
         List<Candlestick> values = getValues(23);
         double putPrice = calculator.put(values, expirationTime, targetPrice);
 
-        double expectedPrice = 302.65d;
+        double expectedPrice = 274.09;
 
         assertEquals(expectedPrice, putPrice, 1d);
     }
