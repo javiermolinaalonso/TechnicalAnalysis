@@ -1,94 +1,88 @@
 package com.assets.derivates;
 
 import com.assets.data.loader.impl.DataDailyLoaderCsv;
+import com.assets.derivates.entities.NakedPutVolatilityStrategyResult;
+import com.assets.derivates.service.impl.NakedPutSellStrategyImpl;
 import com.assets.entities.Candlestick;
 import com.assets.options.impl.OptionsCalculatorCandlestick;
 import com.assets.options.impl.VolatilityCalculator;
 
+import java.io.File;
 import java.io.IOException;
-import java.math.BigDecimal;
+import java.io.PrintWriter;
+import java.net.URISyntaxException;
 import java.net.URL;
-import java.time.LocalDate;
-import java.time.Period;
+import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.*;
 
 public class OptionsVolatility {
 
-    public static final double VOLATILITY_START = 0.5;
-    private static final double VOLATILITY_END = 0.15;
-    static VolatilityCalculator volatilityCalculator = new VolatilityCalculator();
-    static OptionsCalculatorCandlestick optionsCalculator = new OptionsCalculatorCandlestick(volatilityCalculator);
     static int step = 22;
-    public static void main(String[] args) throws IOException {
+
+    NakedPutSellStrategyImpl nakedPutSellStrategy;
+    ExecutorService service;
+
+    public OptionsVolatility() {
+        service = Executors.newFixedThreadPool(4);
+        VolatilityCalculator volatilityCalculator = new VolatilityCalculator();
+        OptionsCalculatorCandlestick optionsCalculator = new OptionsCalculatorCandlestick(volatilityCalculator);
+        nakedPutSellStrategy = new NakedPutSellStrategyImpl(volatilityCalculator, optionsCalculator);
+    }
+
+    private void calculateMonthlyVolatilities(List<Candlestick> values, File output) throws ExecutionException, InterruptedException, IOException {
+        List<Future<NakedPutVolatilityStrategyResult>> results = new ArrayList<>();
+        int calculations = 0;
+        for(double vStart = 0.3; vStart < 0.6; vStart+=0.02) {
+            for(double vEnd = 0.15; vEnd < 0.25; vEnd+=0.02) {
+                for(double strikeDistance = 0.8; strikeDistance < 1.2; strikeDistance+=0.02) {
+                    Future<NakedPutVolatilityStrategyResult> value = service.submit(new StrategyCallable(vStart, vEnd, strikeDistance, values));
+                    results.add(value);
+                    calculations++;
+                }
+            }
+        }
+        PrintWriter printWriter = new PrintWriter(output);
+        printWriter.println("Result, VolatStart, VolatEnd, Strike distance");
+        int currentPrint = 0;
+        for (Future<NakedPutVolatilityStrategyResult> result : results) {
+            printWriter.println(result.get().toCsvString());
+            System.out.println(String.format("%.2f%%", (float)currentPrint * 100 / (float) calculations));
+            currentPrint++;
+        }
+        printWriter.flush();
+        printWriter.close();
+        service.shutdown();
+    }
+
+    public static void main(String[] args) throws IOException, ExecutionException, InterruptedException, URISyntaxException {
         URL resource = OptionsVolatility.class.getClassLoader().getResource("Ibex1993-2015.csv");
 
         DataDailyLoaderCsv loader = new DataDailyLoaderCsv();
         List<Candlestick> values = loader.loadData(resource.getPath());
         Collections.sort(values, (x, y) -> x.getInitialInstant().compareTo(y.getInitialInstant()));
-        VolatilityCalculator volatilityCalculator = new VolatilityCalculator();
-        calculateMonthlyVolatilities(volatilityCalculator, values);
+
+        File f = new File("/Users/javiermolina/projects/TechnicalAnalysis/foo.csv");
+        new OptionsVolatility().calculateMonthlyVolatilities(values, f);
     }
 
-    private static void calculateMonthlyVolatilities(VolatilityCalculator volatilityCalculator, List<Candlestick> values) {
-        double strategyBenefit = 0;
-        for(int i = step; i < values.size(); i+=5) {
-            LinkedList<Candlestick> currentValues = getValues(values, i - step, i);
-            double volatility = volatilityCalculator.getAnnualizedVolatility(currentValues);
-            if(volatility > VOLATILITY_START) {
-                double performance = doEvaluatePutSell(values, i, currentValues);
-                strategyBenefit+= performance;
-            }
+    private class StrategyCallable implements Callable<NakedPutVolatilityStrategyResult> {
+        private final Double vStart;
+        private final Double strikeDistance;
+        private final Double vEnd;
+        private final List<Candlestick> values;
+
+        private StrategyCallable(Double vStart, Double vEnd, Double strikeDistance, List<Candlestick> values) {
+            this.vStart = vStart;
+            this.strikeDistance = strikeDistance;
+            this.vEnd = vEnd;
+            this.values = values;
         }
-        System.out.println(String.format("Final benefit is %.2f", strategyBenefit));
-    }
 
-    private static double doEvaluatePutSell(List<Candlestick> values, int index, LinkedList<Candlestick> currentValues) {
-        Candlestick candlestick = values.get(index);
-        LocalDate strikeDate = candlestick.getDate().plusMonths(12);
-        double strikePrice = candlestick.getFinalPrice().multiply(BigDecimal.valueOf(0.9)).doubleValue();
-        double price = getPrice(values, index, strikeDate, strikePrice, candlestick);
-        double finalPrice = evaluatePerformance(values, index, strikeDate, strikePrice);
-        System.out.println(String.format("Operation profit: %.2f", price - finalPrice));
-        return price - finalPrice;
-    }
-
-    private static double evaluatePerformance(List<Candlestick> values, int index, LocalDate strikeDate, double strikePrice) {
-        Candlestick candlestick = values.get(index);
-        int days;
-        double volatility;
-        double currentPrice;
-        do {
-            days = getDays(strikeDate, candlestick.getDate());
-            volatility = volatilityCalculator.getAnnualizedVolatility(getValues(values, index - days, index));
-            currentPrice = optionsCalculator.put(candlestick, strikeDate, strikePrice, volatility);
-            index++;
-            candlestick = values.get(index);
-        } while(candlestick.getDate().isBefore(strikeDate) && index < values.size() && volatility > VOLATILITY_END);
-        return currentPrice;
-    }
-
-    private static double getPrice(List<Candlestick> values, int index, LocalDate strikeDate, double strikePrice, Candlestick candlestick) {
-        int days = getDays(strikeDate, candlestick.getDate());
-        double volatility = volatilityCalculator.getAnnualizedVolatility(getValues(values, index - days, index));
-        return optionsCalculator.put(candlestick, strikeDate, strikePrice, volatility);
-    }
-
-    private static int getDays(LocalDate strikeDate, LocalDate startDate) {
-        Period between = Period.between(startDate, strikeDate);
-        return between.getDays() + between.getMonths() * 22 + between.getYears() * 252;
-    }
-
-    private static double sellPut(LinkedList<Candlestick> currentValues, LocalDate strikeDate, double strikePrice) {
-        return optionsCalculator.put(currentValues, strikeDate, strikePrice);
-    }
-
-    private static LinkedList<Candlestick> getValues(List<Candlestick> candlesticks, int minIndex, int maxIndex) {
-        LinkedList<Candlestick> values = new LinkedList<>();
-        for(int i = minIndex; i < maxIndex; i++) {
-            values.addLast(candlesticks.get(i));
+        @Override
+        public NakedPutVolatilityStrategyResult call() throws Exception {
+            return nakedPutSellStrategy.calculateStrategy(values, step, vStart, strikeDistance, vEnd);
         }
-        return values;
     }
 }
