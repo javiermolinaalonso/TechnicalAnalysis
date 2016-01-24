@@ -1,5 +1,6 @@
 package com.assets.derivates.entities;
 
+import java.util.List;
 import java.util.Locale;
 
 public class NakedPutVolatilityStrategyResult {
@@ -8,23 +9,23 @@ public class NakedPutVolatilityStrategyResult {
     private final Double volatilityEnd;
     private final Double strikeDistance;
     private final Double result;
-    private final Integer operations;
+    private final List<PutResult> results;
 
     private NakedPutVolatilityStrategyResult(Builder builder) {
         volatilityStart = builder.volatilityStart;
         volatilityEnd = builder.volatilityEnd;
         strikeDistance = builder.strikeDistance;
         result = builder.result;
-        operations = builder.operations;
+        results = builder.results;
     }
 
     @Override
     public String toString() {
-        return String.format("result:%.2f. vStart:%.2f, vEnd:%.2f, strike:%.2f", result / (double) operations, volatilityStart, volatilityEnd, strikeDistance);
+        return String.format("result:%.2f. vStart:%.2f, vEnd:%.2f, strike:%.2f", result / (double) results.size(), volatilityStart, volatilityEnd, strikeDistance);
     }
 
     public String toCsvString() {
-        return String.format(Locale.US, "%.2f,%.2f,%.2f,%.2f", result / (double) operations, volatilityStart, volatilityEnd, strikeDistance);
+        return String.format(Locale.US, "%.2f,%.2f,%.2f,%.2f, %s", result / (double) results.size(), volatilityStart, volatilityEnd, strikeDistance, results.toString());
     }
 
 
@@ -33,7 +34,7 @@ public class NakedPutVolatilityStrategyResult {
         private Double volatilityEnd;
         private Double strikeDistance;
         private Double result;
-        private Integer operations;
+        private List<PutResult> results;
 
         public Builder() {
         }
@@ -43,7 +44,7 @@ public class NakedPutVolatilityStrategyResult {
             this.volatilityEnd = copy.volatilityEnd;
             this.strikeDistance = copy.strikeDistance;
             this.result = copy.result;
-            this.operations = copy.operations;
+            this.results = copy.results;
         }
 
         public Builder withVolatilityStart(Double val) {
@@ -66,8 +67,8 @@ public class NakedPutVolatilityStrategyResult {
             return this;
         }
 
-        public Builder withOperations(Integer val) {
-            operations = val;
+        public Builder withResults(List<PutResult> val) {
+            results = val;
             return this;
         }
 

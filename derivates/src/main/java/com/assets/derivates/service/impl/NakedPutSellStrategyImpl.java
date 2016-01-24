@@ -1,6 +1,7 @@
 package com.assets.derivates.service.impl;
 
 import com.assets.derivates.entities.NakedPutVolatilityStrategyResult;
+import com.assets.derivates.entities.PutResult;
 import com.assets.derivates.service.NakedPutSellStrategy;
 import com.assets.entities.Candlestick;
 import com.assets.options.impl.OptionsCalculatorCandlestick;
@@ -9,6 +10,7 @@ import com.assets.options.impl.VolatilityCalculator;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -24,14 +26,14 @@ public class NakedPutSellStrategyImpl implements NakedPutSellStrategy<Candlestic
 
     public NakedPutVolatilityStrategyResult calculateStrategy(List<Candlestick> values, int step, double volatilityStart, double strikeDistance, double volatilityEnd) {
         double strategyBenefit = 0;
-        int operations = 0;
-        for(int i = step; i < values.size(); i+=5) {
-            LinkedList<Candlestick> currentValues = getValues(values, i - step, i);
-            double volatility = volatilityCalculator.getAnnualizedVolatility(currentValues);
-            if(volatility > volatilityStart) {
-                double performance = doEvaluatePutSell(values, i, currentValues, strikeDistance, volatilityEnd);
-                strategyBenefit+= performance;
-                operations++;
+        List<PutResult> results = new ArrayList<>();
+        for (int i = step; i < values.size(); i += 10) {
+            double volatility = volatilityCalculator.getAnnualizedVolatility(getValues(values, i - step, i));
+            if (volatility > volatilityStart) {
+                PutResult.Builder result = doEvaluatePutSell(values, i, strikeDistance, volatilityEnd);
+                PutResult putResult = result.withInitialVolatility(volatility).build();
+                strategyBenefit += putResult.getBenefit();
+                results.add(putResult);
             }
         }
         return new NakedPutVolatilityStrategyResult.Builder()
@@ -39,32 +41,46 @@ public class NakedPutSellStrategyImpl implements NakedPutSellStrategy<Candlestic
                 .withStrikeDistance(strikeDistance)
                 .withVolatilityStart(volatilityStart)
                 .withVolatilityEnd(volatilityEnd)
-                .withOperations(operations)
+                .withResults(results)
                 .build();
     }
 
-    private double doEvaluatePutSell(List<Candlestick> values, int index, LinkedList<Candlestick> currentValues, double strikeDistance, double volatilityEnd) {
+    private PutResult.Builder doEvaluatePutSell(List<Candlestick> values, int index, double strikeDistance, double volatilityEnd) {
         Candlestick candlestick = values.get(index);
         LocalDate strikeDate = candlestick.getDate().plusMonths(12);
         double strikePrice = candlestick.getFinalPrice().multiply(BigDecimal.valueOf(strikeDistance)).doubleValue();
-        double price = getPrice(values, index, strikeDate, strikePrice, candlestick);
-        double finalPrice = evaluatePerformance(values, index, strikeDate, strikePrice, volatilityEnd);
-        return price - finalPrice;
+        double initialPremium = getPrice(values, index, strikeDate, strikePrice, candlestick);
+        PutResult.Builder builder = evaluatePerformance(values, index, strikeDate, strikePrice, volatilityEnd);
+        return builder
+                .withInitialPremium(initialPremium)
+                .withStrikePrice(strikePrice)
+                .withInitialPrice(candlestick.getFinalPrice().doubleValue())
+                .withStartDate(candlestick.getDate())
+                .withStrikeDate(strikeDate);
     }
 
-    private double evaluatePerformance(List<Candlestick> values, int index, LocalDate strikeDate, double strikePrice, double volatilityEnd) {
+    private PutResult.Builder evaluatePerformance(List<Candlestick> values, int index, LocalDate strikeDate, double strikePrice, double volatilityEnd) {
         Candlestick candlestick = values.get(index);
+        double maxPremium = 0d;
+        double maxVolatility = 0d;
         int days;
         double volatility;
-        double currentPrice;
+        double currentPremium;
         do {
             days = getDays(strikeDate, candlestick.getDate());
             volatility = volatilityCalculator.getAnnualizedVolatility(getValues(values, index - Math.max(days, 10), index));
-            currentPrice = optionsCalculator.put(candlestick, strikeDate, strikePrice, volatility);
+            currentPremium = optionsCalculator.put(candlestick, strikeDate, strikePrice, volatility);
+            maxPremium = Math.max(currentPremium, maxPremium);
+            maxVolatility = Math.max(volatility, maxVolatility);
             index++;
             candlestick = values.get(index);
-        } while(candlestick.getDate().isBefore(strikeDate) && index < values.size()-1 && volatility > volatilityEnd);
-        return currentPrice;
+        } while (candlestick.getDate().isBefore(strikeDate) && index < values.size() - 1 && volatility > volatilityEnd);
+
+        return new PutResult.Builder()
+                .withEndDate(candlestick.getDate())
+                .withMaxPremium(maxPremium)
+                .withMaxVolatility(maxVolatility)
+                .withFinalPremium(currentPremium);
     }
 
     private double getPrice(List<Candlestick> values, int index, LocalDate strikeDate, double strikePrice, Candlestick candlestick) {
@@ -78,13 +94,10 @@ public class NakedPutSellStrategyImpl implements NakedPutSellStrategy<Candlestic
         return between.getDays() + between.getMonths() * 22 + between.getYears() * 252;
     }
 
-    private double sellPut(LinkedList<Candlestick> currentValues, LocalDate strikeDate, double strikePrice) {
-        return optionsCalculator.put(currentValues, strikeDate, strikePrice);
-    }
-
     private LinkedList<Candlestick> getValues(List<Candlestick> candlesticks, int minIndex, int maxIndex) {
+        minIndex = Math.max(0, minIndex);
         LinkedList<Candlestick> values = new LinkedList<>();
-        for(int i = minIndex; i < maxIndex; i++) {
+        for (int i = minIndex; i < maxIndex; i++) {
             values.addLast(candlesticks.get(i));
         }
         return values;

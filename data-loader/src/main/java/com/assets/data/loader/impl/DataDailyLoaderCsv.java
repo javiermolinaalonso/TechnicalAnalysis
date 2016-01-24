@@ -37,7 +37,8 @@ public class DataDailyLoaderCsv extends AbstractCsvLoader {
                     .withFinalPrice(BigDecimal.valueOf(Double.parseDouble(data[4])))
                     .build();
         } catch (ParseException e) {
-            throw new RuntimeException(e);
+            //Just continue
+            return null;
         }
     }
 }

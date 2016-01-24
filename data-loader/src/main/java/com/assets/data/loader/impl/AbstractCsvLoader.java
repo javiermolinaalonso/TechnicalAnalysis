@@ -17,7 +17,9 @@ public abstract class AbstractCsvLoader implements CsvLoader {
         while ((line = br.readLine()) != null) {
             String[] data = line.split(",");
             Candlestick candlestick = parseLine(data);
-            list.add(candlestick);
+            if (candlestick != null) {
+                list.add(candlestick);
+            }
         }
         return list;
     }

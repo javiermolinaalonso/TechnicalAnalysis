@@ -4,28 +4,36 @@ import java.time.LocalDate;
 
 public class PutResult {
 
-    private final Double result;
-    private final Double maxLoss;
+    private final Double initialPremium;
+    private final Double finalPremium;
+    private final Double maxPremium;
+    private final Double strikePrice;
+    private final Double initialPrice;
+    private final Double initialVolatility;
+    private final Double maxVolatility;
     private final LocalDate start;
     private final LocalDate end;
     private final LocalDate strikeDate;
-    private final Double strikePrice;
 
     private PutResult(Builder builder) {
-        result = builder.result;
-        maxLoss = builder.maxLoss;
+        initialPremium = builder.initialPremium;
+        finalPremium = builder.finalPremium;
+        maxPremium = builder.maxPremium;
+        strikePrice = builder.strikePrice;
+        initialPrice = builder.initialPrice;
+        initialVolatility = builder.initialVolatility;
+        maxVolatility = builder.maxVolatility;
         start = builder.start;
         end = builder.end;
         strikeDate = builder.strikeDate;
-        strikePrice = builder.strikePrice;
     }
 
-    public Double getResult() {
-        return result;
+    public Double getInitialPremium() {
+        return initialPremium;
     }
 
-    public Double getMaxLoss() {
-        return maxLoss;
+    public Double getMaxPremium() {
+        return maxPremium;
     }
 
     public LocalDate getStart() {
@@ -44,53 +52,102 @@ public class PutResult {
         return strikePrice;
     }
 
+    public double getBenefit() {
+        return initialPremium - finalPremium;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("{%.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %s, %s, %s}",
+                initialPremium,
+                finalPremium,
+                maxPremium,
+                initialPremium - maxPremium,
+                strikePrice,
+                initialPrice,
+                initialVolatility,
+                maxVolatility,
+                start,
+                end,
+                strikeDate);
+    }
+
+
     public static final class Builder {
-        private Double result;
-        private Double maxLoss;
+        private Double initialPremium;
+        private Double finalPremium;
+        private Double maxPremium;
+        private Double strikePrice;
+        private Double initialPrice;
+        private Double initialVolatility;
+        private Double maxVolatility;
         private LocalDate start;
         private LocalDate end;
         private LocalDate strikeDate;
-        private Double strikePrice;
 
         public Builder() {
         }
 
         public Builder(PutResult copy) {
-            this.result = copy.result;
-            this.maxLoss = copy.maxLoss;
+            this.initialPremium = copy.initialPremium;
+            this.finalPremium = copy.finalPremium;
+            this.maxPremium = copy.maxPremium;
+            this.strikePrice = copy.strikePrice;
+            this.initialPrice = copy.initialPrice;
+            this.initialVolatility = copy.initialVolatility;
+            this.maxVolatility = copy.maxVolatility;
             this.start = copy.start;
             this.end = copy.end;
             this.strikeDate = copy.strikeDate;
-            this.strikePrice = copy.strikePrice;
         }
 
-        public Builder withResult(Double val) {
-            result = val;
+        public Builder withInitialPremium(Double val) {
+            initialPremium = val;
             return this;
         }
 
-        public Builder withMaxLoss(Double val) {
-            maxLoss = val;
+        public Builder withFinalPremium(Double val) {
+            finalPremium = val;
             return this;
         }
 
-        public Builder withStart(LocalDate val) {
+        public Builder withMaxPremium(Double val) {
+            maxPremium = val;
+            return this;
+        }
+
+        public Builder withStrikePrice(Double val) {
+            strikePrice = val;
+            return this;
+        }
+
+        public Builder withInitialPrice(Double val) {
+            initialPrice = val;
+            return this;
+        }
+
+        public Builder withInitialVolatility(Double val) {
+            initialVolatility = val;
+            return this;
+        }
+
+        public Builder withMaxVolatility(Double val) {
+            maxVolatility = val;
+            return this;
+        }
+
+        public Builder withStartDate(LocalDate val) {
             start = val;
             return this;
         }
 
-        public Builder withEnd(LocalDate val) {
+        public Builder withEndDate(LocalDate val) {
             end = val;
             return this;
         }
 
         public Builder withStrikeDate(LocalDate val) {
             strikeDate = val;
-            return this;
-        }
-
-        public Builder withStrikePrice(Double val) {
-            strikePrice = val;
             return this;
         }
 
