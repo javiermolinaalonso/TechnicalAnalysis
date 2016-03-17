@@ -1,12 +1,10 @@
 package com.assets.data.loader.impl;
 
-import com.assets.entities.Candlestick;
-
 import java.io.IOException;
 import java.util.List;
 
-public interface CsvLoader {
+public interface CsvLoader<T> {
 
-    List<Candlestick> loadData(String csvFile) throws IOException;
+    List<T> loadData(String csvFile) throws IOException;
 
 }

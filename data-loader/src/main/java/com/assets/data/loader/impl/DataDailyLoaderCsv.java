@@ -10,7 +10,7 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
-public class DataDailyLoaderCsv extends AbstractCsvLoader {
+public class DataDailyLoaderCsv extends AbstractCsvLoader<Candlestick> {
 
     /*
         The format of the HistData is

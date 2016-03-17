@@ -1,6 +1,6 @@
 package com.assets.derivates.service;
 
-import com.assets.derivates.entities.NakedPutVolatilityStrategyResult;
+import com.assets.derivates.strategies.NakedPutVolatilityStrategyResult;
 
 import java.util.List;
 

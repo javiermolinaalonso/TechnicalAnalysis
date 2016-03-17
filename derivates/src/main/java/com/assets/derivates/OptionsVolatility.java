@@ -1,7 +1,7 @@
 package com.assets.derivates;
 
 import com.assets.data.loader.impl.DataDailyLoaderCsv;
-import com.assets.derivates.entities.NakedPutVolatilityStrategyResult;
+import com.assets.derivates.strategies.NakedPutVolatilityStrategyResult;
 import com.assets.derivates.service.impl.NakedPutSellStrategyImpl;
 import com.assets.entities.Candlestick;
 import com.assets.options.impl.OptionsCalculatorCandlestick;

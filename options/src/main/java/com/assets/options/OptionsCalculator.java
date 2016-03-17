@@ -1,16 +1,19 @@
 package com.assets.options;
 
+import com.assets.options.entities.CallOption;
+import com.assets.options.entities.PutOption;
+
+import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 public interface OptionsCalculator<T> {
 
-    double put(List<T> values, LocalDate expiration, double strike);
+    PutOption put(List<T> values, LocalDate expiration, LocalDate now, BigDecimal strike);
 
-    double call(List<T> values, LocalDate expiration, double strike);
+    CallOption call(List<T> values, LocalDate expiration, LocalDate now, BigDecimal strike);
 
-    double put(T value, LocalDate expiration, double strike, double volatility);
+    PutOption put(T value, LocalDate expiration, LocalDate now, BigDecimal strike, double volatility);
 
-    double call(T value, LocalDate expiration, double strike, double volatility);
+    CallOption call(T value, LocalDate expiration, LocalDate now, BigDecimal strike, double volatility);
 }

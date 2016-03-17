@@ -12,7 +12,7 @@ import java.time.temporal.ChronoUnit;
 /**
  * Created by javier on 28/09/15.
  */
-public class HistDataCsvFileLoader extends AbstractCsvLoader {
+public class HistDataCsvFileLoader extends AbstractCsvLoader<Candlestick> {
 
     /*
         The format of the HistData is

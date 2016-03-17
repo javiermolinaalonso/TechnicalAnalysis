@@ -1,4 +1,6 @@
-package com.assets.derivates.entities;
+package com.assets.derivates.strategies;
+
+import com.assets.derivates.entities.PutResult;
 
 import java.util.List;
 import java.util.Locale;
