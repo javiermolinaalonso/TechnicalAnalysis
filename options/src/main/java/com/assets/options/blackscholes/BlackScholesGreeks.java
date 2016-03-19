@@ -72,7 +72,7 @@ public class BlackScholesGreeks {
 
     private static double d1(double s, double k, double r, double t, double v) {
         double top = log(s / k) + (r + pow(v, 2) / 2) * t;
-        double bottom = v * sqrt(t);
+        double bottom = Math.max(v * sqrt(t), 0.000000001);
         return top / bottom;
     }
 

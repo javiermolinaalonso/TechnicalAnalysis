@@ -17,20 +17,11 @@ public class OptionTrade {
         this.ticker = ticker;
     }
 
-    public BigDecimal getCurrentValue(BigDecimal value, LocalDate when, double volatility) {
-        Option newOption;
-        if(option.isCall()) {
-            newOption = new CallOption(value, option.getStrikePrice(), when, option.getExpirationDate(), volatility, option.getRiskFree());
-        } else {
-            newOption = new PutOption(value, option.getStrikePrice(), when, option.getExpirationDate(), volatility, option.getRiskFree());
-        }
-        return newOption.getPremium();
+    public BigDecimal getTradeAmount() {
+        return tradePrice.multiply(BigDecimal.valueOf(contracts)).multiply(BigDecimal.valueOf(-100));
     }
 
-    public BigDecimal getTradeAmount() {
-        return tradePrice.multiply(BigDecimal.valueOf(contracts));
-    }
-    public Option getOption() {
+    public Option getExpectedValue() {
         return option;
     }
 
@@ -44,5 +35,55 @@ public class OptionTrade {
 
     public String getTicker() {
         return ticker;
+    }
+
+    public BigDecimal getExpirationValue(BigDecimal value) {
+        BigDecimal expectedValue = getExpectedValue(value, option.getExpirationDate()).getPremium().multiply(BigDecimal.valueOf(contracts));
+        BigDecimal expirationValue;
+
+        if(option.isCall()) {
+            if(isShort()) {
+                if(value.compareTo(option.getStrikePrice()) <= 0) {
+                    expirationValue = getTradeAmount();
+                } else {
+                    expirationValue = value.subtract(option.getStrikePrice()).multiply(BigDecimal.valueOf(contracts*100)).add(getTradeAmount());
+                }
+            } else {
+                expirationValue =  expectedValue.multiply(BigDecimal.valueOf(contracts*100)).add(getTradeAmount());
+            }
+        } else {
+            if(isShort()) {
+                if(value.compareTo(option.getStrikePrice()) <= 0) {
+                    expirationValue = value.subtract(option.getStrikePrice()).multiply(BigDecimal.valueOf(Math.abs(contracts*100))).add(getTradeAmount());
+                } else {
+                    expirationValue = getTradeAmount();
+                }
+            } else {
+                expirationValue =  expectedValue.multiply(BigDecimal.valueOf(contracts*100)).add(getTradeAmount());
+            }
+        }
+        return expirationValue;
+    }
+
+    private boolean isShort() {
+        return contracts < 0;
+    }
+
+    public Option getExpectedValue(BigDecimal value, LocalDate when) {
+        return getExpectedValue(value, when, option.getVolatility());
+    }
+
+    public Option getExpectedValue(BigDecimal value) {
+        return getExpectedValue(value, option.getCurrentDate(), option.getVolatility());
+    }
+
+    public Option getExpectedValue(BigDecimal value, LocalDate when, double volatility) {
+        Option newOption;
+        if(option.isCall()) {
+            newOption = new CallOption(value, option.getStrikePrice(), when, option.getExpirationDate(), volatility, option.getRiskFree());
+        } else {
+            newOption = new PutOption(value, option.getStrikePrice(), when, option.getExpirationDate(), volatility, option.getRiskFree());
+        }
+        return newOption;
     }
 }
