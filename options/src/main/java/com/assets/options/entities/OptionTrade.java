@@ -9,16 +9,23 @@ public class OptionTrade {
     private final BigDecimal tradePrice;
     private final int contracts;
     private final String ticker;
+    private final BigDecimal contractComission;
+    private final BigDecimal cost;
+    private final boolean mini;
 
-    public OptionTrade(Option option, BigDecimal tradePrice, int contracts, String ticker) {
+    public OptionTrade(Option option, BigDecimal tradePrice, int contracts, String ticker, BigDecimal contractComission, boolean mini) {
         this.option = option;
         this.tradePrice = tradePrice;
         this.contracts = contracts;
         this.ticker = ticker;
+        this.contractComission = contractComission;
+        this.mini = mini;
+        this.cost = BigDecimal.valueOf(contracts).multiply(tradePrice).multiply(getAmountOfStocks())
+                .add(contractComission.multiply(BigDecimal.valueOf(Math.abs(contracts))));
     }
 
-    public BigDecimal getTradeAmount() {
-        return tradePrice.multiply(BigDecimal.valueOf(contracts)).multiply(BigDecimal.valueOf(-100));
+    public BigDecimal getCost() {
+        return cost;
     }
 
     public Option getExpectedValue() {
@@ -38,31 +45,23 @@ public class OptionTrade {
     }
 
     public BigDecimal getExpirationValue(BigDecimal value) {
-        BigDecimal expectedValue = getExpectedValue(value, option.getExpirationDate()).getPremium().multiply(BigDecimal.valueOf(contracts));
         BigDecimal expirationValue;
 
-        if(option.isCall()) {
-            if(isShort()) {
-                if(value.compareTo(option.getStrikePrice()) <= 0) {
-                    expirationValue = getTradeAmount();
-                } else {
-                    expirationValue = value.subtract(option.getStrikePrice()).multiply(BigDecimal.valueOf(contracts*100)).add(getTradeAmount());
-                }
-            } else {
-                expirationValue =  expectedValue.multiply(BigDecimal.valueOf(contracts*100)).add(getTradeAmount());
-            }
+        if (!isShort()) {
+            expirationValue = getExpectedValue(value, option.getExpirationDate()).getPremium();
         } else {
-            if(isShort()) {
-                if(value.compareTo(option.getStrikePrice()) <= 0) {
-                    expirationValue = value.subtract(option.getStrikePrice()).multiply(BigDecimal.valueOf(Math.abs(contracts*100))).add(getTradeAmount());
-                } else {
-                    expirationValue = getTradeAmount();
+            expirationValue = BigDecimal.ZERO;
+            if (option.isCall()) {
+                if (value.compareTo(option.getStrikePrice()) > 0) {
+                    expirationValue = value.subtract(option.getStrikePrice());
                 }
             } else {
-                expirationValue =  expectedValue.multiply(BigDecimal.valueOf(contracts*100)).add(getTradeAmount());
+                if (value.compareTo(option.getStrikePrice()) <= 0) {
+                    expirationValue = option.getStrikePrice().subtract(value);
+                }
             }
         }
-        return expirationValue;
+        return expirationValue.multiply(getAmountOfStocks()).multiply(BigDecimal.valueOf(getContracts())).subtract(getCost());
     }
 
     private boolean isShort() {
@@ -79,11 +78,15 @@ public class OptionTrade {
 
     public Option getExpectedValue(BigDecimal value, LocalDate when, double volatility) {
         Option newOption;
-        if(option.isCall()) {
+        if (option.isCall()) {
             newOption = new CallOption(value, option.getStrikePrice(), when, option.getExpirationDate(), volatility, option.getRiskFree());
         } else {
             newOption = new PutOption(value, option.getStrikePrice(), when, option.getExpirationDate(), volatility, option.getRiskFree());
         }
         return newOption;
+    }
+
+    private BigDecimal getAmountOfStocks() {
+        return mini ? BigDecimal.ONE : BigDecimal.valueOf(100);
     }
 }

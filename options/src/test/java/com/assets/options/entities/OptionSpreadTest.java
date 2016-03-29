@@ -24,8 +24,8 @@ public class OptionSpreadTest {
     public void testGivenBullCallSpread() throws Exception {
         Option lowerCallOption = new CallOption(currentValue, strike8800, now, twoMonths, volatility, riskFree);
         Option upperCallOption = new CallOption(currentValue, strike9000, now, twoMonths, volatility, riskFree);
-        OptionTrade lowerCallOptionTrade = new OptionTrade(lowerCallOption, lowerCallOption.getPremium(), 1, "FOO");
-        OptionTrade upperCallOptionTrade = new OptionTrade(upperCallOption, lowerCallOption.getPremium(), -1, "FOO");
+        OptionTrade lowerCallOptionTrade = new OptionTrade(lowerCallOption, lowerCallOption.getPremium(), 1, "FOO", BigDecimal.ZERO, true);
+        OptionTrade upperCallOptionTrade = new OptionTrade(upperCallOption, lowerCallOption.getPremium(), -1, "FOO", BigDecimal.ZERO, true);
 
         OptionSpread optionSpread = new OptionSpread(Arrays.asList(lowerCallOptionTrade, upperCallOptionTrade));
 
