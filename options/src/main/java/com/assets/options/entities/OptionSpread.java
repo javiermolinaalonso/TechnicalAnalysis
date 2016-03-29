@@ -1,7 +1,6 @@
 package com.assets.options.entities;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.List;
 
 public class OptionSpread {
@@ -12,10 +11,9 @@ public class OptionSpread {
         this.optionTrades = optionTrades;
     }
 
-    public BigDecimal getExpectedValue(BigDecimal value, LocalDate when, double volatility) {
+    public BigDecimal getExpirationValue(BigDecimal value) {
         BigDecimal expectedValue = BigDecimal.ZERO;
         for (OptionTrade optionTrade : optionTrades) {
-            Option option = optionTrade.getExpectedValue(value, when, volatility);
             BigDecimal tradePremium = optionTrade.getExpirationValue(value);
             expectedValue = expectedValue.add(tradePremium);
         }

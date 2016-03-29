@@ -8,7 +8,10 @@ import java.util.Arrays;
 
 public class OptionSpreadTest {
 
-    private final BigDecimal currentValue = BigDecimal.valueOf(8950);
+    private final BigDecimal comission = BigDecimal.valueOf(2);
+
+    private final BigDecimal currentValue = BigDecimal.valueOf(8800);
+    private final BigDecimal strike8600 = BigDecimal.valueOf(8600);
     private final BigDecimal strike8800 = BigDecimal.valueOf(8800);
     private final BigDecimal strike9000 = BigDecimal.valueOf(9000);
 
@@ -24,15 +27,30 @@ public class OptionSpreadTest {
     public void testGivenBullCallSpread() throws Exception {
         Option lowerCallOption = new CallOption(currentValue, strike8800, now, twoMonths, volatility, riskFree);
         Option upperCallOption = new CallOption(currentValue, strike9000, now, twoMonths, volatility, riskFree);
-        OptionTrade lowerCallOptionTrade = new OptionTrade(lowerCallOption, lowerCallOption.getPremium(), 1, "FOO", BigDecimal.ZERO, true);
-        OptionTrade upperCallOptionTrade = new OptionTrade(upperCallOption, lowerCallOption.getPremium(), -1, "FOO", BigDecimal.ZERO, true);
+        OptionTrade lowerCallOptionTrade = new OptionTrade(lowerCallOption, lowerCallOption.getPremium(), 5, "FOO", comission, true);
+        OptionTrade upperCallOptionTrade = new OptionTrade(upperCallOption, upperCallOption.getPremium(), -5, "FOO", comission, true);
 
         OptionSpread optionSpread = new OptionSpread(Arrays.asList(lowerCallOptionTrade, upperCallOptionTrade));
 
-        for(double expectedPrice = 8000; expectedPrice < 10000; expectedPrice+=50) {
-            BigDecimal expectedValue = optionSpread.getExpectedValue(BigDecimal.valueOf(expectedPrice), twoMonths.minusDays(1), volatility);
+        printSpread(optionSpread);
+    }
+
+    @Test
+    public void testGivenBearCallSpread() throws Exception {
+        Option lowerCallOption = new CallOption(currentValue, strike8600, now, twoMonths, volatility, riskFree);
+        Option upperCallOption = new CallOption(currentValue, strike8800, now, twoMonths, volatility, riskFree);
+        OptionTrade lowerCallOptionTrade = new OptionTrade(lowerCallOption, lowerCallOption.getPremium(), -5, "FOO", comission, true);
+        OptionTrade upperCallOptionTrade = new OptionTrade(upperCallOption, upperCallOption.getPremium(), 5, "FOO", comission, true);
+
+        OptionSpread optionSpread = new OptionSpread(Arrays.asList(lowerCallOptionTrade, upperCallOptionTrade));
+
+        printSpread(optionSpread);
+    }
+
+    private void printSpread(OptionSpread optionSpread) {
+        for(double expectedPrice = 8400; expectedPrice < 9400; expectedPrice+=50) {
+            BigDecimal expectedValue = optionSpread.getExpirationValue(BigDecimal.valueOf(expectedPrice));
             System.out.println(String.format("%.5f", expectedValue.doubleValue()));
         }
-
     }
 }
