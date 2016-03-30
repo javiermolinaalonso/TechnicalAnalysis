@@ -9,16 +9,14 @@ public class OptionTrade {
     private final BigDecimal tradePrice;
     private final int contracts;
     private final String ticker;
-    private final BigDecimal contractComission;
     private final BigDecimal cost;
     private final boolean mini;
 
-    public OptionTrade(Option option, BigDecimal tradePrice, int contracts, String ticker, BigDecimal contractComission, boolean mini) {
+    public OptionTrade(Option option, int contracts, String ticker, BigDecimal contractComission, boolean mini) {
         this.option = option;
-        this.tradePrice = tradePrice;
+        this.tradePrice = option.getPremium();
         this.contracts = contracts;
         this.ticker = ticker;
-        this.contractComission = contractComission;
         this.mini = mini;
         this.cost = BigDecimal.valueOf(contracts).multiply(tradePrice).multiply(getAmountOfStocks())
                 .add(contractComission.multiply(BigDecimal.valueOf(Math.abs(contracts))));

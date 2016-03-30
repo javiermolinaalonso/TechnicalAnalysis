@@ -1,10 +1,13 @@
 package com.assets.options.entities;
 
+import com.assets.options.entities.spread.BearCallSpread;
+import com.assets.options.entities.spread.BullCallSpread;
+import com.assets.options.entities.spread.IronCondorSpread;
+import com.assets.options.entities.spread.OptionSpread;
 import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Arrays;
 
 public class OptionSpreadTest {
 
@@ -14,6 +17,7 @@ public class OptionSpreadTest {
     private final BigDecimal strike8600 = BigDecimal.valueOf(8600);
     private final BigDecimal strike8800 = BigDecimal.valueOf(8800);
     private final BigDecimal strike9000 = BigDecimal.valueOf(9000);
+    private final BigDecimal strike9200 = BigDecimal.valueOf(9200);
 
     private final LocalDate now = LocalDate.of(2015, 1, 1);
     private final LocalDate twoMonths = LocalDate.of(2015, 3, 1);
@@ -25,25 +29,19 @@ public class OptionSpreadTest {
 
     @Test
     public void testGivenBullCallSpread() throws Exception {
-        Option lowerCallOption = new CallOption(currentValue, strike8800, now, twoMonths, volatility, riskFree);
-        Option upperCallOption = new CallOption(currentValue, strike9000, now, twoMonths, volatility, riskFree);
-        OptionTrade lowerCallOptionTrade = new OptionTrade(lowerCallOption, lowerCallOption.getPremium(), 5, "FOO", comission, true);
-        OptionTrade upperCallOptionTrade = new OptionTrade(upperCallOption, upperCallOption.getPremium(), -5, "FOO", comission, true);
-
-        OptionSpread optionSpread = new OptionSpread(Arrays.asList(lowerCallOptionTrade, upperCallOptionTrade));
-
+        OptionSpread optionSpread = new BullCallSpread(currentValue, strike8800, strike9000, now, twoMonths, volatility, riskFree, comission, "FOO", 5, true);
         printSpread(optionSpread);
     }
 
     @Test
     public void testGivenBearCallSpread() throws Exception {
-        Option lowerCallOption = new CallOption(currentValue, strike8600, now, twoMonths, volatility, riskFree);
-        Option upperCallOption = new CallOption(currentValue, strike8800, now, twoMonths, volatility, riskFree);
-        OptionTrade lowerCallOptionTrade = new OptionTrade(lowerCallOption, lowerCallOption.getPremium(), -5, "FOO", comission, true);
-        OptionTrade upperCallOptionTrade = new OptionTrade(upperCallOption, upperCallOption.getPremium(), 5, "FOO", comission, true);
+        OptionSpread optionSpread = new BearCallSpread(currentValue, strike8600, strike8800, now, twoMonths, volatility, riskFree, comission, "FOO", 5, true);
+        printSpread(optionSpread);
+    }
 
-        OptionSpread optionSpread = new OptionSpread(Arrays.asList(lowerCallOptionTrade, upperCallOptionTrade));
-
+    @Test
+    public void testGivenIronCondorSpread() throws Exception {
+        IronCondorSpread optionSpread = new IronCondorSpread(currentValue, strike8600, strike8800, strike9000, strike9200, now, twoMonths, volatility, riskFree, comission, "FOO", 5, true);
         printSpread(optionSpread);
     }
 

@@ -1,11 +1,16 @@
-package com.assets.options.entities;
+package com.assets.options.entities.spread;
+
+import com.assets.options.entities.OptionTrade;
 
 import java.math.BigDecimal;
 import java.util.List;
 
-public class OptionSpread {
+public abstract class OptionSpread {
 
-    private final List<OptionTrade> optionTrades;
+    private List<OptionTrade> optionTrades;
+
+    public OptionSpread() {
+    }
 
     public OptionSpread(List<OptionTrade> optionTrades) {
         this.optionTrades = optionTrades;
@@ -18,5 +23,9 @@ public class OptionSpread {
             expectedValue = expectedValue.add(tradePremium);
         }
         return expectedValue;
+    }
+
+    public void setOptionTrades(List<OptionTrade> optionTrades) {
+        this.optionTrades = optionTrades;
     }
 }

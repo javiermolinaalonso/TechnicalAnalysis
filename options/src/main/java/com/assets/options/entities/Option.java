@@ -9,6 +9,8 @@ import java.time.temporal.ChronoUnit;
 
 public abstract class Option {
 
+    private static final Double IMPLIED_VOLATILITY_ERROR = 0.01d;
+
     protected final BigDecimal currentPrice;
     protected final BigDecimal strikePrice;
     protected final LocalDate currentDate;
@@ -38,6 +40,35 @@ public abstract class Option {
         vega = results[3];
         theta = results[4];
         rho = results[5];
+    }
+
+    public Option(BigDecimal currentPrice, BigDecimal strikePrice, BigDecimal premium, LocalDate now, LocalDate expirationDate, Double riskFree) {
+        this.currentPrice = currentPrice;
+        this.strikePrice = strikePrice;
+        this.premium = premium;
+        this.riskFree = riskFree;
+        this.currentDate = now;
+        this.expirationDate = expirationDate;
+        double yearsToExpiry = getDaysToExpiry() / 365d;
+        double[] results = calculateVolatility(isCall(), currentPrice.doubleValue(), strikePrice.doubleValue(), riskFree, yearsToExpiry, premium.doubleValue(), 0.3d);
+        this.volatility = results[0];
+        delta = results[1];
+        gamma = results[2];
+        vega = results[3];
+        theta = results[4];
+        rho = results[5];
+    }
+
+    private double[] calculateVolatility(boolean call, double currentPrice, double strikePrice, Double riskFree, double yearsToExpiry, double premium, double impliedVolatility) {
+        double[] calculate = BlackScholesGreeks.calculate(call, currentPrice, strikePrice, riskFree, yearsToExpiry, impliedVolatility);
+        double calculatedPremium = calculate[0];
+        if(Math.abs(calculatedPremium - premium) < IMPLIED_VOLATILITY_ERROR) {
+            return new double[]{impliedVolatility, calculate[1], calculate[2], calculate[3], calculate[4], calculate[5]};
+        } else if (calculatedPremium > premium) {
+            return calculateVolatility(call, currentPrice, strikePrice, riskFree, yearsToExpiry, premium, impliedVolatility - 0.01d);
+        } else {
+            return calculateVolatility(call, currentPrice, strikePrice, riskFree, yearsToExpiry, premium, impliedVolatility + 0.01d);
+        }
     }
 
     private int convertDays(LocalDate expiration, LocalDate now) {
