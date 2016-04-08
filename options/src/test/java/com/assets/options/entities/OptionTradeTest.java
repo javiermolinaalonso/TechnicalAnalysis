@@ -32,6 +32,15 @@ public class OptionTradeTest {
     }
 
     @Test
+    public void testRealValues() throws Exception {
+        LocalDate expiration = LocalDate.of(2004, 1, 17);
+        BigDecimal currentValue = BigDecimal.valueOf(34.25);
+        BigDecimal strike = BigDecimal.valueOf(30);
+        PutOption putOption = new PutOption(currentValue, strike, LocalDate.now(), expiration, 0.4d, 0.001);
+        System.out.println(String.format("Current value: %.2f", putOption.getPremium().doubleValue()));
+    }
+
+    @Test
     public void testGivenSameOptionsDifferentEndDateExpectCorrectPrice() throws Exception {
         BigDecimal currentPrice = BigDecimal.valueOf(10);
         Option firstOption = new PutOption(currentPrice, BigDecimal.valueOf(11), firstTrade, expirationDate, volatility, 0d);

@@ -1,9 +1,6 @@
 package com.assets.options.entities;
 
-import com.assets.options.entities.spread.BearCallSpread;
-import com.assets.options.entities.spread.BullCallSpread;
-import com.assets.options.entities.spread.IronCondorSpread;
-import com.assets.options.entities.spread.OptionSpread;
+import com.assets.options.entities.spread.*;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -36,6 +33,12 @@ public class OptionSpreadTest {
     @Test
     public void testGivenBearCallSpread() throws Exception {
         OptionSpread optionSpread = new BearCallSpread(currentValue, strike8600, strike8800, now, twoMonths, volatility, riskFree, comission, "FOO", 5, true);
+        printSpread(optionSpread);
+    }
+
+    @Test
+    public void testGivenBullPutSpread() throws Exception {
+        OptionSpread optionSpread = new BullPutSpread(currentValue, strike9000, strike9200, now, twoMonths, volatility, riskFree, comission, "FOO", 5, true);
         printSpread(optionSpread);
     }
 
