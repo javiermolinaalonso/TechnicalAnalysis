@@ -33,11 +33,11 @@ public class OptionTradeTest {
 
     @Test
     public void testRealValues() throws Exception {
-        LocalDate expiration = LocalDate.of(2004, 1, 17);
-        BigDecimal currentValue = BigDecimal.valueOf(34.25);
-        BigDecimal strike = BigDecimal.valueOf(30);
-        PutOption putOption = new PutOption(currentValue, strike, LocalDate.now(), expiration, 0.4d, 0.001);
-        System.out.println(String.format("Current value: %.2f", putOption.getPremium().doubleValue()));
+        LocalDate expiration = LocalDate.of(2016, 6, 17);
+        BigDecimal currentValue = BigDecimal.valueOf(4.06);
+        BigDecimal strike = BigDecimal.valueOf(4.75);
+        Option option = new CallOption(currentValue, strike, LocalDate.now(), expiration, 0.4d, 0.001);
+        System.out.println(String.format("Current value: %.2f", option.getPremium().doubleValue()));
     }
 
     @Test
