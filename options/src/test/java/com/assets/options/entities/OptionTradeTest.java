@@ -51,7 +51,7 @@ public class OptionTradeTest {
         while(date.isBefore(expirationDate)) {
             date = date.plusDays(1);
             Option option = foo.getExpectedValue(currentPrice, date, volatility);
-            System.out.println(String.format("%.5f, %.5f, %.5f, %.5f", option.getPremium(), option.getDelta(), option.getTheta(), option.getGamma()));
+            System.out.println(String.format("%.5f, %s", option.getPremium(), option.getGreeks()));
         }
     }
 

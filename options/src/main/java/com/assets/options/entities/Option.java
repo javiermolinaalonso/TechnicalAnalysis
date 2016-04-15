@@ -1,7 +1,6 @@
 package com.assets.options.entities;
 
 import com.assets.options.blackscholes.BlackScholesGreeks;
-import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -18,40 +17,40 @@ public class Option {
     protected final BigDecimal strikePrice;
     protected final LocalDate currentDate;
     protected final LocalDate expirationDate;
-    protected final Double volatility;
     protected final Double riskFree;
-    protected final BigDecimal bid;
-    protected final BigDecimal ask;
 
-    protected final BigDecimal premium;
-    protected final Double delta;
-    protected final Double gamma;
-    protected final Double vega;
-    protected final Double theta;
-    protected final Double rho;
+    protected Double volatility;
+    protected BigDecimal bid;
+    protected BigDecimal ask;
+
+    protected BigDecimal premium;
+    protected Greeks greeks;
 
     public Option(String ticker, OptionType optionType, BigDecimal currentPrice, BigDecimal strikePrice, LocalDate now, LocalDate expirationDate, Double volatility, Double riskFree) {
-        this.ticker = ticker;
-        this.optionType = optionType;
-        this.currentPrice = currentPrice;
-        this.strikePrice = strikePrice;
+        this(ticker, currentPrice, strikePrice, optionType, now, expirationDate, riskFree);
         this.volatility = volatility;
-        this.riskFree = riskFree;
-        this.currentDate = now;
-        this.expirationDate = expirationDate;
         double yearsToExpiry = getDaysToExpiry() / 365d;
         double[] results = BlackScholesGreeks.calculate(isCall(), currentPrice.doubleValue(), strikePrice.doubleValue(), riskFree, yearsToExpiry, volatility);
         premium = BigDecimal.valueOf(results[0]);
         bid = premium;
         ask = premium;
-        delta = results[1];
-        gamma = results[2];
-        vega = results[3];
-        theta = results[4];
-        rho = results[5];
+        greeks = new Greeks(results[1],results[2],results[3],results[4],results[5]);
     }
 
     public Option(String ticker, BigDecimal currentPrice, BigDecimal strikePrice, BigDecimal bid, BigDecimal ask, OptionType optionType, LocalDate now, LocalDate expirationDate, Double riskFree) {
+        this(ticker, currentPrice, strikePrice, optionType, now, expirationDate, riskFree);
+        double yearsToExpiry = getDaysToExpiry() / 365d;
+
+        this.premium = bid.add(ask).divide(BigDecimal.valueOf(2), 4, RoundingMode.HALF_UP);
+        this.bid = bid;
+        this.ask = ask;
+
+        double[] results = calculateVolatility(isCall(), currentPrice.doubleValue(), strikePrice.doubleValue(), riskFree, yearsToExpiry, premium.doubleValue(), 0.3d, null);
+        this.volatility = results[0];
+        greeks = new Greeks(results[1],results[2],results[3],results[4],results[5]);
+    }
+
+    private Option(String ticker, BigDecimal currentPrice, BigDecimal strikePrice, OptionType optionType, LocalDate now, LocalDate expirationDate, Double riskFree) {
         this.ticker = ticker;
         this.currentPrice = currentPrice;
         this.strikePrice = strikePrice;
@@ -59,18 +58,6 @@ public class Option {
         this.riskFree = riskFree;
         this.currentDate = now;
         this.expirationDate = expirationDate;
-        this.bid = bid;
-        this.ask = ask;
-        this.premium = bid.add(ask).divide(BigDecimal.valueOf(2), 4, RoundingMode.HALF_UP);
-
-        double yearsToExpiry = getDaysToExpiry() / 365d;
-        double[] results = calculateVolatility(isCall(), currentPrice.doubleValue(), strikePrice.doubleValue(), riskFree, yearsToExpiry, premium.doubleValue(), 0.3d, null);
-        this.volatility = results[0];
-        delta = results[1];
-        gamma = results[2];
-        vega = results[3];
-        theta = results[4];
-        rho = results[5];
     }
 
     private double[] calculateVolatility(boolean call, double currentPrice, double strikePrice, Double riskFree, double yearsToExpiry, double premium, double impliedVolatility, Boolean up) {
@@ -138,41 +125,14 @@ public class Option {
         return premium;
     }
 
-    public Double getDelta() {
-        return delta;
+    public Greeks getGreeks() {
+        return greeks;
     }
-
-    public Double getGamma() {
-        return gamma;
-    }
-
-    public Double getVega() {
-        return vega;
-    }
-
-    public Double getTheta() {
-        return theta;
-    }
-
-    public Double getRho() {
-        return rho;
-    }
-
 
     @Override
     public String toString() {
-        return new ToStringBuilder(this)
-                .append("currentPrice", currentPrice)
-                .append("strikePrice", strikePrice)
-                .append("daysToExpiry", getDaysToExpiry())
-                .append("volatility", volatility)
-                .append("riskFree", riskFree)
-                .append("premium", premium)
-                .append("delta", delta)
-                .append("gamma", gamma)
-                .append("vega", vega)
-                .append("theta", theta)
-                .append("rho", rho)
-                .toString();
+        return String.format("[%s, %s, %.2f, %s] at %.2f, %s, [%.2f, %.2f], %s",
+                ticker, isCall() ? "C" : "P", currentPrice, currentDate.toString(), strikePrice,
+                expirationDate.toString(), bid, ask, greeks);
     }
 }

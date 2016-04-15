@@ -7,6 +7,8 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
+
 public class OptionBookLoaderCsvTest {
 
     private LocalDate now = LocalDate.of(2004, 1, 16);
@@ -19,9 +21,6 @@ public class OptionBookLoaderCsvTest {
         OptionBookLoaderCsv bookLoader = new OptionBookLoaderCsv(now);
 
         List<Option> options = bookLoader.loadData(resource.getPath());
-
-        for (Option option : options) {
-            System.out.println(String.format("%s,%.2f,%.2f",option.getTicker(), option.getCurrentPrice().doubleValue(), option.getStrikePrice().doubleValue()));
-        }
+        assertEquals(138319, options.size());
     }
 }

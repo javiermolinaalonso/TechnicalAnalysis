@@ -60,8 +60,6 @@ public class OptionBookLoaderCsv extends AbstractCsvLoader<Option> {
         } catch (ParseException e) {
             return null;
         }
-
-
     }
 
 }
