@@ -1,4 +1,4 @@
-package com.assets.portfolio.entities.stock;
+package com.assets.statistic.list;
 
 import com.assets.entities.StockPrice;
 import com.assets.statistic.exceptions.StockListMeanParameterException;

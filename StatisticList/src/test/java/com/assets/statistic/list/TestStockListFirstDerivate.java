@@ -1,7 +1,6 @@
-package com.assets.portfolio.entities.stock;
+package com.assets.statistic.list;
 
 import com.assets.entities.StockPrice;
-import com.assets.statistic.list.StockList;
 import org.junit.Before;
 import org.junit.Test;
 

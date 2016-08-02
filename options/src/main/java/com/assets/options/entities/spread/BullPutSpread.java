@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Arrays;
 
-public class BullPutSpread extends OptionSpread {
+public class BullPutSpread extends BaseOptionSpread {
 
     public BullPutSpread(BigDecimal currentPrice, BigDecimal lowStrikePrice, BigDecimal highStrikePrice,
                          BigDecimal lowStrikePremium, BigDecimal highStrikePremium,
@@ -33,4 +33,13 @@ public class BullPutSpread extends OptionSpread {
         setOptionTrades(Arrays.asList(lowerOptionTrade, upperOptionTrade));
     }
 
+    @Override
+    public BigDecimal getMaxGain() {
+        return null;
+    }
+
+    @Override
+    public BigDecimal getMaxLoss() {
+        return null;
+    }
 }

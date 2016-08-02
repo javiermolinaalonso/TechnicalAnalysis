@@ -1,8 +1,5 @@
-package com.assets.portfolio.entities.investment;
+package com.assets.investment.entities;
 
-import com.assets.investment.entities.InvestmentAction;
-import com.assets.investment.entities.InvestmentActionEnum;
-import com.assets.investment.entities.InvestmentActions;
 import org.junit.Before;
 import org.junit.Test;
 

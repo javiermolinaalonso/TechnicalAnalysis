@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Arrays;
 
-public class BearCallSpread extends OptionSpread {
+public class BearCallSpread extends BaseOptionSpread {
 
     public BearCallSpread(BigDecimal currentPrice, BigDecimal lowStrikePrice, BigDecimal highStrikePrice,
                           LocalDate now, LocalDate expirationDate, Double volatility, Double riskFree,
@@ -19,5 +19,15 @@ public class BearCallSpread extends OptionSpread {
         OptionTrade upperCallOptionTrade = new OptionTrade(upperCallOption, contracts, ticker, comission, mini);
         setOptionTrades(Arrays.asList(lowerCallOptionTrade, upperCallOptionTrade));
 
+    }
+
+    @Override
+    public BigDecimal getMaxGain() {
+        return null;
+    }
+
+    @Override
+    public BigDecimal getMaxLoss() {
+        return null;
     }
 }

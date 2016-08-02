@@ -1,4 +1,4 @@
-package com.assets.portfolio.entities;
+package com.assets.statistic.list;
 
 import com.assets.entities.StatisticListType;
 import com.assets.statistic.entities.FactoryStatisticList;
@@ -19,7 +19,7 @@ public class TestStatisticList {
     
     @Before
     public void setUp() throws Exception {
-        prices = new ArrayList<BigDecimal>();
+        prices = new ArrayList<>();
         prices.add(BigDecimal.valueOf(10d));
         prices.add(BigDecimal.valueOf(11d));
         prices.add(BigDecimal.valueOf(12d));

@@ -26,7 +26,7 @@
         </dependency>
         <dependency>
             <groupId>com.assets</groupId>
-            <artifactId>correlation</artifactId>
+            <artifactId>options</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 		<dependency>

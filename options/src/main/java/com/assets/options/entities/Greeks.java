@@ -38,6 +38,6 @@ public class Greeks {
 
     @Override
     public String toString() {
-        return String.format("Greeks: [%.4f, %.4f, %.4f, %.4f, %.4f]", delta, gamma, vega, theta, rho);
+        return String.format("Greeks: [%.4f, %.4f, %.4f, %.4f, %.4f]", delta, gamma, theta, vega, rho);
     }
 }

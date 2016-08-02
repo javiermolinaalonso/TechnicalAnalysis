@@ -21,7 +21,7 @@ public class InvestmentActions {
     private BigDecimal maxAmountInvested;
     
     public InvestmentActions(){
-        this.actions = new ArrayList<InvestmentAction>();
+        this.actions = new ArrayList<>();
         this.benefit = BigDecimal.ZERO;
         this.percentBenefit = BigDecimal.ZERO;
         this.maxAmountInvested = BigDecimal.ZERO;

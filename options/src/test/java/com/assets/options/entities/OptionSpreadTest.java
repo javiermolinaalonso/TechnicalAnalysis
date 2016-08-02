@@ -6,6 +6,8 @@ import org.junit.Test;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import static org.junit.Assert.assertEquals;
+
 public class OptionSpreadTest {
 
     private final BigDecimal comission = BigDecimal.valueOf(2);
@@ -26,19 +28,21 @@ public class OptionSpreadTest {
 
     @Test
     public void testGivenBullCallSpread() throws Exception {
-        OptionSpread optionSpread = new BullCallSpread(currentValue, strike8800, strike9000, now, twoMonths, volatility, riskFree, comission, "FOO", 5, true);
+        BaseOptionSpread optionSpread = new BullCallSpread(currentValue, strike8800, strike9000, now, twoMonths, volatility, riskFree, comission, "FOO", 1, true);
         printSpread(optionSpread);
+        assertEquals(-91, optionSpread.getMaxLoss().doubleValue(), 1d);
+        assertEquals(108, optionSpread.getMaxGain().doubleValue(), 1d);
     }
 
     @Test
     public void testGivenBearCallSpread() throws Exception {
-        OptionSpread optionSpread = new BearCallSpread(currentValue, strike8600, strike8800, now, twoMonths, volatility, riskFree, comission, "FOO", 5, true);
+        BaseOptionSpread optionSpread = new BearCallSpread(currentValue, strike8600, strike8800, now, twoMonths, volatility, riskFree, comission, "FOO", 5, true);
         printSpread(optionSpread);
     }
 
     @Test
     public void testGivenBullPutSpread() throws Exception {
-        OptionSpread optionSpread = new BullPutSpread(currentValue, strike9000, strike9200, now, twoMonths, volatility, riskFree, comission, "FOO", 5, true);
+        BaseOptionSpread optionSpread = new BullPutSpread(currentValue, strike9000, strike9200, now, twoMonths, volatility, riskFree, comission, "FOO", 5, true);
         printSpread(optionSpread);
     }
 
@@ -48,7 +52,7 @@ public class OptionSpreadTest {
         printSpread(optionSpread);
     }
 
-    private void printSpread(OptionSpread optionSpread) {
+    private void printSpread(BaseOptionSpread optionSpread) {
         for(double expectedPrice = 8400; expectedPrice < 9400; expectedPrice+=50) {
             BigDecimal expectedValue = optionSpread.getExpirationValue(BigDecimal.valueOf(expectedPrice));
             System.out.println(String.format("%.5f", expectedValue.doubleValue()));

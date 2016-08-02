@@ -11,6 +11,7 @@ public class OptionTrade {
     private final String ticker;
     private final BigDecimal cost;
     private final boolean mini;
+    private final BigDecimal contractComission;
 
     public OptionTrade(Option option, int contracts, String ticker, BigDecimal contractComission, boolean mini) {
         this.option = option;
@@ -20,6 +21,11 @@ public class OptionTrade {
         this.mini = mini;
         this.cost = BigDecimal.valueOf(contracts).multiply(tradePrice).multiply(getAmountOfStocks())
                 .add(contractComission.multiply(BigDecimal.valueOf(Math.abs(contracts))));
+        this.contractComission = contractComission;
+    }
+
+    public BigDecimal getContractComission() {
+        return contractComission;
     }
 
     public BigDecimal getCost() {
@@ -74,6 +80,10 @@ public class OptionTrade {
         return getExpectedValue(value, option.getCurrentDate(), option.getVolatility());
     }
 
+    public boolean isMini() {
+        return mini;
+    }
+
     public Option getExpectedValue(BigDecimal value, LocalDate when, double volatility) {
         Option newOption;
         if (option.isCall()) {
@@ -86,5 +96,9 @@ public class OptionTrade {
 
     private BigDecimal getAmountOfStocks() {
         return mini ? BigDecimal.ONE : BigDecimal.valueOf(100);
+    }
+
+    public Option getOption() {
+        return option;
     }
 }

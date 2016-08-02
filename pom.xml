@@ -193,5 +193,6 @@
 		<module>investment-entities</module>
 		<module>data-loader</module>
 		<module>options</module>
+		<module>investment-strategy</module>
 	</modules>
 </project>

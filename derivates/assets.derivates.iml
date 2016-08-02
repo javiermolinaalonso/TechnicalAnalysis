@@ -15,8 +15,6 @@
     <orderEntry type="module" module-name="portfolio" />
     <orderEntry type="module" module-name="entities" />
     <orderEntry type="module" module-name="StatisticList" />
-    <orderEntry type="module" module-name="correlation" />
-    <orderEntry type="module" module-name="investment-entities" />
     <orderEntry type="module" module-name="data-loader" />
     <orderEntry type="module" module-name="options" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.4" level="project" />
