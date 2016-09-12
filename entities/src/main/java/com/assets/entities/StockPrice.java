@@ -34,5 +34,4 @@ public class StockPrice {
         return new StringBuilder().append(ticker).append("-").append(instant.toString()).append("-").append(value.setScale(2, RoundingMode.HALF_DOWN).toString()).toString();
     }
     
-    
 }

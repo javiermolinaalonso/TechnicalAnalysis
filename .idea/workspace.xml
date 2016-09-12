@@ -2,49 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e42815d-2456-460e-847d-5e76ba9d8ceb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BaseOptionSpread.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/impl/CalendarSimulationTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/portfolio/OptionPortfolio.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/portfolio/OptionPortfolioIbexTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/portfolio/OptionPortfolioTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/analyzers/SpreadAnalyzer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/investment-strategy/investment-strategy.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/investment-strategy/pom.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BiSpread.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/portfolio/nullDerivate Mean Month.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/portfolio/nullDerivate Mean Week.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/portfolio/nullDerivate.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/portfolio/nullPrice.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/portfolio/src/test/java/com/assets/portfolio/entities/TestBenchmarkStatisticList.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/portfolio/src/test/java/com/assets/portfolio/entities/TestStatisticList.java" afterPath="$PROJECT_DIR$/StatisticList/src/test/java/com/assets/statistic/list/TestStatisticList.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/portfolio/src/test/java/com/assets/portfolio/entities/investment/TestInvestmentAction.java" afterPath="$PROJECT_DIR$/investment-entities/src/test/java/com/assets/investment/entities/TestInvestmentAction.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/portfolio/src/test/java/com/assets/portfolio/entities/investment/TestInvestmentActions.java" afterPath="$PROJECT_DIR$/investment-entities/src/test/java/com/assets/investment/entities/TestInvestmentActions.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/portfolio/src/test/java/com/assets/portfolio/entities/stock/TestStockListFirstDerivate.java" afterPath="$PROJECT_DIR$/StatisticList/src/test/java/com/assets/statistic/list/TestStockListFirstDerivate.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/portfolio/src/test/java/com/assets/portfolio/entities/stock/TestStockListMean.java" afterPath="$PROJECT_DIR$/StatisticList/src/test/java/com/assets/statistic/list/TestStockListMean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portfolio/src/main/java/com/assets/portfolio/AssetPortfolio.java" afterPath="$PROJECT_DIR$/portfolio/src/main/java/com/assets/portfolio/AssetPortfolio.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BearCallSpread.java" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BearCallSpread.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BullCallSpread.java" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BullCallSpread.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BullPutSpread.java" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BullPutSpread.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/Greeks.java" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/Greeks.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/investment-entities/src/main/java/com/assets/investment/entities/InvestmentActionEnum.java" afterPath="$PROJECT_DIR$/investment-entities/src/main/java/com/assets/investment/entities/InvestmentActionEnum.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/investment-entities/src/main/java/com/assets/investment/entities/InvestmentActions.java" afterPath="$PROJECT_DIR$/investment-entities/src/main/java/com/assets/investment/entities/InvestmentActions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/IronCondorSpread.java" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/IronCondorSpread.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/OptionSpread.java" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/OptionSpread.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/OptionSpreadTest.java" afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/OptionSpreadTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/OptionTrade.java" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/OptionTrade.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/optimizers/PremiumOptimizer.java" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/optimizers/PremiumOptimizer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StatisticList/StatisticList.iml" afterPath="$PROJECT_DIR$/StatisticList/StatisticList.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/derivates/assets.derivates.iml" afterPath="$PROJECT_DIR$/derivates/assets.derivates.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bollinger/bollinger.iml" afterPath="$PROJECT_DIR$/bollinger/bollinger.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/correlation/correlation.iml" afterPath="$PROJECT_DIR$/correlation/correlation.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data-loader/data-loader.iml" afterPath="$PROJECT_DIR$/data-loader/data-loader.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/entities/entities.iml" afterPath="$PROJECT_DIR$/entities/entities.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/investment-entities/investment-entities.iml" afterPath="$PROJECT_DIR$/investment-entities/investment-entities.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portfolio/pom.xml" afterPath="$PROJECT_DIR$/portfolio/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portfolio/portfolio.iml" afterPath="$PROJECT_DIR$/portfolio/portfolio.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/investment-strategy/src/test/java/com/investment/strategy/PriceReachesTargetTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/entities/src/main/java/com/assets/entities/StockPrice.java" afterPath="$PROJECT_DIR$/entities/src/main/java/com/assets/entities/StockPrice.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="techAnalysis.iws" />
@@ -88,12 +47,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/investment-strategy/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.54298645">
+            <state vertical-scroll-proportion="0.0">
               <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PriceReachesTargetTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/investment-strategy/src/test/java/com/investment/strategy/PriceReachesTargetTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.75803983">
+              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -137,8 +108,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/derivates/src/main/java/com/assets/derivates/blackscholes/BlackScholes2.java" />
-        <option value="$PROJECT_DIR$/derivates/src/main/java/com/assets/derivates/blackscholes/BlackScholesGreeks2.java" />
         <option value="$PROJECT_DIR$/derivates/src/main/java/com/assets/derivates/blackscholes/BlackScholesGreeks.java" />
         <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/impl/Option.java" />
         <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/impl/PutOption.java" />
@@ -188,6 +157,8 @@
         <option value="$PROJECT_DIR$/investment-entities/src/main/java/com/assets/investment/entities/InvestmentActionEnum.java" />
         <option value="$PROJECT_DIR$/investment-entities/src/main/java/com/assets/investment/entities/InvestmentActions.java" />
         <option value="$PROJECT_DIR$/investment-strategy/pom.xml" />
+        <option value="$PROJECT_DIR$/entities/src/main/java/com/assets/entities/StockPrice.java" />
+        <option value="$PROJECT_DIR$/investment-strategy/src/test/java/com/investment/strategy/PriceReachesTargetTest.java" />
       </list>
     </option>
   </component>
@@ -213,7 +184,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="803" />
+    <option name="height" value="797" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -238,9 +209,9 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -256,6 +227,76 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="TechnicalAnalysis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techAnalysis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TechnicalAnalysis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="investment-strategy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techAnalysis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TechnicalAnalysis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="investment-strategy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="investment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="strategy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techAnalysis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TechnicalAnalysis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="investment-strategy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -753,7 +794,8 @@
       <workItem from="1461272265425" duration="4078000" />
       <workItem from="1461585885891" duration="813000" />
       <workItem from="1464847521529" duration="370000" />
-      <workItem from="1470119481906" duration="972000" />
+      <workItem from="1470119481906" duration="1974000" />
+      <workItem from="1473670623394" duration="8000" />
     </task>
     <task id="LOCAL-00001" summary="Added get and options interface">
       <created>1453363092145</created>
@@ -833,14 +875,20 @@
       <option name="project" value="LOCAL" />
       <updated>1460701088640</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Cleaning house">
+      <created>1470120476900</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1470120476900</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89966000" />
+    <option name="totallyTimeSpent" value="90976000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="803" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="797" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -849,7 +897,6 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="100" y="100" width="1080" height="600" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -859,7 +906,6 @@
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Atlassian " active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31586608" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -871,9 +917,11 @@
       <window_info id="SonarQube" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5181422" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3240059" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="100" y="100" width="1080" height="600" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3622975" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Sequence" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31678832" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -933,7 +981,8 @@
     <MESSAGE value="Spreads done" />
     <MESSAGE value="Fixed infinite loops in implied volatility calculation" />
     <MESSAGE value="Added readable greeks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added readable greeks" />
+    <MESSAGE value="Cleaning house" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaning house" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -987,20 +1036,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/PutOption.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64882946">
-          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/blackscholes/BlackScholesGreeks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/options/src/main/resources/options_20040116INTC.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9318182">
@@ -1026,7 +1061,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.045941807">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1067,13 +1101,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/derivates/src/main/resources/ibex2010-2015.csv">
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26442307">
           <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
         </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/CallOption.java">
@@ -1108,10 +1142,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.65217394">
           <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
-          <folding>
-            <element signature="e#1034#1035#0" expanded="true" />
-            <element signature="e#1061#1062#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1147,7 +1177,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8148148">
           <caret line="49" column="39" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1155,7 +1184,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.14814815">
           <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1167,13 +1195,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/options/src/main/resources/options_20040116.csv">
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44645798">
           <caret line="61798" column="48" selection-start-line="61798" selection-start-column="48" selection-end-line="61798" selection-end-column="48" />
         </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/portfolio/OptionPortfolioIbexTest.java">
@@ -1184,22 +1212,19 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/options/src/test/resources/IBEXOneYear.csv">
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30757096">
           <caret line="13" column="72" selection-start-line="13" selection-start-column="72" selection-end-line="13" selection-end-column="72" />
         </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/options/src/test/java/com/assets/options/impl/CalendarSimulationTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.09256449">
           <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1207,7 +1232,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3171472">
           <caret line="28" column="73" selection-start-line="28" selection-start-column="73" selection-end-line="28" selection-end-column="73" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1215,7 +1239,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.25037935">
           <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1223,7 +1246,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="0" selection-start-line="17" selection-start-column="4" selection-end-line="23" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1231,7 +1253,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6130501">
           <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1239,7 +1260,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09104704">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1247,18 +1267,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09104704">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StatisticList/src/main/java/com/assets/statistic/list/StockList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30542988">
-          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
-          <folding>
-            <element signature="e#580#581#0" expanded="true" />
-            <element signature="e#637#638#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1266,10 +1274,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.47799698">
           <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
-          <folding>
-            <element signature="e#732#733#0" expanded="true" />
-            <element signature="e#808#809#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1277,7 +1281,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13574661">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1285,7 +1288,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.37330317">
           <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1293,7 +1295,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.27314112">
           <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1301,7 +1302,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09104704">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1309,7 +1309,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.74660635">
           <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1317,7 +1316,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.06787331">
           <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1325,7 +1323,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1333,7 +1330,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.67873305">
           <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1341,10 +1337,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33936653">
           <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-          <folding>
-            <element signature="e#236#237#0" expanded="true" />
-            <element signature="e#290#291#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1352,7 +1344,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.81447965">
           <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1360,7 +1351,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.101809956">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1368,7 +1358,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13574661">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1390,9 +1379,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/investment-strategy/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54298645">
+        <state vertical-scroll-proportion="0.0">
           <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StatisticList/src/main/java/com/assets/statistic/list/StockList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3636364">
+          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entities/src/main/java/com/assets/entities/StockPrice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.75">
+          <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/investment-strategy/src/test/java/com/investment/strategy/PriceReachesTargetTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.75803983">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
