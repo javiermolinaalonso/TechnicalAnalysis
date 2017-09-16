@@ -5,6 +5,7 @@ import com.assets.statistic.entities.FactoryStatisticList;
 import com.assets.statistic.exceptions.StockListMeanParameterException;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -86,6 +87,10 @@ public class StockList extends LinkedList<StockPrice> {
     
     public String getTicker() {
         return this.ticker;
+    }
+
+    public BigDecimal getPerformance() {
+        return getLast().getValue().subtract(getFirst().getValue()).divide(getFirst().getValue(), RoundingMode.CEILING);
     }
     
 }
