@@ -15,4 +15,6 @@ public interface StatisticList<T> {
     T getStdDev();
     
     List<BigDecimal> getList();
+
+
 }

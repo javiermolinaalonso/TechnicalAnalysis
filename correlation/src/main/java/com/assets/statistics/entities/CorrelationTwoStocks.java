@@ -1,12 +1,16 @@
 package com.assets.statistics.entities;
 
+import com.assets.entities.StockPrice;
 import com.assets.statistic.exceptions.EmptyStatisticListException;
 import com.assets.statistic.exceptions.InvalidCorrelationDatesException;
 import com.assets.statistic.list.LambdaStatisticList;
 import com.assets.statistic.list.StockList;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.math.BigDecimal;
 import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.util.stream.Collectors;
 
 public final class CorrelationTwoStocks {
@@ -15,7 +19,12 @@ public final class CorrelationTwoStocks {
     private final StockList s2;
     private final Instant from;
     private final Instant to;
-    
+    private StockCorrelation correlation;
+
+    public CorrelationTwoStocks(StockList s1, StockList s2, LocalDateTime from, LocalDateTime to) {
+        this(s1, s2, from.toInstant(ZoneOffset.UTC), to.toInstant(ZoneOffset.UTC));
+    }
+
     public CorrelationTwoStocks(StockList s1, StockList s2, Instant from, Instant to) {
         super();
         this.s1 = s1;
@@ -36,18 +45,21 @@ public final class CorrelationTwoStocks {
         return this.to;
     }
     public StockCorrelation calculateCorrelation() {
-        if(s1 == null || s2 == null){
-            throw new EmptyStatisticListException();
+        if (correlation == null) {
+            if (s1 == null || s2 == null) {
+                throw new EmptyStatisticListException();
+            }
+            if (from.isAfter(to)) {
+                throw new InvalidCorrelationDatesException();
+            }
+            StockList firstListFiltered = s1.filterStocksAndSort(s2, from, to);
+            StockList secondListFiltered = s2.filterStocksAndSort(s1, from, to);
+            CorrelationStatisticList<BigDecimal> firstStockValues = new CorrelationStatisticListImpl(firstListFiltered.stream().map(StockPrice::getValue).collect(Collectors.toList()));
+            CorrelationStatisticList<BigDecimal> secondStockValues = new CorrelationStatisticListImpl(secondListFiltered.stream().map(StockPrice::getValue).collect(Collectors.toList()));
+            correlation = new StockCorrelation(s1.getTicker(), s2.getTicker(), firstStockValues.getCorrelation(secondStockValues), firstListFiltered.getFirst().getInstant(), firstListFiltered.getLast().getInstant(), firstListFiltered.size(), firstStockValues, secondStockValues);
         }
-        if(from.isAfter(to)){
-            throw new InvalidCorrelationDatesException();
-        }
-        StockList firstListFiltered = s1.filterStocksAndSort(s2, from, to);
-        StockList secondListFiltered = s2.filterStocksAndSort(s1, from, to);
-        LambdaStatisticList firstStockValues = new LambdaStatisticList(firstListFiltered.stream().map(x -> x.getValue()).collect(Collectors.toList()));
-        LambdaStatisticList secondStockValues = new LambdaStatisticList(secondListFiltered.stream().map(x -> x.getValue()).collect(Collectors.toList()));
-        throw new NotImplementedException();
-//        return new StockCorrelation(s1.getTicker(), s2.getTicker(), firstStockValues.getCorrelation(secondStockValues), firstListFiltered.getFirst().getInstant(), firstListFiltered.getLast().getInstant(), firstListFiltered.size());
+
+        return correlation;
     }
     
 }

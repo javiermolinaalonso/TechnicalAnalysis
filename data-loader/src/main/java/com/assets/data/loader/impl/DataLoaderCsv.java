@@ -41,12 +41,10 @@ public class DataLoaderCsv implements DataLoader {
         setDataFile(dataFile);
     }
     
-    @Override
     public Map<String, StockList> loadData() {
         return loadData(0);
     }
     
-    @Override
     public Map<String, StockList> loadData(Integer amount) {
         if(dataFile == null){
             throw new DataLoaderEmptyFileException();
@@ -114,7 +112,7 @@ public class DataLoaderCsv implements DataLoader {
     }
     
     @Override
-    public StockList loadStockList(String ticker) {
+    public StockList loadData(String ticker) {
         return data.get(ticker);
     }
 

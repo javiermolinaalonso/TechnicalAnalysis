@@ -38,4 +38,6 @@ public class LambdaStatisticList extends AbstractStatisticList<BigDecimal> {
     public List<BigDecimal> getList() {
         return list;
     }
+
+
 }

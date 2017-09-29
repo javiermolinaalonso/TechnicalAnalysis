@@ -7,10 +7,6 @@ import java.util.Map;
 
 public interface DataLoader {
 
-    Map<String, StockList> loadData();
+    StockList loadData(String ticker);
     
-    Map<String, StockList> loadData(Integer amount);
-    
-    StockList loadStockList(String ticker);
-
 }
