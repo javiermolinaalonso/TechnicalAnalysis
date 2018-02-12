@@ -37,12 +37,13 @@ public class BullCallSpread extends BaseOptionSpread {
     @Override
     public BigDecimal getMaxGain() {
         return upperCallOption.getPremium().subtract(lowerCallOption.getPremium())
-                .add(upperCallOption.getStrikePrice().subtract(lowerCallOption.getStrikePrice()));
+                .add(upperCallOption.getStrikePrice().subtract(lowerCallOption.getStrikePrice()))
+                .subtract(getComission());
     }
 
     @Override
     public BigDecimal getMaxLoss() {
-        return upperCallOption.getPremium().subtract(lowerCallOption.getPremium())
-                .add(lowerCallOption.getStrikePrice().subtract(upperCallOption.getStrikePrice()));
+        return upperCallOption.getPremium().subtract(lowerCallOption.getPremium()).subtract(getComission());
     }
+
 }

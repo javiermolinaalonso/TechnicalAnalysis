@@ -11,10 +11,14 @@ import java.util.stream.Collectors;
 public class OptionPortfolio {
 
     //All trades should have the same ticker
-    private final List<OptionTrade> trades;
+    private List<OptionTrade> trades;
 
     public OptionPortfolio(List<OptionTrade> trades) {
         this.trades = trades;
+    }
+
+    public List<OptionTrade> getTrades() {
+        return trades;
     }
 
     public BigDecimal getCost(LocalDate when, BigDecimal currentPrice, double volatility) {
@@ -62,5 +66,13 @@ public class OptionPortfolio {
             rho += greeks.getRho() * Math.abs(trade.getContracts());
         }
         return new Greeks(delta, gamma, vega, theta, rho);
+    }
+
+    public void add(List<OptionTrade> optionTrades) {
+        trades.addAll(optionTrades);
+    }
+
+    public void setTrades(List<OptionTrade> trades) {
+        this.trades = trades;
     }
 }

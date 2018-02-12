@@ -28,10 +28,18 @@ public class OptionSpreadTest {
 
     @Test
     public void testGivenBullCallSpread() throws Exception {
-        BaseOptionSpread optionSpread = new BullCallSpread(currentValue, strike8800, strike9000, now, twoMonths, volatility, riskFree, comission, "FOO", 1, true);
-        printSpread(optionSpread);
-        assertEquals(-91, optionSpread.getMaxLoss().doubleValue(), 1d);
-        assertEquals(108, optionSpread.getMaxGain().doubleValue(), 1d);
+        BaseOptionSpread spread = new BullCallSpread(currentValue, strike8800, strike9000, now, twoMonths, volatility, riskFree, comission, "FOO", 1, true);
+        assertEquals(91, spread.getCost().doubleValue(), 1d);
+        assertEquals(-91, spread.getMaxLoss().doubleValue(), 1d);
+        assertEquals(108, spread.getMaxGain().doubleValue(), 1d);
+        assertEquals(-91, spread.getExpirationValue(BigDecimal.valueOf(8800)).doubleValue(), 1d);
+        assertEquals(-41, spread.getExpirationValue(BigDecimal.valueOf(8850)).doubleValue(), 1d);
+        assertEquals(8, spread.getExpirationValue(BigDecimal.valueOf(8900)).doubleValue(), 1d);
+        assertEquals(58, spread.getExpirationValue(BigDecimal.valueOf(8950)).doubleValue(), 1d);
+        assertEquals(108, spread.getExpirationValue(BigDecimal.valueOf(9000)).doubleValue(), 1d);
+        System.out.println(spread.getGreeks());
+        assertEquals(0.11, spread.getGreeks().getDelta(), 0.001d);
+        assertEquals(0, spread.getGreeks().getGamma(), 0.0001d);
     }
 
     @Test
@@ -50,6 +58,7 @@ public class OptionSpreadTest {
     public void testGivenIronCondorSpread() throws Exception {
         IronCondorSpread optionSpread = new IronCondorSpread(currentValue, strike8600, strike8800, strike9000, strike9200, now, twoMonths, volatility, riskFree, comission, "FOO", 5, true);
         printSpread(optionSpread);
+        System.out.println(optionSpread.getGreeks());
     }
 
     private void printSpread(BaseOptionSpread optionSpread) {

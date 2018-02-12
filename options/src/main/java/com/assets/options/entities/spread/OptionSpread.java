@@ -1,5 +1,7 @@
 package com.assets.options.entities.spread;
 
+import com.assets.options.entities.Greeks;
+
 import java.math.BigDecimal;
 
 public interface OptionSpread {
@@ -9,4 +11,8 @@ public interface OptionSpread {
     BigDecimal getMaxLoss();
 
     BigDecimal getCost();
+
+    BigDecimal getComission();
+
+    Greeks getGreeks();
 }

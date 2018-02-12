@@ -1,48 +1,61 @@
 package com.assets.options.entities.spread;
 
+import com.assets.options.entities.Greeks;
 import com.assets.options.entities.OptionTrade;
+import com.assets.options.entities.portfolio.OptionPortfolio;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public abstract class BaseOptionSpread implements OptionSpread {
 
-    private List<OptionTrade> optionTrades;
+    private OptionPortfolio options;
 
-    public BaseOptionSpread() {
-        this.optionTrades = new ArrayList<>();
+    BaseOptionSpread() {
+        this(new OptionPortfolio(new ArrayList<>()));
     }
 
-    public BaseOptionSpread(List<OptionTrade> optionTrades) {
-        this.optionTrades = optionTrades;
+    private BaseOptionSpread(OptionPortfolio portfolio) {
+        this.options = portfolio;
     }
 
     public BigDecimal getExpirationValue(BigDecimal value) {
         BigDecimal expectedValue = BigDecimal.ZERO;
-        for (OptionTrade optionTrade : optionTrades) {
+        for (OptionTrade optionTrade : options.getTrades()) {
             BigDecimal tradePremium = optionTrade.getExpirationValue(value);
             expectedValue = expectedValue.add(tradePremium);
         }
         return expectedValue;
     }
 
-    public BaseOptionSpread addSpread(BaseOptionSpread spread) {
-        this.optionTrades.addAll(spread.getOptionTrades());
+    BaseOptionSpread addSpread(BaseOptionSpread spread) {
+        this.options.add(spread.getOptionTrades());
         return this;
     }
 
-    public void setOptionTrades(List<OptionTrade> optionTrades) {
-        this.optionTrades = optionTrades;
+    void setOptionTrades(List<OptionTrade> optionTrades) {
+        this.options.setTrades(optionTrades);
     }
 
     public List<OptionTrade> getOptionTrades() {
-        return optionTrades;
+        return options.getTrades();
     }
 
     @Override
     public BigDecimal getCost() {
-        return optionTrades.stream().map(OptionTrade::getCost).reduce(BigDecimal::add).get();
+        return options.getTrades().stream().map(OptionTrade::getCost).reduce(BigDecimal::add).get();
+    }
+
+    @Override
+    public BigDecimal getComission() {
+        return options.getTrades().stream().map(OptionTrade::getContractComission).reduce(BigDecimal::add).get();
+    }
+
+    @Override
+    public Greeks getGreeks() {
+        return options.getGreeks();
     }
 
     public void printSpread(double from, double to, double step) {
