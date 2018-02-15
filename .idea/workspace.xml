@@ -3,11 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8e42815d-2456-460e-847d-5e76ba9d8ceb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/portfolio/OptionPortfolio.java" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/portfolio/OptionPortfolio.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/OptionTrade.java" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/OptionTrade.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BaseOptionSpread.java" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BaseOptionSpread.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BullCallSpread.java" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BullCallSpread.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/OptionSpread.java" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/OptionSpread.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/OptionSpreadTest.java" afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/OptionSpreadTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/OptionTradeTest.java" afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/OptionTradeTest.java" />
     </list>
     <ignored path="techAnalysis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,57 +38,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="OptionsCalculator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/OptionsCalculator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OptionSpreadTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="OptionSpreadTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/OptionSpreadTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+            <state relative-caret-position="1170">
+              <caret line="85" column="5" lean-forward="false" selection-start-line="71" selection-start-column="4" selection-end-line="85" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IronCondorSpread.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/IronCondorSpread.java">
+      <file leaf-file-name="OptionTradeTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/OptionTradeTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="181">
+              <caret line="152" column="45" lean-forward="false" selection-start-line="152" selection-start-column="45" selection-end-line="152" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseOptionSpread.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BaseOptionSpread.java">
+      <file leaf-file-name="BigDecimal.java" pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/src.zip!/java/math/BigDecimal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="57" column="28" lean-forward="false" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
+            <state relative-caret-position="168">
+              <caret line="3126" column="15" lean-forward="false" selection-start-line="3126" selection-start-column="15" selection-end-line="3126" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OptionPortfolio.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/portfolio/OptionPortfolio.java">
+      <file leaf-file-name="OptionTrade.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/OptionTrade.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="60" column="50" lean-forward="false" selection-start-line="60" selection-start-column="50" selection-end-line="60" selection-end-column="50" />
-              <folding>
-                <element signature="e#1761#1762#0" expanded="true" />
-                <element signature="e#1801#1802#0" expanded="true" />
-                <element signature="e#2552#2553#0" expanded="true" />
-                <element signature="e#2595#2596#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="645">
+              <caret line="58" column="74" lean-forward="false" selection-start-line="58" selection-start-column="74" selection-end-line="58" selection-end-column="74" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -97,22 +81,11 @@
       <file leaf-file-name="Option.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/Option.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="127" column="18" lean-forward="false" selection-start-line="127" selection-start-column="18" selection-end-line="127" selection-end-column="18" />
+            <state relative-caret-position="1395">
+              <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
               <folding>
-                <element signature="e#4910#4911#0" expanded="true" />
-                <element signature="e#4939#4940#0" expanded="true" />
+                <element signature="e#4562#4563#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Greeks.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/Greeks.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-74">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -131,7 +104,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>B</find>
       <find>BuyStra</find>
       <find>BuyStrate</find>
       <find>BuyStrateg</find>
@@ -161,6 +133,7 @@
       <find>DataLoader</find>
       <find>DataLoaderC</find>
       <find>DataLoaderCsv</find>
+      <find>getexpirationvalue</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -180,16 +153,17 @@
       <projects_view />
     </option>
   </component>
+  <component name="HierarchyBrowserManager">
+    <option name="SCOPE" value="Test" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/Greeks.java" />
         <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/analyzers/SpreadAnalyzer.java" />
         <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BearCallSpread.java" />
         <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BullPutSpread.java" />
         <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/IronCondorSpread.java" />
         <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/portfolio/OptionPortfolioTest.java" />
-        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/OptionTrade.java" />
         <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/portfolio/OptionPortfolioIbexTest.java" />
         <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/impl/CalendarSimulationTest.java" />
         <option value="$PROJECT_DIR$/investment-entities/src/test/java/com/assets/portfolio/entities/TestInvestmentAction.java" />
@@ -232,8 +206,10 @@
         <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BullCallSpread.java" />
         <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/OptionSpread.java" />
         <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/portfolio/OptionPortfolio.java" />
-        <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/OptionSpreadTest.java" />
+        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/OptionTrade.java" />
         <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BaseOptionSpread.java" />
+        <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/OptionSpreadTest.java" />
+        <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/OptionTradeTest.java" />
       </list>
     </option>
   </component>
@@ -272,6 +248,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -708,7 +685,6 @@
         <option name="show-excluded-files" value="false" />
       </pane>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -783,85 +759,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.OptionSpreadTest">
-    <configuration default="false" name="CalendarSimulationTest.testName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.assets.options.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="options" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.assets.options.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.assets.options.impl.CalendarSimulationTest" />
-      <option name="METHOD_NAME" value="testName" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="OptionPortfolioIbexTest.testGivenShortCallBearSpread" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.assets.options.entities.portfolio.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="options" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.assets.options.entities.portfolio" />
-      <option name="MAIN_CLASS_NAME" value="com.assets.options.entities.portfolio.OptionPortfolioIbexTest" />
-      <option name="METHOD_NAME" value="testGivenShortCallBearSpread" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="OptionSpreadTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.assets.options.entities.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="options" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.assets.options.entities" />
-      <option name="MAIN_CLASS_NAME" value="com.assets.options.entities.OptionSpreadTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.OptionTradeTest.testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints2">
     <configuration default="false" name="OptionSpreadTest.testGivenBullCallSpread" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -888,7 +786,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="OptionSpreadTest.testGivenIronCondorSpread" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="OptionSpreadTest.givenBullCallSpread_whenGetGreeksAtMiddleTime_expectCorrectGreeks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.assets.options.entities.*" />
@@ -900,7 +798,85 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.assets.options.entities" />
       <option name="MAIN_CLASS_NAME" value="com.assets.options.entities.OptionSpreadTest" />
-      <option name="METHOD_NAME" value="testGivenIronCondorSpread" />
+      <option name="METHOD_NAME" value="givenBullCallSpread_whenGetGreeksAtMiddleTime_expectCorrectGreeks" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="OptionTradeTest.testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.assets.options.entities.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="options" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.assets.options.entities" />
+      <option name="MAIN_CLASS_NAME" value="com.assets.options.entities.OptionTradeTest" />
+      <option name="METHOD_NAME" value="testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="OptionTradeTest.testGivenLongCallWhenExpirationValueExpectThreeCorrectPoints" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.assets.options.entities.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="options" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.assets.options.entities" />
+      <option name="MAIN_CLASS_NAME" value="com.assets.options.entities.OptionTradeTest" />
+      <option name="METHOD_NAME" value="testGivenLongCallWhenExpirationValueExpectThreeCorrectPoints" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="OptionTradeTest.testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.assets.options.entities.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="options" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.assets.options.entities" />
+      <option name="MAIN_CLASS_NAME" value="com.assets.options.entities.OptionTradeTest" />
+      <option name="METHOD_NAME" value="testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints2" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -1496,19 +1472,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.CalendarSimulationTest.testName" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.OptionPortfolioIbexTest.testGivenShortCallBearSpread" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.OptionSpreadTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.OptionSpreadTest.testGivenBullCallSpread" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.OptionSpreadTest.testGivenIronCondorSpread" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.OptionSpreadTest.testGivenBullCallSpread" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.OptionSpreadTest.givenBullCallSpread_whenGetGreeksAtMiddleTime_expectCorrectGreeks" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.OptionTradeTest.testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.OptionTradeTest.testGivenLongCallWhenExpirationValueExpectThreeCorrectPoints" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.OptionTradeTest.testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints2" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.OptionSpreadTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.OptionSpreadTest.testGivenIronCondorSpread" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.OptionSpreadTest.testGivenBullCallSpread" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.OptionPortfolioIbexTest.testGivenShortCallBearSpread" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.CalendarSimulationTest.testName" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.OptionTradeTest.testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints2" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.OptionTradeTest.testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.OptionTradeTest.testGivenLongCallWhenExpirationValueExpectThreeCorrectPoints" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.OptionSpreadTest.givenBullCallSpread_whenGetGreeksAtMiddleTime_expectCorrectGreeks" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.OptionSpreadTest.testGivenBullCallSpread" />
       </list>
     </recent_temporary>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -1588,7 +1564,9 @@
       <workItem from="1506457848321" duration="1333000" />
       <workItem from="1506708822362" duration="3133000" />
       <workItem from="1507283471968" duration="33000" />
-      <workItem from="1518457526098" duration="2022000" />
+      <workItem from="1518457526098" duration="3719000" />
+      <workItem from="1518640157363" duration="2225000" />
+      <workItem from="1518729079091" duration="4538000" />
     </task>
     <task id="LOCAL-00001" summary="Added get and options interface">
       <created>1453363092145</created>
@@ -1716,43 +1694,50 @@
       <option name="project" value="LOCAL" />
       <updated>1506711382708</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Added better spread tests">
+      <created>1518459726936</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1518459726936</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="OptionPortfolioIbexTest_testGivenShortCallBearSpread - 2018.02.12 at 19h 05m 51s.xml">
-      <configuration name="OptionPortfolioIbexTest.testGivenShortCallBearSpread" configurationId="JUnit" />
+    <history-entry file="OptionTradeTest_testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints2 - 2018.02.15 at 23h 16m 09s.xml">
+      <configuration name="OptionTradeTest.testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OptionSpreadTest - 2018.02.12 at 19h 21m 40s.xml">
-      <configuration name="OptionSpreadTest" configurationId="JUnit" />
+    <history-entry file="OptionTradeTest_testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints2 - 2018.02.15 at 23h 17m 14s.xml">
+      <configuration name="OptionTradeTest.testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OptionSpreadTest_testGivenBullCallSpread - 2018.02.12 at 18h 57m 45s.xml">
-      <configuration name="OptionSpreadTest.testGivenBullCallSpread" configurationId="JUnit" />
+    <history-entry file="OptionTradeTest_testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints2 - 2018.02.15 at 23h 17m 32s.xml">
+      <configuration name="OptionTradeTest.testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OptionSpreadTest_testGivenBullCallSpread - 2018.02.12 at 18h 59m 21s.xml">
-      <configuration name="OptionSpreadTest.testGivenBullCallSpread" configurationId="JUnit" />
+    <history-entry file="OptionTradeTest_testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints2 - 2018.02.15 at 23h 18m 10s.xml">
+      <configuration name="OptionTradeTest.testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OptionSpreadTest_testGivenBullCallSpread - 2018.02.12 at 19h 11m 50s.xml">
-      <configuration name="OptionSpreadTest.testGivenBullCallSpread" configurationId="JUnit" />
+    <history-entry file="OptionTradeTest_testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints2 - 2018.02.15 at 23h 18m 46s.xml">
+      <configuration name="OptionTradeTest.testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OptionSpreadTest_testGivenBullCallSpread - 2018.02.12 at 19h 12m 28s.xml">
-      <configuration name="OptionSpreadTest.testGivenBullCallSpread" configurationId="JUnit" />
+    <history-entry file="OptionTradeTest_testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints2 - 2018.02.15 at 23h 18m 55s.xml">
+      <configuration name="OptionTradeTest.testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OptionSpreadTest_testGivenBullCallSpread - 2018.02.12 at 19h 18m 08s.xml">
-      <configuration name="OptionSpreadTest.testGivenBullCallSpread" configurationId="JUnit" />
+    <history-entry file="OptionTradeTest_testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints2 - 2018.02.15 at 23h 22m 59s.xml">
+      <configuration name="OptionTradeTest.testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OptionSpreadTest_testGivenIronCondorSpread - 2018.02.12 at 19h 18m 57s.xml">
-      <configuration name="OptionSpreadTest.testGivenIronCondorSpread" configurationId="JUnit" />
+    <history-entry file="OptionTradeTest_testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints2 - 2018.02.15 at 23h 25m 48s.xml">
+      <configuration name="OptionTradeTest.testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OptionSpreadTest_testGivenIronCondorSpread - 2018.02.12 at 19h 19m 46s.xml">
-      <configuration name="OptionSpreadTest.testGivenIronCondorSpread" configurationId="JUnit" />
+    <history-entry file="OptionTradeTest_testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints2 - 2018.02.15 at 23h 25m 52s.xml">
+      <configuration name="OptionTradeTest.testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OptionSpreadTest_testGivenIronCondorSpread - 2018.02.12 at 19h 20m 04s.xml">
-      <configuration name="OptionSpreadTest.testGivenIronCondorSpread" configurationId="JUnit" />
+    <history-entry file="OptionTradeTest_testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints2 - 2018.02.15 at 23h 26m 57s.xml">
+      <configuration name="OptionTradeTest.testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints2" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102078000" />
+    <option name="totallyTimeSpent" value="110538000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1765,7 +1750,6 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24892704" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1779,11 +1763,11 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36144578" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.59156626" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26987952" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35193133" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35693848" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1792,6 +1776,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24892704" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Atlassian " active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="SonarQube" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="100" y="100" width="1080" height="600" />
@@ -1805,34 +1790,45 @@
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24892704" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Atlassian " active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24892704" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Atlassian " active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="SonarQube" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="SonarQube" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51840943" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5180723" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3240059" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32289156" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="100" y="100" width="1080" height="600" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3622975" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Sequence" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28424153" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28040057" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36144578" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Sequence" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26987952" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35693848" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31664214" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31566265" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="BPMNPalette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1876,7 +1872,8 @@
     <MESSAGE value="fuuuu" />
     <MESSAGE value="Refactoring q es gerunding" />
     <MESSAGE value="Added mysqlcreation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added mysqlcreation" />
+    <MESSAGE value="Added better spread tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added better spread tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1888,24 +1885,23 @@
           <option name="timeStamp" value="65" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BullCallSpread.java</url>
-          <line>38</line>
+          <url>file://$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/OptionSpreadTest.java</url>
+          <line>33</line>
           <properties />
-          <option name="timeStamp" value="116" />
+          <option name="timeStamp" value="125" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="125" />
+      <option name="time" value="147" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
-        <watch expression="upperCallOption.getPremium()" language="JAVA" />
-        <watch expression="lowerCallOption.getPremium()" language="JAVA" />
-        <watch expression="lowerCallOption.getStrikePrice()" language="JAVA" />
-        <watch expression="upperCallOption.getStrikePrice()" language="JAVA" />
-        <watch expression="getCost()" language="JAVA" />
+        <watch expression="optionTrade.getOption().getStrikePrice().doubleValue()" language="JAVA" />
+        <watch expression="expectedPrice" language="JAVA" />
+        <watch expression="Math.abs(optionTrade.getOption().getStrikePrice().doubleValue() - expectedPrice)" language="JAVA" />
+        <watch expression="xresolution" language="JAVA" />
       </configuration>
       <configuration name="Application">
         <watch expression="between.getDays()" language="JAVA" custom="" />
@@ -1926,20 +1922,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/StatisticList/src/main/java/com/assets/statistic/exceptions/InvalidCorrelationDatesException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StatisticList/src/test/java/com/assets/statistic/list/TestStockListFirstDerivate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="16" column="8" lean-forward="false" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.pom">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-482">
@@ -1951,7 +1933,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="316">
           <caret line="74" column="21" lean-forward="true" selection-start-line="74" selection-start-column="21" selection-end-line="74" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1959,7 +1940,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="21" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1967,7 +1947,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="55">
           <caret line="53" column="20" lean-forward="false" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1982,7 +1961,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
           <caret line="146" column="38" lean-forward="false" selection-start-line="146" selection-start-column="38" selection-end-line="146" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1990,7 +1968,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="18" column="4" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2117,7 +2094,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="39" column="32" lean-forward="false" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2139,7 +2115,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
           <caret line="27" column="50" lean-forward="true" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2182,7 +2157,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2190,7 +2164,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2198,7 +2171,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2206,11 +2178,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
           <caret line="44" column="18" lean-forward="false" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1123#1124#0" expanded="false" />
-            <element signature="e#1194#1195#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2218,25 +2185,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/OptionSpread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/OptionTrade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2244,7 +2192,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
           <caret line="52" column="52" lean-forward="false" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2252,23 +2199,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="10" column="41" lean-forward="true" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BullCallSpread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="10" column="47" lean-forward="false" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/Greeks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-74">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2276,46 +2206,82 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/portfolio/OptionPortfolio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="60" column="50" lean-forward="false" selection-start-line="60" selection-start-column="50" selection-end-line="60" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/Greeks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-74">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/Option.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1395">
+          <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+          <folding>
+            <element signature="e#4562#4563#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/OptionTrade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="58" column="74" lean-forward="false" selection-start-line="58" selection-start-column="74" selection-end-line="58" selection-end-column="74" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BaseOptionSpread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="57" column="28" lean-forward="false" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
-          <folding />
+        <state relative-caret-position="171">
+          <caret line="28" column="80" lean-forward="false" selection-start-line="28" selection-start-column="80" selection-end-line="28" selection-end-column="80" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/portfolio/OptionPortfolio.java">
+    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BullCallSpread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="60" column="50" lean-forward="false" selection-start-line="60" selection-start-column="50" selection-end-line="60" selection-end-column="50" />
-          <folding>
-            <element signature="e#1761#1762#0" expanded="true" />
-            <element signature="e#1801#1802#0" expanded="true" />
-            <element signature="e#2552#2553#0" expanded="true" />
-            <element signature="e#2595#2596#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-162">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/Option.java">
+    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/OptionSpread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="127" column="18" lean-forward="false" selection-start-line="127" selection-start-column="18" selection-end-line="127" selection-end-column="18" />
-          <folding>
-            <element signature="e#4910#4911#0" expanded="true" />
-            <element signature="e#4939#4940#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="120">
+          <caret line="10" column="15" lean-forward="false" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/OptionSpreadTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        <state relative-caret-position="1170">
+          <caret line="85" column="5" lean-forward="false" selection-start-line="71" selection-start-column="4" selection-end-line="85" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/src.zip!/java/math/BigDecimal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="3126" column="15" lean-forward="false" selection-start-line="3126" selection-start-column="15" selection-end-line="3126" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/OptionTradeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="152" column="45" lean-forward="false" selection-start-line="152" selection-start-column="45" selection-end-line="152" selection-end-column="45" />
           <folding />
         </state>
       </provider>

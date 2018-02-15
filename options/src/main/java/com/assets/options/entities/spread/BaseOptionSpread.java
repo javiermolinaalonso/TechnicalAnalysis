@@ -5,6 +5,8 @@ import com.assets.options.entities.OptionTrade;
 import com.assets.options.entities.portfolio.OptionPortfolio;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -19,6 +21,15 @@ public abstract class BaseOptionSpread implements OptionSpread {
 
     private BaseOptionSpread(OptionPortfolio portfolio) {
         this.options = portfolio;
+    }
+
+    public BigDecimal getValueAt(BigDecimal value, LocalDate when) {
+        BigDecimal expectedValue = BigDecimal.ZERO;
+        for (OptionTrade optionTrade : options.getTrades()) {
+            final BigDecimal premium = optionTrade.getExpectedValue(value, when);
+            expectedValue = expectedValue.add(premium);
+        }
+        return expectedValue;
     }
 
     public BigDecimal getExpirationValue(BigDecimal value) {

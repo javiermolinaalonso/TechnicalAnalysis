@@ -49,10 +49,18 @@ public class OptionTrade {
     }
 
     public BigDecimal getExpirationValue(BigDecimal value) {
+        return getExpectedValue(value, option.getExpirationDate());
+    }
+
+    private boolean isShort() {
+        return contracts < 0;
+    }
+
+    public BigDecimal getExpectedValue(BigDecimal value, LocalDate when) {
         BigDecimal expirationValue;
 
         if (!isShort()) {
-            expirationValue = getExpectedValue(value, option.getExpirationDate()).getPremium();
+            expirationValue = getExpectedValue(value, when, option.getVolatility()).getPremium();
         } else {
             expirationValue = BigDecimal.ZERO;
             if (option.isCall()) {
@@ -66,18 +74,6 @@ public class OptionTrade {
             }
         }
         return expirationValue.multiply(getAmountOfStocks()).multiply(BigDecimal.valueOf(getContracts())).subtract(getCost());
-    }
-
-    private boolean isShort() {
-        return contracts < 0;
-    }
-
-    public Option getExpectedValue(BigDecimal value, LocalDate when) {
-        return getExpectedValue(value, when, option.getVolatility());
-    }
-
-    public Option getExpectedValue(BigDecimal value) {
-        return getExpectedValue(value, option.getCurrentDate(), option.getVolatility());
     }
 
     public boolean isMini() {

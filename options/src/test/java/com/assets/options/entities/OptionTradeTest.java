@@ -1,9 +1,11 @@
 package com.assets.options.entities;
 
+import com.assets.options.entities.spread.BaseOptionSpread;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.util.Locale;
 
@@ -14,7 +16,10 @@ public class OptionTradeTest {
     public static final double MIN = 9;
     public static final double MAX = 12.5d;
     public static final double STEP = 0.5;
+    public static final double STEPPRINT = 0.2;
     public static final int STRIKE_PRICE = 11;
+    public static final int COLUMNS = 100;
+    public static final int ROWS = 25;
 
     LocalDate firstTrade;
     LocalDate expirationDate;
@@ -48,7 +53,7 @@ public class OptionTradeTest {
 
         LocalDate date = LocalDate.of(firstTrade.getYear(), firstTrade.getMonth(), firstTrade.getDayOfMonth());
 
-        while(date.isBefore(expirationDate)) {
+        while (date.isBefore(expirationDate)) {
             date = date.plusDays(1);
             Option option = foo.getExpectedValue(currentPrice, date, volatility);
             System.out.println(String.format("%.5f, %s", option.getPremium(), option.getGreeks()));
@@ -63,6 +68,21 @@ public class OptionTradeTest {
         assertEquals(BigDecimal.valueOf(-260).doubleValue(), optionTrade.getExpirationValue(BigDecimal.valueOf(MIN)).doubleValue(), 0.001d);
         assertEquals(BigDecimal.valueOf(-260).doubleValue(), optionTrade.getExpirationValue(BigDecimal.valueOf(STRIKE_PRICE)).doubleValue(), 0.001d);
         assertEquals(BigDecimal.valueOf(490).doubleValue(), optionTrade.getExpirationValue(BigDecimal.valueOf(MAX)).doubleValue(), 0.001d);
+    }
+
+    @Test
+    public void testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints() throws Exception {
+        Option option = new CallOption(currentPrice, BigDecimal.valueOf(STRIKE_PRICE), callPrice, firstTrade, expirationDate, 0d);
+        OptionTrade optionTrade = new OptionTrade(option, 5, "FOO", BigDecimal.valueOf(2), false);
+        assertEquals(optionTrade.getExpectedValue(BigDecimal.valueOf(STRIKE_PRICE), expirationDate), optionTrade.getExpirationValue(BigDecimal.valueOf(STRIKE_PRICE)));
+    }
+
+    @Test
+    public void testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints2() throws Exception {
+        Option option = new CallOption(currentPrice, BigDecimal.valueOf(STRIKE_PRICE), callPrice, firstTrade, expirationDate, 0d);
+        OptionTrade optionTrade = new OptionTrade(option, 5, "FOO", BigDecimal.valueOf(2), false);
+
+        print(optionTrade);
     }
 
     @Test
@@ -106,10 +126,59 @@ public class OptionTradeTest {
     }
 
     private void print(OptionTrade optionTrade) {
-        for(double expectedPrice = MIN; expectedPrice <= MAX; expectedPrice+= STEP) {
-            BigDecimal expectedPriceOption = optionTrade.getExpirationValue(BigDecimal.valueOf(expectedPrice));
-            System.out.println(String.format("%.5f", expectedPriceOption.doubleValue()));
+        BigDecimal min = BigDecimal.valueOf(999999);
+        BigDecimal max = BigDecimal.valueOf(-999999);
+        for (double expectedPrice = MIN; expectedPrice <= MAX; expectedPrice += STEP) {
+            BigDecimal expectedValue = optionTrade.getExpirationValue(BigDecimal.valueOf(expectedPrice));
+            if (expectedValue.compareTo(min) < 0) {
+                min = expectedValue;
+            }
+            if (expectedValue.compareTo(max) > 0) {
+                max = expectedValue;
+            }
         }
+
+        //x = expected price
+        // y = expiration value
+        int[][] matrix = new int[COLUMNS][ROWS];
+        double xresolution = ((MAX - MIN) * 1d / COLUMNS);
+        double yresolution = ((max.doubleValue() - min.doubleValue()) * 1d / ROWS);
+
+        int i = 0;
+        for (double expectedPrice = MIN; expectedPrice < MAX; expectedPrice += xresolution) {
+            final BigDecimal expirationValue = optionTrade.getExpirationValue(BigDecimal.valueOf(expectedPrice));
+            int j = 0;
+            final boolean medium = Math.abs(optionTrade.getOption().getStrikePrice().doubleValue() - expectedPrice) <= xresolution / 2;
+            for (double value = max.doubleValue(); value > min.doubleValue(); value -= yresolution) {
+                if (medium) matrix[i][j] = 3;
+                if (Math.abs(value) <= yresolution / 2) matrix[i][j] = 2;
+                if (Math.abs(value - expirationValue.doubleValue()) <= yresolution) matrix[i][j] = 1;
+                j++;
+            }
+            i++;
+        }
+
+        for (int j = 0; j < ROWS; j++) {
+            for (i = 0; i < COLUMNS; i++) {
+
+                final int value = matrix[i][j];
+                if (value == 1) {
+                    System.out.print("*");
+                } else if (value == 2) {
+                    System.out.print("-");
+                } else if (value == 3) {
+                    System.out.print("|");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+
+
+        System.out.println("Min " + min.doubleValue());
+        System.out.println("Max " + max.doubleValue());
+
     }
 
 

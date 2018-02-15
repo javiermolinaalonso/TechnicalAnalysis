@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import static org.junit.Assert.assertEquals;
 
@@ -19,6 +20,7 @@ public class OptionSpreadTest {
     private final BigDecimal strike9200 = BigDecimal.valueOf(9200);
 
     private final LocalDate now = LocalDate.of(2015, 1, 1);
+    private final LocalDate oneMonth = LocalDate.of(2015, 2, 1);
     private final LocalDate twoMonths = LocalDate.of(2015, 3, 1);
     private final LocalDate fourMonths = LocalDate.of(2015, 5, 1);
     private final LocalDate sixMonths = LocalDate.of(2015, 7, 1);
@@ -37,9 +39,15 @@ public class OptionSpreadTest {
         assertEquals(8, spread.getExpirationValue(BigDecimal.valueOf(8900)).doubleValue(), 1d);
         assertEquals(58, spread.getExpirationValue(BigDecimal.valueOf(8950)).doubleValue(), 1d);
         assertEquals(108, spread.getExpirationValue(BigDecimal.valueOf(9000)).doubleValue(), 1d);
-        System.out.println(spread.getGreeks());
         assertEquals(0.11, spread.getGreeks().getDelta(), 0.001d);
         assertEquals(0, spread.getGreeks().getGamma(), 0.0001d);
+    }
+
+    @Test
+    public void givenBullCallSpread_whenGetGreeksAtMiddleTime_expectCorrectGreeks() throws Exception {
+        BaseOptionSpread spread = new BullCallSpread(currentValue, strike8800, strike9000, now, twoMonths, volatility, riskFree, comission, "FOO", 1, true);
+        printSpread(spread);
+
     }
 
     @Test
@@ -61,10 +69,19 @@ public class OptionSpreadTest {
         System.out.println(optionSpread.getGreeks());
     }
 
-    private void printSpread(BaseOptionSpread optionSpread) {
+    private void printSpread(BaseOptionSpread spread) {
+        BigDecimal min = BigDecimal.valueOf(999999);
+        BigDecimal max = BigDecimal.valueOf(-999999);
         for(double expectedPrice = 8400; expectedPrice < 9400; expectedPrice+=50) {
-            BigDecimal expectedValue = optionSpread.getExpirationValue(BigDecimal.valueOf(expectedPrice));
-            System.out.println(String.format("%.5f", expectedValue.doubleValue()));
+            BigDecimal expectedValue = spread.getValueAt(BigDecimal.valueOf(8840), oneMonth);
+            if (expectedValue.compareTo(min)>0) {
+                min = expectedValue;
+            }
+            if (expectedValue.compareTo(max) < 0) {
+                max = expectedValue;
+            }
         }
+        System.out.println("Min " +min.doubleValue() );
+        System.out.println("Max " +max.doubleValue() );
     }
 }
