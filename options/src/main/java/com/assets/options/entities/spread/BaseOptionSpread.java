@@ -75,4 +75,12 @@ public abstract class BaseOptionSpread implements OptionSpread {
             System.out.println(String.format("%.5f", expectedValue.doubleValue()));
         }
     }
+
+    @Override
+    public BigDecimal getStrikePriceAverage() {
+        return BigDecimal.valueOf(options.getTrades().stream()
+                .mapToDouble(x -> x.getOption().getStrikePrice().doubleValue())
+                .average()
+                .orElse(0d));
+    }
 }

@@ -15,4 +15,8 @@ public interface OptionSpread {
     BigDecimal getComission();
 
     Greeks getGreeks();
+
+    BigDecimal getStrikePriceAverage();
+
+    BigDecimal getExpirationValue(BigDecimal bigDecimal);
 }

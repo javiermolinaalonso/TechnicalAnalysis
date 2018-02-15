@@ -1,5 +1,6 @@
 package com.assets.options.entities;
 
+import com.assets.options.PrintUtils;
 import com.assets.options.entities.spread.*;
 import org.junit.Test;
 
@@ -47,7 +48,6 @@ public class OptionSpreadTest {
     public void givenBullCallSpread_whenGetGreeksAtMiddleTime_expectCorrectGreeks() throws Exception {
         BaseOptionSpread spread = new BullCallSpread(currentValue, strike8800, strike9000, now, twoMonths, volatility, riskFree, comission, "FOO", 1, true);
         printSpread(spread);
-
     }
 
     @Test
@@ -70,18 +70,6 @@ public class OptionSpreadTest {
     }
 
     private void printSpread(BaseOptionSpread spread) {
-        BigDecimal min = BigDecimal.valueOf(999999);
-        BigDecimal max = BigDecimal.valueOf(-999999);
-        for(double expectedPrice = 8400; expectedPrice < 9400; expectedPrice+=50) {
-            BigDecimal expectedValue = spread.getValueAt(BigDecimal.valueOf(8840), oneMonth);
-            if (expectedValue.compareTo(min)>0) {
-                min = expectedValue;
-            }
-            if (expectedValue.compareTo(max) < 0) {
-                max = expectedValue;
-            }
-        }
-        System.out.println("Min " +min.doubleValue() );
-        System.out.println("Max " +max.doubleValue() );
+        PrintUtils.print(spread);
     }
 }
