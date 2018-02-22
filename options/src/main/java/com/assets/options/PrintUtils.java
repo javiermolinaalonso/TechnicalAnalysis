@@ -7,12 +7,16 @@ import java.math.BigDecimal;
 public class PrintUtils {
     public static final int COLUMNS = 100;
     public static final int ROWS = 30;
-    public static final double STRIKE_DISTANCE_PERCENT = 0.05d;
+    public static final double STRIKE_DISTANCE_PERCENT = 0.02d;
 
     public static void print(OptionSpread spread) {
+        print(spread, STRIKE_DISTANCE_PERCENT);
+    }
+
+    public static void print(OptionSpread spread, double strikePercent) {
         final BigDecimal mean = spread.getStrikePriceAverage();
-        double lowStrike = mean.doubleValue() - mean.doubleValue() * STRIKE_DISTANCE_PERCENT;
-        double hiStrike = mean.doubleValue() + mean.doubleValue() * STRIKE_DISTANCE_PERCENT;
+        double lowStrike = mean.doubleValue() - mean.doubleValue() * strikePercent;
+        double hiStrike = mean.doubleValue() + mean.doubleValue() * strikePercent;
         int[][] matrix = new int[COLUMNS][ROWS];
         double xresolution = ((hiStrike - lowStrike) * 1d / COLUMNS);
 
@@ -43,7 +47,9 @@ public class PrintUtils {
             i++;
         }
 
+        double currentValue = max.doubleValue();
         for (int j = 0; j < ROWS; j++) {
+            System.out.print(String.format("%8.2f  ", currentValue));
             for (i = 0; i < COLUMNS; i++) {
 
                 final int value = matrix[i][j];
@@ -58,6 +64,11 @@ public class PrintUtils {
                 }
             }
             System.out.println();
+            currentValue = currentValue - yresolution;
+        }
+        System.out.print("          ");
+        for (i = 0; i < COLUMNS; i+=15) {
+            System.out.print(String.format("%8.2f       ", lowStrike + i * xresolution));
         }
     }
 

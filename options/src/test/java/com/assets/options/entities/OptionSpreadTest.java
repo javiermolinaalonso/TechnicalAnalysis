@@ -9,6 +9,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
 public class OptionSpreadTest {
 
@@ -54,6 +55,12 @@ public class OptionSpreadTest {
     public void testGivenBearCallSpread() throws Exception {
         BaseOptionSpread optionSpread = new BearCallSpread(currentValue, strike8600, strike8800, now, twoMonths, volatility, riskFree, comission, "FOO", 5, true);
         printSpread(optionSpread);
+    }
+
+    @Test
+    public void testGivenCalendarCallSpread() throws Exception {
+        BaseOptionSpread optionSpread = new CalendarSpread(currentValue, strike8800, now, oneMonth, fourMonths, volatility, riskFree, comission, "FOO", 5, true);
+        assertEquals(optionSpread.getMaxLoss().doubleValue(), -420, 1d);
     }
 
     @Test
