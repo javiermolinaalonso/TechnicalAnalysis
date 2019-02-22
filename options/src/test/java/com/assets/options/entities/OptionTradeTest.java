@@ -1,11 +1,9 @@
 package com.assets.options.entities;
 
-import com.assets.options.entities.spread.BaseOptionSpread;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.util.Locale;
 
@@ -38,7 +36,7 @@ public class OptionTradeTest {
         LocalDate expiration = LocalDate.of(2016, 6, 17);
         BigDecimal currentValue = BigDecimal.valueOf(4.06);
         BigDecimal strike = BigDecimal.valueOf(4.75);
-        Option option = new CallOption(currentValue, strike, LocalDate.now(), expiration, 0.4d, 0.001);
+        Option option = new CallOption(null, currentValue, strike, LocalDate.now(), expiration, 0.4d, 0.001);
         System.out.println(String.format("Current value: %.2f", option.getPremium().doubleValue()));
     }
 
@@ -59,7 +57,7 @@ public class OptionTradeTest {
 
     @Test
     public void testGivenLongCallWhenExpirationValueExpectThreeCorrectPoints() throws Exception {
-        Option option = new CallOption(currentPrice, BigDecimal.valueOf(STRIKE_PRICE), callPrice, firstTrade, expirationDate, 0d);
+        Option option = new CallOption(null, currentPrice, BigDecimal.valueOf(STRIKE_PRICE), callPrice, firstTrade, expirationDate, 0d);
         OptionTrade optionTrade = new OptionTrade(option, 5, "FOO", BigDecimal.valueOf(2), false);
 
         assertEquals(BigDecimal.valueOf(-260).doubleValue(), optionTrade.getExpirationValue(BigDecimal.valueOf(MIN)).doubleValue(), 0.001d);
@@ -69,20 +67,20 @@ public class OptionTradeTest {
 
     @Test
     public void testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints() throws Exception {
-        Option option = new CallOption(currentPrice, BigDecimal.valueOf(STRIKE_PRICE), callPrice, firstTrade, expirationDate, 0d);
+        Option option = new CallOption(null, currentPrice, BigDecimal.valueOf(STRIKE_PRICE), callPrice, firstTrade, expirationDate, 0d);
         OptionTrade optionTrade = new OptionTrade(option, 5, "FOO", BigDecimal.valueOf(2), false);
         assertEquals(optionTrade.getExpectedValue(BigDecimal.valueOf(STRIKE_PRICE), expirationDate), optionTrade.getExpirationValue(BigDecimal.valueOf(STRIKE_PRICE)));
     }
 
     @Test
     public void testGivenLongCallWhenValueAtSpecificDateExpectThreeCorrectPoints2() throws Exception {
-        Option option = new CallOption(currentPrice, BigDecimal.valueOf(STRIKE_PRICE), callPrice, firstTrade, expirationDate, 0d);
+        Option option = new CallOption(null, currentPrice, BigDecimal.valueOf(STRIKE_PRICE), callPrice, firstTrade, expirationDate, 0d);
         OptionTrade optionTrade = new OptionTrade(option, 5, "FOO", BigDecimal.valueOf(2), false);
     }
 
     @Test
     public void testGivenShortCallExpectExpirationValue() throws Exception {
-        Option option = new CallOption(currentPrice, BigDecimal.valueOf(STRIKE_PRICE), callPrice, firstTrade, expirationDate, 0d);
+        Option option = new CallOption(null, currentPrice, BigDecimal.valueOf(STRIKE_PRICE), callPrice, firstTrade, expirationDate, 0d);
         OptionTrade optionTrade = new OptionTrade(option, -10, "FOO", BigDecimal.valueOf(2), false);
 
         assertEquals(BigDecimal.valueOf(480).doubleValue(), optionTrade.getExpirationValue(BigDecimal.valueOf(MIN)).doubleValue(), 0.001d);

@@ -83,4 +83,5 @@ public abstract class BaseOptionSpread implements OptionSpread {
                 .average()
                 .orElse(0d));
     }
+
 }

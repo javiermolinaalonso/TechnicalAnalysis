@@ -4,7 +4,7 @@ import com.assets.options.entities.Greeks;
 import com.assets.options.entities.Option;
 import com.assets.options.entities.OptionTrade;
 import com.assets.options.entities.OptionType;
-import com.assets.options.entities.spread.BullCallSpread;
+import com.assets.options.entities.spread.VerticalCallSpread;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -59,7 +59,7 @@ public class OptionPortfolioTest {
         BigDecimal highBid = BigDecimal.valueOf(4.4);
         BigDecimal lowStrike = BigDecimal.valueOf(32.5);
         BigDecimal lowAsk = BigDecimal.valueOf(3.2);
-        BullCallSpread spread = new BullCallSpread(currentPrice, lowStrike, highStrike, now, expiry, lowAsk, highBid, 0.02d, BigDecimal.ONE, "INTC", 1, false);
+        VerticalCallSpread spread = new VerticalCallSpread(currentPrice, lowStrike, highStrike, now, expiry, lowAsk, highBid, 0.02d, BigDecimal.ONE, "INTC", 1, false);
         OptionPortfolio optionPortfolio = new OptionPortfolio(spread.getOptionTrades());
 //        ["INTC", C, 32,89, 2004-01-01] at 32,50, 2005-01-22, [3,20, 3,20], Greeks: [0,6053, 0,0598, -1,5044, 13,0371, 17,8299]
 //        ["INTC", C, 32,89, 2004-01-01] at 35,00, 2005-01-22, [4,40, 4,40], Greeks: [0,5331, 0,0317, -2,6117, 13,4645, 13,9088]

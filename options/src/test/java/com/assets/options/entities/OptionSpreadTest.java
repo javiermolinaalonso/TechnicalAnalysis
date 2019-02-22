@@ -6,7 +6,6 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
@@ -32,7 +31,7 @@ public class OptionSpreadTest {
 
     @Test
     public void testGivenBullCallSpread() throws Exception {
-        BaseOptionSpread spread = new BullCallSpread(currentValue, strike8800, strike9000, now, twoMonths, volatility, riskFree, comission, "FOO", 1, true);
+        BaseOptionSpread spread = new VerticalCallSpread(currentValue, strike8800, strike9000, now, twoMonths, volatility, riskFree, comission, "FOO", 1, true);
         assertEquals(91, spread.getCost().doubleValue(), 1d);
         assertEquals(-91, spread.getMaxLoss().doubleValue(), 1d);
         assertEquals(108, spread.getMaxGain().doubleValue(), 1d);
@@ -47,7 +46,7 @@ public class OptionSpreadTest {
 
     @Test
     public void givenBullCallSpread_whenGetGreeksAtMiddleTime_expectCorrectGreeks() throws Exception {
-        BaseOptionSpread spread = new BullCallSpread(currentValue, strike8800, strike9000, now, twoMonths, volatility, riskFree, comission, "FOO", 1, true);
+        BaseOptionSpread spread = new VerticalCallSpread(currentValue, strike8800, strike9000, now, twoMonths, volatility, riskFree, comission, "FOO", 1, true);
         printSpread(spread);
     }
 
@@ -65,7 +64,7 @@ public class OptionSpreadTest {
 
     @Test
     public void testGivenBullPutSpread() throws Exception {
-        BaseOptionSpread optionSpread = new BullPutSpread(currentValue, strike9000, strike9200, now, twoMonths, volatility, riskFree, comission, "FOO", 5, true);
+        BaseOptionSpread optionSpread = new VerticalPutSpread(currentValue, strike9000, strike9200, now, twoMonths, volatility, riskFree, comission, "FOO", 5, true);
         printSpread(optionSpread);
     }
 

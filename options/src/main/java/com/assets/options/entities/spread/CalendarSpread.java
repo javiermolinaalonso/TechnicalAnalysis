@@ -18,8 +18,8 @@ public class CalendarSpread extends BaseOptionSpread {
                           LocalDate now, LocalDate expirationDate, LocalDate furtherExpirationDate, Double volatility, Double riskFree,
                           BigDecimal comission, String ticker, int contracts, boolean mini) {
         this.strikePrice = strikePrice;
-        closerOption = new CallOption(currentPrice, strikePrice, now, expirationDate, volatility, riskFree);
-        furtherOption = new CallOption(currentPrice, strikePrice, now, furtherExpirationDate, volatility, riskFree);
+        closerOption = new CallOption(null, currentPrice, strikePrice, now, expirationDate, volatility, riskFree);
+        furtherOption = new CallOption(null, currentPrice, strikePrice, now, furtherExpirationDate, volatility, riskFree);
         OptionTrade closerOptionTrade = new OptionTrade(closerOption, contracts * -1, ticker, comission, mini);
         OptionTrade furtherOptionTrade = new OptionTrade(furtherOption, contracts, ticker, comission, mini);
         setOptionTrades(Arrays.asList(closerOptionTrade, furtherOptionTrade));

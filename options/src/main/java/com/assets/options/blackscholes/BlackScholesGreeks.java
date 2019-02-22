@@ -103,7 +103,7 @@ public class BlackScholesGreeks {
     }
 
     public static void main(String[] args) {
-        double[] calculate = calculate(false, 189.63, 190, 0.001, 0.56, 0.175);
+        double[] calculate = calculate(false, 270, 300, 0.001, 0.56, 0.175);
 
         for (double v : calculate) {
             System.out.println(v);

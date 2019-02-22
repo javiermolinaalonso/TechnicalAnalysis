@@ -5,12 +5,12 @@ import java.time.LocalDate;
 
 public class CallOption extends Option {
 
-    public CallOption(BigDecimal currentPrice, BigDecimal strikePrice, LocalDate now, LocalDate expirationDate, Double volatility, Double riskFree) {
-        super(null, OptionType.CALL, currentPrice, strikePrice, now, expirationDate, volatility, riskFree);
+    public CallOption(String ticker, BigDecimal currentPrice, BigDecimal strikePrice, LocalDate now, LocalDate expirationDate, Double volatility, Double riskFree) {
+        super(ticker, OptionType.CALL, currentPrice, strikePrice, now, expirationDate, volatility, riskFree);
     }
 
-    public CallOption(BigDecimal currentPrice, BigDecimal strikePrice, BigDecimal premium, LocalDate now, LocalDate expirationDate, Double riskFree) {
-        super(null, currentPrice, strikePrice, premium, premium, OptionType.CALL, now, expirationDate, riskFree);
+    public CallOption(String ticker, BigDecimal currentPrice, BigDecimal strikePrice, BigDecimal premium, LocalDate now, LocalDate expirationDate, Double riskFree) {
+        super(ticker, currentPrice, strikePrice, premium, premium, OptionType.CALL, now, expirationDate, riskFree);
     }
 
 }

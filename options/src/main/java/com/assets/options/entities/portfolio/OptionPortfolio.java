@@ -62,7 +62,7 @@ public class OptionPortfolio {
             delta += greeks.getDelta() * trade.getContracts();
             gamma += greeks.getGamma() * trade.getContracts();
             theta += greeks.getTheta() * trade.getContracts();
-            vega += greeks.getVega() * Math.abs(trade.getContracts());
+            vega += greeks.getVega() * trade.getContracts();
             rho += greeks.getRho() * Math.abs(trade.getContracts());
         }
         return new Greeks(delta, gamma, vega, theta, rho);

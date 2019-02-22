@@ -1,6 +1,7 @@
 package com.assets.options;
 
-import com.assets.options.entities.spread.BullCallSpread;
+import com.assets.options.entities.spread.IronCondorSpread;
+import com.assets.options.entities.spread.VerticalCallSpread;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -8,22 +9,16 @@ import java.time.LocalDate;
 public class OptionsPrinter {
 
     public static void main(String[] args) {
-        final BullCallSpread bullCallSpread = new BullCallSpread(
-                BigDecimal.valueOf(14.62),
-                BigDecimal.valueOf(15),
-                BigDecimal.valueOf(16),
-                LocalDate.now(),
-                LocalDate.of(2018, 4, 20),
-                0.31d,
-                0.01d,
-                BigDecimal.ONE,
-                "GE",
-                1,
-                false
-        );
 
-        System.out.println(bullCallSpread.getMaxLoss());
-        System.out.println(bullCallSpread.getMaxGain());
-        PrintUtils.print(bullCallSpread, 0.05);
+        final IronCondorSpread ironCondor = new IronCondorSpread(277.41, 265d, 270d, 290d, 295d,
+                LocalDate.now(),
+                LocalDate.of(2019, 3, 15),
+                0.15, 0.01d, BigDecimal.ONE, "SPY", 1, false
+        );
+        System.out.println(ironCondor.getMaxLoss());
+        System.out.println(ironCondor.getMaxGain());
+        System.out.println(ironCondor.getCost());
+        PrintUtils.print(ironCondor, 0.005);
     }
+
 }

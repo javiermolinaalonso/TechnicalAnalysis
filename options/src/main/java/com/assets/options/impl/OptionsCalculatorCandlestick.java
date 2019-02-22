@@ -21,13 +21,13 @@ public class OptionsCalculatorCandlestick implements OptionsCalculator<Candlesti
     public CallOption call(List<Candlestick> values, LocalDate expiration, LocalDate now, BigDecimal strike) {
         double volatility = volatilityCalculator.getAnnualizedVolatility(values);
         BigDecimal currentPrice = values.get(values.size() - 1).getFinalPrice();
-        return new CallOption(currentPrice, strike, now, expiration, volatility, 0d);
+        return new CallOption(null, currentPrice, strike, now, expiration, volatility, 0d);
     }
 
     @Override
     public CallOption call(Candlestick value, LocalDate expiration, LocalDate now, BigDecimal strike, double volatility) {
         BigDecimal currentPrice = value.getFinalPrice();
-        return new CallOption(currentPrice, strike, now, expiration, volatility, 0d);
+        return new CallOption(null, currentPrice, strike, now, expiration, volatility, 0d);
     }
 
     @Override

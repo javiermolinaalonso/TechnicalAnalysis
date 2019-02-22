@@ -42,10 +42,10 @@ public class CalendarSimulationTest {
         double shortCallVolatility = volatilityCalculator.getAnnualizedVolatility(candlesticks.subList(30, 60));
 
         Candlestick candlestick = candlesticks.get(60);
-        CallOption longCallOption = new CallOption(candlestick.getFinalPrice(), candlestick.getFinalPrice(), candlestick.getDate(),
+        CallOption longCallOption = new CallOption(null, candlestick.getFinalPrice(), candlestick.getFinalPrice(), candlestick.getDate(),
                 candlestick.getDate().plusYears(1), longCallVolatility, 0d);
         OptionTrade longCallTrade = new OptionTrade(longCallOption, 1, "IBX", BigDecimal.valueOf(2), true);
-        CallOption shortCallOption = new CallOption(candlestick.getFinalPrice(), candlestick.getFinalPrice(), candlestick.getDate(),
+        CallOption shortCallOption = new CallOption(null, candlestick.getFinalPrice(), candlestick.getFinalPrice(), candlestick.getDate(),
                 candlestick.getDate().plusMonths(1), shortCallVolatility, 0d);
         OptionTrade shortCallTrade = new OptionTrade(shortCallOption, -1, "IBX", BigDecimal.valueOf(2), true);
 

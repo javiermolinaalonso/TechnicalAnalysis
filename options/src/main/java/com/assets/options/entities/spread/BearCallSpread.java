@@ -13,8 +13,8 @@ public class BearCallSpread extends BaseOptionSpread {
     public BearCallSpread(BigDecimal currentPrice, BigDecimal lowStrikePrice, BigDecimal highStrikePrice,
                           LocalDate now, LocalDate expirationDate, Double volatility, Double riskFree,
                           BigDecimal comission, String ticker, int contracts, boolean mini) {
-        Option lowerCallOption = new CallOption(currentPrice, lowStrikePrice, now, expirationDate, volatility, riskFree);
-        Option upperCallOption = new CallOption(currentPrice, highStrikePrice, now, expirationDate, volatility, riskFree);
+        Option lowerCallOption = new CallOption(null, currentPrice, lowStrikePrice, now, expirationDate, volatility, riskFree);
+        Option upperCallOption = new CallOption(null, currentPrice, highStrikePrice, now, expirationDate, volatility, riskFree);
         OptionTrade lowerCallOptionTrade = new OptionTrade(lowerCallOption, contracts * -1, ticker, comission, mini);
         OptionTrade upperCallOptionTrade = new OptionTrade(upperCallOption, contracts, ticker, comission, mini);
         setOptionTrades(Arrays.asList(lowerCallOptionTrade, upperCallOptionTrade));

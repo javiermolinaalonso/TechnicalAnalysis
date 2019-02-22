@@ -83,7 +83,7 @@ public class OptionTrade {
     public Option getExpectedValue(BigDecimal value, LocalDate when, double volatility) {
         Option newOption;
         if (option.isCall()) {
-            newOption = new CallOption(value, option.getStrikePrice(), when, option.getExpirationDate(), volatility, option.getRiskFree());
+            newOption = new CallOption(null, value, option.getStrikePrice(), when, option.getExpirationDate(), volatility, option.getRiskFree());
         } else {
             newOption = new PutOption(value, option.getStrikePrice(), when, option.getExpirationDate(), volatility, option.getRiskFree());
         }
