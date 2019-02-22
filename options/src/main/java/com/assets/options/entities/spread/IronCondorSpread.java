@@ -7,6 +7,8 @@ public class IronCondorSpread extends BaseOptionSpread {
 
     private final VerticalPutSpread putSpread;
     private final VerticalCallSpread callSpread;
+    private final boolean mini;
+
     public IronCondorSpread(double currentPrice,
                             double lowLossStrike, double lowProfitStrike,
                             double highProfitStrike, double highStrikeLossPrice,
@@ -16,6 +18,7 @@ public class IronCondorSpread extends BaseOptionSpread {
                 BigDecimal.valueOf(highProfitStrike), BigDecimal.valueOf(highStrikeLossPrice),
                 now, expirationDate, volatility, riskFree, comission, ticker, contracts, mini);
     }
+
     public IronCondorSpread(BigDecimal currentPrice,
                             BigDecimal lowLossStrike, BigDecimal lowProfitStrike,
                             BigDecimal highProfitStrike, BigDecimal highStrikeLossPrice,
@@ -25,6 +28,7 @@ public class IronCondorSpread extends BaseOptionSpread {
         callSpread = new VerticalCallSpread(currentPrice, highStrikeLossPrice, highProfitStrike, now, expirationDate, volatility, riskFree, comission, ticker, contracts, mini);
         addSpread(putSpread);
         addSpread(callSpread);
+        this.mini = mini;
     }
 
     @Override
@@ -32,8 +36,24 @@ public class IronCondorSpread extends BaseOptionSpread {
         return putSpread.getMaxGain().add(callSpread.getMaxGain());
     }
 
+
     @Override
     public BigDecimal getMaxLoss() {
-        return putSpread.getMaxLoss().add(putSpread.getMaxLoss());
+        return callSpread.getHighStrike()
+                .subtract(callSpread.getLowStrike())
+                .abs()
+                .add(netPremiumReceived())
+                .multiply(getMultiplier())
+                .add(getComission())
+                .negate();
+    }
+
+
+    private BigDecimal getMultiplier() {
+        return mini ? BigDecimal.ONE : BigDecimal.valueOf(100);
+    }
+
+    private BigDecimal netPremiumReceived() {
+        return putSpread.netPremiumPaid().add(callSpread.netPremiumPaid());
     }
 }

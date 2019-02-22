@@ -1,41 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8e42815d-2456-460e-847d-5e76ba9d8ceb" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/SuccessRatePrinter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/VerticalCallSpreadTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/VerticallPutSpreadTest.java" afterDir="false" />
+    <list default="true" id="8e42815d-2456-460e-847d-5e76ba9d8ceb" name="Default" comment="Added yayy">
+      <change afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/IronCondorSpreadTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StatisticList/StatisticList.iml" beforeDir="false" afterPath="$PROJECT_DIR$/StatisticList/StatisticList.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bollinger/bollinger.iml" beforeDir="false" afterPath="$PROJECT_DIR$/bollinger/bollinger.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/correlation/correlation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/correlation/correlation.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-loader/data-loader.iml" beforeDir="false" afterPath="$PROJECT_DIR$/data-loader/data-loader.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/derivates/assets.derivates.iml" beforeDir="false" afterPath="$PROJECT_DIR$/derivates/assets.derivates.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entities/entities.iml" beforeDir="false" afterPath="$PROJECT_DIR$/entities/entities.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/investment-entities/investment-entities.iml" beforeDir="false" afterPath="$PROJECT_DIR$/investment-entities/investment-entities.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/investment-strategy/investment-strategy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/investment-strategy/investment-strategy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/options.iml" beforeDir="false" afterPath="$PROJECT_DIR$/options/options.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/options/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/OptionsPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/OptionsPrinter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/blackscholes/BlackScholesGreeks.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/blackscholes/BlackScholesGreeks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/CallOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/CallOption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/OptionTrade.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/OptionTrade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/portfolio/OptionPortfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/portfolio/OptionPortfolio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BaseOptionSpread.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BaseOptionSpread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BearCallSpread.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BearCallSpread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BullCallSpread.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/VerticalCallSpread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BullPutSpread.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/VerticalPutSpread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/CalendarSpread.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/CalendarSpread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/IronCondorSpread.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/IronCondorSpread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/impl/OptionsCalculatorCandlestick.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/impl/OptionsCalculatorCandlestick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/CallOptionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/CallOptionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/OptionSpreadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/OptionSpreadTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/OptionTradeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/OptionTradeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/portfolio/OptionPortfolioTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/portfolio/OptionPortfolioTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/test/java/com/assets/options/impl/CalendarSimulationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/impl/CalendarSimulationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio/portfolio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio/portfolio.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/techAnalysis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/techAnalysis.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/VerticalCallSpread.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/VerticalCallSpread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/VerticalPutSpread.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/VerticalPutSpread.java" afterDir="false" />
     </list>
     <ignored path="techAnalysis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -73,15 +44,15 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2557" />
-          <entry key="PLAIN_TEXT" value="22" />
+          <entry key="JAVA" value="3424" />
+          <entry key="PLAIN_TEXT" value="32" />
           <entry key="XML" value="90" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="6" />
-          <entry key="JAVA" value="53" />
+          <entry key="JAVA" value="68" />
           <entry key="UML" value="2" />
           <entry key="XML" value="8" />
         </counts>
@@ -94,36 +65,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/SuccessRatePrinter.java">
+        <entry file="file://$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/IronCondorSpreadTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/VerticalPutSpread.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="93" selection-start-line="93" selection-end-line="93" />
-              <folding>
-                <element signature="e#3479#3480#0" expanded="true" />
-                <element signature="e#3574#3575#0" expanded="true" />
-                <element signature="e#3487#3488#0" expanded="true" />
-                <element signature="e#3578#3579#0" expanded="true" />
-                <element signature="e#3621#3622#0" expanded="true" />
-                <element signature="e#3703#3704#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/VerticallPutSpreadTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+            <state relative-caret-position="78">
+              <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -131,14 +76,18 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BaseOptionSpread.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/IronCondorSpread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="58" selection-start-line="58" selection-end-line="58" />
+            <state relative-caret-position="151">
+              <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
               <folding>
-                <element signature="e#2103#2104#0" expanded="true" />
-                <element signature="e#2145#2146#0" expanded="true" />
+                <element signature="e#1866#1867#0" expanded="true" />
+                <element signature="e#1940#1941#0" expanded="true" />
+                <element signature="e#2367#2368#0" expanded="true" />
+                <element signature="e#2437#2438#0" expanded="true" />
+                <element signature="e#2261#2262#0" expanded="true" />
+                <element signature="e#2288#2289#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -213,7 +162,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/investment-entities/src/main/java/com/assets/investment/entities/InvestmentActionEnum.java" />
         <option value="$PROJECT_DIR$/investment-entities/src/main/java/com/assets/investment/entities/InvestmentActions.java" />
         <option value="$PROJECT_DIR$/investment-strategy/pom.xml" />
         <option value="$PROJECT_DIR$/entities/src/main/java/com/assets/entities/StockPrice.java" />
@@ -251,19 +199,20 @@
         <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/OptionSpreadTest.java" />
         <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/PrintUtils.java" />
         <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BullCallSpread.java" />
-        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BaseOptionSpread.java" />
         <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/SuccessRatePrinter.java" />
         <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/OptionsPrinter.java" />
-        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/IronCondorSpread.java" />
         <option value="$PROJECT_DIR$/options/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/blackscholes/BlackScholesGreeks.java" />
         <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/CallOption.java" />
         <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/portfolio/OptionPortfolio.java" />
         <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/VerticalCallSpreadTest.java" />
+        <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/VerticallPutSpreadTest.java" />
+        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BaseOptionSpread.java" />
+        <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/IronCondorSpreadTest.java" />
         <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/VerticalCallSpread.java" />
         <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/VerticalPutSpread.java" />
-        <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/VerticallPutSpreadTest.java" />
+        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/IronCondorSpread.java" />
       </list>
     </option>
   </component>
@@ -365,6 +314,27 @@
               <item name="TechnicalAnalysis" type="462c0819:PsiDirectoryNode" />
               <item name="options" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="options" type="462c0819:PsiDirectoryNode" />
+              <item name="entities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="techAnalysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TechnicalAnalysis" type="462c0819:PsiDirectoryNode" />
+              <item name="options" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="options" type="462c0819:PsiDirectoryNode" />
+              <item name="entities" type="462c0819:PsiDirectoryNode" />
+              <item name="spread" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="techAnalysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TechnicalAnalysis" type="462c0819:PsiDirectoryNode" />
+              <item name="options" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -446,7 +416,7 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550851851206" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550870539186" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="dynamic.classpath" value="false" />
@@ -516,7 +486,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.VerticallPutSpreadTest.givenVerticalPutCreditSpread_whenGetMaxProfit_expectCorrect">
+  <component name="RunManager" selected="JUnit.IronCondorSpreadTest.givenIronCondorSpread_whenGetMaxProfit_expectCorrect">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -768,20 +738,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BlackScholesGreeks" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.assets.options.blackscholes.BlackScholesGreeks" />
-      <module name="options" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.assets.options.blackscholes.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -835,7 +791,7 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method v="2" />
     </configuration>
-    <configuration name="VerticalCallSpreadTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IronCondorSpreadTest.givenIronCondorSpread_whenGetMaxProfit_expectCorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="options" />
       <extension name="coverage">
         <pattern>
@@ -844,7 +800,9 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.assets.options.entities.spread" />
-      <option name="MAIN_CLASS_NAME" value="com.assets.options.entities.spread.VerticalCallSpreadTest" />
+      <option name="MAIN_CLASS_NAME" value="com.assets.options.entities.spread.IronCondorSpreadTest" />
+      <option name="METHOD_NAME" value="givenIronCondorSpread_whenGetMaxProfit_expectCorrect" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -862,6 +820,21 @@
       <option name="MAIN_CLASS_NAME" value="com.assets.options.entities.spread.VerticalCallSpreadTest" />
       <option name="METHOD_NAME" value="givenVerticalCreditSpread_whenGetMaxProfit_expectCorrect" />
       <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VerticallPutSpreadTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="options" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.assets.options.entities.spread.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.assets.options.entities.spread" />
+      <option name="MAIN_CLASS_NAME" value="com.assets.options.entities.spread.VerticallPutSpreadTest" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -934,19 +907,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.VerticalCallSpreadTest" />
-      <item itemvalue="Application.BlackScholesGreeks" />
       <item itemvalue="JUnit.VerticalCallSpreadTest.givenVerticalCreditSpread_whenGetMaxProfit_expectCorrect" />
       <item itemvalue="JUnit.VerticallPutSpreadTest.givenVerticalPutDebitSpread_whenGetMaxProfit_expectCorrect" />
       <item itemvalue="JUnit.VerticallPutSpreadTest.givenVerticalPutCreditSpread_whenGetMaxProfit_expectCorrect" />
+      <item itemvalue="JUnit.IronCondorSpreadTest.givenIronCondorSpread_whenGetMaxProfit_expectCorrect" />
+      <item itemvalue="JUnit.VerticallPutSpreadTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.IronCondorSpreadTest.givenIronCondorSpread_whenGetMaxProfit_expectCorrect" />
+        <item itemvalue="JUnit.VerticallPutSpreadTest" />
         <item itemvalue="JUnit.VerticallPutSpreadTest.givenVerticalPutCreditSpread_whenGetMaxProfit_expectCorrect" />
         <item itemvalue="JUnit.VerticallPutSpreadTest.givenVerticalPutDebitSpread_whenGetMaxProfit_expectCorrect" />
         <item itemvalue="JUnit.VerticalCallSpreadTest.givenVerticalCreditSpread_whenGetMaxProfit_expectCorrect" />
-        <item itemvalue="JUnit.VerticalCallSpreadTest" />
-        <item itemvalue="Application.BlackScholesGreeks" />
       </list>
     </recent_temporary>
   </component>
@@ -1012,7 +985,7 @@
       <workItem from="1519640356527" duration="708000" />
       <workItem from="1550486339087" duration="643000" />
       <workItem from="1550570206809" duration="5335000" />
-      <workItem from="1550836696420" duration="5886000" />
+      <workItem from="1550836696420" duration="9412000" />
     </task>
     <task id="LOCAL-00001" summary="Added get and options interface">
       <created>1453363092145</created>
@@ -1168,43 +1141,50 @@
       <option name="project" value="LOCAL" />
       <updated>1519337736511</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Added yayy">
+      <created>1550851910009</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1550851910009</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="VerticallPutSpreadTest_givenVerticalPutDebitSpread_whenGetMaxProfit_expectCorrect - 2019.02.22 at 16h 59m 06s.xml">
-      <configuration name="VerticallPutSpreadTest.givenVerticalPutDebitSpread_whenGetMaxProfit_expectCorrect" configurationId="JUnit" />
+    <history-entry file="IronCondorSpreadTest_givenIronCondorSpread_whenGetMaxProfit_expectCorrect - 2019.02.22 at 22h 15m 42s.xml">
+      <configuration name="IronCondorSpreadTest.givenIronCondorSpread_whenGetMaxProfit_expectCorrect" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="VerticallPutSpreadTest_givenVerticalPutDebitSpread_whenGetMaxProfit_expectCorrect - 2019.02.22 at 16h 59m 47s.xml">
-      <configuration name="VerticallPutSpreadTest.givenVerticalPutDebitSpread_whenGetMaxProfit_expectCorrect" configurationId="JUnit" />
+    <history-entry file="IronCondorSpreadTest_givenIronCondorSpread_whenGetMaxProfit_expectCorrect - 2019.02.22 at 22h 17m 01s.xml">
+      <configuration name="IronCondorSpreadTest.givenIronCondorSpread_whenGetMaxProfit_expectCorrect" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="VerticallPutSpreadTest_givenVerticalPutDebitSpread_whenGetMaxProfit_expectCorrect - 2019.02.22 at 17h 01m 28s.xml">
-      <configuration name="VerticallPutSpreadTest.givenVerticalPutDebitSpread_whenGetMaxProfit_expectCorrect" configurationId="JUnit" />
+    <history-entry file="IronCondorSpreadTest_givenIronCondorSpread_whenGetMaxProfit_expectCorrect - 2019.02.22 at 22h 18m 04s.xml">
+      <configuration name="IronCondorSpreadTest.givenIronCondorSpread_whenGetMaxProfit_expectCorrect" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="VerticallPutSpreadTest_givenVerticalPutDebitSpread_whenGetMaxProfit_expectCorrect - 2019.02.22 at 17h 02m 13s.xml">
-      <configuration name="VerticallPutSpreadTest.givenVerticalPutDebitSpread_whenGetMaxProfit_expectCorrect" configurationId="JUnit" />
+    <history-entry file="IronCondorSpreadTest_givenIronCondorSpread_whenGetMaxProfit_expectCorrect - 2019.02.22 at 22h 19m 43s.xml">
+      <configuration name="IronCondorSpreadTest.givenIronCondorSpread_whenGetMaxProfit_expectCorrect" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="VerticallPutSpreadTest_givenVerticalPutDebitSpread_whenGetMaxProfit_expectCorrect - 2019.02.22 at 17h 02m 58s.xml">
-      <configuration name="VerticallPutSpreadTest.givenVerticalPutDebitSpread_whenGetMaxProfit_expectCorrect" configurationId="JUnit" />
+    <history-entry file="VerticallPutSpreadTest - 2019.02.22 at 22h 20m 08s.xml">
+      <configuration name="VerticallPutSpreadTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="VerticallPutSpreadTest_givenVerticalPutDebitSpread_whenGetMaxProfit_expectCorrect - 2019.02.22 at 17h 03m 01s.xml">
-      <configuration name="VerticallPutSpreadTest.givenVerticalPutDebitSpread_whenGetMaxProfit_expectCorrect" configurationId="JUnit" />
+    <history-entry file="VerticallPutSpreadTest - 2019.02.22 at 22h 20m 15s.xml">
+      <configuration name="VerticallPutSpreadTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="VerticallPutSpreadTest_givenVerticalPutDebitSpread_whenGetMaxProfit_expectCorrect - 2019.02.22 at 17h 03m 12s.xml">
-      <configuration name="VerticallPutSpreadTest.givenVerticalPutDebitSpread_whenGetMaxProfit_expectCorrect" configurationId="JUnit" />
+    <history-entry file="IronCondorSpreadTest_givenIronCondorSpread_whenGetMaxProfit_expectCorrect - 2019.02.22 at 22h 20m 51s.xml">
+      <configuration name="IronCondorSpreadTest.givenIronCondorSpread_whenGetMaxProfit_expectCorrect" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="VerticallPutSpreadTest_givenVerticalPutDebitSpread_whenGetMaxProfit_expectCorrect - 2019.02.22 at 17h 03m 26s.xml">
-      <configuration name="VerticallPutSpreadTest.givenVerticalPutDebitSpread_whenGetMaxProfit_expectCorrect" configurationId="JUnit" />
+    <history-entry file="IronCondorSpreadTest_givenIronCondorSpread_whenGetMaxProfit_expectCorrect - 2019.02.22 at 22h 20m 55s.xml">
+      <configuration name="IronCondorSpreadTest.givenIronCondorSpread_whenGetMaxProfit_expectCorrect" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="VerticallPutSpreadTest_givenVerticalPutDebitSpread_whenGetMaxProfit_expectCorrect - 2019.02.22 at 17h 03m 51s.xml">
-      <configuration name="VerticallPutSpreadTest.givenVerticalPutDebitSpread_whenGetMaxProfit_expectCorrect" configurationId="JUnit" />
+    <history-entry file="IronCondorSpreadTest_givenIronCondorSpread_whenGetMaxProfit_expectCorrect - 2019.02.22 at 22h 21m 33s.xml">
+      <configuration name="IronCondorSpreadTest.givenIronCondorSpread_whenGetMaxProfit_expectCorrect" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="VerticallPutSpreadTest_givenVerticalPutDebitSpread_whenGetMaxProfit_expectCorrect - 2019.02.22 at 17h 06m 47s.xml">
-      <configuration name="VerticallPutSpreadTest.givenVerticalPutDebitSpread_whenGetMaxProfit_expectCorrect" configurationId="JUnit" />
+    <history-entry file="IronCondorSpreadTest_givenIronCondorSpread_whenGetMaxProfit_expectCorrect - 2019.02.22 at 22h 22m 18s.xml">
+      <configuration name="IronCondorSpreadTest.givenIronCondorSpread_whenGetMaxProfit_expectCorrect" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131482000" />
+    <option name="totallyTimeSpent" value="135008000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1221,7 +1201,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.31566265" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.41807228" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.5180723" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.66746986" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -1238,7 +1218,7 @@
       <window_info anchor="bottom" id="Database Changes" order="17" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24892704" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" visible="true" weight="0.24892704" />
       <window_info anchor="right" id="PlantUML" order="3" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="right" id="Database" order="5" />
@@ -1344,7 +1324,8 @@
     <MESSAGE value="printwork" />
     <MESSAGE value="print spread working" />
     <MESSAGE value="added ge test" />
-    <option name="LAST_COMMIT_MESSAGE" value="added ge test" />
+    <MESSAGE value="Added yayy" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added yayy" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1356,10 +1337,16 @@
           <option name="timeStamp" value="65" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BaseOptionSpread.java</url>
-          <line>58</line>
+          <url>file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/IronCondorSpread.java</url>
+          <line>56</line>
           <properties />
-          <option name="timeStamp" value="76" />
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/IronCondorSpread.java</url>
+          <line>41</line>
+          <properties />
+          <option name="timeStamp" value="90" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -1369,6 +1356,18 @@
     <watches-manager>
       <configuration name="JUnit">
         <watch expression="spread.getExpirationValue(BigDecimal.valueOf(500))" language="JAVA" />
+        <watch expression="putSpread.getMaxGain()" language="JAVA" />
+        <watch expression="putSpread.getMaxLoss()" language="JAVA" />
+        <watch expression="callSpread.getMaxGain()" language="JAVA" />
+        <watch expression="callSpread.getMaxLoss()" language="JAVA" />
+        <watch expression="netPremiumReceived()" language="JAVA" />
+        <watch expression="putSpread.netPremiumPaid()" language="JAVA" />
+        <watch expression="callSpread.netPremiumPaid()" language="JAVA" />
+        <watch expression="upperOption.getPremium()" language="JAVA" />
+        <watch expression="lowerOption.getPremium()" language="JAVA" />
+        <watch expression="net" language="JAVA" />
+        <watch expression="callSpread.getHighStrike()                 .subtract(callSpread.getLowStrike())                 .abs()                 .add(netPremiumReceived())                 .multiply(getMultiplier())" language="JAVA" />
+        <watch expression="getComission()" language="JAVA" />
       </configuration>
       <configuration name="Application">
         <watch expression="upperCallOption.getStrikePrice().subtract(lowerCallOption.getStrikePrice())" language="JAVA" />
@@ -1390,61 +1389,58 @@
   <component name="debuggerHistoryManager">
     <expressions id="watch">
       <expression>
-        <expression-string>spread.getExpirationValue(BigDecimal.valueOf(500))</expression-string>
+        <expression-string>getComission()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>lowerOptionTrade.getCost()</expression-string>
+        <expression-string>callSpread.getHighStrike()                 .subtract(callSpread.getLowStrike())                 .abs()                 .add(netPremiumReceived())                 .multiply(getMultiplier())</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>upperOptionTrade.getCost()</expression-string>
+        <expression-string>net</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>upperOption.getcos()</expression-string>
+        <expression-string>lowerOption.getPremium()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>lowerOption.getStrikePrice()                     .subtract(upperOption.getStrikePrice())                     .add(netPremiumPaid())</expression-string>
+        <expression-string>upperOption.getPremium()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>upperOption.getStrikePrice()                     .subtract(lowerOption.getStrikePrice())                     .subtract(netPremiumPaid())</expression-string>
+        <expression-string>netPremiumPaid().multiply(getMultiplier())</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>netPremiumPaid()</expression-string>
+        <expression-string>upperOptionTrade.getCost().add(lowerOptionTrade.getCost()).negate();</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>lowerOption.getStrikePrice()</expression-string>
+        <expression-string>callSpread.netPremiumPaid()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>upperOption.getStrikePrice()</expression-string>
+        <expression-string>putSpread.netPremiumPaid()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>spread.getMaxGain()</expression-string>
+        <expression-string>netPremiumReceived()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/data-loader/src/main/java/com/assets/data/loader/yahoo/YahooDataPeriod.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/data-loader/src/main/java/com/assets/data/loader/mysql/jOOQ-generator/library.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="211">
@@ -1520,30 +1516,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/OptionSpread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="13" column="25" lean-forward="true" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BearCallSpread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="89">
           <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/IronCondorSpread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
-          <folding>
-            <element signature="e#1857#1858#0" expanded="true" />
-            <element signature="e#1924#1925#0" expanded="true" />
-            <element signature="e#1890#1891#0" expanded="true" />
-            <element signature="e#1917#1918#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1771,37 +1747,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/VerticalCallSpread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="81" column="8" selection-start-line="81" selection-start-column="8" selection-end-line="88" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BaseOptionSpread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
-          <folding>
-            <element signature="e#2103#2104#0" expanded="true" />
-            <element signature="e#2145#2146#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/VerticalCallSpreadTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="28" column="39" lean-forward="true" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/runners/ParentRunner.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="117">
@@ -1834,27 +1779,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/VerticalPutSpread.java">
+    <entry file="file://$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/VerticalCallSpreadTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
+        <state relative-caret-position="263">
+          <caret line="45" column="1" lean-forward="true" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
           <folding>
-            <element signature="e#3479#3480#0" expanded="true" />
-            <element signature="e#3574#3575#0" expanded="true" />
-            <element signature="e#3487#3488#0" expanded="true" />
-            <element signature="e#3578#3579#0" expanded="true" />
-            <element signature="e#3621#3622#0" expanded="true" />
-            <element signature="e#3703#3704#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BaseOptionSpread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="62" column="22" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
+          <folding>
+            <element signature="e#2103#2104#0" expanded="true" />
+            <element signature="e#2145#2146#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/VerticalCallSpread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="96" column="34" selection-start-line="96" selection-start-column="34" selection-end-line="96" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/VerticallPutSpreadTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+        <state relative-caret-position="240">
+          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/VerticalPutSpread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+          <folding>
+            <element signature="e#3833#3834#0" expanded="true" />
+            <element signature="e#3915#3916#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/IronCondorSpreadTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/OptionSpread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/IronCondorSpread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
+          <folding>
+            <element signature="e#1866#1867#0" expanded="true" />
+            <element signature="e#1940#1941#0" expanded="true" />
+            <element signature="e#2367#2368#0" expanded="true" />
+            <element signature="e#2437#2438#0" expanded="true" />
+            <element signature="e#2261#2262#0" expanded="true" />
+            <element signature="e#2288#2289#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -67,7 +67,7 @@ public class VerticalPutSpread extends BaseOptionSpread {
         if (isDebit()) {
             return lowerOption.getStrikePrice()
                     .subtract(upperOption.getStrikePrice())
-                    .add(netPremiumPaid())
+                    .subtract(netPremiumPaid())
                     .multiply(getMultiplier())
                     .subtract(getComission());
         } else {
@@ -84,8 +84,8 @@ public class VerticalPutSpread extends BaseOptionSpread {
         return upperOptionTrade.isMini() ? BigDecimal.ONE : BigDecimal.valueOf(100);
     }
 
-    private BigDecimal netPremiumPaid() {
-        return upperOption.getPremium().subtract(lowerOption.getPremium());
+    BigDecimal netPremiumPaid() {
+        return lowerOption.getPremium().subtract(upperOption.getPremium());
     }
 
     @Override
@@ -95,7 +95,7 @@ public class VerticalPutSpread extends BaseOptionSpread {
         } else {
             return lowerOption.getStrikePrice()
                     .subtract(upperOption.getStrikePrice())
-                    .add(netPremiumPaid())
+                    .subtract(netPremiumPaid())
                     .multiply(getMultiplier());
         }
     }

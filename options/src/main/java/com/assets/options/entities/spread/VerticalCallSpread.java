@@ -10,10 +10,10 @@ import java.util.Arrays;
 
 public class VerticalCallSpread extends BaseOptionSpread {
 
-    private final Option lowerCallOption;
-    private final Option upperCallOption;
-    private OptionTrade lowerCallOptionTrade;
-    private OptionTrade upperCallOptionTrade;
+    private final Option lowerOption;
+    private final Option upperOption;
+    private OptionTrade lowerOptionTrade;
+    private OptionTrade upperOptionTrade;
 
     public static VerticalCallSpread basicCallSpread(double currentPrice,
                                                      double lowStrikePrice,
@@ -40,57 +40,65 @@ public class VerticalCallSpread extends BaseOptionSpread {
                               LocalDate now, LocalDate expirationDate, Double volatility, Double riskFree,
                               BigDecimal comission, String ticker, int contracts, boolean mini) {
 
-        lowerCallOption = new CallOption(ticker, currentPrice, lowStrikePrice, now, expirationDate, volatility, riskFree);
-        upperCallOption = new CallOption(ticker, currentPrice, highStrikePrice, now, expirationDate, volatility, riskFree);
-        lowerCallOptionTrade = new OptionTrade(lowerCallOption, contracts, ticker, comission, mini);
-        upperCallOptionTrade = new OptionTrade(upperCallOption, contracts * -1, ticker, comission, mini);
-        setOptionTrades(Arrays.asList(lowerCallOptionTrade, upperCallOptionTrade));
+        lowerOption = new CallOption(ticker, currentPrice, lowStrikePrice, now, expirationDate, volatility, riskFree);
+        upperOption = new CallOption(ticker, currentPrice, highStrikePrice, now, expirationDate, volatility, riskFree);
+        lowerOptionTrade = new OptionTrade(lowerOption, contracts, ticker, comission, mini);
+        upperOptionTrade = new OptionTrade(upperOption, contracts * -1, ticker, comission, mini);
+        setOptionTrades(Arrays.asList(lowerOptionTrade, upperOptionTrade));
     }
 
     public VerticalCallSpread(BigDecimal currentPrice, BigDecimal lowStrikePrice, BigDecimal highStrikePrice,
                               LocalDate now, LocalDate expirationDate, BigDecimal lowPremium, BigDecimal highPremium,
                               Double riskFree, BigDecimal comission, String ticker, int contracts, boolean mini) {
-        lowerCallOption = new CallOption(ticker, currentPrice, lowStrikePrice, lowPremium, now, expirationDate, riskFree);
-        upperCallOption = new CallOption(ticker, currentPrice, highStrikePrice, highPremium, now, expirationDate, riskFree);
-        lowerCallOptionTrade = new OptionTrade(lowerCallOption, contracts, ticker, comission, mini);
-        upperCallOptionTrade = new OptionTrade(upperCallOption, contracts * -1, ticker, comission, mini);
-        setOptionTrades(Arrays.asList(lowerCallOptionTrade, upperCallOptionTrade));
+        lowerOption = new CallOption(ticker, currentPrice, lowStrikePrice, lowPremium, now, expirationDate, riskFree);
+        upperOption = new CallOption(ticker, currentPrice, highStrikePrice, highPremium, now, expirationDate, riskFree);
+        lowerOptionTrade = new OptionTrade(lowerOption, contracts, ticker, comission, mini);
+        upperOptionTrade = new OptionTrade(upperOption, contracts * -1, ticker, comission, mini);
+        setOptionTrades(Arrays.asList(lowerOptionTrade, upperOptionTrade));
     }
 
     @Override
     public BigDecimal getMaxGain() {
         if (isDebit()) {
-            return upperCallOption.getStrikePrice().subtract(lowerCallOption.getStrikePrice())
+            return upperOption.getStrikePrice().subtract(lowerOption.getStrikePrice())
                     .subtract(netPremiumPaid())
                     .multiply(getMultiplier())
                     .subtract(getComission());
         } else {
-            return netPremiumPaid().multiply(getMultiplier()).negate();
+            return upperOptionTrade.getCost().add(lowerOptionTrade.getCost()).negate();
         }
-    }
-
-    private BigDecimal getMultiplier() {
-        return upperCallOptionTrade.isMini() ? BigDecimal.ONE : BigDecimal.valueOf(100);
-    }
-
-    private BigDecimal netPremiumPaid() {
-        return lowerCallOption.getPremium().subtract(upperCallOption.getPremium());
     }
 
     @Override
     public BigDecimal getMaxLoss() {
         if (isDebit()) {
-            return lowerCallOptionTrade.getCost().add(upperCallOptionTrade.getCost()).negate();
+            return lowerOptionTrade.getCost().add(upperOptionTrade.getCost()).negate();
         } else {
-            return upperCallOption.getStrikePrice()
-                    .subtract(lowerCallOption.getStrikePrice())
+            return upperOption.getStrikePrice()
+                    .subtract(lowerOption.getStrikePrice())
                     .subtract(netPremiumPaid())
                     .multiply(getMultiplier());
         }
     }
 
+    public BigDecimal getHighStrike() {
+        return upperOption.getStrikePrice();
+    }
+
+    public BigDecimal getLowStrike() {
+        return lowerOption.getStrikePrice();
+    }
+
+    private BigDecimal getMultiplier() {
+        return upperOptionTrade.isMini() ? BigDecimal.ONE : BigDecimal.valueOf(100);
+    }
+
+    BigDecimal netPremiumPaid() {
+        return lowerOption.getPremium().subtract(upperOption.getPremium());
+    }
+
     private boolean isDebit() {
-        return upperCallOption.getStrikePrice().compareTo(lowerCallOption.getStrikePrice()) > 0;
+        return upperOption.getStrikePrice().compareTo(lowerOption.getStrikePrice()) > 0;
     }
 
 }
