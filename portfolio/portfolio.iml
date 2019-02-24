@@ -19,6 +19,7 @@
     <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.3.2" level="project" />
     <orderEntry type="module" module-name="StatisticList" />
     <orderEntry type="module" module-name="options" />
+    <orderEntry type="library" name="Maven: com.ib:interactive-brokers-api:9.73" level="project" />
     <orderEntry type="module" module-name="data-loader" />
     <orderEntry type="library" name="Maven: org.springframework:spring-web:3.2.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: aopalliance:aopalliance:1.0" level="project" />

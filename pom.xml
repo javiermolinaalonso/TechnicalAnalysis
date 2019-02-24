@@ -15,6 +15,13 @@
                 <enabled>true</enabled>
             </snapshots>
         </repository>
+        <repository>
+            <id>com.springsource.repository.plugins.snapshot</id>
+            <url>http://repo.spring.io/plugins-release/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
     </repositories>
 
     <properties>
@@ -146,7 +153,14 @@
                 <artifactId>commons-math3</artifactId>
                 <version>3.2</version>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/com.ib/interactive-brokers-api -->
+            <dependency>
+                <groupId>com.ib</groupId>
+                <artifactId>interactive-brokers-api</artifactId>
+                <version>9.73</version>
+            </dependency>
         </dependencies>
+
     </dependencyManagement>
 
     <dependencies>
