@@ -1,8 +1,10 @@
 package com.assets.options;
 
+import com.assets.options.entities.spread.CalendarCallSpread;
 import com.assets.options.entities.spread.OptionSpread;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public class PrintUtils {
     public static final int COLUMNS = 100;
@@ -14,6 +16,10 @@ public class PrintUtils {
     }
 
     public static void print(OptionSpread spread, double strikePercent) {
+        print(spread, strikePercent, spread.getExpirationDate(), 0d);
+    }
+
+    public static void print(OptionSpread spread, double strikePercent, LocalDate when, double currentPrice) {
         final BigDecimal mean = spread.getStrikePriceAverage();
         double lowStrike = mean.doubleValue() - mean.doubleValue() * strikePercent;
         double hiStrike = mean.doubleValue() + mean.doubleValue() * strikePercent;
@@ -35,7 +41,7 @@ public class PrintUtils {
 
         int i = 0;
         for (double expectedPrice = lowStrike; expectedPrice < (hiStrike - (xresolution / 4)); expectedPrice += xresolution) {
-            final BigDecimal expirationValue = spread.getExpirationValue(BigDecimal.valueOf(expectedPrice));
+            final BigDecimal expirationValue = spread.getValueAt(BigDecimal.valueOf(expectedPrice), when);
             int j = 0;
             final boolean medium = Math.abs(spread.getStrikePriceAverage().doubleValue() - expectedPrice) <= xresolution / 2;
             for (double value = max.doubleValue(); value > (min.doubleValue() + yresolution / 2); value -= yresolution) {
@@ -71,5 +77,4 @@ public class PrintUtils {
             System.out.print(String.format("%8.2f       ", lowStrike + i * xresolution));
         }
     }
-
 }

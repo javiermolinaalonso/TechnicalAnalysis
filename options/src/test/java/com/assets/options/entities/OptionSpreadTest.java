@@ -52,13 +52,13 @@ public class OptionSpreadTest {
 
     @Test
     public void testGivenBearCallSpread() throws Exception {
-        BaseOptionSpread optionSpread = new BearCallSpread(currentValue, strike8600, strike8800, now, twoMonths, volatility, riskFree, comission, "FOO", 5, true);
+        BaseOptionSpread optionSpread = new VerticalCallSpread(currentValue, strike8600, strike8800, now, twoMonths, volatility, riskFree, comission, "FOO", 5, true);
         printSpread(optionSpread);
     }
 
     @Test
     public void testGivenCalendarCallSpread() throws Exception {
-        BaseOptionSpread optionSpread = new CalendarSpread(currentValue, strike8800, now, oneMonth, fourMonths, volatility, riskFree, comission, "FOO", 5, true);
+        BaseOptionSpread optionSpread = new CalendarCallSpread(currentValue, strike8800, now, oneMonth, fourMonths, volatility, riskFree, comission, "FOO", 5, true);
         assertEquals(optionSpread.getMaxLoss().doubleValue(), -420, 1d);
     }
 

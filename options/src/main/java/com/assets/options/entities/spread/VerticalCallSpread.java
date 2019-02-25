@@ -45,6 +45,7 @@ public class VerticalCallSpread extends BaseOptionSpread {
         lowerOptionTrade = new OptionTrade(lowerOption, contracts, ticker, comission, mini);
         upperOptionTrade = new OptionTrade(upperOption, contracts * -1, ticker, comission, mini);
         setOptionTrades(Arrays.asList(lowerOptionTrade, upperOptionTrade));
+        this.mini = mini;
     }
 
     public VerticalCallSpread(BigDecimal currentPrice, BigDecimal lowStrikePrice, BigDecimal highStrikePrice,
@@ -55,6 +56,7 @@ public class VerticalCallSpread extends BaseOptionSpread {
         lowerOptionTrade = new OptionTrade(lowerOption, contracts, ticker, comission, mini);
         upperOptionTrade = new OptionTrade(upperOption, contracts * -1, ticker, comission, mini);
         setOptionTrades(Arrays.asList(lowerOptionTrade, upperOptionTrade));
+        this.mini = mini;
     }
 
     @Override
@@ -81,16 +83,17 @@ public class VerticalCallSpread extends BaseOptionSpread {
         }
     }
 
+    @Override
+    public LocalDate getExpirationDate() {
+        return lowerOption.getExpirationDate();
+    }
+
     public BigDecimal getHighStrike() {
         return upperOption.getStrikePrice();
     }
 
     public BigDecimal getLowStrike() {
         return lowerOption.getStrikePrice();
-    }
-
-    private BigDecimal getMultiplier() {
-        return upperOptionTrade.isMini() ? BigDecimal.ONE : BigDecimal.valueOf(100);
     }
 
     BigDecimal netPremiumPaid() {

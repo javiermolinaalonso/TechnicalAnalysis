@@ -22,4 +22,6 @@ public interface OptionSpread {
     BigDecimal getExpirationValue(BigDecimal bigDecimal);
 
     BigDecimal getValueAt(BigDecimal value, LocalDate when);
+
+    LocalDate getExpirationDate();
 }

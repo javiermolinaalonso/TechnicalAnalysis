@@ -56,10 +56,14 @@ public class OptionTrade {
         return contracts < 0;
     }
 
+    private boolean isLong() {
+        return contracts > 0;
+    }
+
     public BigDecimal getExpectedValue(BigDecimal value, LocalDate when) {
         BigDecimal expirationValue;
 
-        if (!isShort()) {
+        if (isLong()) {
             expirationValue = getExpectedValue(value, when, option.getVolatility()).getPremium();
         } else {
             expirationValue = BigDecimal.ZERO;
@@ -83,7 +87,7 @@ public class OptionTrade {
     public Option getExpectedValue(BigDecimal value, LocalDate when, double volatility) {
         Option newOption;
         if (option.isCall()) {
-            newOption = new CallOption(null, value, option.getStrikePrice(), when, option.getExpirationDate(), volatility, option.getRiskFree());
+            newOption = new CallOption(ticker, value, option.getStrikePrice(), when, option.getExpirationDate(), volatility, option.getRiskFree());
         } else {
             newOption = new PutOption(value, option.getStrikePrice(), when, option.getExpirationDate(), volatility, option.getRiskFree());
         }

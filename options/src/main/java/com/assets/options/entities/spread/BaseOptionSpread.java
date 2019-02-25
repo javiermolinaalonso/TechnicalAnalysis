@@ -14,6 +14,7 @@ import java.util.List;
 public abstract class BaseOptionSpread implements OptionSpread {
 
     private OptionPortfolio options;
+    boolean mini = false;
 
     BaseOptionSpread() {
         this(new OptionPortfolio(new ArrayList<>()));
@@ -21,6 +22,10 @@ public abstract class BaseOptionSpread implements OptionSpread {
 
     private BaseOptionSpread(OptionPortfolio portfolio) {
         this.options = portfolio;
+    }
+
+    protected BigDecimal getMultiplier() {
+        return mini ? BigDecimal.ONE : BigDecimal.valueOf(100);
     }
 
     public BigDecimal getValueAt(BigDecimal value, LocalDate when) {

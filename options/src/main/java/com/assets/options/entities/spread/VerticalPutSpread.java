@@ -46,6 +46,7 @@ public class VerticalPutSpread extends BaseOptionSpread {
         lowerOption = new PutOption(currentPrice, lowStrikePrice, lowStrikePremium, now, expirationDate, riskFree);
         upperOption = new PutOption(currentPrice, highStrikePrice, highStrikePremium, now, expirationDate, riskFree);
         doSpread(comission, ticker, contracts, mini, lowerOption, upperOption);
+        this.mini = mini;
     }
 
     public VerticalPutSpread(BigDecimal currentPrice, BigDecimal lowStrikePrice, BigDecimal highStrikePrice,
@@ -54,6 +55,7 @@ public class VerticalPutSpread extends BaseOptionSpread {
         lowerOption = new PutOption(currentPrice, lowStrikePrice, now, expirationDate, volatility, riskFree);
         upperOption = new PutOption(currentPrice, highStrikePrice, now, expirationDate, volatility, riskFree);
         doSpread(comission, ticker, contracts, mini, lowerOption, upperOption);
+        this.mini = mini;
     }
 
     private void doSpread(BigDecimal comission, String ticker, int contracts, boolean mini, Option lowerOption, Option upperOption) {
@@ -80,10 +82,6 @@ public class VerticalPutSpread extends BaseOptionSpread {
         return upperOption.getStrikePrice().compareTo(lowerOption.getStrikePrice()) < 0;
     }
 
-    private BigDecimal getMultiplier() {
-        return upperOptionTrade.isMini() ? BigDecimal.ONE : BigDecimal.valueOf(100);
-    }
-
     BigDecimal netPremiumPaid() {
         return lowerOption.getPremium().subtract(upperOption.getPremium());
     }
@@ -98,5 +96,10 @@ public class VerticalPutSpread extends BaseOptionSpread {
                     .subtract(netPremiumPaid())
                     .multiply(getMultiplier());
         }
+    }
+
+    @Override
+    public LocalDate getExpirationDate() {
+        return lowerOption.getExpirationDate();
     }
 }

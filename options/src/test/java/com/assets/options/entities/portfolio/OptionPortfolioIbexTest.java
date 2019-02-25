@@ -3,7 +3,7 @@ package com.assets.options.entities.portfolio;
 import com.assets.options.entities.Option;
 import com.assets.options.entities.OptionTrade;
 import com.assets.options.entities.OptionType;
-import com.assets.options.entities.spread.BearCallSpread;
+import com.assets.options.entities.spread.VerticalCallSpread;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -46,7 +46,7 @@ public class OptionPortfolioIbexTest {
         Option shortOption = new Option("IBEX", currentPrice, shortStrike, shortBid, shortAsk, OptionType.CALL, now, nearExpiry, 0.02d);
         OptionTrade longTrade = new OptionTrade(longOption, 1, "IBEX", BigDecimal.ONE, true);
         OptionTrade shortTrade = new OptionTrade(shortOption, -1, "IBEX", BigDecimal.ONE, true);
-        BearCallSpread bearCallSpread = new BearCallSpread(currentPrice, shortStrike, longStrike, now, nearExpiry, longOption.getVolatility(), 0.02, BigDecimal.valueOf(2), "IBEX", 1, true);
+        VerticalCallSpread bearCallSpread = new VerticalCallSpread(currentPrice, shortStrike, longStrike, now, nearExpiry, longOption.getVolatility(), 0.02, BigDecimal.valueOf(2), "IBEX", 1, true);
         bearCallSpread.printSpread(8500d, 9500d, 50d);
         System.out.println("Long " + longOption.getGreeks());
         System.out.println("Short " + shortOption.getGreeks());

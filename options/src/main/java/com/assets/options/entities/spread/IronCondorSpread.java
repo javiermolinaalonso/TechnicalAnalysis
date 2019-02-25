@@ -7,7 +7,6 @@ public class IronCondorSpread extends BaseOptionSpread {
 
     private final VerticalPutSpread putSpread;
     private final VerticalCallSpread callSpread;
-    private final boolean mini;
 
     public IronCondorSpread(double currentPrice,
                             double lowLossStrike, double lowProfitStrike,
@@ -48,10 +47,11 @@ public class IronCondorSpread extends BaseOptionSpread {
                 .negate();
     }
 
-
-    private BigDecimal getMultiplier() {
-        return mini ? BigDecimal.ONE : BigDecimal.valueOf(100);
+    @Override
+    public LocalDate getExpirationDate() {
+        return putSpread.getExpirationDate();
     }
+
 
     private BigDecimal netPremiumReceived() {
         return putSpread.netPremiumPaid().add(callSpread.netPremiumPaid());
