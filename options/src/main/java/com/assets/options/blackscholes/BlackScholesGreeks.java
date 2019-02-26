@@ -1,5 +1,7 @@
 package com.assets.options.blackscholes;
 
+import net.finmath.functions.AnalyticFormulas;
+
 import static java.lang.Math.*;
 
 public class BlackScholesGreeks {
@@ -17,7 +19,7 @@ public class BlackScholesGreeks {
         double[] p = new double[6];
 
         double d1 = d1(currentValue, strike, riskFree, time, volatility);
-        double d2 = d2(currentValue, strike, riskFree, time, volatility);
+        double d2 = d2(d1, volatility, time);
 
         double sd1 = standardNormalDistribution(d1);
         double cd1 = cumulativeDistribution(d1, sd1);
@@ -80,6 +82,10 @@ public class BlackScholesGreeks {
         return d1(s, k, r, t, v) - v * sqrt(t);
     }
 
+    private static double d2(double d1, double v, double t) {
+        return d1 - Math.max(v * sqrt(t), 0.000000001);
+    }
+
     public static double cumulativeDistribution(double x) {
         return cumulativeDistribution(x, standardNormalDistribution(x));
     }
@@ -103,10 +109,8 @@ public class BlackScholesGreeks {
     }
 
     public static void main(String[] args) {
-        double[] calculate = calculate(false, 270, 300, 0.001, 0.56, 0.175);
+        double[] calculate = calculate(true, 45, 46, 0.002d, 0.0466, 0.15d);
+        System.out.println(calculate[4]/365d);
 
-        for (double v : calculate) {
-            System.out.println(v);
-        }
     }
 }

@@ -26,11 +26,10 @@ public class CalendarCallSpreadTest {
     }
 
     @Test
-    public void asfafafafa() {
-        final CalendarCallSpread spread = CalendarCallSpread.basicSpread(277, 280, 30, 60, 0.15, "SPY");
+    public void given_ko_spread() {
+        final CalendarCallSpread spread = CalendarCallSpread.basicSpread(45, 46, 17, 51, 0.15, "KO");
 
-        System.out.println(spread.getValueAt(BigDecimal.valueOf(280), LocalDate.now()));
-        System.out.println(spread.getValueAt(BigDecimal.valueOf(280), LocalDate.now().plusDays(5)));
-        System.out.println(spread.getValueAt(BigDecimal.valueOf(280), LocalDate.now().plusDays(30)));
+        System.out.println(String.format("%.2f, %.2f, %.2f", spread.getCost().doubleValue(), spread.getGreeks().getDelta(), spread.getGreeks().getTheta()));
+//        PrintUtils.print(spread, 0.2);
     }
 }

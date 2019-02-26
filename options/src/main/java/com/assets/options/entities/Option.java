@@ -34,7 +34,11 @@ public class Option {
         premium = BigDecimal.valueOf(results[0]);
         bid = premium;
         ask = premium;
-        greeks = new Greeks(results[1],results[2],results[3],results[4],results[5]);
+        double theta = Math.abs(results[4]) / 365d;
+        if (optionType == OptionType.PUT) {
+            theta = -theta;
+        }
+        greeks = new Greeks(results[1],results[2],results[3], theta, results[5]);
     }
 
     public Option(String ticker, BigDecimal currentPrice, BigDecimal strikePrice, BigDecimal bid, BigDecimal ask, OptionType optionType, LocalDate now, LocalDate expirationDate, Double riskFree) {
@@ -47,7 +51,11 @@ public class Option {
 
         double[] results = calculateVolatility(isCall(), currentPrice.doubleValue(), strikePrice.doubleValue(), riskFree, yearsToExpiry, premium.doubleValue(), 0.3d, null);
         this.volatility = results[0];
-        greeks = new Greeks(results[1],results[2],results[3],results[4],results[5]);
+        double theta = Math.abs(results[4]) / 365d;
+        if (optionType == OptionType.PUT) {
+            theta = -theta;
+        }
+        greeks = new Greeks(results[1],results[2],results[3], theta, results[5]);
     }
 
     private Option(String ticker, BigDecimal currentPrice, BigDecimal strikePrice, OptionType optionType, LocalDate now, LocalDate expirationDate, Double riskFree) {

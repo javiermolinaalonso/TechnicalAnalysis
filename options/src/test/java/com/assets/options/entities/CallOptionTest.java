@@ -1,11 +1,13 @@
 package com.assets.options.entities;
 
+import org.hamcrest.number.IsCloseTo;
 import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 public class CallOptionTest {
@@ -40,5 +42,12 @@ public class CallOptionTest {
         Option higherVolatilityOption = new CallOption(null, BigDecimal.TEN, BigDecimal.TEN, BigDecimal.valueOf(0.7), now, expirationDate, 0d);
 
         assertTrue(lowerVolatilityOption.getPremium().compareTo(higherVolatilityOption.getPremium()) < 0);
+    }
+
+    @Test
+    public void givenCallOption_expectCorrectTheta() {
+        final CallOption ko = new CallOption("KO", BigDecimal.valueOf(45), BigDecimal.valueOf(46), LocalDate.now(), LocalDate.now().plusDays(17), 0.15, 0.002);
+
+        assertThat(ko.getGreeks().getTheta(), IsCloseTo.closeTo(0.0138, 0.001d));
     }
 }
