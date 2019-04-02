@@ -12,6 +12,7 @@ public class VerticalPutSpread extends BaseOptionSpread {
 
     private final Option lowerOption;
     private final Option upperOption;
+    private final double volatility;
     private OptionTrade lowerOptionTrade;
     private OptionTrade upperOptionTrade;
 
@@ -43,19 +44,21 @@ public class VerticalPutSpread extends BaseOptionSpread {
                              BigDecimal lowStrikePremium, BigDecimal highStrikePremium,
                              LocalDate now, LocalDate expirationDate, Double riskFree,
                              BigDecimal comission, String ticker, int contracts, boolean mini) {
+        super(mini);
         lowerOption = new PutOption(currentPrice, lowStrikePrice, lowStrikePremium, now, expirationDate, riskFree);
         upperOption = new PutOption(currentPrice, highStrikePrice, highStrikePremium, now, expirationDate, riskFree);
         doSpread(comission, ticker, contracts, mini, lowerOption, upperOption);
-        this.mini = mini;
+        this.volatility = (lowerOption.getVolatility() + upperOption.getVolatility()) / 2;
     }
 
     public VerticalPutSpread(BigDecimal currentPrice, BigDecimal lowStrikePrice, BigDecimal highStrikePrice,
                              LocalDate now, LocalDate expirationDate, Double volatility, Double riskFree,
                              BigDecimal comission, String ticker, int contracts, boolean mini) {
+        super(mini);
         lowerOption = new PutOption(currentPrice, lowStrikePrice, now, expirationDate, volatility, riskFree);
         upperOption = new PutOption(currentPrice, highStrikePrice, now, expirationDate, volatility, riskFree);
         doSpread(comission, ticker, contracts, mini, lowerOption, upperOption);
-        this.mini = mini;
+        this.volatility = volatility;
     }
 
     private void doSpread(BigDecimal comission, String ticker, int contracts, boolean mini, Option lowerOption, Option upperOption) {
@@ -101,5 +104,10 @@ public class VerticalPutSpread extends BaseOptionSpread {
     @Override
     public LocalDate getExpirationDate() {
         return lowerOption.getExpirationDate();
+    }
+
+    @Override
+    public double getVolatility() {
+        return volatility;
     }
 }

@@ -67,7 +67,7 @@ public class DataLoaderCsv implements DataLoader {
             }
             String ticker = file.getName().split("_")[1].split("\\.")[0].toUpperCase();
             try {
-                data.put(ticker, loadList(ticker, file.getAbsolutePath()));
+                data.put(ticker, loadList(ticker, file));
             }catch(DataLoaderFileNotFoundException de){
                 logger.error(String.format("The file with ticker %s not found", ticker));
             }catch(DataLoaderIOException dle){
@@ -78,7 +78,7 @@ public class DataLoaderCsv implements DataLoader {
         return data;
     }
     
-    private StockList loadList(String ticker, String file) {
+    private StockList loadList(String ticker, File file) {
         StockList prices = new StockList(ticker);
         for(String[] value : readCsv(file)){
             try {
@@ -90,11 +90,11 @@ public class DataLoaderCsv implements DataLoader {
         return prices;
     }
 
-    private List<String[]> readCsv(String file) {
+    private List<String[]> readCsv(File file) {
         List<String[]> list = new ArrayList<>();
         BufferedReader br;
         try {
-            br = new BufferedReader(new FileReader(new File(file)));
+            br = new BufferedReader(new FileReader(file));
         } catch (FileNotFoundException e) {
             throw new DataLoaderFileNotFoundException();
         }
@@ -113,6 +113,9 @@ public class DataLoaderCsv implements DataLoader {
     
     @Override
     public StockList loadData(String ticker) {
+        if (data.isEmpty()) {
+            loadData();
+        }
         return data.get(ticker);
     }
 

@@ -6,18 +6,17 @@ import com.assets.options.entities.portfolio.OptionPortfolio;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public abstract class BaseOptionSpread implements OptionSpread {
 
     private OptionPortfolio options;
-    boolean mini = false;
+    private boolean mini = false;
 
-    BaseOptionSpread() {
+    BaseOptionSpread(boolean mini) {
         this(new OptionPortfolio(new ArrayList<>()));
+        this.mini = mini;
     }
 
     private BaseOptionSpread(OptionPortfolio portfolio) {
@@ -62,6 +61,11 @@ public abstract class BaseOptionSpread implements OptionSpread {
     @Override
     public BigDecimal getCost() {
         return options.getTrades().stream().map(OptionTrade::getCost).reduce(BigDecimal::add).get();
+    }
+
+    @Override
+    public BigDecimal getCost(BigDecimal currentPrice, LocalDate when, double volatility) {
+        return options.getCost(when, currentPrice, volatility);
     }
 
     @Override

@@ -37,9 +37,9 @@ public class OptionPortfolio {
     private List<OptionTrade> getOptionTrades(LocalDate when, BigDecimal currentPrice, double volatility) {
         return this.trades
                     .parallelStream()
-                    .filter(trade -> trade.getOption().getExpirationDate().isAfter(when))
+                    .filter(trade -> !trade.getOption().getExpirationDate().isBefore(when))
                     .map(trade -> new OptionTrade(
-                            trade.getExpectedValue(currentPrice, when, volatility),
+                            trade.getExpectedOption(currentPrice, when, volatility),
                             trade.getContracts(),
                             trade.getTicker(),
                             trade.getContractComission(),

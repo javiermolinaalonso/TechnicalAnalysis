@@ -3,13 +3,21 @@ package com.assets.entities;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneOffset;
 
 public class StockPrice {
 
     private final String ticker;
     private final Instant instant;
     private final BigDecimal value;
-    
+
+    public StockPrice(String ticker, LocalDate when, Number number) {
+        this(ticker,
+                when.atTime(0, 0).toInstant(ZoneOffset.UTC),
+                new BigDecimal(number.toString())
+        );
+    }
     public StockPrice(String ticker, Instant instant, BigDecimal value) {
         super();
         this.ticker = ticker;
@@ -33,5 +41,8 @@ public class StockPrice {
     public String toString(){
         return new StringBuilder().append(ticker).append("-").append(instant.toString()).append("-").append(value.setScale(2, RoundingMode.HALF_DOWN).toString()).toString();
     }
-    
+
+    public LocalDate getLocalDate() {
+        return this.instant.atOffset(ZoneOffset.UTC).toLocalDate();
+    }
 }

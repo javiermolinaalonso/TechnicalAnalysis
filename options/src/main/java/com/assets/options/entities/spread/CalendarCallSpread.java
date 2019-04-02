@@ -13,8 +13,9 @@ public class CalendarCallSpread extends BaseOptionSpread {
     private final Option closerOption;
     private final Option furtherOption;
     private final BigDecimal strikePrice;
+    private double volatility;
 
-    public static final CalendarCallSpread basicSpread(
+    public static CalendarCallSpread basicSpread(
             double currentPrice,
             double strikePrice,
             int closeDays,
@@ -39,13 +40,15 @@ public class CalendarCallSpread extends BaseOptionSpread {
     public CalendarCallSpread(BigDecimal currentPrice, BigDecimal strikePrice,
                               LocalDate now, LocalDate expirationDate, LocalDate furtherExpirationDate, Double volatility, Double riskFree,
                               BigDecimal comission, String ticker, int contracts, boolean mini) {
+        super(mini);
         this.strikePrice = strikePrice;
+        this.volatility = volatility;
         closerOption = new CallOption(ticker, currentPrice, strikePrice, now, expirationDate, volatility, riskFree);
         furtherOption = new CallOption(ticker, currentPrice, strikePrice, now, furtherExpirationDate, volatility, riskFree);
         OptionTrade closerOptionTrade = new OptionTrade(closerOption, contracts * -1, ticker, comission, mini);
         OptionTrade furtherOptionTrade = new OptionTrade(furtherOption, contracts, ticker, comission, mini);
         setOptionTrades(Arrays.asList(closerOptionTrade, furtherOptionTrade));
-        this.mini = mini;
+
     }
 
     @Override
@@ -69,6 +72,11 @@ public class CalendarCallSpread extends BaseOptionSpread {
     @Override
     public LocalDate getExpirationDate() {
         return closerOption.getExpirationDate();
+    }
+
+    @Override
+    public double getVolatility() {
+        return volatility;
     }
 
 }

@@ -12,6 +12,7 @@ public class VerticalCallSpread extends BaseOptionSpread {
 
     private final Option lowerOption;
     private final Option upperOption;
+    private final Double volatility;
     private OptionTrade lowerOptionTrade;
     private OptionTrade upperOptionTrade;
 
@@ -39,24 +40,25 @@ public class VerticalCallSpread extends BaseOptionSpread {
     public VerticalCallSpread(BigDecimal currentPrice, BigDecimal lowStrikePrice, BigDecimal highStrikePrice,
                               LocalDate now, LocalDate expirationDate, Double volatility, Double riskFree,
                               BigDecimal comission, String ticker, int contracts, boolean mini) {
-
+        super(mini);
         lowerOption = new CallOption(ticker, currentPrice, lowStrikePrice, now, expirationDate, volatility, riskFree);
         upperOption = new CallOption(ticker, currentPrice, highStrikePrice, now, expirationDate, volatility, riskFree);
         lowerOptionTrade = new OptionTrade(lowerOption, contracts, ticker, comission, mini);
         upperOptionTrade = new OptionTrade(upperOption, contracts * -1, ticker, comission, mini);
         setOptionTrades(Arrays.asList(lowerOptionTrade, upperOptionTrade));
-        this.mini = mini;
+        this.volatility = volatility;
     }
 
     public VerticalCallSpread(BigDecimal currentPrice, BigDecimal lowStrikePrice, BigDecimal highStrikePrice,
                               LocalDate now, LocalDate expirationDate, BigDecimal lowPremium, BigDecimal highPremium,
                               Double riskFree, BigDecimal comission, String ticker, int contracts, boolean mini) {
+        super(mini);
         lowerOption = new CallOption(ticker, currentPrice, lowStrikePrice, lowPremium, now, expirationDate, riskFree);
         upperOption = new CallOption(ticker, currentPrice, highStrikePrice, highPremium, now, expirationDate, riskFree);
         lowerOptionTrade = new OptionTrade(lowerOption, contracts, ticker, comission, mini);
         upperOptionTrade = new OptionTrade(upperOption, contracts * -1, ticker, comission, mini);
         setOptionTrades(Arrays.asList(lowerOptionTrade, upperOptionTrade));
-        this.mini = mini;
+        this.volatility = (lowerOption.getVolatility() + upperOption.getVolatility()) / 2;
     }
 
     @Override
@@ -86,6 +88,11 @@ public class VerticalCallSpread extends BaseOptionSpread {
     @Override
     public LocalDate getExpirationDate() {
         return lowerOption.getExpirationDate();
+    }
+
+    @Override
+    public double getVolatility() {
+        return volatility;
     }
 
     public BigDecimal getHighStrike() {

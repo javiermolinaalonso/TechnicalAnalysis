@@ -1,11 +1,9 @@
 package com.assets.options.entities.spread;
 
-import com.assets.options.PrintUtils;
 import org.hamcrest.number.IsCloseTo;
 import org.junit.Test;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.number.BigDecimalCloseTo.closeTo;
@@ -20,16 +18,10 @@ public class CalendarCallSpreadTest {
         assertThat("Max loss is correct", spread.getMaxLoss(), closeTo(BigDecimal.valueOf(-205), BigDecimal.valueOf(1)));
         assertThat("Max loss happens far from strike", spread.getMaxLoss(), closeTo(spread.getExpirationValue(BigDecimal.valueOf(200)), BigDecimal.ONE));
         assertThat("Cost is correct", spread.getCost(), closeTo(BigDecimal.valueOf(205), BigDecimal.valueOf(1)));
+
         assertThat("Delta is close to zero", spread.getGreeks().getDelta(), IsCloseTo.closeTo(0d, 0.04));
         assertThat("Gamma is close to zero", spread.getGreeks().getGamma(), IsCloseTo.closeTo(0d, 0.01));
-        assertThat("Theta is correct", spread.getGreeks().getTheta(), IsCloseTo.closeTo(8, 0.5));
+        assertThat("Theta is correct", spread.getGreeks().getTheta(), IsCloseTo.closeTo(0.021, 0.001));
     }
 
-    @Test
-    public void given_ko_spread() {
-        final CalendarCallSpread spread = CalendarCallSpread.basicSpread(45, 46, 17, 51, 0.15, "KO");
-
-        System.out.println(String.format("%.2f, %.2f, %.2f", spread.getCost().doubleValue(), spread.getGreeks().getDelta(), spread.getGreeks().getTheta()));
-//        PrintUtils.print(spread, 0.2);
-    }
 }

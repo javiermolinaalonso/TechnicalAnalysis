@@ -11,7 +11,11 @@ public class LambdaStatisticList extends AbstractStatisticList<BigDecimal> {
     public LambdaStatisticList(List<BigDecimal> origin){
         super(origin);
     }
-    
+
+    public LambdaStatisticList() {
+        super();
+    }
+
     public BigDecimal computeMean() {
         return list.stream().reduce((x, y) -> x.add(y)).get().divide(new BigDecimal(list.size()), 5, RoundingMode.HALF_DOWN);
     }

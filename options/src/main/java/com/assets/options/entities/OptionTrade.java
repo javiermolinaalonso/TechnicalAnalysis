@@ -6,7 +6,7 @@ import java.time.LocalDate;
 public class OptionTrade {
 
     private final Option option;
-    private final BigDecimal tradePrice;
+    private final BigDecimal premium;
     private final int contracts;
     private final String ticker;
     private final BigDecimal cost;
@@ -15,11 +15,11 @@ public class OptionTrade {
 
     public OptionTrade(Option option, int contracts, String ticker, BigDecimal contractComission, boolean mini) {
         this.option = option;
-        this.tradePrice = option.getPremium();
+        this.premium = option.getPremium();
         this.contracts = contracts;
         this.ticker = ticker;
         this.mini = mini;
-        this.cost = BigDecimal.valueOf(contracts).multiply(tradePrice).multiply(getAmountOfStocks())
+        this.cost = BigDecimal.valueOf(contracts).multiply(premium).multiply(getAmountOfStocks())
                 .add(contractComission.multiply(BigDecimal.valueOf(Math.abs(contracts))));
         this.contractComission = contractComission;
     }
@@ -28,16 +28,20 @@ public class OptionTrade {
         return contractComission;
     }
 
+    public BigDecimal getTradeComission() {
+        return BigDecimal.valueOf(Math.abs(getContracts())).multiply(getContractComission());
+    }
+
     public BigDecimal getCost() {
         return cost;
     }
 
-    public Option getExpectedValue() {
+    public Option getExpectedOption() {
         return option;
     }
 
-    public BigDecimal getTradePrice() {
-        return tradePrice;
+    public BigDecimal getPremium() {
+        return premium;
     }
 
     public int getContracts() {
@@ -52,39 +56,21 @@ public class OptionTrade {
         return getExpectedValue(value, option.getExpirationDate());
     }
 
-    private boolean isShort() {
-        return contracts < 0;
-    }
-
-    private boolean isLong() {
-        return contracts > 0;
-    }
-
     public BigDecimal getExpectedValue(BigDecimal value, LocalDate when) {
-        BigDecimal expirationValue;
+        final BigDecimal premiumAt = getExpectedOption(value, when, option.getVolatility()).getPremium();
 
-        if (isLong()) {
-            expirationValue = getExpectedValue(value, when, option.getVolatility()).getPremium();
-        } else {
-            expirationValue = BigDecimal.ZERO;
-            if (option.isCall()) {
-                if (value.compareTo(option.getStrikePrice()) > 0) {
-                    expirationValue = value.subtract(option.getStrikePrice());
-                }
-            } else {
-                if (value.compareTo(option.getStrikePrice()) <= 0) {
-                    expirationValue = option.getStrikePrice().subtract(value);
-                }
-            }
-        }
-        return expirationValue.multiply(getAmountOfStocks()).multiply(BigDecimal.valueOf(getContracts())).subtract(getCost());
+        return premiumAt.subtract(premium)
+                .multiply(getAmountOfStocks())
+                .multiply(BigDecimal.valueOf(getContracts()))
+                .subtract(getTradeComission());
+
     }
 
     public boolean isMini() {
         return mini;
     }
 
-    public Option getExpectedValue(BigDecimal value, LocalDate when, double volatility) {
+    public Option getExpectedOption(BigDecimal value, LocalDate when, double volatility) {
         Option newOption;
         if (option.isCall()) {
             newOption = new CallOption(ticker, value, option.getStrikePrice(), when, option.getExpirationDate(), volatility, option.getRiskFree());
@@ -100,5 +86,22 @@ public class OptionTrade {
 
     public Option getOption() {
         return option;
+    }
+
+    public Greeks getGreeks() {
+        final Greeks greeks = option.getGreeks();
+        return new Greeks(greeks.getDelta() * greekModifier(),
+                greeks.getGamma() * greekModifier(),
+                greeks.getVega() * greekModifier(),
+                greeks.getTheta() * greekModifier(),
+                greeks.getRho() * greekModifier());
+    }
+
+    private int greekModifier() {
+        if (getContracts() < 0) {
+            return -1;
+        } else {
+            return 1;
+        }
     }
 }

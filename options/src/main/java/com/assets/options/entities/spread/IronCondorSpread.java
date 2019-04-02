@@ -7,6 +7,15 @@ public class IronCondorSpread extends BaseOptionSpread {
 
     private final VerticalPutSpread putSpread;
     private final VerticalCallSpread callSpread;
+    private double volatility;
+
+    public static IronCondorSpread basicIronCondor(double currentPrice,
+                                                   double lowLossStrike, double lowProfitStrike,
+                                                   double highProfitStrike, double highStrikeLossPrice,
+                                                   int daysToExpiry, double volatility, String ticker) {
+        return new IronCondorSpread(currentPrice, lowLossStrike, lowProfitStrike, highProfitStrike, highStrikeLossPrice,
+                LocalDate.now(), LocalDate.now().plusDays(daysToExpiry), volatility, 0.01d, BigDecimal.ONE, ticker, 1, false);
+    }
 
     public IronCondorSpread(double currentPrice,
                             double lowLossStrike, double lowProfitStrike,
@@ -23,11 +32,12 @@ public class IronCondorSpread extends BaseOptionSpread {
                             BigDecimal highProfitStrike, BigDecimal highStrikeLossPrice,
                             LocalDate now, LocalDate expirationDate, Double volatility, Double riskFree,
                             BigDecimal comission, String ticker, int contracts, boolean mini) {
+        super(mini);
         putSpread = new VerticalPutSpread(currentPrice, lowLossStrike, lowProfitStrike, now, expirationDate, volatility, riskFree, comission, ticker, contracts, mini);
         callSpread = new VerticalCallSpread(currentPrice, highStrikeLossPrice, highProfitStrike, now, expirationDate, volatility, riskFree, comission, ticker, contracts, mini);
         addSpread(putSpread);
         addSpread(callSpread);
-        this.mini = mini;
+        this.volatility = volatility;
     }
 
     @Override
@@ -52,6 +62,10 @@ public class IronCondorSpread extends BaseOptionSpread {
         return putSpread.getExpirationDate();
     }
 
+    @Override
+    public double getVolatility() {
+        return volatility;
+    }
 
     private BigDecimal netPremiumReceived() {
         return putSpread.netPremiumPaid().add(callSpread.netPremiumPaid());

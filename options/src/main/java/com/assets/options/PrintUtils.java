@@ -16,10 +16,10 @@ public class PrintUtils {
     }
 
     public static void print(OptionSpread spread, double strikePercent) {
-        print(spread, strikePercent, spread.getExpirationDate(), 0d);
+        print(spread, strikePercent, spread.getExpirationDate());
     }
 
-    public static void print(OptionSpread spread, double strikePercent, LocalDate when, double currentPrice) {
+    public static void print(OptionSpread spread, double strikePercent, LocalDate when) {
         final BigDecimal mean = spread.getStrikePriceAverage();
         double lowStrike = mean.doubleValue() - mean.doubleValue() * strikePercent;
         double hiStrike = mean.doubleValue() + mean.doubleValue() * strikePercent;
@@ -37,7 +37,7 @@ public class PrintUtils {
                 max = expectedValue;
             }
         }
-        double yresolution = ((max.doubleValue() - min.doubleValue()) * 1d / ROWS);
+        double yresolution = ((max.doubleValue() - min.doubleValue()) / ROWS);
 
         int i = 0;
         for (double expectedPrice = lowStrike; expectedPrice < (hiStrike - (xresolution / 4)); expectedPrice += xresolution) {
@@ -47,7 +47,7 @@ public class PrintUtils {
             for (double value = max.doubleValue(); value > (min.doubleValue() + yresolution / 2); value -= yresolution) {
                 if (medium) matrix[i][j] = 3;
                 if (Math.abs(value) <= yresolution / 2) matrix[i][j] = 2;
-                if (Math.abs(value - expirationValue.doubleValue()) <= yresolution) matrix[i][j] = 1;
+                if (Math.abs(value - expirationValue.doubleValue()) <= yresolution / 2d) matrix[i][j] = 1;
                 j++;
             }
             i++;
