@@ -1,6 +1,5 @@
 package com.assets.options.blackscholes;
 
-import net.finmath.functions.AnalyticFormulas;
 import net.finmath.functions.NormalDistribution;
 
 import static java.lang.Math.*;
@@ -70,10 +69,6 @@ public class BlackScholesGreeks {
         double top = log(s / k) + (r + pow(v, 2) / 2) * t;
         double bottom = Math.max(v * sqrt(t), 0.000000001);
         return top / bottom;
-    }
-
-    private static double d2(double s, double k, double r, double t, double v) {
-        return d1(s, k, r, t, v) - v * sqrt(t);
     }
 
     private static double d2(double d1, double v, double t) {

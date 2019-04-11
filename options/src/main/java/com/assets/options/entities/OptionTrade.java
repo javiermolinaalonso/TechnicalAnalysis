@@ -75,7 +75,7 @@ public class OptionTrade {
         if (option.isCall()) {
             newOption = new CallOption(ticker, value, option.getStrikePrice(), when, option.getExpirationDate(), volatility, option.getRiskFree());
         } else {
-            newOption = new PutOption(value, option.getStrikePrice(), when, option.getExpirationDate(), volatility, option.getRiskFree());
+            newOption = new PutOption(null, value, option.getStrikePrice(), when, option.getExpirationDate(), volatility, option.getRiskFree());
         }
         return newOption;
     }

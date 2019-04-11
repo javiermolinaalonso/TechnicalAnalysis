@@ -37,7 +37,7 @@ public class OptionTradeTest {
     @Test
     public void testGivenSameOptionsDifferentEndDateExpectCorrectPrice() throws Exception {
         BigDecimal currentPrice = BigDecimal.valueOf(10);
-        Option firstOption = new PutOption(currentPrice, BigDecimal.valueOf(11), firstTrade, expirationDate, volatility, 0d);
+        Option firstOption = new PutOption(null, currentPrice, BigDecimal.valueOf(11), firstTrade, expirationDate, volatility, 0d);
         OptionTrade foo = new OptionTrade(firstOption, 10, "FOO", BigDecimal.ZERO, false);
 
         LocalDate date = LocalDate.of(firstTrade.getYear(), firstTrade.getMonth(), firstTrade.getDayOfMonth());
@@ -84,7 +84,7 @@ public class OptionTradeTest {
 
     @Test
     public void testGivenLongPutExpectExpirationValue() throws Exception {
-        Option option = new PutOption(currentPrice, BigDecimal.valueOf(STRIKE_PRICE), putPrice, firstTrade, expirationDate, 0d);
+        Option option = new PutOption(null, currentPrice, BigDecimal.valueOf(STRIKE_PRICE), putPrice, firstTrade, expirationDate, 0d);
         OptionTrade optionTrade = new OptionTrade(option, 7, "FOO", BigDecimal.valueOf(2), false);
 
         assertEquals(BigDecimal.valueOf(546).doubleValue(), optionTrade.getExpirationValue(BigDecimal.valueOf(MIN)).doubleValue(), 0.001d);
@@ -94,7 +94,7 @@ public class OptionTradeTest {
 
     @Test
     public void testShortPutExpectExpirationValue() throws Exception {
-        Option option = new PutOption(currentPrice, BigDecimal.valueOf(STRIKE_PRICE), putPrice, firstTrade, expirationDate, 0d);
+        Option option = new PutOption(null, currentPrice, BigDecimal.valueOf(STRIKE_PRICE), putPrice, firstTrade, expirationDate, 0d);
         OptionTrade optionTrade = new OptionTrade(option, -3, "FOO", BigDecimal.valueOf(2), false);
 
         assertEquals(BigDecimal.valueOf(-246).doubleValue(), optionTrade.getExpirationValue(BigDecimal.valueOf(MIN)).doubleValue(), 0.001d);
@@ -104,7 +104,7 @@ public class OptionTradeTest {
 
     @Test
     public void givenShortPut_whenGetGreeks_expectCorrectSign() {
-        Option option = new PutOption(currentPrice, BigDecimal.valueOf(STRIKE_PRICE), putPrice, firstTrade, expirationDate, 0d);
+        Option option = new PutOption(null, currentPrice, BigDecimal.valueOf(STRIKE_PRICE), putPrice, firstTrade, expirationDate, 0d);
         OptionTrade optionTrade = new OptionTrade(option, -1, "FOO", BigDecimal.valueOf(2), false);
 
         final Greeks greeks = optionTrade.getGreeks();
@@ -116,7 +116,7 @@ public class OptionTradeTest {
 
     @Test
     public void givenLongPut_whenGetGreeks_expectCorrectSign() {
-        Option option = new PutOption(currentPrice, BigDecimal.valueOf(STRIKE_PRICE), putPrice, firstTrade, expirationDate, 0d);
+        Option option = new PutOption(null, currentPrice, BigDecimal.valueOf(STRIKE_PRICE), putPrice, firstTrade, expirationDate, 0d);
         OptionTrade optionTrade = new OptionTrade(option, 1, "FOO", BigDecimal.valueOf(2), false);
 
         final Greeks greeks = optionTrade.getGreeks();

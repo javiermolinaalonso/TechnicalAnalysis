@@ -28,7 +28,6 @@ public interface OptionSpread {
 
     LocalDate getExpirationDate();
 
-//    Pair<BigDecimal, BigDecimal> getThresholds();
-
     double getVolatility();
+
 }

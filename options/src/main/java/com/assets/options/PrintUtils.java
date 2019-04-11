@@ -76,5 +76,6 @@ public class PrintUtils {
         for (i = 0; i < COLUMNS; i+=15) {
             System.out.print(String.format("%8.2f       ", lowStrike + i * xresolution));
         }
+        System.out.println();
     }
 }

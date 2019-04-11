@@ -9,7 +9,10 @@ import java.time.temporal.ChronoUnit;
 
 public class Option {
 
-    private static final Double IMPLIED_VOLATILITY_ERROR = 0.01d;
+    private static final Double IMPLIED_VOLATILITY_ERROR = 0.0001d;
+    private static final double MAX_IV = 1d;
+    private static final double MIN_IV = 0.01d;
+    private static final int MAX_IV_STEPS = 25;
 
     protected final String ticker;
     protected final OptionType optionType;
@@ -45,7 +48,7 @@ public class Option {
         this.bid = bid;
         this.ask = ask;
 
-        double[] results = calculateVolatility(isCall(), currentPrice.doubleValue(), strikePrice.doubleValue(), riskFree, yearsToExpiry, premium.doubleValue(), 0.3d, null);
+        double[] results = calculateVolatility(isCall(), currentPrice.doubleValue(), strikePrice.doubleValue(), riskFree, yearsToExpiry, premium.doubleValue(), MAX_IV, MAX_IV, MIN_IV, MAX_IV_STEPS);
         this.volatility = results[0];
         greeks = new Greeks(results[1],results[2],results[3], results[4] / 365d, results[5]);
     }
@@ -60,25 +63,24 @@ public class Option {
         this.expirationDate = expirationDate;
     }
 
-    private double[] calculateVolatility(boolean call, double currentPrice, double strikePrice, Double riskFree, double yearsToExpiry, double premium, double impliedVolatility, Boolean up) {
+    private double[] calculateVolatility(boolean call, double currentPrice, double strikePrice, Double riskFree, double yearsToExpiry, double premium, double impliedVolatility, double maxIV, double minIV, int maxSteps) {
         double[] calculate = BlackScholesGreeks.calculate(call, currentPrice, strikePrice, riskFree, yearsToExpiry, impliedVolatility);
         double calculatedPremium = calculate[0];
-        double[] values = {impliedVolatility, calculate[1], calculate[2], calculate[3], calculate[4], calculate[5]};
-        if (calculatedPremium == 0d || Math.abs(calculatedPremium - premium) < IMPLIED_VOLATILITY_ERROR) {
-            return values;
-        } else if (impliedVolatility > 0.7 || impliedVolatility <= 0.01) {
-            return values;
-        } else if (calculatedPremium > premium) {
-            if (up != null && up) {
-                return values;
-            }
-            return calculateVolatility(call, currentPrice, strikePrice, riskFree, yearsToExpiry, premium, impliedVolatility - 0.01d, false);
+        if (calculatedPremium > premium) {
+            maxIV = impliedVolatility;
         } else {
-            if (up != null && !up) {
-                return values;
-            }
-            return calculateVolatility(call, currentPrice, strikePrice, riskFree, yearsToExpiry, premium, impliedVolatility + 0.01d, true);
+            minIV = impliedVolatility;
         }
+        impliedVolatility = (maxIV + minIV) / 2;
+        if (maxSteps == 0 || isPremiumErrorAcceptable(premium, calculatedPremium)) {
+            return new double[]{impliedVolatility, calculate[1], calculate[2], calculate[3], calculate[4], calculate[5]};
+        } else {
+            return calculateVolatility(call, currentPrice, strikePrice, riskFree, yearsToExpiry, premium, impliedVolatility, maxIV, minIV, maxSteps-1);
+        }
+    }
+
+    private boolean isPremiumErrorAcceptable(double premium, double calculatedPremium) {
+        return calculatedPremium == 0d || Math.abs(calculatedPremium - premium) < IMPLIED_VOLATILITY_ERROR;
     }
 
     private int convertDays(LocalDate expiration, LocalDate now) {

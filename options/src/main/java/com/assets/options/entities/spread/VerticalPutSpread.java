@@ -26,7 +26,9 @@ public class VerticalPutSpread extends BaseOptionSpread {
         return new VerticalPutSpread(
                 BigDecimal.valueOf(currentPrice),
                 BigDecimal.valueOf(lowStrikePrice),
+                volatility,
                 BigDecimal.valueOf(highStrikePrice),
+                volatility,
                 LocalDate.now(),
                 LocalDate.now().plusDays(daysToExpiry),
                 volatility,
@@ -45,18 +47,19 @@ public class VerticalPutSpread extends BaseOptionSpread {
                              LocalDate now, LocalDate expirationDate, Double riskFree,
                              BigDecimal comission, String ticker, int contracts, boolean mini) {
         super(mini);
-        lowerOption = new PutOption(currentPrice, lowStrikePrice, lowStrikePremium, now, expirationDate, riskFree);
-        upperOption = new PutOption(currentPrice, highStrikePrice, highStrikePremium, now, expirationDate, riskFree);
+        lowerOption = new PutOption(null, currentPrice, lowStrikePrice, lowStrikePremium, now, expirationDate, riskFree);
+        upperOption = new PutOption(null, currentPrice, highStrikePrice, highStrikePremium, now, expirationDate, riskFree);
         doSpread(comission, ticker, contracts, mini, lowerOption, upperOption);
         this.volatility = (lowerOption.getVolatility() + upperOption.getVolatility()) / 2;
     }
 
-    public VerticalPutSpread(BigDecimal currentPrice, BigDecimal lowStrikePrice, BigDecimal highStrikePrice,
+    public VerticalPutSpread(BigDecimal currentPrice, BigDecimal lowStrikePrice, double lowStrikeIV,
+                             BigDecimal highStrikePrice, double highStrikeIV,
                              LocalDate now, LocalDate expirationDate, Double volatility, Double riskFree,
                              BigDecimal comission, String ticker, int contracts, boolean mini) {
         super(mini);
-        lowerOption = new PutOption(currentPrice, lowStrikePrice, now, expirationDate, volatility, riskFree);
-        upperOption = new PutOption(currentPrice, highStrikePrice, now, expirationDate, volatility, riskFree);
+        lowerOption = new PutOption(null, currentPrice, lowStrikePrice, now, expirationDate, lowStrikeIV, riskFree);
+        upperOption = new PutOption(null, currentPrice, highStrikePrice, now, expirationDate, highStrikeIV, riskFree);
         doSpread(comission, ticker, contracts, mini, lowerOption, upperOption);
         this.volatility = volatility;
     }
@@ -109,5 +112,21 @@ public class VerticalPutSpread extends BaseOptionSpread {
     @Override
     public double getVolatility() {
         return volatility;
+    }
+
+    public BigDecimal getLowerStrike () {
+        return lowerOption.getStrikePrice();
+    }
+
+    public BigDecimal getUpperStrike () {
+        return upperOption.getStrikePrice();
+    }
+
+    public BigDecimal getLowerPremium() {
+        return lowerOption.getPremium();
+    }
+
+    public BigDecimal getUpperPremium() {
+        return upperOption.getPremium();
     }
 }
