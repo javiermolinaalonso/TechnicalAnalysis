@@ -10,6 +10,7 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static net.finmath.functions.NormalDistribution.cumulativeDistribution;
@@ -69,6 +70,9 @@ public class SpreadAnalyzer {
 
 
         final BigDecimal tae = tae(ponderatedValue, maxExpectedLoss, daysToExpiry);
+        if (averageLoss.compareTo(BigDecimal.ZERO) == 0) {
+            return new SpreadAnalyzerResult(BigDecimal.ONE, null, null, null, null, Collections.emptyList());
+        }
         return new SpreadAnalyzerResult(winProbability, averageWin.divide(averageLoss, 4, RoundingMode.HALF_UP), tae, averageWin, averageLoss, cutPoints);
     }
 

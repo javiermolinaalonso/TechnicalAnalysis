@@ -69,7 +69,7 @@ public class OptionsHistorical {
             long passedDays = ChronoUnit.DAYS.between(startingDate, stockPrice.getLocalDate());
 
             BigDecimal expectedTae = currentSpreadValue.divide(spreadWithResults.getValue().getMaxLoss().abs(), 4, RoundingMode.HALF_UP).multiply(BigDecimal.valueOf(365)).divide(BigDecimal.valueOf(passedDays), 4, RoundingMode.HALF_UP);
-            if (expectedTae.compareTo(spreadWithResults.getKey().getExpectedTae()) > 0 && currentSpreadValue.compareTo(BigDecimal.valueOf(MIN_BENEFIT)) > 0) {
+            if (expectedTae.compareTo(spreadWithResults.getKey().getExpectedTae().get()) > 0 && currentSpreadValue.compareTo(BigDecimal.valueOf(MIN_BENEFIT)) > 0) {
                 return printAndReturn(j, spread, stockPrice, prices.get(i).getLocalDate());
             }
             j++;
@@ -118,8 +118,8 @@ public class OptionsHistorical {
                             if (spread.isValid()) {
                                 final SpreadAnalyzerResult analyzerResult = spreadAnalyzer.analyze(spread, BigDecimal.valueOf(currentPrice), now);
 //                                System.out.println(analyzerResult);
-                                if (analyzerResult.getExpectedTae().compareTo(BigDecimal.valueOf(0)) > 0) {
-                                    if (pair == null || analyzerResult.getExpectedTae().compareTo(pair.getKey().getExpectedTae()) > 0) {
+                                if (analyzerResult.getExpectedTae().get().compareTo(BigDecimal.valueOf(0)) > 0) {
+                                    if (pair == null || analyzerResult.getExpectedTae().get().compareTo(pair.getKey().getExpectedTae().get()) > 0) {
                                         pair = new Pair<>(analyzerResult, spread);
                                     }
                                 }

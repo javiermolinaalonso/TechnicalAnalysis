@@ -1,30 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8e42815d-2456-460e-847d-5e76ba9d8ceb" name="Default" comment="fuuuu">
-      <change afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/analyzers/SpreadAnalyzerResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/options/src/main/resources/dailyprices_SPX_2019.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/options/src/main/resources/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/analyzers/SpreadAnalyzerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/blackscholes/IVolatilityTest.java" afterDir="false" />
+    <list default="true" id="8e42815d-2456-460e-847d-5e76ba9d8ceb" name="Default" comment="Improved volatility calculation&#10;Added spread analyzer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/OptionsHistorical.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/OptionsHistorical.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/OptionsPrinter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/PrintUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/PrintUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/analyzers/SpreadAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/analyzers/SpreadAnalyzer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/blackscholes/BlackScholesGreeks.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/blackscholes/BlackScholesGreeks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/CallOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/CallOption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/Option.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/Option.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/OptionTrade.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/OptionTrade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/PutOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/PutOption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/CalendarCallSpread.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/CalendarCallSpread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/IronCondorSpread.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/IronCondorSpread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/OptionSpread.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/OptionSpread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/VerticalCallSpread.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/VerticalCallSpread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/VerticalPutSpread.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/VerticalPutSpread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/impl/OptionsCalculatorCandlestick.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/impl/OptionsCalculatorCandlestick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/OptionTradeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/OptionTradeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/IronCondorSpreadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/IronCondorSpreadTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/analyzers/SpreadAnalyzerResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/analyzers/SpreadAnalyzerResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/test/java/com/assets/options/analyzers/SpreadAnalyzerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/analyzers/SpreadAnalyzerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/CallOptionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/CallOptionTest.java" afterDir="false" />
     </list>
     <ignored path="techAnalysis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,22 +36,24 @@
     <session id="1654838381">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="15" />
-          <entry key="project.open.time.1" value="9" />
+          <entry key="project.closed" value="17" />
+          <entry key="project.open.time.1" value="10" />
+          <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.2" value="2" />
+          <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.3" value="3" />
           <entry key="project.open.time.49" value="1" />
           <entry key="project.open.time.50" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="17" />
+          <entry key="project.opened" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="1" />
           <entry key="CSV" value="4" />
-          <entry key="JAVA" value="26744" />
-          <entry key="PLAIN_TEXT" value="156" />
+          <entry key="JAVA" value="27814" />
+          <entry key="PLAIN_TEXT" value="209" />
           <entry key="Scratch" value="58" />
           <entry key="XML" value="120" />
         </counts>
@@ -77,7 +62,7 @@
         <counts>
           <entry key="CLASS" value="25" />
           <entry key="CSV" value="6" />
-          <entry key="JAVA" value="315" />
+          <entry key="JAVA" value="318" />
           <entry key="Properties" value="1" />
           <entry key="Scratch" value="7" />
           <entry key="UML" value="2" />
@@ -97,11 +82,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/analyzers/SpreadAnalyzer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+            <state relative-caret-position="-490">
+              <caret line="41" selection-start-line="41" selection-end-line="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -112,20 +97,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/options/src/test/java/com/assets/options/analyzers/SpreadAnalyzerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+            <state relative-caret-position="150">
+              <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/options/src/test/java/com/assets/options/blackscholes/IVolatilityTest.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/CallOptionTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="120">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
@@ -134,7 +116,7 @@
         <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/PutOption.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
-              <caret line="20" column="11" lean-forward="true" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+              <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -143,7 +125,7 @@
         <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/CallOption.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="16" selection-end-column="5" />
+              <caret line="13" selection-start-line="13" selection-end-line="16" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -151,32 +133,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/Option.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
+            <state relative-caret-position="555">
               <caret line="42" column="11" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
-              <folding>
-                <element signature="e#5296#5297#0" expanded="true" />
-                <element signature="e#5353#5354#0" expanded="true" />
-                <element signature="e#5386#5387#0" expanded="true" />
-                <element signature="e#5415#5416#0" expanded="true" />
-                <element signature="e#5458#5459#0" expanded="true" />
-                <element signature="e#5493#5494#0" expanded="true" />
-                <element signature="e#5535#5536#0" expanded="true" />
-                <element signature="e#5569#5570#0" expanded="true" />
-                <element signature="e#5610#5611#0" expanded="true" />
-                <element signature="e#5644#5645#0" expanded="true" />
-                <element signature="e#5688#5689#0" expanded="true" />
-                <element signature="e#5725#5726#0" expanded="true" />
-                <element signature="e#5764#5765#0" expanded="true" />
-                <element signature="e#5836#5837#0" expanded="true" />
-                <element signature="e#5873#5874#0" expanded="true" />
-                <element signature="e#5906#5907#0" expanded="true" />
-                <element signature="e#5941#5942#0" expanded="true" />
-                <element signature="e#5972#5973#0" expanded="true" />
-                <element signature="e#6010#6011#0" expanded="true" />
-                <element signature="e#6040#6041#0" expanded="true" />
-                <element signature="e#6073#6074#0" expanded="true" />
-                <element signature="e#6102#6103#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -269,7 +227,6 @@
         <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/blackscholes/BlackScholesGreeksTest.java" />
         <option value="$PROJECT_DIR$/options/pom.xml" />
         <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/OptionTrade.java" />
-        <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/CallOptionTest.java" />
         <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/OptionTradeTest.java" />
         <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/CalendarCallSpreadTest.java" />
         <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/VerticalCallSpreadTest.java" />
@@ -291,22 +248,23 @@
         <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/OptionsPrinter.java" />
         <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/VerticalPutSpread.java" />
         <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/VerticalCallSpread.java" />
-        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/analyzers/SpreadAnalyzerResult.java" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_183.txt" />
-        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/analyzers/SpreadAnalyzer.java" />
         <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/IronCondorSpreadTest.java" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_184.txt" />
         <option value="$PROJECT_DIR$/options/src/main/resources/dailyprices_SPX_2019.csv" />
-        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/OptionsHistorical.java" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.csv" />
         <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/IronCondorSpread.java" />
         <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/CalendarCallSpread.java" />
-        <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/analyzers/SpreadAnalyzerTest.java" />
         <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/CallOption.java" />
         <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/blackscholes/BlackScholesGreeks.java" />
         <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/Option.java" />
         <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/PutOption.java" />
         <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/blackscholes/IVolatilityTest.java" />
+        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/analyzers/SpreadAnalyzer.java" />
+        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/analyzers/SpreadAnalyzerResult.java" />
+        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/OptionsHistorical.java" />
+        <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/CallOptionTest.java" />
+        <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/analyzers/SpreadAnalyzerTest.java" />
       </list>
     </option>
   </component>
@@ -532,7 +490,7 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554974916900" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555444076462" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
@@ -603,7 +561,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.IVolatilityTest.volatilityIsProperlyCalculated_whenGivenOptionPriceDuo">
+  <component name="RunManager" selected="JUnit.SpreadAnalyzerTest.name">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -855,20 +813,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OptionsHistorical" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.assets.options.OptionsHistorical" />
-      <module name="options" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.assets.options.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -922,17 +866,17 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method v="2" />
     </configuration>
-    <configuration name="IVolatilityTest.foo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CallOptionTest.name" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="options" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.assets.options.blackscholes.*" />
+          <option name="PATTERN" value="com.assets.options.entities.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.assets.options.blackscholes" />
-      <option name="MAIN_CLASS_NAME" value="com.assets.options.blackscholes.IVolatilityTest" />
-      <option name="METHOD_NAME" value="foo" />
+      <option name="PACKAGE_NAME" value="com.assets.options.entities" />
+      <option name="MAIN_CLASS_NAME" value="com.assets.options.entities.CallOptionTest" />
+      <option name="METHOD_NAME" value="name" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
@@ -956,17 +900,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IronCondorSpreadTest.weirdScenarios" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SpreadAnalyzerTest.name" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="options" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.assets.options.entities.spread.*" />
+          <option name="PATTERN" value="com.assets.options.analyzers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.assets.options.entities.spread" />
-      <option name="MAIN_CLASS_NAME" value="com.assets.options.entities.spread.IronCondorSpreadTest" />
-      <option name="METHOD_NAME" value="weirdScenarios" />
+      <option name="PACKAGE_NAME" value="com.assets.options.analyzers" />
+      <option name="MAIN_CLASS_NAME" value="com.assets.options.analyzers.SpreadAnalyzerTest" />
+      <option name="METHOD_NAME" value="name" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
@@ -984,6 +928,23 @@
       <option name="PACKAGE_NAME" value="com.assets.options.analyzers" />
       <option name="MAIN_CLASS_NAME" value="com.assets.options.analyzers.SpreadAnalyzerTest" />
       <option name="METHOD_NAME" value="testCalendar" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpreadAnalyzerTest.testCalendarWow" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="options" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.assets.options.analyzers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.assets.options.analyzers" />
+      <option name="MAIN_CLASS_NAME" value="com.assets.options.analyzers.SpreadAnalyzerTest" />
+      <option name="METHOD_NAME" value="testCalendarWow" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
@@ -1023,19 +984,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.OptionsHistorical" />
-      <item itemvalue="JUnit.IronCondorSpreadTest.weirdScenarios" />
       <item itemvalue="JUnit.SpreadAnalyzerTest.testCalendar" />
-      <item itemvalue="JUnit.IVolatilityTest.foo" />
       <item itemvalue="JUnit.IVolatilityTest.volatilityIsProperlyCalculated_whenGivenOptionPriceDuo" />
+      <item itemvalue="JUnit.SpreadAnalyzerTest.testCalendarWow" />
+      <item itemvalue="JUnit.CallOptionTest.name" />
+      <item itemvalue="JUnit.SpreadAnalyzerTest.name" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.IVolatilityTest.volatilityIsProperlyCalculated_whenGivenOptionPriceDuo" />
-        <item itemvalue="JUnit.IVolatilityTest.foo" />
+        <item itemvalue="JUnit.SpreadAnalyzerTest.name" />
+        <item itemvalue="JUnit.CallOptionTest.name" />
+        <item itemvalue="JUnit.SpreadAnalyzerTest.testCalendarWow" />
         <item itemvalue="JUnit.SpreadAnalyzerTest.testCalendar" />
-        <item itemvalue="Application.OptionsHistorical" />
-        <item itemvalue="JUnit.IronCondorSpreadTest.weirdScenarios" />
+        <item itemvalue="JUnit.IVolatilityTest.volatilityIsProperlyCalculated_whenGivenOptionPriceDuo" />
       </list>
     </recent_temporary>
   </component>
@@ -1115,7 +1076,10 @@
       <workItem from="1554306923173" duration="26894000" />
       <workItem from="1554713356571" duration="136000" />
       <workItem from="1554717325824" duration="62000" />
-      <workItem from="1554884583247" duration="8960000" />
+      <workItem from="1554884583247" duration="9163000" />
+      <workItem from="1555055824531" duration="2680000" />
+      <workItem from="1555409580015" duration="526000" />
+      <workItem from="1555440644154" duration="800000" />
     </task>
     <task id="LOCAL-00001" summary="Added get and options interface">
       <created>1453363092145</created>
@@ -1320,49 +1284,55 @@
       <option name="project" value="LOCAL" />
       <updated>1554189144188</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Improved volatility calculation&#10;Added spread analyzer">
+      <created>1554975326273</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1554975326273</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="IVolatilityTest_foo - 2019.04.11 at 11h 13m 05s.xml">
-      <configuration name="IVolatilityTest.foo" configurationId="JUnit" />
+    <history-entry file="SpreadAnalyzerTest_testCalendarWow - 2019.04.12 at 10h 54m 21s.xml">
+      <configuration name="SpreadAnalyzerTest.testCalendarWow" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IVolatilityTest_foo - 2019.04.11 at 11h 15m 52s.xml">
-      <configuration name="IVolatilityTest.foo" configurationId="JUnit" />
+    <history-entry file="SpreadAnalyzerTest_testCalendarWow - 2019.04.12 at 11h 00m 10s.xml">
+      <configuration name="SpreadAnalyzerTest.testCalendarWow" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IVolatilityTest_foo - 2019.04.11 at 11h 16m 09s.xml">
-      <configuration name="IVolatilityTest.foo" configurationId="JUnit" />
+    <history-entry file="SpreadAnalyzerTest_testCalendarWow - 2019.04.12 at 15h 42m 40s.xml">
+      <configuration name="SpreadAnalyzerTest.testCalendarWow" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IVolatilityTest_foo - 2019.04.11 at 11h 19m 44s.xml">
-      <configuration name="IVolatilityTest.foo" configurationId="JUnit" />
+    <history-entry file="SpreadAnalyzerTest_testCalendarWow - 2019.04.12 at 15h 42m 51s.xml">
+      <configuration name="SpreadAnalyzerTest.testCalendarWow" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IVolatilityTest_foo - 2019.04.11 at 11h 20m 18s.xml">
-      <configuration name="IVolatilityTest.foo" configurationId="JUnit" />
+    <history-entry file="CallOptionTest_name - 2019.04.16 at 12h 15m 05s.xml">
+      <configuration name="CallOptionTest.name" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IVolatilityTest_foo - 2019.04.11 at 11h 20m 27s.xml">
-      <configuration name="IVolatilityTest.foo" configurationId="JUnit" />
+    <history-entry file="CallOptionTest_name - 2019.04.16 at 12h 15m 30s.xml">
+      <configuration name="CallOptionTest.name" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IVolatilityTest_foo - 2019.04.11 at 11h 20m 40s.xml">
-      <configuration name="IVolatilityTest.foo" configurationId="JUnit" />
+    <history-entry file="CallOptionTest_name - 2019.04.16 at 12h 16m 24s.xml">
+      <configuration name="CallOptionTest.name" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IVolatilityTest_foo - 2019.04.11 at 11h 21m 04s.xml">
-      <configuration name="IVolatilityTest.foo" configurationId="JUnit" />
+    <history-entry file="CallOptionTest_name - 2019.04.16 at 12h 17m 50s.xml">
+      <configuration name="CallOptionTest.name" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IVolatilityTest_foo - 2019.04.11 at 11h 22m 54s.xml">
-      <configuration name="IVolatilityTest.foo" configurationId="JUnit" />
+    <history-entry file="CallOptionTest_name - 2019.04.16 at 12h 18m 49s.xml">
+      <configuration name="CallOptionTest.name" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="IVolatilityTest_volatilityIsProperlyCalculated_whenGivenOptionPriceDuo - 2019.04.11 at 11h 28m 16s.xml">
-      <configuration name="IVolatilityTest.volatilityIsProperlyCalculated_whenGivenOptionPriceDuo" configurationId="JUnit" />
+    <history-entry file="SpreadAnalyzerTest_name - 2019.04.16 at 12h 18m 52s.xml">
+      <configuration name="SpreadAnalyzerTest.name" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="220228000" />
+    <option name="totallyTimeSpent" value="224437000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18745036" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10729614" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1372,8 +1342,8 @@
       <window_info id="Nl-Palette" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.31445783" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4167883" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.43211678" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4167883" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4313253" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -1477,7 +1447,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added get and options interface" />
     <MESSAGE value="Added volatility strategy" />
     <MESSAGE value="Paralelized and csv adapt" />
     <MESSAGE value="Added resources&#10;Added more detal on each operation" />
@@ -1502,7 +1471,8 @@
     <MESSAGE value="Added calendar spread" />
     <MESSAGE value="finally theta is correct" />
     <MESSAGE value="fuuuu" />
-    <option name="LAST_COMMIT_MESSAGE" value="fuuuu" />
+    <MESSAGE value="Improved volatility calculation&#10;Added spread analyzer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved volatility calculation&#10;Added spread analyzer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1555,6 +1525,18 @@
           <properties />
           <option name="timeStamp" value="213" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/options/src/main/java/com/assets/options/analyzers/SpreadAnalyzer.java</url>
+          <line>75</line>
+          <properties />
+          <option name="timeStamp" value="214" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/options/src/main/java/com/assets/options/analyzers/SpreadAnalyzer.java</url>
+          <line>41</line>
+          <properties />
+          <option name="timeStamp" value="215" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -1562,9 +1544,7 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
-        <watch expression="calculatedPremium" language="JAVA" />
-        <watch expression="premium" language="JAVA" />
-        <watch expression="new Double(maxIV)" language="JAVA" />
+        <watch expression="calculateProbability(new BigDecimal(&quot;143.8&quot;), 0.1790, 66, new BigDecimal(&quot;155&quot;), new BigDecimal(&quot;160&quot;))" language="JAVA" />
       </configuration>
       <configuration name="Application">
         <watch expression="statisticList.getStdDev()" language="JAVA" />
@@ -1585,66 +1565,58 @@
   <component name="debuggerHistoryManager">
     <expressions id="watch">
       <expression>
-        <expression-string>new Double(maxIV)</expression-string>
+        <expression-string>calculateProbability(new BigDecimal(&quot;143.8&quot;), 0.1790, 66, new BigDecimal(&quot;155&quot;), new BigDecimal(&quot;160&quot;))</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>maxIV</expression-string>
+        <expression-string>calculateProbability(new BigDecimal(&quot;143.8&quot;), 0.1790, 66, new BigDecimal(&quot;135&quot;), new BigDecimal(&quot;140&quot;))</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>premium</expression-string>
+        <expression-string>calculateProbability(new BigDecimal(&quot;143.8&quot;), 0.1790, 66, new BigDecimal(&quot;140&quot;), new BigDecimal(&quot;145&quot;))</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>premiui</expression-string>
+        <expression-string>calculateProbability(new BigDecimal(&quot;143.73&quot;), 0.1790, 66, new BigDecimal(&quot;140&quot;), new BigDecimal(&quot;145&quot;))</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>calculatedPremium</expression-string>
+        <expression-string>calculateProbability(new BigDecimal(&quot;143.73&quot;), 0.1790, 59, new BigDecimal(&quot;140&quot;), new BigDecimal(&quot;145&quot;))</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>statisticList.getStdDev()</expression-string>
+        <expression-string>calculateProbability(new BigDecimal(&quot;143.73&quot;), 0.1790, 62, new BigDecimal(&quot;140&quot;), new BigDecimal(&quot;145&quot;))</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>ChronoUnit.DAYS.between(startingDate, stockPrice.getLocalDate())</expression-string>
-        <language-id>JAVA</language-id>
-        <custom-info>java.time.temporal.ChronoUnit</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>stockPrice.getLocalDate()</expression-string>
+        <expression-string>calculateProbability(new BigDecimal(&quot;143.77&quot;), 0.1790, 62, new BigDecimal(&quot;140&quot;), new BigDecimal(&quot;145&quot;))</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>startingDate</expression-string>
+        <expression-string>calculateProbability(new BigDecimal(&quot;143.22&quot;), 0.1790, 62, new BigDecimal(&quot;140&quot;), new BigDecimal(&quot;145&quot;))</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>passedDays</expression-string>
+        <expression-string>calculateProbability(new BigDecimal(&quot;145.0&quot;), 0.1790, 62, new BigDecimal(&quot;140&quot;), new BigDecimal(&quot;145&quot;))</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>calculateProbability(new BigDecimal(&quot;145.0&quot;), 0.1790, 62, new BigDecimal(&quot;140&quot;), new BigDecimal(&quot;150&quot;))</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/commons/commons-math3/3.2/commons-math3-3.2-sources.jar!/org/apache/commons/math3/distribution/BinomialDistribution.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="100" column="18" selection-start-line="100" selection-start-column="18" selection-end-line="100" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/net/finmath/finmath-lib/4.0.6/finmath-lib-4.0.6.jar!/net/finmath/functions/NormalDistribution.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1792,10 +1764,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="249">
           <caret line="52" column="16" lean-forward="true" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
-          <folding>
-            <element signature="e#429#430#0" expanded="true" />
-            <element signature="e#483#484#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1810,13 +1778,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="430">
           <caret line="493" selection-start-line="493" selection-end-line="493" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/analyzers/SpreadAnalyzerResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="57" column="38" lean-forward="true" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -1873,22 +1834,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/options/src/main/resources/dailyprices_SPX.csv">
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state>
-          <caret column="41" selection-end-column="41" />
-        </state>
-      </provider>
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/analyzers/SpreadAnalyzer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state>
+          <caret column="41" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -1896,10 +1847,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
-          <folding>
-            <element signature="e#1170#1171#0" expanded="true" />
-            <element signature="e#1197#1198#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1907,23 +1854,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="62" column="65" lean-forward="true" selection-start-line="62" selection-start-column="65" selection-end-line="62" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/OptionsHistorical.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1800">
-          <caret line="120" column="52" selection-start-line="120" selection-start-column="52" selection-end-line="120" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/test/java/com/assets/options/analyzers/SpreadAnalyzerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1935,13 +1865,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/options/src/main/resources/dailyprices_SPX_2019.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
       <provider selected="true" editor-type-id="csv-text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="81" selection-start-line="1" selection-start-column="81" selection-end-line="1" selection-end-column="81" />
         </state>
-      </provider>
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/IronCondorSpreadTest.java">
@@ -1965,55 +1895,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/CallOption.java">
+    <entry file="file://$PROJECT_DIR$/options/src/test/java/com/assets/options/blackscholes/IVolatilityTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="16" selection-end-column="5" />
+        <state relative-caret-position="210">
+          <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/OptionsHistorical.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="121" column="140" selection-start-line="121" selection-start-column="140" selection-end-line="121" selection-end-column="140" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/analyzers/SpreadAnalyzerResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="64" column="183" lean-forward="true" selection-start-line="64" selection-start-column="183" selection-end-line="64" selection-end-column="183" />
+          <folding>
+            <element signature="e#1065#1066#0" expanded="true" />
+            <element signature="e#1122#1123#0" expanded="true" />
+            <element signature="e#1290#1291#0" expanded="true" />
+            <element signature="e#1344#1345#0" expanded="true" />
+            <element signature="e#1474#1475#0" expanded="true" />
+            <element signature="e#1527#1528#0" expanded="true" />
+            <element signature="e#1580#1581#0" expanded="true" />
+            <element signature="e#1634#1635#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/CallOptionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/PutOption.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="20" column="11" lean-forward="true" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/CallOption.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="13" selection-start-line="13" selection-end-line="16" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/Option.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
+        <state relative-caret-position="555">
           <caret line="42" column="11" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
-          <folding>
-            <element signature="e#5296#5297#0" expanded="true" />
-            <element signature="e#5353#5354#0" expanded="true" />
-            <element signature="e#5386#5387#0" expanded="true" />
-            <element signature="e#5415#5416#0" expanded="true" />
-            <element signature="e#5458#5459#0" expanded="true" />
-            <element signature="e#5493#5494#0" expanded="true" />
-            <element signature="e#5535#5536#0" expanded="true" />
-            <element signature="e#5569#5570#0" expanded="true" />
-            <element signature="e#5610#5611#0" expanded="true" />
-            <element signature="e#5644#5645#0" expanded="true" />
-            <element signature="e#5688#5689#0" expanded="true" />
-            <element signature="e#5725#5726#0" expanded="true" />
-            <element signature="e#5764#5765#0" expanded="true" />
-            <element signature="e#5836#5837#0" expanded="true" />
-            <element signature="e#5873#5874#0" expanded="true" />
-            <element signature="e#5906#5907#0" expanded="true" />
-            <element signature="e#5941#5942#0" expanded="true" />
-            <element signature="e#5972#5973#0" expanded="true" />
-            <element signature="e#6010#6011#0" expanded="true" />
-            <element signature="e#6040#6041#0" expanded="true" />
-            <element signature="e#6073#6074#0" expanded="true" />
-            <element signature="e#6102#6103#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/test/java/com/assets/options/blackscholes/IVolatilityTest.java">
+    <entry file="file://$PROJECT_DIR$/options/src/test/java/com/assets/options/analyzers/SpreadAnalyzerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+        <state relative-caret-position="150">
+          <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/analyzers/SpreadAnalyzer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-490">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
