@@ -1,6 +1,5 @@
 package com.assets.options.entities.spread;
 
-import com.assets.options.PrintUtils;
 import org.hamcrest.number.IsCloseTo;
 import org.junit.Test;
 
@@ -22,7 +21,6 @@ public class VerticallPutSpreadTest {
                 0.22,
                 "PHOB");
 
-        PrintUtils.print(spread);
         assertThat(spread.getMaxGain(), closeTo(BigDecimal.valueOf(260), BigDecimal.valueOf(1)));
         assertThat(spread.getMaxLoss(), closeTo(BigDecimal.valueOf(-238), BigDecimal.valueOf(1)));
         assertThat(spread.getCost(), closeTo(BigDecimal.valueOf(-260), BigDecimal.valueOf(1)));
@@ -52,6 +50,6 @@ public class VerticallPutSpreadTest {
         assertThat("Delta is correct", spread.getGreeks().getDelta(), IsCloseTo.closeTo(-0.08, 0.01));
         assertThat("Gamma is correct", spread.getGreeks().getGamma(), IsCloseTo.closeTo(0.00008, 0.00001));
         assertThat("Vega is correct", spread.getGreeks().getVega(), IsCloseTo.closeTo(0.24, 0.1));
-        assertThat("Theta is correct", spread.getGreeks().getTheta(), IsCloseTo.closeTo(-0.2, 0.1));
+        assertThat("Theta is correct", spread.getGreeks().getTheta(), IsCloseTo.closeTo(-0.0003, 0.0001));
     }
 }

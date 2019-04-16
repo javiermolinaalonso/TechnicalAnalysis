@@ -72,8 +72,8 @@ public class CalendarSimulationTest {
 //
 //        System.out.println("Month portfolio: " + portfolio.getGreeks(firstMonthCandlestick.getDate(), firstMonthCandlestick.getFinalPrice(), firstMonthVolatility));
 //        System.out.println("***********");
-//        Option expectedValue = shortCallTrade.getExpectedValue(firstMonthCandlestick.getFinalPrice(), firstMonthCandlestick.getDate(), firstMonthVolatility);
-//        Option longExpectedValue = longCallTrade.getExpectedValue(firstMonthCandlestick.getFinalPrice(), firstMonthCandlestick.getDate(), firstMonthVolatility);
+//        Option expectedValue = shortCallTrade.getExpectedOption(firstMonthCandlestick.getFinalPrice(), firstMonthCandlestick.getDate(), firstMonthVolatility);
+//        Option longExpectedValue = longCallTrade.getExpectedOption(firstMonthCandlestick.getFinalPrice(), firstMonthCandlestick.getDate(), firstMonthVolatility);
 //        System.out.println("Long Call first month: " + longExpectedValue);
 //        System.out.println("Short call first month: " + expectedValue);
 //        CallOption shortCallMonthOption = new CallOption(firstMonthCandlestick.getFinalPrice(),

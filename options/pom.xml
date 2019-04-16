@@ -40,8 +40,9 @@
         </exclusions>
     </dependency>
     <dependency>
-        <groupId>com.ib</groupId>
-        <artifactId>interactive-brokers-api</artifactId>
+        <groupId>net.finmath</groupId>
+        <artifactId>finmath-lib</artifactId>
+        <version>4.0.6</version>
     </dependency>
 </dependencies>
 </project>

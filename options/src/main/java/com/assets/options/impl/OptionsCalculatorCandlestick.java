@@ -34,13 +34,13 @@ public class OptionsCalculatorCandlestick implements OptionsCalculator<Candlesti
     public PutOption put(List<Candlestick> values, LocalDate expiration, LocalDate now, BigDecimal strike) {
         double volatility = volatilityCalculator.getAnnualizedVolatility(values);
         BigDecimal currentPrice = values.get(values.size() - 1).getFinalPrice();
-        return new PutOption(currentPrice, strike, now, expiration, volatility, 0d);
+        return new PutOption(null, currentPrice, strike, now, expiration, volatility, 0d);
     }
 
     @Override
     public PutOption put(Candlestick value, LocalDate expiration, LocalDate now, BigDecimal strike, double volatility) {
         BigDecimal currentPrice = value.getFinalPrice();
-        return new PutOption(currentPrice, strike, now, expiration, volatility, 0d);
+        return new PutOption(null, currentPrice, strike, now, expiration, volatility, 0d);
     }
 
 }

@@ -12,6 +12,7 @@ public class VerticalPutSpread extends BaseOptionSpread {
 
     private final Option lowerOption;
     private final Option upperOption;
+    private final double volatility;
     private OptionTrade lowerOptionTrade;
     private OptionTrade upperOptionTrade;
 
@@ -25,7 +26,9 @@ public class VerticalPutSpread extends BaseOptionSpread {
         return new VerticalPutSpread(
                 BigDecimal.valueOf(currentPrice),
                 BigDecimal.valueOf(lowStrikePrice),
+                volatility,
                 BigDecimal.valueOf(highStrikePrice),
+                volatility,
                 LocalDate.now(),
                 LocalDate.now().plusDays(daysToExpiry),
                 volatility,
@@ -43,17 +46,22 @@ public class VerticalPutSpread extends BaseOptionSpread {
                              BigDecimal lowStrikePremium, BigDecimal highStrikePremium,
                              LocalDate now, LocalDate expirationDate, Double riskFree,
                              BigDecimal comission, String ticker, int contracts, boolean mini) {
-        lowerOption = new PutOption(currentPrice, lowStrikePrice, lowStrikePremium, now, expirationDate, riskFree);
-        upperOption = new PutOption(currentPrice, highStrikePrice, highStrikePremium, now, expirationDate, riskFree);
+        super(mini);
+        lowerOption = new PutOption(null, currentPrice, lowStrikePrice, lowStrikePremium, now, expirationDate, riskFree);
+        upperOption = new PutOption(null, currentPrice, highStrikePrice, highStrikePremium, now, expirationDate, riskFree);
         doSpread(comission, ticker, contracts, mini, lowerOption, upperOption);
+        this.volatility = (lowerOption.getVolatility() + upperOption.getVolatility()) / 2;
     }
 
-    public VerticalPutSpread(BigDecimal currentPrice, BigDecimal lowStrikePrice, BigDecimal highStrikePrice,
+    public VerticalPutSpread(BigDecimal currentPrice, BigDecimal lowStrikePrice, double lowStrikeIV,
+                             BigDecimal highStrikePrice, double highStrikeIV,
                              LocalDate now, LocalDate expirationDate, Double volatility, Double riskFree,
                              BigDecimal comission, String ticker, int contracts, boolean mini) {
-        lowerOption = new PutOption(currentPrice, lowStrikePrice, now, expirationDate, volatility, riskFree);
-        upperOption = new PutOption(currentPrice, highStrikePrice, now, expirationDate, volatility, riskFree);
+        super(mini);
+        lowerOption = new PutOption(null, currentPrice, lowStrikePrice, now, expirationDate, lowStrikeIV, riskFree);
+        upperOption = new PutOption(null, currentPrice, highStrikePrice, now, expirationDate, highStrikeIV, riskFree);
         doSpread(comission, ticker, contracts, mini, lowerOption, upperOption);
+        this.volatility = volatility;
     }
 
     private void doSpread(BigDecimal comission, String ticker, int contracts, boolean mini, Option lowerOption, Option upperOption) {
@@ -80,10 +88,6 @@ public class VerticalPutSpread extends BaseOptionSpread {
         return upperOption.getStrikePrice().compareTo(lowerOption.getStrikePrice()) < 0;
     }
 
-    private BigDecimal getMultiplier() {
-        return upperOptionTrade.isMini() ? BigDecimal.ONE : BigDecimal.valueOf(100);
-    }
-
     BigDecimal netPremiumPaid() {
         return lowerOption.getPremium().subtract(upperOption.getPremium());
     }
@@ -98,5 +102,31 @@ public class VerticalPutSpread extends BaseOptionSpread {
                     .subtract(netPremiumPaid())
                     .multiply(getMultiplier());
         }
+    }
+
+    @Override
+    public LocalDate getExpirationDate() {
+        return lowerOption.getExpirationDate();
+    }
+
+    @Override
+    public double getVolatility() {
+        return volatility;
+    }
+
+    public BigDecimal getLowerStrike () {
+        return lowerOption.getStrikePrice();
+    }
+
+    public BigDecimal getUpperStrike () {
+        return upperOption.getStrikePrice();
+    }
+
+    public BigDecimal getLowerPremium() {
+        return lowerOption.getPremium();
+    }
+
+    public BigDecimal getUpperPremium() {
+        return upperOption.getPremium();
     }
 }
