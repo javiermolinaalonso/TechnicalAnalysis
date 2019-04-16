@@ -153,12 +153,6 @@
                 <artifactId>commons-math3</artifactId>
                 <version>3.2</version>
             </dependency>
-            <!-- https://mvnrepository.com/artifact/com.ib/interactive-brokers-api -->
-            <dependency>
-                <groupId>com.ib</groupId>
-                <artifactId>interactive-brokers-api</artifactId>
-                <version>9.73</version>
-            </dependency>
         </dependencies>
 
     </dependencyManagement>
@@ -225,5 +219,6 @@
         <module>data-loader</module>
         <module>options</module>
         <module>investment-strategy</module>
+        <module>ibclient</module>
     </modules>
 </project>

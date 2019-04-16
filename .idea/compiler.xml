@@ -11,6 +11,7 @@
         <module name="correlation" />
         <module name="data-loader" />
         <module name="entities" />
+        <module name="ibclient" />
         <module name="investment-entities" />
         <module name="investment-strategy" />
         <module name="options" />
@@ -24,6 +25,7 @@
       <module name="correlation" target="1.8" />
       <module name="data-loader" target="1.8" />
       <module name="entities" target="1.8" />
+      <module name="ibclient" target="1.8" />
       <module name="investment-entities" target="1.8" />
       <module name="investment-strategy" target="1.8" />
       <module name="options" target="1.8" />
