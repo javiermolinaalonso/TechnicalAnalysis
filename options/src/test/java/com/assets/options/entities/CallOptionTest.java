@@ -1,9 +1,5 @@
 package com.assets.options.entities;
 
-import com.assets.options.PrintUtils;
-import com.assets.options.entities.spread.CalendarCallSpread;
-import com.assets.options.entities.spread.OptionSpread;
-import org.hamcrest.number.IsCloseTo;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -27,7 +23,7 @@ public class CallOptionTest {
         Option priceOption = new CallOption(null, BigDecimal.TEN, BigDecimal.TEN, BigDecimal.valueOf(0.4849), now, expirationDate, 0d);
 
         assertEquals(option.getPremium().doubleValue(), priceOption.getPremium().doubleValue(), 0.001d);
-        assertEquals(option.getVolatility(), option.getVolatility(), 0.001d);
+        assertEquals(option.getImpliedVolatility(), option.getImpliedVolatility(), 0.001d);
     }
 
     @Test
@@ -36,7 +32,7 @@ public class CallOptionTest {
         Option priceOption = new CallOption(null, BigDecimal.TEN, BigDecimal.TEN, BigDecimal.valueOf(0.3234), now, expirationDate, 0d);
 
         assertEquals(option.getPremium().doubleValue(), priceOption.getPremium().doubleValue(), 0.001d);
-        assertEquals(option.getVolatility(), option.getVolatility(), 0.001d);
+        assertEquals(option.getImpliedVolatility(), option.getImpliedVolatility(), 0.001d);
     }
 
     @Test

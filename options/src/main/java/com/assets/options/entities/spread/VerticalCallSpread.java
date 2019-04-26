@@ -61,7 +61,7 @@ public class VerticalCallSpread extends BaseOptionSpread {
         lowerOptionTrade = new OptionTrade(lowerOption, contracts, ticker, comission, mini);
         upperOptionTrade = new OptionTrade(upperOption, contracts * -1, ticker, comission, mini);
         setOptionTrades(Arrays.asList(lowerOptionTrade, upperOptionTrade));
-        this.volatility = (lowerOption.getVolatility() + upperOption.getVolatility()) / 2;
+        this.volatility = (lowerOption.getImpliedVolatility() + upperOption.getImpliedVolatility()) / 2;
     }
 
     @Override

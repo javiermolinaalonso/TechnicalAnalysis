@@ -22,18 +22,18 @@ public class Option {
     protected final LocalDate expirationDate;
     protected final Double riskFree;
 
-    protected Double volatility;
+    protected Double impliedVolatility;
     protected BigDecimal bid;
     protected BigDecimal ask;
 
     protected BigDecimal premium;
     protected Greeks greeks;
 
-    public Option(String ticker, OptionType optionType, BigDecimal currentPrice, BigDecimal strikePrice, LocalDate now, LocalDate expirationDate, Double volatility, Double riskFree) {
+    public Option(String ticker, OptionType optionType, BigDecimal currentPrice, BigDecimal strikePrice, LocalDate now, LocalDate expirationDate, Double impliedVolatility, Double riskFree) {
         this(ticker, currentPrice, strikePrice, optionType, now, expirationDate, riskFree);
-        this.volatility = volatility;
+        this.impliedVolatility = impliedVolatility;
         double yearsToExpiry = getDaysToExpiry() / 365d;
-        double[] results = BlackScholesGreeks.calculate(isCall(), currentPrice.doubleValue(), strikePrice.doubleValue(), riskFree, yearsToExpiry, volatility);
+        double[] results = BlackScholesGreeks.calculate(isCall(), currentPrice.doubleValue(), strikePrice.doubleValue(), riskFree, yearsToExpiry, impliedVolatility);
         premium = BigDecimal.valueOf(results[0]);
         bid = premium;
         ask = premium;
@@ -49,7 +49,7 @@ public class Option {
         this.ask = ask;
 
         double[] results = calculateVolatility(isCall(), currentPrice.doubleValue(), strikePrice.doubleValue(), riskFree, yearsToExpiry, premium.doubleValue(), MAX_IV, MAX_IV, MIN_IV, MAX_IV_STEPS);
-        this.volatility = results[0];
+        this.impliedVolatility = results[0];
         greeks = new Greeks(results[1],results[2],results[3], results[4] / 365d, results[5]);
     }
 
@@ -115,8 +115,8 @@ public class Option {
         return (double) convertDays(expirationDate, currentDate);
     }
 
-    public Double getVolatility() {
-        return volatility;
+    public Double getImpliedVolatility() {
+        return impliedVolatility;
     }
 
     public Double getRiskFree() {

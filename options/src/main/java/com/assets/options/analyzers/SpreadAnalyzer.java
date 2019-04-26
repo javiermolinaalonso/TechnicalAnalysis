@@ -7,7 +7,6 @@ import org.slf4j.LoggerFactory;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
-import java.time.Period;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -23,6 +22,7 @@ public class SpreadAnalyzer {
     public static final BigDecimal STEPS = BigDecimal.valueOf(1000);
     public static final BigDecimal DAYS_OF_YEAR = BigDecimal.valueOf(365);
 
+    //TODO the analyzer is not having into consideration the increase or decrease of impliedVolatility
     public SpreadAnalyzerResult analyze(OptionSpread spread, BigDecimal assetPrice, LocalDate now) {
         long daysToExpiry = ChronoUnit.DAYS.between(now, spread.getExpirationDate());
         BigDecimal maxExpectedPrice = spread.getStrikePriceAverage().multiply(DISTANCE_FROM_AVERAGE_STRIKE);

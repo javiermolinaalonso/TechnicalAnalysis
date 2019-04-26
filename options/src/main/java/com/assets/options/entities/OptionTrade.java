@@ -36,10 +36,6 @@ public class OptionTrade {
         return cost;
     }
 
-    public Option getExpectedOption() {
-        return option;
-    }
-
     public BigDecimal getPremium() {
         return premium;
     }
@@ -57,7 +53,11 @@ public class OptionTrade {
     }
 
     public BigDecimal getExpectedValue(BigDecimal value, LocalDate when) {
-        final BigDecimal premiumAt = getExpectedOption(value, when, option.getVolatility()).getPremium();
+        return getExpectedValue(value, when, option.getImpliedVolatility());
+    }
+
+    public BigDecimal getExpectedValue(BigDecimal value, LocalDate when, double iv) {
+        final BigDecimal premiumAt = getExpectedOption(value, when, iv).getPremium();
 
         return premiumAt.subtract(premium)
                 .multiply(getAmountOfStocks())
@@ -86,6 +86,10 @@ public class OptionTrade {
 
     public Option getOption() {
         return option;
+    }
+
+    public double getImpliedVolatility() {
+        return option.getImpliedVolatility();
     }
 
     public Greeks getGreeks() {

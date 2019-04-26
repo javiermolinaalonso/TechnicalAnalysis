@@ -16,11 +16,17 @@ public class SpreadAnalyzerTest {
 
     @Test
     public void name() {
-        final CalendarCallSpread ibm = CalendarCallSpread.complexSpread(144.62, 145, LocalDate.now(), 2, 0.80688, 31, 0.231, "IBM", 0.90);
-        final SpreadAnalyzerResult analyze = victim.analyze(ibm, new BigDecimal("144.62"), LocalDate.now());
+        final CalendarCallSpread spread = CalendarCallSpread.complexSpread(
+                289.48, 295,
+                LocalDate.now(), 65,
+                0.0907, 121, 0.0931,
+                "SPY", 0.1);
+        final SpreadAnalyzerResult analyze = victim.analyze(spread, new BigDecimal("285"), LocalDate.now().plusDays(60));
 
-        System.out.println(ibm);
+        System.out.println(spread);
         System.out.println(analyze);
+
+        System.out.println(spread.getValueAt(new BigDecimal("295"), LocalDate.now().plusDays(60), 0.11));
     }
 
     @Test

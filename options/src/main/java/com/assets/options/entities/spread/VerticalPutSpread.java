@@ -50,7 +50,7 @@ public class VerticalPutSpread extends BaseOptionSpread {
         lowerOption = new PutOption(null, currentPrice, lowStrikePrice, lowStrikePremium, now, expirationDate, riskFree);
         upperOption = new PutOption(null, currentPrice, highStrikePrice, highStrikePremium, now, expirationDate, riskFree);
         doSpread(comission, ticker, contracts, mini, lowerOption, upperOption);
-        this.volatility = (lowerOption.getVolatility() + upperOption.getVolatility()) / 2;
+        this.volatility = (lowerOption.getImpliedVolatility() + upperOption.getImpliedVolatility()) / 2;
     }
 
     public VerticalPutSpread(BigDecimal currentPrice, BigDecimal lowStrikePrice, double lowStrikeIV,

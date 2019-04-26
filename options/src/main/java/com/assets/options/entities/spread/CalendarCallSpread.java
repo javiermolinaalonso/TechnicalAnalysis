@@ -114,7 +114,7 @@ public class CalendarCallSpread extends BaseOptionSpread {
     public String toString() {
         return new StringJoiner(", ","Calendar {", "}")
                 .add(String.format("Strike [%.2f @ %s for %.2f / %.2f @ %s for %.2f]", closerOption.getStrikePrice(), closerOption.getExpirationDate(), closerOption.getPremium(), furtherOption.getStrikePrice(), furtherOption.getExpirationDate(), furtherOption.getPremium()))
-                .add(String.format("IV [%.2f%%, %.2f%%]", closerOption.getVolatility() * 100, furtherOption.getVolatility() * 100))
+                .add(String.format("IV [%.2f%%, %.2f%%]", closerOption.getImpliedVolatility() * 100, furtherOption.getImpliedVolatility() * 100))
                 .add(String.format("Cost [%.2f]", getCost()))
                 .add(String.format("Max Loss:%.2f, Max Win:%.2f", getMaxLoss(), getMaxGain()))
                 .toString();

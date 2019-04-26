@@ -27,6 +27,15 @@ public abstract class BaseOptionSpread implements OptionSpread {
         return mini ? BigDecimal.ONE : BigDecimal.valueOf(100);
     }
 
+    public BigDecimal getValueAt(BigDecimal value, LocalDate when, double volatility) {
+        BigDecimal expectedValue = BigDecimal.ZERO;
+        for (OptionTrade optionTrade : options.getTrades()) {
+            final BigDecimal premium = optionTrade.getExpectedValue(value, when, volatility);
+            expectedValue = expectedValue.add(premium);
+        }
+        return expectedValue;
+    }
+
     public BigDecimal getValueAt(BigDecimal value, LocalDate when) {
         BigDecimal expectedValue = BigDecimal.ZERO;
         for (OptionTrade optionTrade : options.getTrades()) {
