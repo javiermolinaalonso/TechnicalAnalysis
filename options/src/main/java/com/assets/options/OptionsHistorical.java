@@ -7,7 +7,8 @@ import com.assets.options.entities.spread.IronCondorSpread;
 import com.assets.options.entities.spread.OptionSpread;
 import com.assets.statistic.list.LambdaStatisticList;
 import com.assets.statistic.list.StockList;
-import javafx.util.Pair;
+import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.apache.commons.lang3.tuple.Pair;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -120,7 +121,7 @@ public class OptionsHistorical {
 //                                System.out.println(analyzerResult);
                                 if (analyzerResult.getExpectedTae().get().compareTo(BigDecimal.valueOf(0)) > 0) {
                                     if (pair == null || analyzerResult.getExpectedTae().get().compareTo(pair.getKey().getExpectedTae().get()) > 0) {
-                                        pair = new Pair<>(analyzerResult, spread);
+                                        pair = new ImmutablePair<>(analyzerResult, spread);
                                     }
                                 }
                             }

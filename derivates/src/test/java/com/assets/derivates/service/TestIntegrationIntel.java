@@ -40,7 +40,7 @@ public class TestIntegrationIntel {
         DataLoader loader = new DataLoaderCsv(TestIntegrationIntel.class.getResource("/table_intc.csv").getFile());
         from = Instant.parse(FROM);
         to = Instant.parse(TO);
-        inputData = new StockList(loader.loadData().get(TICKER).parallelStream().filter(p -> (p.getInstant().compareTo(from) >= 0 && p.getInstant().compareTo(to) <= 0)).sequential().collect(Collectors.toList()), TICKER);
+        inputData = new StockList(loader.loadData(TICKER).parallelStream().filter(p -> (p.getInstant().compareTo(from) >= 0 && p.getInstant().compareTo(to) <= 0)).sequential().collect(Collectors.toList()), TICKER);
         entryPoints = computeEntranceService.computeEntrances(inputData);
         exitPoints = computeExitsService.computeExits(entryPoints, inputData);
     }

@@ -1,7 +1,6 @@
 package com.assets.options.entities.spread;
 
 import com.assets.options.entities.Greeks;
-import javafx.util.Pair;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

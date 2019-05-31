@@ -5,6 +5,7 @@ import org.apache.commons.lang3.Validate;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.*;
 
 /**
@@ -65,6 +66,11 @@ public class Candlestick {
         LocalDateTime localDateTime = LocalDateTime.ofInstant(initialInstant, ZoneId.systemDefault());
         return localDateTime.toLocalDate();
     }
+
+    public BigDecimal getDailyIncrease() {
+        return getInitialPrice().subtract(getFinalPrice()).divide(getInitialPrice(), 6, RoundingMode.HALF_UP);
+    }
+
     @Override
     public String toString() {
         return new ToStringBuilder(this)

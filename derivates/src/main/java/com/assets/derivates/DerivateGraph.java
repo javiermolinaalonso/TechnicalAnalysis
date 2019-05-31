@@ -42,11 +42,11 @@ public class DerivateGraph {
     public static void main(String[] args) throws FileNotFoundException {
         
         DataLoader loader = new DataLoaderCsv(DEFAULT_PATH);
-        Map<String, StockList> data = loader.loadData();
+
         logger.info("Data loaded");
 
         for(String ticker : TICKERS){
-            StockList inputData = new StockList(data.get(ticker).parallelStream().filter(p -> (p.getInstant().compareTo(Instant.parse(FROM)) >= 0 && p.getInstant().compareTo(Instant.parse(TO)) <= 0)).sequential().collect(Collectors.toList()), ticker);
+            StockList inputData = new StockList(loader.loadData(ticker).parallelStream().filter(p -> (p.getInstant().compareTo(Instant.parse(FROM)) >= 0 && p.getInstant().compareTo(Instant.parse(TO)) <= 0)).sequential().collect(Collectors.toList()), ticker);
             computeTicker(inputData);
         }
 
