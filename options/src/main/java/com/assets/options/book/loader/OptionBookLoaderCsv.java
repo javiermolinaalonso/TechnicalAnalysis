@@ -48,11 +48,10 @@ public class OptionBookLoaderCsv extends AbstractCsvLoader<Option> {
             LocalDate expiry = day.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
             return new Option(
                     data[0],
-                    new BigDecimal(data[1]),
+                    optionType, new BigDecimal(data[1]),
                     new BigDecimal(data[4]),
                     new BigDecimal(data[6]),
                     new BigDecimal(data[7]),
-                    optionType,
                     now,
                     expiry,
                     0d

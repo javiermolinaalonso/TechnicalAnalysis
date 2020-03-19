@@ -2,100 +2,53 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e42815d-2456-460e-847d-5e76ba9d8ceb" name="Default" comment="Improved volatility calculation&#10;Added spread analyzer">
+      <change afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/OptionBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/OptionTradeFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/SpreadFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/vertical/BearPutSpread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/vertical/BearSpread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/vertical/BullPutSpread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/vertical/BullSpread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/vertical/VerticalSpread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StatisticList/StatisticList.iml" beforeDir="false" afterPath="$PROJECT_DIR$/StatisticList/StatisticList.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bollinger/bollinger.iml" beforeDir="false" afterPath="$PROJECT_DIR$/bollinger/bollinger.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/correlation/correlation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/correlation/correlation.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-loader/data-loader.iml" beforeDir="false" afterPath="$PROJECT_DIR$/data-loader/data-loader.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-loader/src/main/java/com/assets/data/loader/mongo/MongoDataLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-loader/src/main/java/com/assets/data/loader/mysql/MySqlDataLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-loader/src/main/java/com/assets/data/loader/mysql/entities/DefaultCatalog.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-loader/src/main/java/com/assets/data/loader/mysql/entities/Keys.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-loader/src/main/java/com/assets/data/loader/mysql/entities/Portfolio.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-loader/src/main/java/com/assets/data/loader/mysql/entities/Tables.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-loader/src/main/java/com/assets/data/loader/mysql/entities/tables/DailyQuotes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-loader/src/main/java/com/assets/data/loader/mysql/entities/tables/records/DailyQuotesRecord.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data-loader/src/main/java/com/assets/data/loader/mysql/jOOQ-generator/generate.sh" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/derivates/assets.derivates.iml" beforeDir="false" afterPath="$PROJECT_DIR$/derivates/assets.derivates.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/derivates/src/main/java/com/assets/derivates/DerivateGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/derivates/src/main/java/com/assets/derivates/DerivateGraph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/derivates/src/test/java/com/assets/derivates/service/TestIntegrationIntel.java" beforeDir="false" afterPath="$PROJECT_DIR$/derivates/src/test/java/com/assets/derivates/service/TestIntegrationIntel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/entities/entities.iml" beforeDir="false" afterPath="$PROJECT_DIR$/entities/entities.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/investment-entities/investment-entities.iml" beforeDir="false" afterPath="$PROJECT_DIR$/investment-entities/investment-entities.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/investment-strategy/investment-strategy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/investment-strategy/investment-strategy.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/options/options.iml" beforeDir="false" afterPath="$PROJECT_DIR$/options/options.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/OptionsHistorical.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/OptionsHistorical.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/OptionSpread.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/OptionSpread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/book/loader/OptionBookLoaderCsv.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/book/loader/OptionBookLoaderCsv.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/CallOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/CallOption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/Option.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/Option.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/PutOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/PutOption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BaseOptionSpread.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BaseOptionSpread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/IronCondorSpread.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/IronCondorSpread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/VerticalCallSpread.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/VerticalPutSpread.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/test/java/com/assets/options/analyzers/SpreadAnalyzerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/analyzers/SpreadAnalyzerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/IronCondorSpreadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/IronCondorSpreadTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/VerticalCallSpreadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/VerticalSpreadTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/VerticallPutSpreadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/VerticallPutSpreadTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/portfolio/portfolio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio/portfolio.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/techAnalysis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/techAnalysis.iml" afterDir="false" />
     </list>
-    <ignored path="techAnalysis.iws" />
-    <ignored path=".idea/workspace.xml" />
-    <ignored path="$PROJECT_DIR$/bollinger/target/" />
-    <ignored path="$PROJECT_DIR$/target/" />
-    <ignored path=".idea/dataSources.local.xml" />
-    <ignored path="$PROJECT_DIR$/derivates/target/" />
-    <ignored path="$PROJECT_DIR$/portfolio/target/" />
-    <ignored path="$PROJECT_DIR$/entities/target/" />
-    <ignored path="$PROJECT_DIR$/StatisticList/target/" />
-    <ignored path="$PROJECT_DIR$/correlation/target/" />
-    <ignored path="$PROJECT_DIR$/investment-entities/target/" />
-    <ignored path="$PROJECT_DIR$/data-loader/target/" />
-    <ignored path="$PROJECT_DIR$/options/target/" />
-    <ignored path="$PROJECT_DIR$/investment-strategy/target/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="techAnalysis" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/OptionSpread.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/OptionsHistorical.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="674">
-              <caret line="144" column="56" selection-start-line="144" selection-start-column="56" selection-end-line="144" selection-end-column="56" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/derivates/src/main/java/com/assets/derivates/DerivateGraph.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="48" column="13" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/derivates/src/test/java/com/assets/derivates/service/TestIntegrationIntel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="42" column="57" selection-start-line="42" selection-start-column="57" selection-end-line="42" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -106,47 +59,6 @@
         <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>D</find>
-      <find>DataLoader</find>
-      <find>DataLoaderC</find>
-      <find>DataLoaderCsv</find>
-      <find>getExpirationValue</find>
-      <find>currentValue</find>
-      <find>bearcallspread</find>
-      <find>hamc</find>
-      <find>hamcr</find>
-      <find>y\&gt;\n            \&lt;groupId\&gt;junit\&lt;\/groupId\&gt;\n            \&lt;artifactId\&gt;junit\&lt;\/artifactId\&gt;\n            \&lt;version\&gt;\$\{junit\.version\}\&lt;\/version\&gt;\n            \&lt;scope\&gt;test\&lt;\/scope\&gt;\n            \&lt;exclusions\&gt;\n                \&lt;exclusion\&gt;\n                    \&lt;groupId\&gt;org\.hamcrest\&lt;\/groupId\&gt;\n                    \&lt;artifactId\&gt;hamcrest\-core\&lt;\/artifactId\&gt;\n                \&lt;\/exclusion\&gt;\n            \&lt;\/exclusions\&gt;\n        \&lt;\/dependency\&gt;</find>
-      <find>repositor</find>
-      <find>IConnectionHandler</find>
-      <find>e_client</find>
-      <find>28</find>
-      <find>trading</find>
-      <find>ewra</find>
-      <find>getvalueat</find>
-      <find>getexpirationvalue</find>
-      <find>getgree</find>
-      <find>NormalDistribution</find>
-      <find>319</find>
-      <find>23</find>
-      <find>mu</find>
-      <find>data</find>
-      <find>debit</find>
-      <find>isDebit</find>
-      <find>Result=</find>
-      <find>Period.</find>
-      <find>.</find>
-      <find>&quot;</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>getValueAt</replace>
-      <replace>,</replace>
-    </replaceStrings>
-    <dirStrings>
-      <dir>$PROJECT_DIR$</dir>
-    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -159,63 +71,6 @@
   <component name="HierarchyBrowserManager">
     <option name="SCOPE" value="All" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/ib/EWrapperImpl.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_169.txt" />
-        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/ib/IBMain.java" />
-        <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/CalendarSpreadTest.java" />
-        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/CalendarSpread.java" />
-        <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/OptionSpreadTest.java" />
-        <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/portfolio/OptionPortfolioIbexTest.java" />
-        <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/blackscholes/BlackScholesGreeksTest.java" />
-        <option value="$PROJECT_DIR$/options/pom.xml" />
-        <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/OptionTradeTest.java" />
-        <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/CalendarCallSpreadTest.java" />
-        <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/VerticalCallSpreadTest.java" />
-        <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/VerticallPutSpreadTest.java" />
-        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/portfolio/OptionPortfolio.java" />
-        <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/portfolio/OptionPortfolioTest.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_180.txt" />
-        <option value="$PROJECT_DIR$/data-loader/src/main/java/com/assets/data/loader/impl/DataLoaderCsv.java" />
-        <option value="$PROJECT_DIR$/data-loader/src/main/java/com/assets/data/loader/impl/ClassPathLoaderCsv.java" />
-        <option value="$PROJECT_DIR$/StatisticList/src/main/java/com/assets/statistic/list/LambdaStatisticList.java" />
-        <option value="$PROJECT_DIR$/StatisticList/src/main/java/com/assets/statistic/list/AbstractStatisticList.java" />
-        <option value="$PROJECT_DIR$/entities/src/main/java/com/assets/entities/StockPrice.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_181.txt" />
-        <option value="$PROJECT_DIR$/options/src/main/resources/dailyprices_SPX.csv" />
-        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/PrintUtils.java" />
-        <option value="$PROJECT_DIR$/options/src/main/resources/log4j.properties" />
-        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/OptionsPrinter.java" />
-        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/VerticalPutSpread.java" />
-        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/VerticalCallSpread.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_183.txt" />
-        <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/IronCondorSpreadTest.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_184.txt" />
-        <option value="$PROJECT_DIR$/options/src/main/resources/dailyprices_SPX_2019.csv" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.csv" />
-        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/IronCondorSpread.java" />
-        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/CalendarCallSpread.java" />
-        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/CallOption.java" />
-        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/blackscholes/BlackScholesGreeks.java" />
-        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/PutOption.java" />
-        <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/blackscholes/IVolatilityTest.java" />
-        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/analyzers/SpreadAnalyzerResult.java" />
-        <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/CallOptionTest.java" />
-        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/analyzers/SpreadAnalyzer.java" />
-        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/Option.java" />
-        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/OptionTrade.java" />
-        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BaseOptionSpread.java" />
-        <option value="$PROJECT_DIR$/options/src/test/java/com/assets/options/analyzers/SpreadAnalyzerTest.java" />
-        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/OptionSpread.java" />
-        <option value="$PROJECT_DIR$/options/src/main/java/com/assets/options/OptionsHistorical.java" />
-        <option value="$PROJECT_DIR$/derivates/src/test/java/com/assets/derivates/service/TestIntegrationIntel.java" />
-        <option value="$PROJECT_DIR$/derivates/src/main/java/com/assets/derivates/DerivateGraph.java" />
-      </list>
-    </option>
-  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -223,125 +78,16 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
   </component>
+  <component name="ProjectId" id="1Ykel2RBhzV22dXJ81PrDul6sX8" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <flattenPackages ProjectPane="false" />
-      <hideEmptyPackages ProjectPane="false" />
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="techAnalysis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TechnicalAnalysis" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="techAnalysis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TechnicalAnalysis" type="462c0819:PsiDirectoryNode" />
-              <item name="data-loader" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="techAnalysis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TechnicalAnalysis" type="462c0819:PsiDirectoryNode" />
-              <item name="data-loader" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="techAnalysis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TechnicalAnalysis" type="462c0819:PsiDirectoryNode" />
-              <item name="data-loader" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="techAnalysis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TechnicalAnalysis" type="462c0819:PsiDirectoryNode" />
-              <item name="data-loader" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="techAnalysis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TechnicalAnalysis" type="462c0819:PsiDirectoryNode" />
-              <item name="data-loader" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="loader" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="techAnalysis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TechnicalAnalysis" type="462c0819:PsiDirectoryNode" />
-              <item name="options" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="techAnalysis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TechnicalAnalysis" type="462c0819:PsiDirectoryNode" />
-              <item name="options" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="techAnalysis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TechnicalAnalysis" type="462c0819:PsiDirectoryNode" />
-              <item name="options" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="techAnalysis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TechnicalAnalysis" type="462c0819:PsiDirectoryNode" />
-              <item name="options" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="techAnalysis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TechnicalAnalysis" type="462c0819:PsiDirectoryNode" />
-              <item name="options" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="options" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="techAnalysis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TechnicalAnalysis" type="462c0819:PsiDirectoryNode" />
-              <item name="options" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="options" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="techAnalysis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TechnicalAnalysis" type="462c0819:PsiDirectoryNode" />
-              <item name="options" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="options" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
-              <item name="spread" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="HbShouldOpenHtmlAsHb" value="" />
@@ -359,7 +105,6 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="recentsLimit" value="5" />
-    <property name="restartRequiresConfirmation" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -407,20 +152,14 @@
       <recent name="com.assets.entities.exceptions" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="JUnit.SpreadAnalyzerTest.name">
-    <configuration default="true" type="AndroidRunConfigurationType">
+  <component name="RunManager" selected="JUnit.VerticallPutSpreadTest">
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -449,7 +188,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType">
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
       <option name="TESTING_TYPE" value="0" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
       <option name="METHOD_NAME" value="" />
@@ -473,12 +212,6 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Applet">
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -550,6 +283,7 @@
       <setting name="vmparams" value="" />
       <setting name="cmdLine" value="run-app" />
       <setting name="passParentEnv" value="true" />
+      <setting name="grailsApplicationRoot" value="" />
       <setting name="launchBrowser" value="false" />
       <setting name="launchBrowserUrl" value="" />
       <setting name="depsClasspath" value="false" />
@@ -573,23 +307,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IVolatilityTest.volatilityIsProperlyCalculated_whenGivenOptionPriceDuo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="options" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.assets.options.blackscholes.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.assets.options.blackscholes" />
-      <option name="MAIN_CLASS_NAME" value="com.assets.options.blackscholes.IVolatilityTest" />
-      <option name="METHOD_NAME" value="volatilityIsProperlyCalculated_whenGivenOptionPriceDuo" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SpreadAnalyzerTest.name" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="options" />
       <extension name="coverage">
@@ -601,23 +318,6 @@
       <option name="PACKAGE_NAME" value="com.assets.options.analyzers" />
       <option name="MAIN_CLASS_NAME" value="com.assets.options.analyzers.SpreadAnalyzerTest" />
       <option name="METHOD_NAME" value="name" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SpreadAnalyzerTest.testCalendar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="options" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.assets.options.analyzers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.assets.options.analyzers" />
-      <option name="MAIN_CLASS_NAME" value="com.assets.options.analyzers.SpreadAnalyzerTest" />
-      <option name="METHOD_NAME" value="testCalendar" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
@@ -636,6 +336,39 @@
       <option name="MAIN_CLASS_NAME" value="com.assets.options.analyzers.SpreadAnalyzerTest" />
       <option name="METHOD_NAME" value="testCalendarWow" />
       <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpreadAnalyzerTest.testIronCondor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="options" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.assets.options.analyzers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.assets.options.analyzers" />
+      <option name="MAIN_CLASS_NAME" value="com.assets.options.analyzers.SpreadAnalyzerTest" />
+      <option name="METHOD_NAME" value="testIronCondor" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VerticallPutSpreadTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="options" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.assets.options.entities.spread.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.assets.options.entities.spread" />
+      <option name="MAIN_CLASS_NAME" value="com.assets.options.entities.spread.VerticallPutSpreadTest" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -817,19 +550,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.SpreadAnalyzerTest.testCalendar" />
-      <item itemvalue="JUnit.IVolatilityTest.volatilityIsProperlyCalculated_whenGivenOptionPriceDuo" />
       <item itemvalue="JUnit.SpreadAnalyzerTest.testCalendarWow" />
       <item itemvalue="JUnit.CallOptionTest.name" />
       <item itemvalue="JUnit.SpreadAnalyzerTest.name" />
+      <item itemvalue="JUnit.SpreadAnalyzerTest.testIronCondor" />
+      <item itemvalue="JUnit.VerticallPutSpreadTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.VerticallPutSpreadTest" />
+        <item itemvalue="JUnit.SpreadAnalyzerTest.testIronCondor" />
         <item itemvalue="JUnit.SpreadAnalyzerTest.name" />
         <item itemvalue="JUnit.CallOptionTest.name" />
         <item itemvalue="JUnit.SpreadAnalyzerTest.testCalendarWow" />
-        <item itemvalue="JUnit.IVolatilityTest.volatilityIsProperlyCalculated_whenGivenOptionPriceDuo" />
-        <item itemvalue="JUnit.SpreadAnalyzerTest.testCalendar" />
       </list>
     </recent_temporary>
   </component>
@@ -912,6 +645,8 @@
       <workItem from="1555579600952" duration="1241000" />
       <workItem from="1556261024939" duration="300000" />
       <workItem from="1559306841555" duration="388000" />
+      <workItem from="1583491169710" duration="130000" />
+      <workItem from="1584616476010" duration="12788000" />
     </task>
     <task id="LOCAL-00001" summary="Added get and options interface">
       <created>1453363092145</created>
@@ -1126,137 +861,6 @@
     <option name="localTasksCounter" value="31" />
     <servers />
   </component>
-  <component name="TestHistory">
-    <history-entry file="SpreadAnalyzerTest_name - 2019.04.18 at 11h 35m 35s.xml">
-      <configuration name="SpreadAnalyzerTest.name" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SpreadAnalyzerTest_name - 2019.04.18 at 11h 39m 14s.xml">
-      <configuration name="SpreadAnalyzerTest.name" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SpreadAnalyzerTest_name - 2019.04.18 at 11h 39m 23s.xml">
-      <configuration name="SpreadAnalyzerTest.name" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SpreadAnalyzerTest_name - 2019.04.18 at 11h 39m 31s.xml">
-      <configuration name="SpreadAnalyzerTest.name" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SpreadAnalyzerTest_name - 2019.04.18 at 11h 40m 27s.xml">
-      <configuration name="SpreadAnalyzerTest.name" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SpreadAnalyzerTest_name - 2019.04.18 at 11h 40m 36s.xml">
-      <configuration name="SpreadAnalyzerTest.name" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SpreadAnalyzerTest_name - 2019.04.18 at 11h 46m 57s.xml">
-      <configuration name="SpreadAnalyzerTest.name" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SpreadAnalyzerTest_name - 2019.04.18 at 11h 47m 03s.xml">
-      <configuration name="SpreadAnalyzerTest.name" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SpreadAnalyzerTest_name - 2019.04.18 at 11h 47m 09s.xml">
-      <configuration name="SpreadAnalyzerTest.name" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SpreadAnalyzerTest_name - 2019.04.18 at 11h 47m 19s.xml">
-      <configuration name="SpreadAnalyzerTest.name" configurationId="JUnit" />
-    </history-entry>
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="228878000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26370135" />
-      <window_info id="Structure" order="1" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info id="Nl-Palette" order="7" />
-      <window_info anchor="bottom" id="LuaCheck" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3138686" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.15255475" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4313253" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Application Servers" order="7" />
-      <window_info anchor="bottom" id="Spring" order="8" />
-      <window_info anchor="bottom" id="Sequence" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.2686747" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32043797" />
-      <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
-      <window_info anchor="bottom" id="SonarQube" order="14" />
-      <window_info anchor="bottom" id="Version Control" order="15" weight="0.32891566" />
-      <window_info anchor="bottom" id="Atlassian " order="16" />
-      <window_info anchor="bottom" id="Database Changes" order="17" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="SciView" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.44757745" />
-      <window_info anchor="right" id="PlantUML" order="3" />
-      <window_info anchor="right" id="Maven Projects" order="4" />
-      <window_info anchor="right" id="Database" order="5" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" x="100" y="100" width="1080" height="600" id="Documentation" order="7" type="FLOATING" />
-      <window_info anchor="right" id="Palette" order="8" />
-      <window_info anchor="right" id="Mongo Explorer" order="9" />
-      <window_info anchor="right" id="Bean Validation" order="10" />
-      <window_info anchor="right" id="Properties" order="11" />
-      <window_info anchor="right" id="Capture Analysis" order="12" />
-      <window_info anchor="right" id="BPMNPalette" order="13" />
-      <window_info anchor="right" id="Theme Preview" order="14" />
-      <window_info anchor="right" id="LuaJ" order="15" />
-      <window_info anchor="right" id="Data View" order="16" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18168813" />
-      <window_info id="Structure" order="1" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info id="Nl-Palette" order="7" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.31445783" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.41686746" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.43253013" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Application Servers" order="7" />
-      <window_info anchor="bottom" id="Spring" order="8" />
-      <window_info anchor="bottom" id="Sequence" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.2686747" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32048193" />
-      <window_info anchor="bottom" id="Docker" order="13" />
-      <window_info anchor="bottom" id="SonarQube" order="14" />
-      <window_info anchor="bottom" id="Version Control" order="15" weight="0.32891566" />
-      <window_info anchor="bottom" id="Atlassian " order="16" />
-      <window_info anchor="bottom" id="Database Changes" order="17" show_stripe_button="false" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.44778255" />
-      <window_info anchor="right" id="PlantUML" order="3" />
-      <window_info anchor="right" id="Maven Projects" order="4" />
-      <window_info anchor="right" id="Database" order="5" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" x="100" y="100" width="1080" height="600" id="Documentation" order="7" type="FLOATING" />
-      <window_info anchor="right" id="Palette" order="8" />
-      <window_info anchor="right" id="Mongo Explorer" order="9" />
-      <window_info anchor="right" id="Bean Validation" order="10" />
-      <window_info anchor="right" id="Properties" order="11" />
-      <window_info anchor="right" id="Capture Analysis" order="12" />
-      <window_info anchor="right" id="BPMNPalette" order="13" />
-      <window_info anchor="right" id="Theme Preview" order="14" />
-      <window_info anchor="right" id="LuaJ" order="15" />
-      <window_info anchor="right" id="Data View" order="16" />
-    </layout-to-restore>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -1306,62 +910,98 @@
     <MESSAGE value="fuuu" />
     <option name="LAST_COMMIT_MESSAGE" value="fuuu" />
   </component>
+  <component name="WindowStateProjectService">
+    <state x="1093" y="443" key="#com.intellij.ide.util.MemberChooser" timestamp="1584631502092">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1093" y="443" key="#com.intellij.ide.util.MemberChooser/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584631502092" />
+    <state x="825" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1584633320874">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="825" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584633320874" />
+    <state width="2518" height="562" key="GridCell.Tab.0.bottom" timestamp="1584633848280">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="562" key="GridCell.Tab.0.bottom/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584633848280" />
+    <state width="2518" height="562" key="GridCell.Tab.0.center" timestamp="1584633848279">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="562" key="GridCell.Tab.0.center/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584633848279" />
+    <state width="2518" height="562" key="GridCell.Tab.0.left" timestamp="1584633848278">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="562" key="GridCell.Tab.0.left/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584633848278" />
+    <state width="2518" height="562" key="GridCell.Tab.0.right" timestamp="1584633848279">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="562" key="GridCell.Tab.0.right/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584633848279" />
+    <state width="2518" height="562" key="GridCell.Tab.1.bottom" timestamp="1584633848005">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="562" key="GridCell.Tab.1.bottom/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584633848005" />
+    <state width="2518" height="562" key="GridCell.Tab.1.center" timestamp="1584633848003">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="562" key="GridCell.Tab.1.center/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584633848003" />
+    <state width="2518" height="562" key="GridCell.Tab.1.left" timestamp="1584633847997">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="562" key="GridCell.Tab.1.left/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584633847997" />
+    <state width="2518" height="562" key="GridCell.Tab.1.right" timestamp="1584633848004">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2518" height="562" key="GridCell.Tab.1.right/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584633848004" />
+    <state x="938" y="342" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584631142053">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="938" y="342" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584631142053" />
+    <state x="937" y="477" width="686" height="486" key="find.popup" timestamp="1584616757634">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="937" y="477" width="686" height="486" key="find.popup/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584616757634" />
+    <state x="1042" y="333" key="refactoring.ChangeSignatureDialog" timestamp="1584625573965">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="1042" y="333" key="refactoring.ChangeSignatureDialog/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584625573965" />
+    <state x="943" y="329" width="672" height="678" key="search.everywhere.popup" timestamp="1584632218579">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="943" y="329" width="672" height="678" key="search.everywhere.popup/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584632218579" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/derivates/src/main/java/com/assets/derivates/OptionsVolatility.java</url>
           <line>49</line>
-          <properties />
           <option name="timeStamp" value="65" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/data-loader/src/main/java/com/assets/data/loader/impl/DataLoaderCsv.java</url>
           <line>118</line>
-          <properties />
           <option name="timeStamp" value="134" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/data-loader/src/main/java/com/assets/data/loader/impl/DataLoaderCsv.java</url>
           <line>67</line>
-          <properties />
           <option name="timeStamp" value="137" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/data-loader/src/main/java/com/assets/data/loader/impl/DataLoaderCsv.java</url>
           <line>96</line>
-          <properties />
           <option name="timeStamp" value="139" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/options/src/main/java/com/assets/options/OptionsHistorical.java</url>
-          <line>98</line>
-          <properties />
-          <option name="timeStamp" value="174" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/options/src/main/java/com/assets/options/OptionsHistorical.java</url>
-          <line>65</line>
-          <properties />
-          <option name="timeStamp" value="209" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/options/src/main/java/com/assets/options/OptionsHistorical.java</url>
-          <line>71</line>
-          <properties />
-          <option name="timeStamp" value="211" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/options/src/main/java/com/assets/options/OptionsHistorical.java</url>
-          <line>46</line>
-          <properties />
-          <option name="timeStamp" value="213" />
+          <url>file://$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/VerticallPutSpreadTest.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="217" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
         <watch expression="calculateProbability(new BigDecimal(&quot;143.8&quot;), 0.1790, 66, new BigDecimal(&quot;155&quot;), new BigDecimal(&quot;160&quot;))" language="JAVA" />
+        <watch expression="spread.getMaxGain()" language="JAVA" />
       </configuration>
       <configuration name="Application">
         <watch expression="statisticList.getStdDev()" language="JAVA" />
@@ -1432,305 +1072,6 @@
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/StatisticList/src/main/java/com/assets/statistic/entities/StatisticList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StatisticList/src/main/java/com/assets/statistic/list/AbstractStatisticList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StatisticList/src/main/java/com/assets/statistic/list/LambdaStatisticList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/time/Instant.java" />
-    <entry file="file://$PROJECT_DIR$/entities/src/main/java/com/assets/entities/StockPrice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="45" column="67" selection-start-line="45" selection-start-column="67" selection-end-line="45" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StatisticList/src/main/java/com/assets/statistic/list/StockList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="74" column="15" selection-start-line="74" selection-start-column="15" selection-end-line="74" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_181.txt" />
-    <entry file="file://$PROJECT_DIR$/options/src/main/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="86" lean-forward="true" selection-start-line="7" selection-start-column="86" selection-end-line="7" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/jre/lib/rt.jar!/sun/reflect/NativeMethodAccessorImpl.class" />
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/OptionsPrinter.java" />
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/PrintUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="52" column="16" lean-forward="true" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/SuccessRatePrinter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/math/BigDecimal.java" />
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/VerticalCallSpread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="121" column="22" selection-start-line="121" selection-start-column="22" selection-end-line="121" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/VerticallPutSpreadTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="33" column="46" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/VerticalPutSpread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_183.txt" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_182.txt" />
-    <entry file="file://$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/VerticalCallSpreadTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_184.txt" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_2.csv" />
-    <entry file="file://$PROJECT_DIR$/options/src/main/resources/dailyprices_SPX.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state>
-          <caret column="41" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/blackscholes/BlackScholesGreeks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/resources/dailyprices_SPX_2019.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="81" selection-start-line="1" selection-start-column="81" selection-end-line="1" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/IronCondorSpreadTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="45" column="1" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/IronCondorSpread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="617">
-          <caret line="98" column="28" lean-forward="true" selection-start-line="94" selection-start-column="8" selection-end-line="98" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/CalendarCallSpread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
-          <caret line="117" column="56" selection-start-line="117" selection-start-column="56" selection-end-line="117" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/test/java/com/assets/options/blackscholes/IVolatilityTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/analyzers/SpreadAnalyzerResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="64" column="183" lean-forward="true" selection-start-line="64" selection-start-column="183" selection-end-line="64" selection-end-column="183" />
-          <folding>
-            <element signature="e#1065#1066#0" expanded="true" />
-            <element signature="e#1122#1123#0" expanded="true" />
-            <element signature="e#1290#1291#0" expanded="true" />
-            <element signature="e#1344#1345#0" expanded="true" />
-            <element signature="e#1474#1475#0" expanded="true" />
-            <element signature="e#1527#1528#0" expanded="true" />
-            <element signature="e#1580#1581#0" expanded="true" />
-            <element signature="e#1634#1635#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/ib/IBMain.java" />
-    <entry file="file://$PROJECT_DIR$/ibclient/pom.xml" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="148" column="23" selection-start-line="148" selection-start-column="23" selection-end-line="148" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ibclient/src/main/java/TestJavaClient/Main.java" />
-    <entry file="file://$PROJECT_DIR$/ibclient/src/main/java/TestJavaClient/OrderDlg.java" />
-    <entry file="file://$PROJECT_DIR$/ibclient/src/main/java/TestJavaClient/SampleFrame.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/com/interactivebrokers/tws-api/9.73.01-SNAPSHOT/tws-api-9.73.01-SNAPSHOT-sources.jar!/com/ib/client/EReader.java" />
-    <entry file="file://$PROJECT_DIR$/options/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="45" column="17" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/CallOptionTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/analyzers/SpreadAnalyzer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="95" selection-start-line="24" selection-start-column="95" selection-end-line="24" selection-end-column="95" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/Option.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="81" column="88" lean-forward="true" selection-start-line="81" selection-start-column="88" selection-end-line="81" selection-end-column="88" />
-          <folding>
-            <element signature="e#4838#4839#0" expanded="true" />
-            <element signature="e#4871#4872#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/CallOption.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="13" selection-start-line="13" selection-end-line="16" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/PutOption.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/test/java/com/assets/options/analyzers/SpreadAnalyzerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="41" column="66" selection-start-line="41" selection-start-column="66" selection-end-line="41" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BaseOptionSpread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="41" column="39" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/OptionTrade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1110">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/OptionSpread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/options/src/main/java/com/assets/options/OptionsHistorical.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="674">
-          <caret line="144" column="56" selection-start-line="144" selection-start-column="56" selection-end-line="144" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data-loader/src/main/java/com/assets/data/loader/impl/DataLoaderCsv.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="38" column="11" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
-          <folding>
-            <element signature="e#1378#1379#0" expanded="true" />
-            <element signature="e#1412#1413#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data-loader/src/main/java/com/assets/data/loader/DataLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/derivates/src/test/java/com/assets/derivates/service/TestIntegrationIntel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="42" column="57" selection-start-line="42" selection-start-column="57" selection-end-line="42" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/derivates/src/main/java/com/assets/derivates/DerivateGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="48" column="13" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
   </component>
   <component name="masterDetails">
     <states>

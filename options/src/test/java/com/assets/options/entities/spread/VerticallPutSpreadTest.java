@@ -1,5 +1,7 @@
 package com.assets.options.entities.spread;
 
+import com.assets.options.entities.OptionBuilder;
+import com.assets.options.entities.spread.vertical.VerticalSpread;
 import org.hamcrest.number.IsCloseTo;
 import org.junit.Test;
 
@@ -10,16 +12,13 @@ import static org.hamcrest.number.BigDecimalCloseTo.closeTo;
 
 public class VerticallPutSpreadTest {
 
-
     @Test
     public void givenVerticalPutCreditSpread_whenGetMaxProfit_expectCorrect() {
-        final VerticalPutSpread spread = VerticalPutSpread.basicPutSpread(
-                277,
-                275,
-                280,
-                60,
-                0.22,
-                "PHOB");
+        VerticalSpread spread = new SpreadFactory().bullPutSpread(
+                OptionBuilder.create("PHOB", 277).withDaysToExpiry(60).withStrikePrice(275).withIV(0.22).buildPut(),
+                OptionBuilder.create("PHOB", 277).withDaysToExpiry(60).withStrikePrice(280).withIV(0.22).buildPut(),
+                1
+        );
 
         assertThat(spread.getMaxGain(), closeTo(BigDecimal.valueOf(260), BigDecimal.valueOf(1)));
         assertThat(spread.getMaxLoss(), closeTo(BigDecimal.valueOf(-238), BigDecimal.valueOf(1)));
@@ -32,13 +31,11 @@ public class VerticallPutSpreadTest {
 
     @Test
     public void givenVerticalPutDebitSpread_whenGetMaxProfit_expectCorrect() {
-        final VerticalPutSpread spread = VerticalPutSpread.basicPutSpread(
-                277,
-                280,
-                275,
-                60,
-                0.22,
-                "PHOB");
+        VerticalSpread spread = new SpreadFactory().bullPutSpread(
+                OptionBuilder.create("PHOB", 277).withDaysToExpiry(60).withStrikePrice(275).withIV(0.22).buildPut(),
+                OptionBuilder.create("PHOB", 277).withDaysToExpiry(60).withStrikePrice(280).withIV(0.22).buildPut(),
+                1
+        );
 
         assertThat("Max gain is correct", spread.getMaxGain(), closeTo(BigDecimal.valueOf(235), BigDecimal.valueOf(1)));
         assertThat("Max loss is correct", spread.getMaxLoss(), closeTo(BigDecimal.valueOf(-264), BigDecimal.valueOf(1)));

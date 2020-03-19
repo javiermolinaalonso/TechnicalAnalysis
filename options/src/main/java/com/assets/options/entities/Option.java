@@ -1,13 +1,14 @@
 package com.assets.options.entities;
 
 import com.assets.options.blackscholes.BlackScholesGreeks;
+import org.jetbrains.annotations.NotNull;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-public class Option {
+public class Option implements Comparable<Option>{
 
     private static final Double IMPLIED_VOLATILITY_ERROR = 0.0001d;
     private static final double MAX_IV = 1d;
@@ -40,7 +41,7 @@ public class Option {
         greeks = new Greeks(results[1],results[2],results[3], results[4]/365d, results[5]);
     }
 
-    public Option(String ticker, BigDecimal currentPrice, BigDecimal strikePrice, BigDecimal bid, BigDecimal ask, OptionType optionType, LocalDate now, LocalDate expirationDate, Double riskFree) {
+    public Option(String ticker, OptionType optionType, BigDecimal currentPrice, BigDecimal strikePrice, BigDecimal bid, BigDecimal ask, LocalDate now, LocalDate expirationDate, Double riskFree) {
         this(ticker, currentPrice, strikePrice, optionType, now, expirationDate, riskFree);
         double yearsToExpiry = getDaysToExpiry() / 365d;
 
@@ -136,5 +137,10 @@ public class Option {
         return String.format("[%s, %s, %.2f, %s] at %.2f, %s, [%.2f, %.2f], %s",
                 ticker, isCall() ? "C" : "P", currentPrice, currentDate.toString(), strikePrice,
                 expirationDate.toString(), bid, ask, greeks);
+    }
+
+    @Override
+    public int compareTo(@NotNull Option o) {
+        return getStrikePrice().compareTo(o.getStrikePrice());
     }
 }

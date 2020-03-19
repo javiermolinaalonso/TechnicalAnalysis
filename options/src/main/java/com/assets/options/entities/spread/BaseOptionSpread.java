@@ -11,16 +11,20 @@ import java.util.List;
 
 public abstract class BaseOptionSpread implements OptionSpread {
 
-    private OptionPortfolio options;
-    private boolean mini = false;
+    private final OptionPortfolio options;
+    private final boolean mini;
 
-    BaseOptionSpread(boolean mini) {
-        this(new OptionPortfolio(new ArrayList<>()));
-        this.mini = mini;
+    protected BaseOptionSpread(boolean mini) {
+        this(new OptionPortfolio(new ArrayList<>()), mini);
     }
 
-    private BaseOptionSpread(OptionPortfolio portfolio) {
+    protected BaseOptionSpread(OptionPortfolio portfolio) {
+        this(portfolio, false);
+    }
+
+    protected BaseOptionSpread(OptionPortfolio portfolio, boolean mini) {
         this.options = portfolio;
+        this.mini = mini;
     }
 
     protected BigDecimal getMultiplier() {

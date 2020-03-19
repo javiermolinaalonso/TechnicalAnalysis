@@ -3,8 +3,10 @@ package com.assets.options;
 import com.assets.entities.StockPrice;
 import com.assets.options.analyzers.SpreadAnalyzer;
 import com.assets.options.analyzers.SpreadAnalyzerResult;
+import com.assets.options.entities.OptionBuilder;
 import com.assets.options.entities.spread.IronCondorSpread;
 import com.assets.options.entities.spread.OptionSpread;
+import com.assets.options.entities.spread.SpreadFactory;
 import com.assets.statistic.list.LambdaStatisticList;
 import com.assets.statistic.list.StockList;
 import org.apache.commons.lang3.tuple.ImmutablePair;
@@ -115,7 +117,14 @@ public class OptionsHistorical {
                             final int highProfitStrike = BigDecimal.valueOf(currentPrice + currentPrice * callLoP).setScale(0, RoundingMode.DOWN).intValue();
                             final int highLossStrike = BigDecimal.valueOf(currentPrice + currentPrice * callHiP).setScale(0, RoundingMode.UP).intValue();
 
-                            final IronCondorSpread spread = new IronCondorSpread(currentPrice, lowLossStrike, volatility, lowProfitStrike, volatility, highProfitStrike, volatility, highLossStrike, volatility, now, now.plusDays(daysToExpiry), volatility, RISK_FREE, BigDecimal.ONE, SPX, 1, false);
+                            IronCondorSpread spread = new SpreadFactory().ironCondor(
+                                    OptionBuilder.create("SPY", currentPrice).withStrikePrice(lowLossStrike).withIV(volatility).withDaysToExpiry(daysToExpiry).buildPut(),
+                                    OptionBuilder.create("SPY", currentPrice).withStrikePrice(lowProfitStrike).withIV(volatility).withDaysToExpiry(daysToExpiry).buildPut(),
+                                    OptionBuilder.create("SPY", currentPrice).withStrikePrice(highProfitStrike).withIV(volatility).withDaysToExpiry(daysToExpiry).buildCall(),
+                                    OptionBuilder.create("SPY", currentPrice).withStrikePrice(highLossStrike).withIV(volatility).withDaysToExpiry(daysToExpiry).buildCall(),
+                                    1
+                            );
+
                             if (spread.isValid()) {
                                 final SpreadAnalyzerResult analyzerResult = spreadAnalyzer.analyze(spread, BigDecimal.valueOf(currentPrice), now);
 //                                System.out.println(analyzerResult);

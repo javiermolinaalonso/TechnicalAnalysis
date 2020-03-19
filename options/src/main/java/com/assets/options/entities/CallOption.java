@@ -17,7 +17,10 @@ public class CallOption extends Option {
     }
 
     public CallOption(String ticker, BigDecimal currentPrice, BigDecimal strikePrice, BigDecimal premium, LocalDate now, LocalDate expirationDate, double riskFree) {
-        super(ticker, currentPrice, strikePrice, premium, premium, OptionType.CALL, now, expirationDate, riskFree);
+        super(ticker, OptionType.CALL, currentPrice, strikePrice, premium, premium, now, expirationDate, riskFree);
+    }
+    public CallOption(String ticker, BigDecimal currentPrice, BigDecimal strikePrice, BigDecimal bid, BigDecimal ask, LocalDate now, LocalDate expirationDate, double riskFree) {
+        super(ticker, OptionType.CALL, currentPrice, strikePrice, bid, ask, now, expirationDate, riskFree);
     }
 
 }

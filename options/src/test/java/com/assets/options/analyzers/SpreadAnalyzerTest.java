@@ -1,9 +1,8 @@
 package com.assets.options.analyzers;
 
-import com.assets.options.entities.spread.CalendarCallSpread;
-import com.assets.options.entities.spread.IronCondorSpread;
-import com.assets.options.entities.spread.OptionSpread;
-import com.assets.options.entities.spread.VerticalPutSpread;
+import com.assets.options.entities.CallOption;
+import com.assets.options.entities.OptionBuilder;
+import com.assets.options.entities.spread.*;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -16,6 +15,20 @@ public class SpreadAnalyzerTest {
 
     @Test
     public void name() {
+        final CalendarCallSpread spread = CalendarCallSpread.complexSpread(
+                289.48, 295,
+                LocalDate.now(), 65,
+                0.0907, 121, 0.0931,
+                "SPY", 0.1);
+        final SpreadAnalyzerResult analyze = victim.analyze(spread, new BigDecimal("285"), LocalDate.now().plusDays(60));
+
+        System.out.println(spread);
+        System.out.println(analyze);
+
+        System.out.println(spread.getValueAt(new BigDecimal("295"), LocalDate.now().plusDays(60), 0.11));
+    }
+    @Test
+    public void foo() {
         final CalendarCallSpread spread = CalendarCallSpread.complexSpread(
                 289.48, 295,
                 LocalDate.now(), 65,
@@ -119,18 +132,20 @@ public class SpreadAnalyzerTest {
         System.out.println(spreadDay9);
 //        System.out.println(victim.analyze(spreadDay1, BigDecimal.valueOf(145d), LocalDate.of(2019, 4, 4)));
     }
-    @Test
-    public void testBullSpread() {
-        final VerticalPutSpread spread = VerticalPutSpread.basicPutSpread(CURRENT_PRICE.doubleValue(), 140d, 145d, 45, 0.3, "IBM");
-        System.out.println(victim.analyze(spread, CURRENT_PRICE, LocalDate.now()));
-    }
 
 //    Expectation: [winProbability=67.43%, riskRewardRatio=1.0506, averageWin=434.91, averageLoss=413.95, cutPoints=[771.5645], expectedTae=48.37%]
 //    Purchased: {[702.00/710.00/762.00/786.00] @ 1996-12-07, [1.22/1.99/12.35/4.88], Max Loss:-1581.20, Max Win:818.80} purchased at 1996-11-27 with current price 755.00
 //    Result=801.91, currentStockPrice=749.76
     @Test
     public void testIronCondor() {
-        final IronCondorSpread spread = IronCondorSpread.basicIronCondor(755, 702, 710, 762, 786, 11, 0.05, "IBM");
-        System.out.println(victim.analyze(spread, BigDecimal.valueOf(755), LocalDate.now()));
+        IronCondorSpread spread = new SpreadFactory().ironCondor(
+                OptionBuilder.create("SBUX", 50.67).withStrikePrice(35d).withPremium(1.89).withDaysToExpiry(30).buildPut(),
+                OptionBuilder.create("SBUX", 50.67).withStrikePrice(40d).withPremium(2.75).withDaysToExpiry(30).buildPut(),
+                OptionBuilder.create("SBUX", 50.67).withStrikePrice(55d).withPremium(4.10).withDaysToExpiry(30).buildCall(),
+                OptionBuilder.create("SBUX", 50.67).withStrikePrice(60d).withPremium(2.48).withDaysToExpiry(30).buildCall(),
+                1
+        );
+        spread.printSpread(30, 65, 1);
+        System.out.println(victim.analyze(spread, BigDecimal.valueOf(50), LocalDate.now()));
     }
 }
