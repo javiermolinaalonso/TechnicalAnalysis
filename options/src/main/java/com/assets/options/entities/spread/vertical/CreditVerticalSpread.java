@@ -20,7 +20,8 @@ abstract class CreditVerticalSpread extends VerticalSpread {
         return lowerOptionTrade.getOption().getStrikePrice()
                 .subtract(upperOptionTrade.getOption().getStrikePrice())
                 .subtract(netPremiumPaid())
-                .multiply(getMultiplier());
+                .multiply(getMultiplier())
+                .subtract(getComission());
     }
 
 }

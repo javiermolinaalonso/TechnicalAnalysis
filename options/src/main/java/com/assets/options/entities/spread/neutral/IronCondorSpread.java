@@ -1,6 +1,7 @@
-package com.assets.options.entities.spread;
+package com.assets.options.entities.spread.neutral;
 
 import com.assets.options.entities.portfolio.OptionPortfolio;
+import com.assets.options.entities.spread.BaseOptionSpread;
 import com.assets.options.entities.spread.vertical.BearCallSpread;
 import com.assets.options.entities.spread.vertical.BullPutSpread;
 
@@ -28,10 +29,8 @@ public class IronCondorSpread extends BaseOptionSpread {
 
     @Override
     public BigDecimal getMaxLoss() {
-        return callSpread.getMaxLoss().add(putSpread.getMaxGain().subtract(putSpread.getComission()))
-                .min(
-                        putSpread.getMaxLoss().add(callSpread.getMaxGain().subtract(callSpread.getComission())
-                ));
+        return callSpread.getMaxLoss().add(putSpread.getMaxGain())
+                .min(putSpread.getMaxLoss().add(callSpread.getMaxGain()));
     }
 
     @Override

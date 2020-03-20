@@ -42,7 +42,7 @@ public class OptionPortfolio {
                             trade.getExpectedOption(currentPrice, when, volatility),
                             trade.getContracts(),
                             trade.getTicker(),
-                            trade.getContractComission(),
+                            trade.getTradeComission(),
                             trade.isMini()))
                     .collect(Collectors.toList());
     }

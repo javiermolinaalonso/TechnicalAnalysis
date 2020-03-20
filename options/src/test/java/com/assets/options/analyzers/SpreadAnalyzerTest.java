@@ -1,8 +1,10 @@
 package com.assets.options.analyzers;
 
-import com.assets.options.entities.CallOption;
 import com.assets.options.entities.OptionBuilder;
-import com.assets.options.entities.spread.*;
+import com.assets.options.entities.spread.CalendarCallSpread;
+import com.assets.options.entities.spread.OptionSpread;
+import com.assets.options.entities.spread.SpreadFactory;
+import com.assets.options.entities.spread.neutral.IronCondorSpread;
 import org.junit.Test;
 
 import java.math.BigDecimal;

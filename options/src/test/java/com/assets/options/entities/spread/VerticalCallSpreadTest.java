@@ -41,7 +41,7 @@ public class VerticalCallSpreadTest {
         );
 
         assertThat("Max gain is correct", spread.getMaxGain(), closeTo(BigDecimal.valueOf(235), BigDecimal.valueOf(1)));
-        assertThat("Max loss is correct", spread.getMaxLoss(), closeTo(BigDecimal.valueOf(-263), BigDecimal.valueOf(1)));
+        assertThat("Max loss is correct", spread.getMaxLoss(), closeTo(BigDecimal.valueOf(-264), BigDecimal.valueOf(1)));
         assertThat("Cost is correct", spread.getCost(), closeTo(BigDecimal.valueOf(-235), BigDecimal.valueOf(1)));
         assertThat("Delta is correct", spread.getGreeks().getDelta(), IsCloseTo.closeTo(-0.08, 0.01));
         assertThat("Gamma is correct", spread.getGreeks().getGamma(), IsCloseTo.closeTo(0.00008, 0.00001));

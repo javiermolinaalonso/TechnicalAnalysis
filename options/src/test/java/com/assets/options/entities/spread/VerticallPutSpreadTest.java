@@ -21,7 +21,7 @@ public class VerticallPutSpreadTest {
         );
 
         assertThat(spread.getMaxGain(), closeTo(BigDecimal.valueOf(260), BigDecimal.valueOf(1)));
-        assertThat(spread.getMaxLoss(), closeTo(BigDecimal.valueOf(-238), BigDecimal.valueOf(1)));
+        assertThat(spread.getMaxLoss(), closeTo(BigDecimal.valueOf(-239), BigDecimal.valueOf(1)));
         assertThat(spread.getCost(), closeTo(BigDecimal.valueOf(-260), BigDecimal.valueOf(1)));
 
         assertThat("Max loss happens when price is low", spread.getExpirationValue(BigDecimal.valueOf(100)), closeTo(spread.getMaxLoss(), BigDecimal.valueOf(3)));

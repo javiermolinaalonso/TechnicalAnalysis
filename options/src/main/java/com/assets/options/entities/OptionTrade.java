@@ -11,7 +11,7 @@ public class OptionTrade {
     private final String ticker;
     private final BigDecimal cost;
     private final boolean mini;
-    private final BigDecimal contractComission;
+    private final BigDecimal tradeComission;
 
     public OptionTrade(Option option, int contracts, String ticker, BigDecimal contractComission, boolean mini) {
         this.option = option;
@@ -19,17 +19,12 @@ public class OptionTrade {
         this.contracts = contracts;
         this.ticker = ticker;
         this.mini = mini;
-        this.cost = BigDecimal.valueOf(contracts).multiply(premium).multiply(getAmountOfStocks())
-                .add(contractComission.multiply(BigDecimal.valueOf(Math.abs(contracts))));
-        this.contractComission = contractComission;
-    }
-
-    public BigDecimal getContractComission() {
-        return contractComission;
+        this.tradeComission = contractComission.multiply(BigDecimal.valueOf(Math.abs(contracts)));
+        this.cost = BigDecimal.valueOf(contracts).multiply(premium).multiply(getAmountOfStocks()).add(tradeComission);
     }
 
     public BigDecimal getTradeComission() {
-        return BigDecimal.valueOf(Math.abs(getContracts())).multiply(getContractComission());
+        return tradeComission;
     }
 
     public BigDecimal getCost() {

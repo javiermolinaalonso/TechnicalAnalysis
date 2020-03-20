@@ -84,7 +84,7 @@ public abstract class BaseOptionSpread implements OptionSpread {
 
     @Override
     public BigDecimal getComission() {
-        return options.getTrades().stream().map(OptionTrade::getContractComission).reduce(BigDecimal::add).get();
+        return options.getTrades().stream().map(OptionTrade::getTradeComission).reduce(BigDecimal::add).get();
     }
 
     @Override
