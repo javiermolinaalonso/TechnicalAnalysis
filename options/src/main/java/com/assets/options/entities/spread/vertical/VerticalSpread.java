@@ -46,7 +46,4 @@ public abstract class VerticalSpread extends BaseOptionSpread {
         return upperOptionTrade.getOption().getPremium();
     }
 
-    BigDecimal netPremiumPaid() {
-        return lowerOptionTrade.getPremium().subtract(upperOptionTrade.getPremium());
-    }
 }

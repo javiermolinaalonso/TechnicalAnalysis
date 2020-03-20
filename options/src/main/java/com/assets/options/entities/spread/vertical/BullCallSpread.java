@@ -4,9 +4,9 @@ import com.assets.options.entities.OptionTrade;
 
 import java.math.BigDecimal;
 
-public class BullSpread extends VerticalSpread {
+public class BullCallSpread extends VerticalSpread {
 
-    public BullSpread(OptionTrade lowerOption, OptionTrade upperOption) {
+    public BullCallSpread(OptionTrade lowerOption, OptionTrade upperOption) {
         super(lowerOption, upperOption);
     }
 

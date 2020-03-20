@@ -37,7 +37,11 @@ public class OptionTrade {
     }
 
     public BigDecimal getPremium() {
-        return premium;
+        if (contracts > 0) {
+            return option.getAsk();
+        } else {
+            return option.getBid();
+        }
     }
 
     public int getContracts() {
@@ -107,5 +111,9 @@ public class OptionTrade {
         } else {
             return 1;
         }
+    }
+
+    public BigDecimal getGrossPremium() {
+        return getPremium().multiply(BigDecimal.valueOf(getContracts()));
     }
 }

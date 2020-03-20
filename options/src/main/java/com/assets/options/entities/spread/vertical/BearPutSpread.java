@@ -12,7 +12,8 @@ public class BearPutSpread extends VerticalSpread {
 
     @Override
     public BigDecimal getMaxGain() {
-        return upperOptionTrade.getOption().getStrikePrice().subtract(lowerOptionTrade.getOption().getStrikePrice())
+        return upperOptionTrade.getOption().getStrikePrice()
+                .subtract(lowerOptionTrade.getOption().getStrikePrice())
                 .subtract(netPremiumPaid())
                 .multiply(getMultiplier())
                 .subtract(getComission());

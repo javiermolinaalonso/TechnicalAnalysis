@@ -2,24 +2,24 @@ package com.assets.options.entities.spread;
 
 import com.assets.options.entities.CallOption;
 import com.assets.options.entities.PutOption;
-import com.assets.options.entities.spread.vertical.BearSpread;
+import com.assets.options.entities.spread.vertical.BearCallSpread;
 import com.assets.options.entities.spread.vertical.BearPutSpread;
-import com.assets.options.entities.spread.vertical.BullSpread;
+import com.assets.options.entities.spread.vertical.BullCallSpread;
 import com.assets.options.entities.spread.vertical.BullPutSpread;
 
 public class SpreadFactory {
 
-    public BullSpread bullCallSpread(CallOption o1, CallOption o2, int contracts) {
+    public BullCallSpread bullCallSpread(CallOption o1, CallOption o2, int contracts) {
         assert o1.compareTo(o2) < 0;
-        return new BullSpread(
+        return new BullCallSpread(
                 OptionTradeFactory.buy(o1, contracts),
                 OptionTradeFactory.write(o2, contracts)
         );
     }
 
-    public BearSpread bearCallSpread(CallOption o1, CallOption o2, int contracts) {
+    public BearCallSpread bearCallSpread(CallOption o1, CallOption o2, int contracts) {
         assert o1.compareTo(o2) < 0;
-        return new BearSpread(
+        return new BearCallSpread(
                 OptionTradeFactory.write(o1, contracts),
                 OptionTradeFactory.buy(o2, contracts)
         );

@@ -1,7 +1,7 @@
 package com.assets.options.entities.spread;
 
 import com.assets.options.entities.portfolio.OptionPortfolio;
-import com.assets.options.entities.spread.vertical.BearSpread;
+import com.assets.options.entities.spread.vertical.BearCallSpread;
 import com.assets.options.entities.spread.vertical.BullPutSpread;
 
 import java.math.BigDecimal;
@@ -12,10 +12,10 @@ import java.util.stream.Stream;
 
 public class IronCondorSpread extends BaseOptionSpread {
 
-    private final BearSpread callSpread;
+    private final BearCallSpread callSpread;
     private final BullPutSpread putSpread;
 
-    public IronCondorSpread(BearSpread callSpread, BullPutSpread putSpread) {
+    public IronCondorSpread(BearCallSpread callSpread, BullPutSpread putSpread) {
         super(new OptionPortfolio(Stream.concat(callSpread.getOptionTrades().stream(), putSpread.getOptionTrades().stream()).collect(Collectors.toList())));
         this.callSpread = callSpread;
         this.putSpread = putSpread;

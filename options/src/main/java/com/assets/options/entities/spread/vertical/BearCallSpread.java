@@ -4,9 +4,9 @@ import com.assets.options.entities.OptionTrade;
 
 import java.math.BigDecimal;
 
-public class BearSpread extends VerticalSpread {
+public class BearCallSpread extends VerticalSpread {
 
-    public BearSpread(OptionTrade lowerOption, OptionTrade upperOption) {
+    public BearCallSpread(OptionTrade lowerOption, OptionTrade upperOption) {
         super(lowerOption, upperOption);
     }
 
@@ -17,8 +17,8 @@ public class BearSpread extends VerticalSpread {
 
     @Override
     public BigDecimal getMaxLoss() {
-        return upperOptionTrade.getOption().getStrikePrice()
-                .subtract(lowerOptionTrade.getOption().getStrikePrice())
+        return lowerOptionTrade.getOption().getStrikePrice()
+                .subtract(upperOptionTrade.getOption().getStrikePrice())
                 .subtract(netPremiumPaid())
                 .multiply(getMultiplier());
     }

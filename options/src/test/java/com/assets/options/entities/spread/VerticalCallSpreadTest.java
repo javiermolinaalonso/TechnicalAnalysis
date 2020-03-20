@@ -12,16 +12,17 @@ import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.lessThan;
 import static org.hamcrest.number.BigDecimalCloseTo.closeTo;
 
-public class VerticalSpreadTest {
+public class VerticalCallSpreadTest {
 
     @Test
     public void givenVerticalDebitSpread_whenGetMaxProfit_expectCorrect() {
 
         VerticalSpread spread = new SpreadFactory().bullCallSpread(
-                OptionBuilder.create("PHOB", 277).withDaysToExpiry(60).withStrikePrice(275).withIV(0.22).buildCall(),
                 OptionBuilder.create("PHOB", 277).withDaysToExpiry(60).withStrikePrice(280).withIV(0.22).buildCall(),
+                OptionBuilder.create("PHOB", 277).withDaysToExpiry(60).withStrikePrice(285).withIV(0.22).buildCall(),
                 1
         );
+
         assertThat(spread.getMaxGain(), closeTo(BigDecimal.valueOf(300), BigDecimal.valueOf(1)));
         assertThat(spread.getMaxLoss(), closeTo(BigDecimal.valueOf(-200), BigDecimal.valueOf(1)));
         assertThat(spread.getCost(), closeTo(BigDecimal.valueOf(200), BigDecimal.valueOf(1)));
@@ -33,12 +34,12 @@ public class VerticalSpreadTest {
 
     @Test
     public void givenVerticalCreditSpread_whenGetMaxProfit_expectCorrect() {
-
         VerticalSpread spread = new SpreadFactory().bearCallSpread(
                 OptionBuilder.create("PHOB", 277).withDaysToExpiry(60).withStrikePrice(275).withIV(0.22).buildCall(),
                 OptionBuilder.create("PHOB", 277).withDaysToExpiry(60).withStrikePrice(280).withIV(0.22).buildCall(),
                 1
         );
+
         assertThat("Max gain is correct", spread.getMaxGain(), closeTo(BigDecimal.valueOf(235), BigDecimal.valueOf(1)));
         assertThat("Max loss is correct", spread.getMaxLoss(), closeTo(BigDecimal.valueOf(-263), BigDecimal.valueOf(1)));
         assertThat("Cost is correct", spread.getCost(), closeTo(BigDecimal.valueOf(-235), BigDecimal.valueOf(1)));

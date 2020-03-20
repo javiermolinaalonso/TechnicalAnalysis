@@ -17,7 +17,7 @@ public class OptionBuilder {
     private BigDecimal bid;
     private BigDecimal ask;
 
-    private Double riskFree = 0.1d;
+    private Double riskFree = 0.001d;
 
     public static OptionBuilder create(String ticker, double currentPrice) {
         return create(ticker,currentPrice,Clock.systemUTC());

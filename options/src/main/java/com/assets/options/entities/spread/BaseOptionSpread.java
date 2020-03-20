@@ -58,17 +58,18 @@ public abstract class BaseOptionSpread implements OptionSpread {
         return expectedValue;
     }
 
-    BaseOptionSpread addSpread(BaseOptionSpread spread) {
-        this.options.add(spread.getOptionTrades());
-        return this;
-    }
-
     void setOptionTrades(List<OptionTrade> optionTrades) {
         this.options.setTrades(optionTrades);
     }
 
     public List<OptionTrade> getOptionTrades() {
         return options.getTrades();
+    }
+
+    protected BigDecimal netPremiumPaid() {
+        return options.getTrades().stream()
+                .map(trade -> trade.getGrossPremium())
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 
     @Override

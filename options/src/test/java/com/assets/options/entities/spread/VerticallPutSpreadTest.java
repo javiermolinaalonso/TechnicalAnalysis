@@ -31,7 +31,7 @@ public class VerticallPutSpreadTest {
 
     @Test
     public void givenVerticalPutDebitSpread_whenGetMaxProfit_expectCorrect() {
-        VerticalSpread spread = new SpreadFactory().bullPutSpread(
+        VerticalSpread spread = new SpreadFactory().bearPutSpread(
                 OptionBuilder.create("PHOB", 277).withDaysToExpiry(60).withStrikePrice(275).withIV(0.22).buildPut(),
                 OptionBuilder.create("PHOB", 277).withDaysToExpiry(60).withStrikePrice(280).withIV(0.22).buildPut(),
                 1

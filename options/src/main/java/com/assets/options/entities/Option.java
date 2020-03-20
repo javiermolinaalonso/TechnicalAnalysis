@@ -128,6 +128,14 @@ public class Option implements Comparable<Option>{
         return premium;
     }
 
+    public BigDecimal getBid() {
+        return bid;
+    }
+
+    public BigDecimal getAsk() {
+        return ask;
+    }
+
     public Greeks getGreeks() {
         return greeks;
     }

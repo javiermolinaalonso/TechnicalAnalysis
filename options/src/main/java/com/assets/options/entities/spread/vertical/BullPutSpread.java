@@ -17,9 +17,10 @@ public class BullPutSpread extends VerticalSpread {
 
     @Override
     public BigDecimal getMaxLoss() {
-        return upperOptionTrade.getOption().getStrikePrice()
-                .subtract(lowerOptionTrade.getOption().getStrikePrice())
+        return lowerOptionTrade.getOption().getStrikePrice()
+                .subtract(upperOptionTrade.getOption().getStrikePrice())
                 .subtract(netPremiumPaid())
                 .multiply(getMultiplier());
     }
+
 }
