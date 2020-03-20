@@ -1,7 +1,7 @@
 package com.assets.options.entities.spread;
 
-import com.assets.options.entities.CallOption;
 import com.assets.options.entities.Option;
+import com.assets.options.entities.OptionBuilder;
 import com.assets.options.entities.OptionTrade;
 
 import java.math.BigDecimal;
@@ -74,10 +74,10 @@ public class CalendarCallSpread extends BaseOptionSpread {
         super(mini);
         this.strikePrice = strikePrice;
         this.volatility = volatility;
-        closerOption = new CallOption(ticker, currentPrice, strikePrice, now, expirationDate, closeIV, riskFree);
-        furtherOption = new CallOption(ticker, currentPrice, strikePrice, now, furtherExpirationDate, farIV, riskFree);
-        OptionTrade closerOptionTrade = new OptionTrade(closerOption, contracts * -1, ticker, comission, mini);
-        OptionTrade furtherOptionTrade = new OptionTrade(furtherOption, contracts, ticker, comission, mini);
+        closerOption = OptionBuilder.create(ticker, currentPrice.doubleValue()).withStrikePrice(strikePrice.doubleValue()).withCurrentDate(now).withExpirationAt(expirationDate).withIV(closeIV).withRiskFree(riskFree).buildCall();
+        furtherOption = OptionBuilder.create(ticker, currentPrice.doubleValue()).withStrikePrice(strikePrice.doubleValue()).withCurrentDate(now).withExpirationAt(furtherExpirationDate).withIV(farIV).withRiskFree(riskFree).buildCall();
+        OptionTrade closerOptionTrade = OptionTradeFactory.write(closerOption, contracts, comission.doubleValue());
+        OptionTrade furtherOptionTrade = OptionTradeFactory.buy(closerOption, contracts, comission.doubleValue());;
         setOptionTrades(Arrays.asList(closerOptionTrade, furtherOptionTrade));
 
     }

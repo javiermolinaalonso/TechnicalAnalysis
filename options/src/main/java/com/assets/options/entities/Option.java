@@ -8,7 +8,7 @@ import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-public class Option implements Comparable<Option>{
+public abstract class Option implements Comparable<Option> {
 
     private static final Double IMPLIED_VOLATILITY_ERROR = 0.0001d;
     private static final double MAX_IV = 1d;
@@ -30,7 +30,7 @@ public class Option implements Comparable<Option>{
     protected BigDecimal premium;
     protected Greeks greeks;
 
-    public Option(String ticker, OptionType optionType, BigDecimal currentPrice, BigDecimal strikePrice, LocalDate now, LocalDate expirationDate, Double impliedVolatility, Double riskFree) {
+    Option(String ticker, OptionType optionType, BigDecimal currentPrice, BigDecimal strikePrice, LocalDate now, LocalDate expirationDate, Double impliedVolatility, Double riskFree) {
         this(ticker, currentPrice, strikePrice, optionType, now, expirationDate, riskFree);
         this.impliedVolatility = impliedVolatility;
         double yearsToExpiry = getDaysToExpiry() / 365d;
@@ -41,7 +41,7 @@ public class Option implements Comparable<Option>{
         greeks = new Greeks(results[1],results[2],results[3], results[4]/365d, results[5]);
     }
 
-    public Option(String ticker, OptionType optionType, BigDecimal currentPrice, BigDecimal strikePrice, BigDecimal bid, BigDecimal ask, LocalDate now, LocalDate expirationDate, Double riskFree) {
+    Option(String ticker, OptionType optionType, BigDecimal currentPrice, BigDecimal strikePrice, BigDecimal bid, BigDecimal ask, LocalDate now, LocalDate expirationDate, Double riskFree) {
         this(ticker, currentPrice, strikePrice, optionType, now, expirationDate, riskFree);
         double yearsToExpiry = getDaysToExpiry() / 365d;
 

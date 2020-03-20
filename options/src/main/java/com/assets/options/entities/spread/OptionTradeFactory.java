@@ -7,13 +7,22 @@ import java.math.BigDecimal;
 
 public class OptionTradeFactory {
 
-    private static final BigDecimal DEFAULT_COMISSION = BigDecimal.valueOf(1);
+    private static final double DEFAULT_FEE = 1d;
 
     public static OptionTrade write(Option option, int contracts) {
-        return new OptionTrade(option, contracts * -1, option.getTicker(), DEFAULT_COMISSION.multiply(BigDecimal.valueOf(contracts)), false);
+        return write(option, contracts, DEFAULT_FEE);
+    }
+    public static OptionTrade write(Option option, int contracts, double fee) {
+        assert contracts > 0;
+        return new OptionTrade(option, contracts * -1, option.getTicker(), BigDecimal.valueOf(fee), false);
     }
 
     public static OptionTrade buy(Option option, int contracts) {
-        return new OptionTrade(option, contracts, option.getTicker(), DEFAULT_COMISSION.multiply(BigDecimal.valueOf(contracts)), false);
+        return buy(option, contracts, DEFAULT_FEE);
+    }
+
+    public static OptionTrade buy(Option option, int contracts, double fee) {
+        assert contracts > 0;
+        return new OptionTrade(option, contracts, option.getTicker(), BigDecimal.valueOf(fee), false);
     }
 }

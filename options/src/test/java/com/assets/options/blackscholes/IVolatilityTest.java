@@ -1,10 +1,8 @@
 package com.assets.options.blackscholes;
 
-import com.assets.options.entities.CallOption;
-import com.assets.options.entities.PutOption;
+import com.assets.options.entities.Option;
+import com.assets.options.entities.OptionBuilder;
 import org.junit.Test;
-
-import java.time.LocalDate;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -14,15 +12,16 @@ public class IVolatilityTest {
 
     @Test
     public void volatilityIsProperlyCalculated_whenGivenOptionPrice() {
-        final CallOption callV = new CallOption("IWM", 143.45, 144d, 3.7d, LocalDate.of(2019, 1, 16), LocalDate.of(2019, 3, 1), 0.015);
-        final PutOption putV = new PutOption("IWM", 143.45, 144d, 4.16d, LocalDate.of(2019, 1, 16), LocalDate.of(2019, 3, 1), 0.015);
+        Option callV = OptionBuilder.create("IWM", 143.45).withStrikePrice(144d).withPremium(3.7).withDaysToExpiry(44).withRiskFree(0.015).buildCall();
+        Option putV = OptionBuilder.create("IWM", 143.45).withStrikePrice(144d).withPremium(4.16).withDaysToExpiry(44).withRiskFree(0.015).buildPut();
+
         assertThat(callV.getImpliedVolatility(), is(closeTo(0.1933, 0.011)));
         assertThat(putV.getImpliedVolatility(), is(closeTo(0.1926, 0.01)));
     }
 
     @Test
     public void volatilityIsProperlyCalculated_whenGivenOptionPriceDuo() {
-        final CallOption callV = new CallOption("IWM", 143.45, 165d, 1.57d, LocalDate.of(2019, 1, 16), LocalDate.of(2019, 9, 20), 0.015);
+        Option callV = OptionBuilder.create("IWM", 143.45).withStrikePrice(165d).withPremium(1.57).withDaysToExpiry(247).withRiskFree(0.015).buildCall();
         assertThat(callV.getImpliedVolatility(), is(closeTo(0.1569, 0.011)));
     }
 }

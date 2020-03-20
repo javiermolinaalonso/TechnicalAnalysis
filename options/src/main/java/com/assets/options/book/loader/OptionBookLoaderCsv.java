@@ -2,7 +2,7 @@ package com.assets.options.book.loader;
 
 import com.assets.data.loader.impl.AbstractCsvLoader;
 import com.assets.options.entities.Option;
-import com.assets.options.entities.OptionType;
+import com.assets.options.entities.OptionBuilder;
 
 import java.math.BigDecimal;
 import java.text.ParseException;
@@ -35,27 +35,21 @@ public class OptionBookLoaderCsv extends AbstractCsvLoader<Option> {
 
     @Override
     protected Option parseLine(String[] data) {
-        String callOrPput = data[3];
+        String callOrPut = data[3];
 
-        OptionType optionType;
-        if(CALL.equals(callOrPput)) {
-            optionType = OptionType.CALL;
-        } else {
-            optionType = OptionType.PUT;
-        }
         try {
             Date day = dateFormat.parse(data[2]);
             LocalDate expiry = day.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-            return new Option(
-                    data[0],
-                    optionType, new BigDecimal(data[1]),
-                    new BigDecimal(data[4]),
-                    new BigDecimal(data[6]),
-                    new BigDecimal(data[7]),
-                    now,
-                    expiry,
-                    0d
-            );
+            OptionBuilder optionBuilder = OptionBuilder.create(data[0], new BigDecimal(data[1]).doubleValue())
+                    .withStrikePrice(new BigDecimal(data[4]).doubleValue())
+                    .withBidAsk(new BigDecimal(data[6]).doubleValue(), new BigDecimal(data[7]).doubleValue())
+                    .withCurrentDate(now)
+                    .withExpirationAt(expiry);
+            if(CALL.equals(callOrPut)) {
+                return optionBuilder.buildCall();
+            } else {
+                return optionBuilder.buildPut();
+            }
         } catch (ParseException e) {
             return null;
         }

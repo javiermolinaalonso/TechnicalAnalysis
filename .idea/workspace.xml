@@ -3,14 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="8e42815d-2456-460e-847d-5e76ba9d8ceb" name="Default" comment="Vertical spreads are awesome">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/OptionsHistorical.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/OptionsHistorical.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/derivates/src/main/java/com/assets/derivates/OptionsVolatility.java" beforeDir="false" afterPath="$PROJECT_DIR$/derivates/src/main/java/com/assets/derivates/OptionsVolatility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/book/loader/OptionBookLoaderCsv.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/book/loader/OptionBookLoaderCsv.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/CallOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/CallOption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/Option.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/Option.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/OptionBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/OptionBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/OptionTrade.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/OptionTrade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/portfolio/OptionPortfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/portfolio/OptionPortfolio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BaseOptionSpread.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/BaseOptionSpread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/IronCondorSpread.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/neutral/IronCondorSpread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/SpreadFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/SpreadFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/test/java/com/assets/options/analyzers/SpreadAnalyzerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/analyzers/SpreadAnalyzerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/IronCondorSpreadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/IronCondorSpreadTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/CalendarCallSpread.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/CalendarCallSpread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/OptionTradeFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/OptionTradeFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/impl/OptionsCalculatorCandlestick.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/impl/OptionsCalculatorCandlestick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/test/java/com/assets/options/blackscholes/IVolatilityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/blackscholes/IVolatilityTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/CallOptionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/CallOptionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/OptionTradeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/OptionTradeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/test/java/com/assets/options/impl/CalendarSimulationTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +77,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555568819387" />
-    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JSON&#10;TEXT" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="dynamic.classpath" value="false" />
@@ -129,7 +134,7 @@
       <recent name="com.assets.entities.exceptions" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.VerticallPutSpreadTest">
+  <component name="RunManager" selected="Application.GreeksAnalyser">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -189,6 +194,20 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GreeksAnalyser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.assets.options.main.GreeksAnalyser" />
+      <module name="options" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.assets.options.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -267,83 +286,69 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method v="2" />
     </configuration>
-    <configuration name="IronCondorSpreadTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CallOptionTest.givenCallOption_assertThetaIsNegative" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="options" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.assets.options.entities.spread.*" />
+          <option name="PATTERN" value="com.assets.options.entities.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.assets.options.entities.spread" />
-      <option name="MAIN_CLASS_NAME" value="com.assets.options.entities.spread.IronCondorSpreadTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="IronCondorSpreadTest.givenIronCondorSpread_whenGetMaxProfit_expectCorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="options" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.assets.options.entities.spread.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.assets.options.entities.spread" />
-      <option name="MAIN_CLASS_NAME" value="com.assets.options.entities.spread.IronCondorSpreadTest" />
-      <option name="METHOD_NAME" value="givenIronCondorSpread_whenGetMaxProfit_expectCorrect" />
+      <option name="PACKAGE_NAME" value="com.assets.options.entities" />
+      <option name="MAIN_CLASS_NAME" value="com.assets.options.entities.CallOptionTest" />
+      <option name="METHOD_NAME" value="givenCallOption_assertThetaIsNegative" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VerticalCallSpreadTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CallOptionTest.testGivenPrice20VolatilityExpectImpliedVolatilityMatches" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="options" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.assets.options.entities.spread.neutral.*" />
+          <option name="PATTERN" value="com.assets.options.entities.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.assets.options.entities.spread" />
-      <option name="MAIN_CLASS_NAME" value="com.assets.options.entities.spread.VerticalCallSpreadTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="VerticalCallSpreadTest.givenVerticalDebitSpread_whenGetMaxProfit_expectCorrect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="options" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.assets.options.entities.spread.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.assets.options.entities.spread" />
-      <option name="MAIN_CLASS_NAME" value="com.assets.options.entities.spread.VerticalCallSpreadTest" />
-      <option name="METHOD_NAME" value="givenVerticalDebitSpread_whenGetMaxProfit_expectCorrect" />
+      <option name="PACKAGE_NAME" value="com.assets.options.entities" />
+      <option name="MAIN_CLASS_NAME" value="com.assets.options.entities.CallOptionTest" />
+      <option name="METHOD_NAME" value="testGivenPrice20VolatilityExpectImpliedVolatilityMatches" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VerticallPutSpreadTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CallOptionTest.testGivenPriceExactStartVolatilityExpectImpliedVolatilityMatches" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="options" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.assets.options.entities.spread.neutral.*" />
+          <option name="PATTERN" value="com.assets.options.entities.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.assets.options.entities.spread" />
-      <option name="MAIN_CLASS_NAME" value="com.assets.options.entities.spread.VerticallPutSpreadTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="com.assets.options.entities" />
+      <option name="MAIN_CLASS_NAME" value="com.assets.options.entities.CallOptionTest" />
+      <option name="METHOD_NAME" value="testGivenPriceExactStartVolatilityExpectImpliedVolatilityMatches" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CallOptionTest.testGivenTwoOptionsWithDifferentPremiumExpectHigherVolatilityAtHigherPremium" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="options" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.assets.options.entities.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.assets.options.entities" />
+      <option name="MAIN_CLASS_NAME" value="com.assets.options.entities.CallOptionTest" />
+      <option name="METHOD_NAME" value="testGivenTwoOptionsWithDifferentPremiumExpectHigherVolatilityAtHigherPremium" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -525,19 +530,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.VerticalCallSpreadTest" />
-      <item itemvalue="JUnit.VerticallPutSpreadTest" />
-      <item itemvalue="JUnit.IronCondorSpreadTest" />
-      <item itemvalue="JUnit.IronCondorSpreadTest.givenIronCondorSpread_whenGetMaxProfit_expectCorrect" />
-      <item itemvalue="JUnit.VerticalCallSpreadTest.givenVerticalDebitSpread_whenGetMaxProfit_expectCorrect" />
+      <item itemvalue="JUnit.CallOptionTest.testGivenTwoOptionsWithDifferentPremiumExpectHigherVolatilityAtHigherPremium" />
+      <item itemvalue="JUnit.CallOptionTest.testGivenPrice20VolatilityExpectImpliedVolatilityMatches" />
+      <item itemvalue="JUnit.CallOptionTest.testGivenPriceExactStartVolatilityExpectImpliedVolatilityMatches" />
+      <item itemvalue="JUnit.CallOptionTest.givenCallOption_assertThetaIsNegative" />
+      <item itemvalue="Application.GreeksAnalyser" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.VerticallPutSpreadTest" />
-        <item itemvalue="JUnit.VerticalCallSpreadTest" />
-        <item itemvalue="JUnit.VerticalCallSpreadTest.givenVerticalDebitSpread_whenGetMaxProfit_expectCorrect" />
-        <item itemvalue="JUnit.IronCondorSpreadTest.givenIronCondorSpread_whenGetMaxProfit_expectCorrect" />
-        <item itemvalue="JUnit.IronCondorSpreadTest" />
+        <item itemvalue="Application.GreeksAnalyser" />
+        <item itemvalue="JUnit.CallOptionTest.givenCallOption_assertThetaIsNegative" />
+        <item itemvalue="JUnit.CallOptionTest.testGivenPriceExactStartVolatilityExpectImpliedVolatilityMatches" />
+        <item itemvalue="JUnit.CallOptionTest.testGivenPrice20VolatilityExpectImpliedVolatilityMatches" />
+        <item itemvalue="JUnit.CallOptionTest.testGivenTwoOptionsWithDifferentPremiumExpectHigherVolatilityAtHigherPremium" />
       </list>
     </recent_temporary>
   </component>
@@ -622,7 +627,7 @@
       <workItem from="1559306841555" duration="388000" />
       <workItem from="1583491169710" duration="130000" />
       <workItem from="1584616476010" duration="15297000" />
-      <workItem from="1584697200959" duration="2553000" />
+      <workItem from="1584697200959" duration="7933000" />
     </task>
     <task id="LOCAL-00001" summary="Added get and options interface">
       <created>1453363092145</created>
@@ -855,7 +860,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584702613592</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Vertical spreads are awesome">
+      <created>1584704175543</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1584704175543</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -930,80 +942,87 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="825" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584703541635" />
-    <state x="810" y="313" key="CommitChangelistDialog2" timestamp="1584702613464">
+    <state x="810" y="313" key="CommitChangelistDialog2" timestamp="1584704175348">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="810" y="313" key="CommitChangelistDialog2/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584702613464" />
+    <state x="810" y="313" key="CommitChangelistDialog2/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584704175348" />
     <state x="100" y="100" width="2360" height="1240" key="DiffContextDialog" timestamp="1584702085208">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="100" y="100" width="2360" height="1240" key="DiffContextDialog/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584702085208" />
     <state x="100" y="100" width="2360" height="1240" key="DiffContextDialog/2560.284.1440.877/0.23.2560.1337@0.23.2560.1337" timestamp="1584695853308" />
-    <state width="2518" height="537" key="GridCell.Tab.0.bottom" timestamp="1584704161630">
+    <state width="2518" height="537" key="GridCell.Tab.0.bottom" timestamp="1584713565651">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state width="2518" height="537" key="GridCell.Tab.0.bottom/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584712650371" />
+    <state width="2518" height="537" key="GridCell.Tab.0.bottom/2560.284.1440.877/0.0.2560.1360@0.0.2560.1360" timestamp="1584709747723" />
+    <state width="2518" height="537" key="GridCell.Tab.0.bottom/2560.284.1440.877/0.23.2560.1337@0.23.2560.1337" timestamp="1584713565651" />
+    <state width="2518" height="537" key="GridCell.Tab.0.center" timestamp="1584713565648">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state width="2518" height="537" key="GridCell.Tab.0.center/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584712650369" />
+    <state width="2518" height="537" key="GridCell.Tab.0.center/2560.284.1440.877/0.0.2560.1360@0.0.2560.1360" timestamp="1584709747721" />
+    <state width="2518" height="537" key="GridCell.Tab.0.center/2560.284.1440.877/0.23.2560.1337@0.23.2560.1337" timestamp="1584713565648" />
+    <state width="2518" height="537" key="GridCell.Tab.0.left" timestamp="1584713565646">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state width="2518" height="537" key="GridCell.Tab.0.left/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584712650368" />
+    <state width="2518" height="537" key="GridCell.Tab.0.left/2560.284.1440.877/0.0.2560.1360@0.0.2560.1360" timestamp="1584709747720" />
+    <state width="2518" height="537" key="GridCell.Tab.0.left/2560.284.1440.877/0.23.2560.1337@0.23.2560.1337" timestamp="1584713565646" />
+    <state width="2518" height="537" key="GridCell.Tab.0.right" timestamp="1584713565650">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state width="2518" height="537" key="GridCell.Tab.0.right/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584712650370" />
+    <state width="2518" height="537" key="GridCell.Tab.0.right/2560.284.1440.877/0.0.2560.1360@0.0.2560.1360" timestamp="1584709747722" />
+    <state width="2518" height="537" key="GridCell.Tab.0.right/2560.284.1440.877/0.23.2560.1337@0.23.2560.1337" timestamp="1584713565650" />
+    <state width="2518" height="562" key="GridCell.Tab.1.bottom" timestamp="1584710833846">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2518" height="537" key="GridCell.Tab.0.bottom/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584704161630" />
-    <state width="2518" height="537" key="GridCell.Tab.0.center" timestamp="1584704161627">
+    <state width="2518" height="562" key="GridCell.Tab.1.bottom/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584710833846" />
+    <state width="2518" height="562" key="GridCell.Tab.1.bottom/2560.284.1440.877/0.0.2560.1360@0.0.2560.1360" timestamp="1584709140917" />
+    <state width="2518" height="562" key="GridCell.Tab.1.center" timestamp="1584710833844">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2518" height="537" key="GridCell.Tab.0.center/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584704161627" />
-    <state width="2518" height="537" key="GridCell.Tab.0.left" timestamp="1584704161626">
+    <state width="2518" height="562" key="GridCell.Tab.1.center/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584710833844" />
+    <state width="2518" height="562" key="GridCell.Tab.1.center/2560.284.1440.877/0.0.2560.1360@0.0.2560.1360" timestamp="1584709140916" />
+    <state width="2518" height="562" key="GridCell.Tab.1.left" timestamp="1584710833843">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2518" height="537" key="GridCell.Tab.0.left/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584704161626" />
-    <state width="2518" height="537" key="GridCell.Tab.0.right" timestamp="1584704161629">
+    <state width="2518" height="562" key="GridCell.Tab.1.left/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584710833843" />
+    <state width="2518" height="562" key="GridCell.Tab.1.left/2560.284.1440.877/0.0.2560.1360@0.0.2560.1360" timestamp="1584709140915" />
+    <state width="2518" height="562" key="GridCell.Tab.1.right" timestamp="1584710833845">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state width="2518" height="537" key="GridCell.Tab.0.right/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584704161629" />
-    <state width="2518" height="562" key="GridCell.Tab.1.bottom" timestamp="1584703971770">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state width="2518" height="562" key="GridCell.Tab.1.bottom/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584703971770" />
-    <state width="2518" height="562" key="GridCell.Tab.1.center" timestamp="1584703971768">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state width="2518" height="562" key="GridCell.Tab.1.center/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584703971768" />
-    <state width="2518" height="562" key="GridCell.Tab.1.left" timestamp="1584703971767">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state width="2518" height="562" key="GridCell.Tab.1.left/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584703971767" />
-    <state width="2518" height="562" key="GridCell.Tab.1.right" timestamp="1584703971769">
-      <screen x="0" y="0" width="2560" height="1440" />
-    </state>
-    <state width="2518" height="562" key="GridCell.Tab.1.right/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584703971769" />
+    <state width="2518" height="562" key="GridCell.Tab.1.right/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584710833845" />
+    <state width="2518" height="562" key="GridCell.Tab.1.right/2560.284.1440.877/0.0.2560.1360@0.0.2560.1360" timestamp="1584709140916" />
     <state x="1132" y="642" key="VCS.ChangelistChooser" timestamp="1584701920728">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="1132" y="642" key="VCS.ChangelistChooser/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584701920728" />
-    <state x="880" y="460" key="Vcs.Push.Dialog.v2" timestamp="1584702614915">
+    <state x="880" y="460" key="Vcs.Push.Dialog.v2" timestamp="1584704177966">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="880" y="460" key="Vcs.Push.Dialog.v2/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584702614915" />
-    <state x="938" y="342" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584631142053">
+    <state x="880" y="460" key="Vcs.Push.Dialog.v2/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584704177966" />
+    <state x="938" y="342" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584711300579">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="938" y="342" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584631142053" />
-    <state x="937" y="477" width="686" height="486" key="find.popup" timestamp="1584616757634">
+    <state x="938" y="342" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584711300579" />
+    <state x="937" y="477" width="686" height="486" key="find.popup" timestamp="1584713908790">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="937" y="477" width="686" height="486" key="find.popup/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584616757634" />
+    <state x="937" y="477" width="686" height="486" key="find.popup/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584713908790" />
     <state x="1042" y="333" key="refactoring.ChangeSignatureDialog" timestamp="1584625573965">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="1042" y="333" key="refactoring.ChangeSignatureDialog/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584625573965" />
-    <state x="943" y="329" width="672" height="678" key="search.everywhere.popup" timestamp="1584702987184">
+    <state x="943" y="329" width="672" height="678" key="search.everywhere.popup" timestamp="1584713899516">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
-    <state x="943" y="329" width="672" height="678" key="search.everywhere.popup/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584702987184" />
+    <state x="943" y="329" width="672" height="678" key="search.everywhere.popup/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584713899516" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/derivates/src/main/java/com/assets/derivates/OptionsVolatility.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="65" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/data-loader/src/main/java/com/assets/data/loader/impl/DataLoaderCsv.java</url>
           <line>118</line>
@@ -1019,27 +1038,14 @@
           <line>96</line>
           <option name="timeStamp" value="139" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/neutral/IronCondorSpread.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="223" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/options/src/test/java/com/assets/options/entities/spread/IronCondorSpreadTest.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="224" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/spread/neutral/IronCondorSpread.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="225" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
         <watch expression="callSpread.getMaxLoss()" language="JAVA" />
         <watch expression="putSpread.getMaxLoss()" language="JAVA" />
+        <watch expression="callVx.getDaysToExpiry()" language="JAVA" />
+        <watch expression="caxllV.getDaysToExpiry()" language="JAVA" />
       </configuration>
       <configuration name="Application">
         <watch expression="statisticList.getStdDev()" language="JAVA" />

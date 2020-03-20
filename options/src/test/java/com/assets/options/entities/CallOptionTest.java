@@ -2,13 +2,10 @@ package com.assets.options.entities;
 
 import org.junit.Test;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import static org.hamcrest.Matchers.lessThan;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class CallOptionTest {
 
@@ -16,11 +13,9 @@ public class CallOptionTest {
     private LocalDate expirationDate = LocalDate.of(2016, 3, 1);
 
     @Test
-    public void testGivenPriceExactStartVolatilityExpectImpliedVolatilityMatches() throws Exception {
-
-        Option option = new CallOption(null, BigDecimal.TEN, BigDecimal.TEN, now, expirationDate, 0.3d, 0d);
-
-        Option priceOption = new CallOption(null, BigDecimal.TEN, BigDecimal.TEN, BigDecimal.valueOf(0.4849), now, expirationDate, 0d);
+    public void testGivenPriceExactStartVolatilityExpectImpliedVolatilityMatches() {
+        Option option = OptionBuilder.create("IWM", 10d).withStrikePrice(10d).withIV(0.3).withDaysToExpiry(60).buildCall();
+        Option priceOption = OptionBuilder.create("IWM", 10d).withStrikePrice(10d).withPremium(0.4849).withDaysToExpiry(60).buildCall();
 
         assertEquals(option.getPremium().doubleValue(), priceOption.getPremium().doubleValue(), 0.001d);
         assertEquals(option.getImpliedVolatility(), option.getImpliedVolatility(), 0.001d);
@@ -28,8 +23,8 @@ public class CallOptionTest {
 
     @Test
     public void testGivenPrice20VolatilityExpectImpliedVolatilityMatches() throws Exception {
-        Option option = new CallOption(null, BigDecimal.TEN, BigDecimal.TEN, now, expirationDate, 0.2d, 0d);
-        Option priceOption = new CallOption(null, BigDecimal.TEN, BigDecimal.TEN, BigDecimal.valueOf(0.3234), now, expirationDate, 0d);
+        Option option = OptionBuilder.create("IWM", 10d).withStrikePrice(10d).withIV(0.2).withDaysToExpiry(60).buildCall();
+        Option priceOption = OptionBuilder.create("IWM", 10d).withStrikePrice(10d).withPremium(0.3234).withDaysToExpiry(60).buildCall();
 
         assertEquals(option.getPremium().doubleValue(), priceOption.getPremium().doubleValue(), 0.001d);
         assertEquals(option.getImpliedVolatility(), option.getImpliedVolatility(), 0.001d);
@@ -37,16 +32,16 @@ public class CallOptionTest {
 
     @Test
     public void testGivenTwoOptionsWithDifferentPremiumExpectHigherVolatilityAtHigherPremium() throws Exception {
-        Option lowerVolatilityOption = new CallOption(null, BigDecimal.TEN, BigDecimal.TEN, BigDecimal.valueOf(0.5), now, expirationDate, 0d);
-        Option higherVolatilityOption = new CallOption(null, BigDecimal.TEN, BigDecimal.TEN, BigDecimal.valueOf(0.7), now, expirationDate, 0d);
+        Option lowerVolatilityOption = OptionBuilder.create("IWM", 10d).withStrikePrice(10d).withPremium(0.5).withDaysToExpiry(60).buildCall();
+        Option higherVolatilityOption = OptionBuilder.create("IWM", 10d).withStrikePrice(10d).withPremium(0.7).withDaysToExpiry(60).buildCall();
 
-        assertTrue(lowerVolatilityOption.getPremium().compareTo(higherVolatilityOption.getPremium()) < 0);
+        assertTrue(lowerVolatilityOption.getImpliedVolatility().compareTo(higherVolatilityOption.getImpliedVolatility()) < 0);
     }
 
     @Test
     public void givenCallOption_assertThetaIsNegative() {
-        final CallOption ko = new CallOption(null, BigDecimal.TEN, BigDecimal.TEN, BigDecimal.valueOf(0.5), now, expirationDate, 0d);
+        Option option = OptionBuilder.create("IWM", 10d).withStrikePrice(10d).withPremium(0.5).withDaysToExpiry(60).buildCall();
 
-        assertThat(ko.getGreeks().getTheta(), lessThan(0d));
+        assertThat(option.getGreeks().getTheta(), lessThan(0d));
     }
 }

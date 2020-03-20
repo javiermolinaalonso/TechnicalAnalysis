@@ -1,8 +1,8 @@
 package com.assets.derivates;
 
 import com.assets.data.loader.impl.DataDailyLoaderCsv;
-import com.assets.derivates.strategies.NakedPutVolatilityStrategyResult;
 import com.assets.derivates.service.impl.NakedPutSellStrategyImpl;
+import com.assets.derivates.strategies.NakedPutVolatilityStrategyResult;
 import com.assets.entities.Candlestick;
 import com.assets.options.impl.OptionsCalculatorCandlestick;
 import com.assets.options.impl.VolatilityCalculator;
@@ -27,7 +27,6 @@ public class OptionsVolatility {
 
     public OptionsVolatility() {
         service = Executors.newFixedThreadPool(1);
-//        service = Executors.newSingleThreadExecutor();
         VolatilityCalculator volatilityCalculator = new VolatilityCalculator();
         OptionsCalculatorCandlestick optionsCalculator = new OptionsCalculatorCandlestick(volatilityCalculator);
         nakedPutSellStrategy = new NakedPutSellStrategyImpl(volatilityCalculator, optionsCalculator);

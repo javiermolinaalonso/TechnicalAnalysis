@@ -20,21 +20,29 @@ public class OptionBuilder {
     private Double riskFree = 0.001d;
 
     public static OptionBuilder create(String ticker, double currentPrice) {
-        return create(ticker,currentPrice,Clock.systemUTC());
+        return create(ticker, BigDecimal.valueOf(currentPrice));
     }
 
-    public static OptionBuilder create(String ticker, double currentPrice, Clock clock) {
+    public static OptionBuilder create(String ticker, BigDecimal currentPrice) {
+        return create(ticker, currentPrice, Clock.systemUTC());
+    }
+
+    public static OptionBuilder create(String ticker, BigDecimal currentPrice, Clock clock) {
         return new OptionBuilder(ticker, currentPrice, clock);
     }
 
-    private OptionBuilder(String ticker, double currentPrice, Clock clock) {
+    private OptionBuilder(String ticker, BigDecimal currentPrice, Clock clock) {
         this.ticker = ticker;
-        this.currentPrice = BigDecimal.valueOf(currentPrice);
+        this.currentPrice = currentPrice;
         this.clock = clock;
     }
 
     public OptionBuilder withStrikePrice(double strikePrice) {
-        this.strikePrice = BigDecimal.valueOf(strikePrice);
+        return withStrikePrice(BigDecimal.valueOf(strikePrice));
+    }
+
+    public OptionBuilder withStrikePrice(BigDecimal strikePrice) {
+        this.strikePrice = strikePrice;
         return this;
     }
 
@@ -66,7 +74,7 @@ public class OptionBuilder {
         return this;
     }
 
-    public OptionBuilder withIV(double iv){
+    public OptionBuilder withIV(double iv) {
         this.impliedVolatility = iv;
         return this;
     }

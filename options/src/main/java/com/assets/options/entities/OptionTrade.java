@@ -70,13 +70,12 @@ public class OptionTrade {
     }
 
     public Option getExpectedOption(BigDecimal value, LocalDate when, double volatility) {
-        Option newOption;
+        OptionBuilder optionBuilder = OptionBuilder.create(ticker, value).withStrikePrice(option.getStrikePrice()).withCurrentDate(when).withExpirationAt(option.getExpirationDate()).withIV(volatility).withRiskFree(option.getRiskFree());
         if (option.isCall()) {
-            newOption = new CallOption(ticker, value, option.getStrikePrice(), when, option.getExpirationDate(), volatility, option.getRiskFree());
+            return optionBuilder.buildCall();
         } else {
-            newOption = new PutOption(null, value, option.getStrikePrice(), when, option.getExpirationDate(), volatility, option.getRiskFree());
+            return optionBuilder.buildPut();
         }
-        return newOption;
     }
 
     private BigDecimal getAmountOfStocks() {
