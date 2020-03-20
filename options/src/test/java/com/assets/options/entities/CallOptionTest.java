@@ -2,15 +2,10 @@ package com.assets.options.entities;
 
 import org.junit.Test;
 
-import java.time.LocalDate;
-
 import static org.hamcrest.Matchers.lessThan;
 import static org.junit.Assert.*;
 
 public class CallOptionTest {
-
-    private LocalDate now = LocalDate.of(2016, 1, 1);
-    private LocalDate expirationDate = LocalDate.of(2016, 3, 1);
 
     @Test
     public void testGivenPriceExactStartVolatilityExpectImpliedVolatilityMatches() {
