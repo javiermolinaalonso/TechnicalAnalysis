@@ -10,6 +10,12 @@ import java.time.LocalDate;
 
 public class AnalyzeCurrentStatus {
 
+    /**
+     * Example of use
+     * DebitCall 1 SPY 229.40 26 225 17.57 17.96 230 14.57 14.96
+     * CreditCall 1 SPY 229.40 26 225 17.57 17.96 230 14.57 14.96
+     * @param args
+     */
     public static void main(String[] args) {
         OptionSpread spread = loadSpread(args);
         PrintUtils.print(spread, 0.15);
