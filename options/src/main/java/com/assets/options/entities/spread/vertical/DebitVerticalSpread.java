@@ -21,6 +21,6 @@ abstract class DebitVerticalSpread extends VerticalSpread {
 
     @Override
     public BigDecimal getMaxLoss() {
-        return getCost();
+        return getCost().negate();
     }
 }
