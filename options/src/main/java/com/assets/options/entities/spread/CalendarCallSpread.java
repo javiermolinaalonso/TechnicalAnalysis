@@ -1,119 +1,63 @@
 package com.assets.options.entities.spread;
 
-import com.assets.options.entities.Option;
+import com.assets.options.entities.CallOption;
 import com.assets.options.entities.OptionBuilder;
 import com.assets.options.entities.OptionTrade;
+import com.assets.options.entities.portfolio.OptionPortfolio;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Arrays;
 import java.util.StringJoiner;
+
+import static java.util.Arrays.asList;
 
 public class CalendarCallSpread extends BaseOptionSpread {
 
-    private final Option closerOption;
-    private final Option furtherOption;
-    private final BigDecimal strikePrice;
-    private double volatility;
+    private final OptionTrade closerOption;
+    private final OptionTrade furtherOption;
 
-    public static CalendarCallSpread basicSpread(
-            double currentPrice,
-            double strikePrice,
-            int closeDays,
-            int farDays,
-            double volatility,
-            String ticker
-    ) {
-        return new CalendarCallSpread(
-                BigDecimal.valueOf(currentPrice),
-                BigDecimal.valueOf(strikePrice),
-                LocalDate.now(),
-                LocalDate.now().plusDays(closeDays),
-                LocalDate.now().plusDays(farDays),
-                volatility,
-                volatility,
-                0.01d,
-                BigDecimal.ONE,
-                ticker,
-                1,
-                false,
-                volatility
-        );
-    }
-
-    public static CalendarCallSpread complexSpread(
-            double currentPrice,
-            double strikePrice,
-            LocalDate now,
-            int closeDays,
-            double closeImpliedVolatility,
-            int farDays,
-            double farImpliedVolatility,
-            String ticker,
-            double volatility
-    ) {
-        return new CalendarCallSpread(
-                BigDecimal.valueOf(currentPrice),
-                BigDecimal.valueOf(strikePrice),
-                now,
-                now.plusDays(closeDays),
-                now.plusDays(farDays),
-                closeImpliedVolatility,
-                farImpliedVolatility,
-                0.01d,
-                BigDecimal.ONE,
-                ticker,
-                1,
-                false,
-                volatility
-        );
-    }
-    public CalendarCallSpread(BigDecimal currentPrice, BigDecimal strikePrice,
-                              LocalDate now, LocalDate expirationDate, LocalDate furtherExpirationDate, double closeIV, double farIV, Double riskFree,
-                              BigDecimal comission, String ticker, int contracts, boolean mini, double volatility) {
-        super(mini);
-        this.strikePrice = strikePrice;
-        this.volatility = volatility;
-        closerOption = OptionBuilder.create(ticker, currentPrice.doubleValue()).withStrikePrice(strikePrice.doubleValue()).withCurrentDate(now).withExpirationAt(expirationDate).withIV(closeIV).withRiskFree(riskFree).buildCall();
-        furtherOption = OptionBuilder.create(ticker, currentPrice.doubleValue()).withStrikePrice(strikePrice.doubleValue()).withCurrentDate(now).withExpirationAt(furtherExpirationDate).withIV(farIV).withRiskFree(riskFree).buildCall();
-        OptionTrade closerOptionTrade = OptionTradeFactory.write(closerOption, contracts, comission.doubleValue());
-        OptionTrade furtherOptionTrade = OptionTradeFactory.buy(closerOption, contracts, comission.doubleValue());;
-        setOptionTrades(Arrays.asList(closerOptionTrade, furtherOptionTrade));
-
+    public CalendarCallSpread(OptionTrade closerOption, OptionTrade furtherOption) {
+        super(new OptionPortfolio(asList(closerOption, furtherOption)));
+        this.closerOption = closerOption;
+        this.furtherOption = furtherOption;
     }
 
     @Override
     public BigDecimal getMaxGain() {
-        return getExpirationValue(strikePrice).subtract(getComission());
+        CallOption soldFurtherOption = OptionBuilder.create(closerOption.getTicker(), closerOption.getOption().getStrikePrice())
+                .withStrikePrice(closerOption.getOption().getStrikePrice())
+                .withIV(furtherOption.getImpliedVolatility())
+                .withExpirationAt(furtherOption.getOption().getExpirationDate())
+                .withCurrentDate(closerOption.getOption().getExpirationDate())
+                .buildCall();
+        OptionTrade writeFurtherTrade = OptionTradeFactory.write(soldFurtherOption, furtherOption.getContracts());
+        return closerOption.getCost().add(writeFurtherTrade.getCost()).add(furtherOption.getCost()).negate();
     }
 
     @Override
     public BigDecimal getMaxLoss() {
-        return furtherOption.getPremium().subtract(closerOption.getPremium())
-                .multiply(getMultiplier())
-                .add(getComission())
-                .negate();
+        return getCost().negate();
     }
 
     @Override
     public BigDecimal getExpirationValue(BigDecimal value) {
-        return getValueAt(value, closerOption.getExpirationDate());
+        return getValueAt(value, closerOption.getOption().getExpirationDate());
     }
 
     @Override
     public LocalDate getExpirationDate() {
-        return closerOption.getExpirationDate();
+        return closerOption.getOption().getExpirationDate();
     }
 
     @Override
     public double getVolatility() {
-        return volatility;
+        return (closerOption.getImpliedVolatility() + furtherOption.getImpliedVolatility()) / 2d;
     }
 
     @Override
     public String toString() {
-        return new StringJoiner(", ","Calendar {", "}")
-                .add(String.format("Strike [%.2f @ %s for %.2f / %.2f @ %s for %.2f]", closerOption.getStrikePrice(), closerOption.getExpirationDate(), closerOption.getPremium(), furtherOption.getStrikePrice(), furtherOption.getExpirationDate(), furtherOption.getPremium()))
+        return new StringJoiner(", ", "Calendar {", "}")
+                .add(String.format("Strike [%.2f @ %s for %.2f / %.2f @ %s for %.2f]", closerOption.getOption().getStrikePrice(), closerOption.getOption().getExpirationDate(), closerOption.getPremium(), furtherOption.getOption().getStrikePrice(), furtherOption.getOption().getExpirationDate(), furtherOption.getPremium()))
                 .add(String.format("IV [%.2f%%, %.2f%%]", closerOption.getImpliedVolatility() * 100, furtherOption.getImpliedVolatility() * 100))
                 .add(String.format("Cost [%.2f]", getCost()))
                 .add(String.format("Max Loss:%.2f, Max Win:%.2f", getMaxLoss(), getMaxGain()))

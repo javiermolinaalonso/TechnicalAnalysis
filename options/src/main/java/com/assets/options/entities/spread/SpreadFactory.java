@@ -45,4 +45,13 @@ public class SpreadFactory {
     public IronCondorSpread ironCondor(PutOption o1, PutOption o2, CallOption o3, CallOption o4, int contracts) {
         return new IronCondorSpread(bearCallSpread(o3, o4, contracts), bullPutSpread(o1, o2, contracts));
     }
+
+    public CalendarCallSpread calendarCallSpread(CallOption closer, CallOption further, int contracts) {
+        assert closer.getDaysToExpiry() < further.getDaysToExpiry();
+        assert closer.getStrikePrice().equals(further.getStrikePrice());
+        return new CalendarCallSpread(
+                OptionTradeFactory.write(closer, contracts),
+                OptionTradeFactory.buy(further, contracts)
+        );
+    }
 }

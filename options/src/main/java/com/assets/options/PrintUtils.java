@@ -1,6 +1,5 @@
 package com.assets.options;
 
-import com.assets.options.entities.spread.CalendarCallSpread;
 import com.assets.options.entities.spread.OptionSpread;
 
 import java.math.BigDecimal;

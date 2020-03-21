@@ -21,6 +21,6 @@ abstract class DebitVerticalSpread extends VerticalSpread {
 
     @Override
     public BigDecimal getMaxLoss() {
-        return lowerOptionTrade.getCost().add(upperOptionTrade.getCost()).negate();
+        return getCost();
     }
 }
