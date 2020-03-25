@@ -6,17 +6,12 @@ import com.assets.options.entities.portfolio.OptionPortfolio;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 public abstract class BaseOptionSpread implements OptionSpread {
 
     private final OptionPortfolio options;
     private final boolean mini;
-
-    protected BaseOptionSpread(boolean mini) {
-        this(new OptionPortfolio(new ArrayList<>()), mini);
-    }
 
     protected BaseOptionSpread(OptionPortfolio portfolio) {
         this(portfolio, false);
@@ -56,10 +51,6 @@ public abstract class BaseOptionSpread implements OptionSpread {
             expectedValue = expectedValue.add(tradePremium);
         }
         return expectedValue;
-    }
-
-    void setOptionTrades(List<OptionTrade> optionTrades) {
-        this.options.setTrades(optionTrades);
     }
 
     public List<OptionTrade> getOptionTrades() {
@@ -107,4 +98,11 @@ public abstract class BaseOptionSpread implements OptionSpread {
                 .orElse(0d));
     }
 
+    @Override
+    public String toString() {
+        return "BaseOptionSpread{" +
+                "options=" + options +
+                ", mini=" + mini +
+                '}';
+    }
 }

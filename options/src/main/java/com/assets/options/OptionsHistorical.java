@@ -31,7 +31,7 @@ public class OptionsHistorical {
 
     public static final String SPX = "SPX";
     public static final int DAYS_CALCULATION = 30;
-//    public static final int DAYS_COUNT = 7058;
+    //    public static final int DAYS_COUNT = 7058;
     public static final int DAYS_COUNT = 30;
     public static final double RISK_FREE = 0.025d;
     private static final double BUY_PERCENTAGE = 0.07d;
@@ -65,7 +65,7 @@ public class OptionsHistorical {
         System.out.println(String.format("Purchased: %s purchased at %s with current price %.2f", spreadWithResults.getValue().toString(), prices.get(i).getLocalDate(), prices.get(i).getValue()));
         int j = i + 1;
         OptionSpread spread = spreadWithResults.getValue();
-        final LocalDate startingDate = prices.get(j-1).getLocalDate();
+        final LocalDate startingDate = prices.get(j - 1).getLocalDate();
         while (j < prices.size() && prices.get(j).getLocalDate().isBefore(spread.getExpirationDate())) {
             final StockPrice stockPrice = prices.get(j);
             final BigDecimal currentSpreadValue = spread.getValueAt(stockPrice.getValue(), stockPrice.getLocalDate());
@@ -125,13 +125,11 @@ public class OptionsHistorical {
                                     1
                             );
 
-                            if (spread.isValid()) {
-                                final SpreadAnalyzerResult analyzerResult = spreadAnalyzer.analyze(spread, BigDecimal.valueOf(currentPrice), now);
+                            final SpreadAnalyzerResult analyzerResult = spreadAnalyzer.analyze(spread, BigDecimal.valueOf(currentPrice), now);
 //                                System.out.println(analyzerResult);
-                                if (analyzerResult.getExpectedTae().get().compareTo(BigDecimal.valueOf(0)) > 0) {
-                                    if (pair == null || analyzerResult.getExpectedTae().get().compareTo(pair.getKey().getExpectedTae().get()) > 0) {
-                                        pair = new ImmutablePair<>(analyzerResult, spread);
-                                    }
+                            if (analyzerResult.getExpectedTae().get().compareTo(BigDecimal.valueOf(0)) > 0) {
+                                if (pair == null || analyzerResult.getExpectedTae().get().compareTo(pair.getKey().getExpectedTae().get()) > 0) {
+                                    pair = new ImmutablePair<>(analyzerResult, spread);
                                 }
                             }
                         }

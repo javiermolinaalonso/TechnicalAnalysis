@@ -1,5 +1,8 @@
 package com.assets.options.entities;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Greeks {
 
     private final double delta;
@@ -8,7 +11,12 @@ public class Greeks {
     private final double theta;
     private final double rho;
 
-    public Greeks(double delta, double gamma, double vega, double theta, double rho) {
+    @JsonCreator
+    public Greeks(@JsonProperty("delta") double delta,
+                  @JsonProperty("gamma") double gamma,
+                  @JsonProperty("vega") double vega,
+                  @JsonProperty("theta") double theta,
+                  @JsonProperty("rho") double rho) {
         this.delta = delta;
         this.gamma = gamma;
         this.vega = vega;

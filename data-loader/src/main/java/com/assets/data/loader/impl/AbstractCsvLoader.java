@@ -6,10 +6,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class AbstractCsvLoader<T> implements CsvLoader<T> {
+public abstract class AbstractCsvLoader<T> implements FileDataLoader<T> {
 
-    public List<T> loadData(String csvFile) throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader(csvFile));
+    public List<T> loadData(String fileLocation) throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader(fileLocation));
         String line;
         List<T> list = new ArrayList<>();
         while ((line = br.readLine()) != null) {

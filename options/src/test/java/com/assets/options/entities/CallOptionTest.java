@@ -12,7 +12,7 @@ public class CallOptionTest {
         Option option = OptionBuilder.create("IWM", 10d).withStrikePrice(10d).withIV(0.3).withDaysToExpiry(60).buildCall();
         Option priceOption = OptionBuilder.create("IWM", 10d).withStrikePrice(10d).withPremium(0.4849).withDaysToExpiry(60).buildCall();
 
-        assertEquals(option.getPremium().doubleValue(), priceOption.getPremium().doubleValue(), 0.001d);
+        assertEquals(option.getBid().doubleValue(), priceOption.getBid().doubleValue(), 0.001d);
         assertEquals(option.getImpliedVolatility(), option.getImpliedVolatility(), 0.001d);
     }
 
@@ -21,7 +21,7 @@ public class CallOptionTest {
         Option option = OptionBuilder.create("IWM", 10d).withStrikePrice(10d).withIV(0.2).withDaysToExpiry(60).buildCall();
         Option priceOption = OptionBuilder.create("IWM", 10d).withStrikePrice(10d).withPremium(0.3234).withDaysToExpiry(60).buildCall();
 
-        assertEquals(option.getPremium().doubleValue(), priceOption.getPremium().doubleValue(), 0.001d);
+        assertEquals(option.getBid().doubleValue(), priceOption.getBid().doubleValue(), 0.001d);
         assertEquals(option.getImpliedVolatility(), option.getImpliedVolatility(), 0.001d);
     }
 

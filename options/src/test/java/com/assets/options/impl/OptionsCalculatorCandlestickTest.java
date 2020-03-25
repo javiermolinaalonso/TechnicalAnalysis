@@ -40,7 +40,7 @@ public class OptionsCalculatorCandlestickTest {
         LocalDate expirationTime = LocalDate.of(2016, 5, 12);
 
         List<Candlestick> values = getValues(23);
-        BigDecimal putPrice = calculator.put(values, expirationTime, values.get(values.size() - 1).getDate(), targetPrice).getPremium();
+        BigDecimal putPrice = calculator.put(values, expirationTime, values.get(values.size() - 1).getDate(), targetPrice).getBid();
 
         double expectedPrice = 218.09;
 

@@ -1,5 +1,7 @@
 package com.assets.options.analyzers;
 
+import com.assets.options.entities.spread.OptionSpread;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.List;
@@ -8,6 +10,7 @@ import java.util.StringJoiner;
 
 public class SpreadAnalyzerResult {
 
+    private final OptionSpread spread;
     private final BigDecimal winProbability;
 
     /**
@@ -21,13 +24,18 @@ public class SpreadAnalyzerResult {
     private final BigDecimal averageLoss;
     private final List<BigDecimal> cutPoints;
 
-    public SpreadAnalyzerResult(BigDecimal winProbability, BigDecimal riskRewardRatio, BigDecimal expectedTae, BigDecimal averageWin, BigDecimal averageLoss, List<BigDecimal> cutPoints) {
+    public SpreadAnalyzerResult(OptionSpread spread, BigDecimal winProbability, BigDecimal riskRewardRatio, BigDecimal expectedTae, BigDecimal averageWin, BigDecimal averageLoss, List<BigDecimal> cutPoints) {
+        this.spread = spread;
         this.winProbability = winProbability;
         this.riskRewardRatio = riskRewardRatio;
         this.expectedTae = expectedTae;
         this.averageWin = averageWin;
         this.averageLoss = averageLoss;
         this.cutPoints = cutPoints;
+    }
+
+    public OptionSpread getSpread() {
+        return spread;
     }
 
     public Optional<BigDecimal> getWinProbability() {
@@ -57,6 +65,7 @@ public class SpreadAnalyzerResult {
     @Override
     public String toString() {
         return new StringJoiner(", ", "[", "]")
+                .add("spread=" + spread.toString())
                 .add("winProbability=" + getWinProbability().map(winProbability -> winProbability.multiply(BigDecimal.valueOf(100)).setScale(2, RoundingMode.HALF_UP) + "%").orElse("?"))
                 .add("riskRewardRatio=" + getRiskRewardRatio().map(BigDecimal::toString).orElse("?"))
                 .add("averageWin=" + getAverageWin().map(averageWin -> averageWin.setScale(2, RoundingMode.HALF_UP).toString()).orElse("?"))

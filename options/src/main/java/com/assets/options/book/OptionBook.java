@@ -1,23 +1,29 @@
 package com.assets.options.book;
 
 import com.assets.options.entities.Option;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
+@JsonDeserialize(builder = OptionBook.Builder.class)
 public class OptionBook {
 
     private final String ticker;
     private final BigDecimal currentPrice;
     private final LocalDate now;
-    private final List<Option> availableOptions;
+    private final Map<LocalDate, List<Option>> options;
 
     private OptionBook(Builder builder) {
         ticker = builder.ticker;
         currentPrice = builder.currentPrice;
         now = builder.now;
-        availableOptions = builder.availableOptions;
+        options = builder.options.stream().collect(Collectors.groupingBy(Option::getExpirationDate));
     }
 
     public String getTicker() {
@@ -32,24 +38,26 @@ public class OptionBook {
         return now;
     }
 
-    public List<Option> getAvailableOptions() {
-        return availableOptions;
+    public List<Option> getOptions(LocalDate date) {
+        return options.getOrDefault(date, Collections.emptyList());
     }
 
+    public List<Option> getOptions() {
+        return options.entrySet().stream().flatMap(e -> e.getValue().stream()).collect(Collectors.toList());
+    }
+
+    public List<LocalDate> getAvailableDates() {
+        return options.keySet().stream().sorted().collect(Collectors.toList());
+    }
+
+    @JsonPOJOBuilder
     public static final class Builder {
         private String ticker;
         private BigDecimal currentPrice;
         private LocalDate now;
-        private List<Option> availableOptions;
+        private List<Option> options;
 
         public Builder() {
-        }
-
-        public Builder(OptionBook copy) {
-            this.ticker = copy.ticker;
-            this.currentPrice = copy.currentPrice;
-            this.now = copy.now;
-            this.availableOptions = copy.availableOptions;
         }
 
         public Builder withTicker(String val) {
@@ -67,8 +75,8 @@ public class OptionBook {
             return this;
         }
 
-        public Builder withAvailableOptions(List<Option> val) {
-            availableOptions = val;
+        public Builder withOptions(List<Option> val) {
+            options = val;
             return this;
         }
 

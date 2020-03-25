@@ -72,7 +72,10 @@ public class OptionPortfolio {
         trades.addAll(optionTrades);
     }
 
-    public void setTrades(List<OptionTrade> trades) {
-        this.trades = trades;
+    @Override
+    public String toString() {
+        return "OptionPortfolio{" +
+                "trades=" + trades +
+                '}';
     }
 }

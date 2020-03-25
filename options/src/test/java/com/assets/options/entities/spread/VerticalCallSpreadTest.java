@@ -47,5 +47,24 @@ public class VerticalCallSpreadTest {
         assertThat("Gamma is correct", spread.getGreeks().getGamma(), IsCloseTo.closeTo(0.00008, 0.00001));
         assertThat("Vega is correct", spread.getGreeks().getVega(), IsCloseTo.closeTo(0.24, 0.1));
         assertThat("Theta is correct", spread.getGreeks().getTheta(), IsCloseTo.closeTo(-0.0003, 0.0001));
+        assertThat("Volatility is the average", spread.getVolatility(), IsCloseTo.closeTo(0.22, 0.001));
+    }
+
+    @Test
+    public void givenVerticalSpread_whenGetMaxProfit_expectNegative() {
+        VerticalSpread spread = new SpreadFactory().bullCallSpread(
+                OptionBuilder.create("INTC", 32.89)
+                        .withDaysToExpiry(17)
+                        .withBidAsk(22.7,22.9)
+                        .withStrikePrice(10)
+                        .buildCall(),
+                OptionBuilder.create("INTC", 32.89)
+                        .withDaysToExpiry(17)
+                        .withBidAsk(17.7,17.9)
+                        .withStrikePrice(15)
+                        .buildCall(),
+                1
+        );
+        assertThat("Max gain is negative", spread.getMaxGain(), lessThan(BigDecimal.ZERO));
     }
 }

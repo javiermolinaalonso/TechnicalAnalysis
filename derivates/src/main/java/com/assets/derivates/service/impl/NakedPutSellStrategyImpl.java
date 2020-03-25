@@ -1,8 +1,8 @@
 package com.assets.derivates.service.impl;
 
-import com.assets.derivates.strategies.NakedPutVolatilityStrategyResult;
 import com.assets.derivates.entities.PutResult;
 import com.assets.derivates.service.NakedPutSellStrategy;
+import com.assets.derivates.strategies.NakedPutVolatilityStrategyResult;
 import com.assets.entities.Candlestick;
 import com.assets.options.impl.OptionsCalculatorCandlestick;
 import com.assets.options.impl.VolatilityCalculator;
@@ -68,7 +68,7 @@ public class NakedPutSellStrategyImpl implements NakedPutSellStrategy<Candlestic
         do {
             int days = getDays(strikeDate, candlestick.getDate());
             volatility = volatilityCalculator.getAnnualizedVolatility(getValues(values, index - Math.max(days, 10), index));
-            currentPremium = optionsCalculator.put(candlestick, strikeDate, candlestick.getDate(), strikePrice, volatility).getPremium().doubleValue();
+            currentPremium = optionsCalculator.put(candlestick, strikeDate, candlestick.getDate(), strikePrice, volatility).getBid().doubleValue();
             maxPremium = Math.max(currentPremium, maxPremium);
             maxVolatility = Math.max(volatility, maxVolatility);
             index++;
@@ -85,7 +85,7 @@ public class NakedPutSellStrategyImpl implements NakedPutSellStrategy<Candlestic
     private BigDecimal getPrice(List<Candlestick> values, int index, LocalDate strikeDate, BigDecimal strikePrice, Candlestick candlestick) {
         int days = getDays(strikeDate, candlestick.getDate());
         double volatility = volatilityCalculator.getAnnualizedVolatility(getValues(values, index - days, index));
-        return optionsCalculator.put(candlestick, strikeDate, candlestick.getDate(), strikePrice, volatility).getPremium();
+        return optionsCalculator.put(candlestick, strikeDate, candlestick.getDate(), strikePrice, volatility).getBid();
     }
 
     private int getDays(LocalDate strikeDate, LocalDate startDate) {

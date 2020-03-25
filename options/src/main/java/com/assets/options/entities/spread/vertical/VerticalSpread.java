@@ -27,7 +27,7 @@ public abstract class VerticalSpread extends BaseOptionSpread {
 
     @Override
     public double getVolatility() {
-        return lowerOptionTrade.getImpliedVolatility() + upperOptionTrade.getImpliedVolatility() / 2;
+        return (lowerOptionTrade.getImpliedVolatility() + upperOptionTrade.getImpliedVolatility()) / 2;
     }
 
     public BigDecimal getHighStrike() {
@@ -39,11 +39,11 @@ public abstract class VerticalSpread extends BaseOptionSpread {
     }
 
     public BigDecimal getLowerPremium() {
-        return lowerOptionTrade.getOption().getPremium();
+        return lowerOptionTrade.getOption().getBid();
     }
 
     public BigDecimal getUpperPremium() {
-        return upperOptionTrade.getOption().getPremium();
+        return upperOptionTrade.getOption().getAsk();
     }
 
 }

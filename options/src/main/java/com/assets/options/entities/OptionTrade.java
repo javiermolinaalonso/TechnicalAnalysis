@@ -15,10 +15,13 @@ public class OptionTrade {
 
     public OptionTrade(Option option, int contracts, String ticker, BigDecimal contractComission, boolean mini) {
         this.option = option;
-        this.premium = option.getPremium();
         this.contracts = contracts;
         this.ticker = ticker;
         this.mini = mini;
+        this.premium = getPremium();
+        if (premium.compareTo(BigDecimal.ZERO) == 0) {
+            throw new OptionIsNotAvailableException();
+        }
         this.tradeComission = contractComission.multiply(BigDecimal.valueOf(Math.abs(contracts)));
         this.cost = BigDecimal.valueOf(contracts).multiply(premium).multiply(getAmountOfStocks()).add(tradeComission);
     }
@@ -56,9 +59,9 @@ public class OptionTrade {
     }
 
     public BigDecimal getExpectedValue(BigDecimal value, LocalDate when, double iv) {
-        final BigDecimal premiumAt = getExpectedOption(value, when, iv).getPremium();
-
-        return premiumAt.subtract(premium)
+//        BigDecimal premiumAt = new OptionTrade(getExpectedOption(value, when, iv), contracts, ticker, tradeComission.divide(BigDecimal.valueOf(contracts), 0, RoundingMode.HALF_UP), mini).getPremium();
+        final BigDecimal premiumAt = getExpectedOption(value, when, iv).getBid();
+        return premiumAt.subtract(this.premium)
                 .multiply(getAmountOfStocks())
                 .multiply(BigDecimal.valueOf(getContracts()))
                 .subtract(getTradeComission());
@@ -109,5 +112,18 @@ public class OptionTrade {
 
     public BigDecimal getGrossPremium() {
         return getPremium().multiply(BigDecimal.valueOf(getContracts()));
+    }
+
+    @Override
+    public String toString() {
+        return "OptionTrade{" +
+                "option=" + option +
+                ", premium=" + premium +
+                ", contracts=" + contracts +
+                ", ticker='" + ticker + '\'' +
+                ", cost=" + cost +
+                ", mini=" + mini +
+                ", tradeComission=" + tradeComission +
+                '}';
     }
 }

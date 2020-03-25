@@ -44,13 +44,6 @@ public class IronCondorSpread extends BaseOptionSpread {
     }
 
 
-    public boolean isValid() {
-        return putSpread.getLowerPremium().compareTo(BigDecimal.ONE) > 0
-                && putSpread.getUpperPremium().compareTo(BigDecimal.ONE) > 0
-                && callSpread.getLowerPremium().compareTo(BigDecimal.ONE) > 0
-                && callSpread.getUpperPremium().compareTo(BigDecimal.ONE) > 0;
-    }
-
     @Override
     public String toString() {
         return new StringJoiner(", ","Iron Condor{", "}")

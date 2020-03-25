@@ -1,6 +1,11 @@
 package com.assets.options.analyzers;
 
+import com.assets.options.book.OptionBook;
+import com.assets.options.entities.Option;
 import com.assets.options.entities.spread.OptionSpread;
+import com.assets.options.entities.spread.SpreadFactory;
+import com.assets.options.entities.spread.exceptions.OptionsException;
+import com.assets.options.entities.spread.vertical.VerticalSpread;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,6 +16,8 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 import static net.finmath.functions.NormalDistribution.cumulativeDistribution;
 
@@ -18,9 +25,59 @@ public class SpreadAnalyzer {
 
     private static final Logger logger = LoggerFactory.getLogger(SpreadAnalyzer.class);
 
-    public static final BigDecimal DISTANCE_FROM_AVERAGE_STRIKE = BigDecimal.valueOf(3);
-    public static final BigDecimal STEPS = BigDecimal.valueOf(1000);
+    public static final BigDecimal DISTANCE_FROM_AVERAGE_STRIKE = BigDecimal.valueOf(50);
+    public static final BigDecimal STEPS = BigDecimal.valueOf(30000);
     public static final BigDecimal DAYS_OF_YEAR = BigDecimal.valueOf(365);
+
+    public List<SpreadAnalyzerResult> analyzeByDate(OptionBook book) {
+        return book.getAvailableDates()
+                .stream()
+                .map(date -> getBestVerticalSpread(date, book))
+                .filter(t -> t.isPresent())
+                .map(t -> t.get())
+                .collect(Collectors.toList());
+    }
+
+    private Optional<SpreadAnalyzerResult> getBestVerticalSpread(LocalDate date, OptionBook optionBook) {
+        List<Option> options = optionBook.getOptions(date);
+        List<VerticalSpread> spreads = getAllSpreadCombination(options);
+        SpreadAnalyzer spreadAnalyzer = new SpreadAnalyzer();
+
+        List<SpreadAnalyzerResult> results = spreads
+                .parallelStream()
+                .map(s -> spreadAnalyzer.analyze(s, optionBook.getCurrentPrice(), optionBook.getNow()))
+                .filter(s -> s.getExpectedTae().isPresent())
+                .sorted((s1, s2) -> s2.getExpectedTae().get().compareTo(s1.getExpectedTae().get()))
+                .collect(Collectors.toList());
+
+        if (results.isEmpty()) {
+            return Optional.empty();
+        }
+        return Optional.of(results.get(0));
+    }
+
+    private List<VerticalSpread> getAllSpreadCombination(List<Option> options) {
+        SpreadFactory spreadFactory = new SpreadFactory();
+        List<VerticalSpread> result = new ArrayList<>();
+        List<Option> filteredOptions = options.stream().filter(o -> o.getBid().doubleValue() > 0.1 && o.getAsk().doubleValue() > 0.1 && o.getDaysToExpiry() > 0.1).collect(Collectors.toList());
+        for (int i = 0; i < filteredOptions.size(); i++) {
+            for (int j = 0; j < filteredOptions.size(); j++) {
+                try {
+                    VerticalSpread verticalSpread = spreadFactory.verticalSpread(filteredOptions.get(i), filteredOptions.get(j), 1);
+                    if (verticalSpread.getMaxGain().compareTo(BigDecimal.ZERO) > 0) {
+                        result.add(verticalSpread);
+                    }
+                } catch (OptionsException e) {
+                    //Nothing to do
+                }
+            }
+        }
+        return result;
+    }
+
+
+
+
 
     //TODO the analyzer is not having into consideration the increase or decrease of impliedVolatility
     public SpreadAnalyzerResult analyze(OptionSpread spread, BigDecimal assetPrice, LocalDate now) {
@@ -39,6 +96,7 @@ public class SpreadAnalyzer {
         List<BigDecimal> cutPoints = new ArrayList<>();
 
         while (currentPrice.compareTo(maxExpectedPrice) < 0d) {
+            //TODO Volatility should not be the spread, but the current
             final BigDecimal probability = calculateProbability(assetPrice, spread.getVolatility(), daysToExpiry, currentPrice, currentPrice.add(incrementStep));
 
             if (probability.compareTo(BigDecimal.ZERO) > 0) {
@@ -71,9 +129,9 @@ public class SpreadAnalyzer {
 
         final BigDecimal tae = tae(ponderatedValue, maxExpectedLoss, daysToExpiry);
         if (averageLoss.compareTo(BigDecimal.ZERO) == 0) {
-            return new SpreadAnalyzerResult(BigDecimal.ONE, null, null, null, null, Collections.emptyList());
+            return new SpreadAnalyzerResult(spread, BigDecimal.ONE, null, null, null, null, Collections.emptyList());
         }
-        return new SpreadAnalyzerResult(winProbability, averageWin.divide(averageLoss, 4, RoundingMode.HALF_UP), tae, averageWin, averageLoss, cutPoints);
+        return new SpreadAnalyzerResult(spread, winProbability, averageWin.divide(averageLoss, 4, RoundingMode.HALF_UP), tae, averageWin, averageLoss, cutPoints);
     }
 
     private BigDecimal tae(BigDecimal expectedGain, BigDecimal maxExpectedLoss, long daysToExpiry) {
