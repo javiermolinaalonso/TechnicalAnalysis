@@ -85,18 +85,10 @@ public class OptionBuilder {
     }
 
     public CallOption buildCall() {
-        if (impliedVolatility == null) {
-            return new CallOption(ticker, currentPrice, strikePrice, bid, ask, currentDate, expirationDate, riskFree);
-        } else {
-            return new CallOption(ticker, currentPrice, strikePrice, currentDate, expirationDate, impliedVolatility, riskFree);
-        }
+        return new CallOption(ticker, currentPrice, strikePrice, bid, ask, currentDate, expirationDate, impliedVolatility, riskFree);
     }
 
     public PutOption buildPut() {
-        if (impliedVolatility == null) {
-            return new PutOption(ticker, currentPrice, strikePrice, bid, ask, currentDate, expirationDate, riskFree);
-        } else {
-            return new PutOption(ticker, currentPrice, strikePrice, currentDate, expirationDate, impliedVolatility, riskFree);
-        }
+        return new PutOption(ticker, currentPrice, strikePrice, bid, ask, currentDate, expirationDate, impliedVolatility, riskFree);
     }
 }

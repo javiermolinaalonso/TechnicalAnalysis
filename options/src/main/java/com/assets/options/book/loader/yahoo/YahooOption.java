@@ -13,6 +13,7 @@ public abstract class YahooOption {
     protected double lastPrice;
     protected String contractSize;
     protected long expiration;
+    protected double impliedVolatility;
 
     @JsonCreator
     public YahooOption(@JsonProperty("contractSymbol") String contractSymbol,
@@ -22,7 +23,8 @@ public abstract class YahooOption {
                        @JsonProperty("currency") String currency,
                        @JsonProperty("lastPrice") double lastPrice,
                        @JsonProperty("contractSize") String contractSize,
-                       @JsonProperty("expiration") long expiration) {
+                       @JsonProperty("expiration") long expiration,
+                       @JsonProperty("impliedVolatility") double impliedVolatility) {
         this.contractSymbol = contractSymbol;
         this.strike = strike;
         this.bid = bid;
@@ -31,6 +33,7 @@ public abstract class YahooOption {
         this.lastPrice = lastPrice;
         this.contractSize = contractSize;
         this.expiration = expiration;
+        this.impliedVolatility = impliedVolatility;
     }
 
     public double getStrike() {
@@ -51,4 +54,7 @@ public abstract class YahooOption {
 
     public abstract boolean isCall();
 
+    public double getImpliedVolatility() {
+        return impliedVolatility;
+    }
 }

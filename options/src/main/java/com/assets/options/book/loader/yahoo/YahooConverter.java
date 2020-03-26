@@ -25,7 +25,8 @@ public class YahooConverter {
                     .withStrikePrice(option.getStrike())
                     .withBidAsk(option.getBid(), option.getAsk())
                     .withCurrentDate(now)
-                    .withExpirationAt(expiration);
+                    .withExpirationAt(expiration)
+                    .withIV(option.getImpliedVolatility());
             if(option.isCall()) {
                 options.add(optionBuilder.buildCall());
             } else {

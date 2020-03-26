@@ -13,8 +13,9 @@ public class YahooOptionCall extends YahooOption {
                            @JsonProperty("currency") String currency,
                            @JsonProperty("lastPrice") double lastPrice,
                            @JsonProperty("contractSize") String contractSize,
-                           @JsonProperty("expiration") long expiration) {
-        super(contractSymbol, strike, bid, ask, currency, lastPrice, contractSize, expiration);
+                           @JsonProperty("expiration") long expiration,
+                           @JsonProperty("impliedVolatility") double impliedVolatility) {
+        super(contractSymbol, strike, bid, ask, currency, lastPrice, contractSize, expiration, impliedVolatility);
     }
 
     @Override

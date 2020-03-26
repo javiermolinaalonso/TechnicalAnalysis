@@ -95,9 +95,10 @@ public class SpreadAnalyzer {
         BigDecimal averageLoss = BigDecimal.ZERO;
         List<BigDecimal> cutPoints = new ArrayList<>();
 
+        ProbabilityDistributionService probabilityService = new ProbabilityDistributionService(assetPrice.doubleValue(), spread.getVolatility(), Math.toIntExact(daysToExpiry));
         while (currentPrice.compareTo(maxExpectedPrice) < 0d) {
             //TODO Volatility should not be the spread, but the current
-            final BigDecimal probability = calculateProbability(assetPrice, spread.getVolatility(), daysToExpiry, currentPrice, currentPrice.add(incrementStep));
+            final BigDecimal probability = BigDecimal.valueOf(probabilityService.calculate(currentPrice.doubleValue(), currentPrice.add(incrementStep).doubleValue()));
 
             if (probability.compareTo(BigDecimal.ZERO) > 0) {
                 final BigDecimal expirationValueAtCurrentPrice = spread.getExpirationValue(currentPrice);

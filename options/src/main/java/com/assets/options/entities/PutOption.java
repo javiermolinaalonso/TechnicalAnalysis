@@ -8,10 +8,6 @@ import java.time.LocalDate;
 
 public class PutOption extends Option {
 
-    public PutOption(String ticker, BigDecimal currentPrice, BigDecimal strikePrice, LocalDate currentDate, LocalDate expirationDate, Double volatility, Double riskFree) {
-        super(ticker, currentPrice, strikePrice, currentDate, expirationDate, volatility, riskFree);
-    }
-
     @JsonCreator
     public PutOption(@JsonProperty("ticker") String ticker,
                      @JsonProperty("currentPrice") BigDecimal currentPrice,
@@ -20,8 +16,9 @@ public class PutOption extends Option {
                      @JsonProperty("ask") BigDecimal ask,
                      @JsonProperty("currentDate") LocalDate currentDate,
                      @JsonProperty("expirationDate") LocalDate expirationDate,
+                     @JsonProperty("impliedVolatility") Double impliedVolatility,
                      @JsonProperty("riskFree") double riskFree) {
-        super(ticker, currentPrice, strikePrice, bid, ask, currentDate, expirationDate, riskFree);
+        super(ticker, currentPrice, strikePrice, bid, ask, currentDate, expirationDate, impliedVolatility, riskFree);
     }
 
     @Override

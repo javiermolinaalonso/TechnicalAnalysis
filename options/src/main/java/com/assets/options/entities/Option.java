@@ -49,17 +49,30 @@ public abstract class Option implements Comparable<Option> {
         greeks = new Greeks(results[1],results[2],results[3], results[4]/365d, results[5]);
     }
 
-    Option(String ticker, BigDecimal currentPrice, BigDecimal strikePrice, BigDecimal bid, BigDecimal ask, LocalDate currentDate, LocalDate expirationDate, Double riskFree) {
+    Option(String ticker, BigDecimal currentPrice, BigDecimal strikePrice, BigDecimal bid, BigDecimal ask, LocalDate currentDate, LocalDate expirationDate, Double impliedVolatility, Double riskFree) {
         this(ticker, currentPrice, strikePrice, currentDate, expirationDate, riskFree);
         double yearsToExpiry = getDaysToExpiry() / 365d;
 
-        this.premium = bid.add(ask).divide(BigDecimal.valueOf(2), 4, RoundingMode.HALF_UP);
-        this.bid = bid;
-        this.ask = ask;
+        if (bid == null) {
+            double[] results = BlackScholesGreeks.calculate(isCall(), currentPrice.doubleValue(), strikePrice.doubleValue(), riskFree, yearsToExpiry, impliedVolatility);
+            this.premium = BigDecimal.valueOf(results[0]);
+            this.bid = premium;
+            this.ask = premium;
+        } else {
+            this.premium = bid.add(ask).divide(BigDecimal.valueOf(2), 4, RoundingMode.HALF_UP);
+            this.bid = bid;
+            this.ask = ask;
+        }
 
-        double[] results = calculateVolatility(isCall(), currentPrice.doubleValue(), strikePrice.doubleValue(), riskFree, yearsToExpiry, premium.doubleValue(), MAX_IV, MAX_IV, MIN_IV, MAX_IV_STEPS);
-        this.impliedVolatility = results[0];
-        greeks = new Greeks(results[1],results[2],results[3], results[4] / 365d, results[5]);
+        if (impliedVolatility == null) {
+            double[] results = calculateVolatility(isCall(), currentPrice.doubleValue(), strikePrice.doubleValue(), riskFree, yearsToExpiry, premium.doubleValue(), MAX_IV, MAX_IV, MIN_IV, MAX_IV_STEPS);
+            this.impliedVolatility = results[0];
+            greeks = new Greeks(results[1],results[2],results[3], results[4] / 365d, results[5]);
+        } else {
+            this.impliedVolatility = impliedVolatility;
+            double[] results = BlackScholesGreeks.calculate(isCall(), currentPrice.doubleValue(), strikePrice.doubleValue(), riskFree, yearsToExpiry, this.impliedVolatility);
+            this.greeks = new Greeks(results[1],results[2],results[3], results[4]/365d, results[5]);
+        }
     }
 
     private Option(String ticker, BigDecimal currentPrice, BigDecimal strikePrice, LocalDate currentDate, LocalDate expirationDate, Double riskFree) {
