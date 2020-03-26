@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8e42815d-2456-460e-847d-5e76ba9d8ceb" name="Default" comment="Weeell some things done">
-      <change afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/analyzers/ProbabilityDistributionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/analyzers/ProbabilityDistributionStep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/analyzers/ProbabilityDistributionServiceTest.java" afterDir="false" />
+    <list default="true" id="8e42815d-2456-460e-847d-5e76ba9d8ceb" name="Default" comment="bueh parece q algo mejor">
+      <change afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/analyzers/VerticalSpreadAnalyzer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/AnalyzeCurrentStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/AnalyzeCurrentStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/OptionsHistorical.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/OptionsHistorical.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/analyzers/ProbabilityDistributionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/analyzers/ProbabilityDistributionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/analyzers/SpreadAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/analyzers/SpreadAnalyzer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/book/loader/yahoo/YahooConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/book/loader/yahoo/YahooConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/book/loader/yahoo/YahooOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/book/loader/yahoo/YahooOption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/book/loader/yahoo/YahooOptionCall.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/book/loader/yahoo/YahooOptionCall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/book/loader/yahoo/YahooOptionPut.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/book/loader/yahoo/YahooOptionPut.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/CallOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/CallOption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/book/OptionBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/book/OptionBook.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/Option.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/Option.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/OptionBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/OptionBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/PutOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/PutOption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/main/OptionBookAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/main/OptionBookAnalyzer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/test/java/com/assets/options/analyzers/ProbabilityDistributionServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/analyzers/ProbabilityDistributionServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/options/src/test/java/com/assets/options/analyzers/SpreadAnalyzerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/analyzers/SpreadAnalyzerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,8 +33,8 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -50,7 +47,7 @@
     </option>
   </component>
   <component name="HierarchyBrowserManager">
-    <option name="SCOPE" value="All" />
+    <option name="SCOPE" value="Production" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -135,7 +132,7 @@
       <recent name="$PROJECT_DIR$/derivates/src/main/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ProbabilityDistributionServiceTest.givenTenSteps_whenCalculateDistribution_expectCorrectPercentages2">
+  <component name="RunManager" selected="Application.OptionBookAnalyzer">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -197,6 +194,34 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OptionBookAnalyzer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.assets.options.main.OptionBookAnalyzer" />
+      <module name="options" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.assets.options.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="YahooDownloader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.assets.options.main.YahooDownloader" />
+      <module name="options" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.assets.options.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -253,22 +278,6 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method v="2" />
     </configuration>
-    <configuration name="ProbabilityDistributionServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="options" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.assets.options.analyzers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.assets.options.analyzers" />
-      <option name="MAIN_CLASS_NAME" value="com.assets.options.analyzers.ProbabilityDistributionServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ProbabilityDistributionServiceTest.givenTenSteps_whenCalculateDistribution_expectCorrectPercentages" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="options" />
       <extension name="coverage">
@@ -314,23 +323,6 @@
       <option name="PACKAGE_NAME" value="com.assets.options.analyzers" />
       <option name="MAIN_CLASS_NAME" value="com.assets.options.analyzers.SpreadAnalyzerTest" />
       <option name="METHOD_NAME" value="test" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SpreadAnalyzerTest.testIronCondor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="options" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.assets.options.analyzers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.assets.options.analyzers" />
-      <option name="MAIN_CLASS_NAME" value="com.assets.options.analyzers.SpreadAnalyzerTest" />
-      <option name="METHOD_NAME" value="testIronCondor" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
@@ -435,18 +427,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.SpreadAnalyzerTest.test" />
-      <item itemvalue="JUnit.ProbabilityDistributionServiceTest" />
       <item itemvalue="JUnit.ProbabilityDistributionServiceTest.givenTenSteps_whenCalculateDistribution_expectCorrectPercentages" />
-      <item itemvalue="JUnit.SpreadAnalyzerTest.testIronCondor" />
       <item itemvalue="JUnit.ProbabilityDistributionServiceTest.givenTenSteps_whenCalculateDistribution_expectCorrectPercentages2" />
+      <item itemvalue="Application.YahooDownloader" />
+      <item itemvalue="Application.OptionBookAnalyzer" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.OptionBookAnalyzer" />
+        <item itemvalue="Application.YahooDownloader" />
+        <item itemvalue="JUnit.SpreadAnalyzerTest.test" />
         <item itemvalue="JUnit.ProbabilityDistributionServiceTest.givenTenSteps_whenCalculateDistribution_expectCorrectPercentages2" />
         <item itemvalue="JUnit.ProbabilityDistributionServiceTest.givenTenSteps_whenCalculateDistribution_expectCorrectPercentages" />
-        <item itemvalue="JUnit.SpreadAnalyzerTest.test" />
-        <item itemvalue="JUnit.SpreadAnalyzerTest.testIronCondor" />
-        <item itemvalue="JUnit.ProbabilityDistributionServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -542,7 +534,7 @@
       <workItem from="1585142095021" duration="204000" />
       <workItem from="1585142336202" duration="1555000" />
       <workItem from="1585144838656" duration="3000" />
-      <workItem from="1585145656235" duration="12721000" />
+      <workItem from="1585145656235" duration="22715000" />
     </task>
     <task id="LOCAL-00001" summary="Added get and options interface">
       <created>1453363092145</created>
@@ -824,7 +816,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585173429712</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="bueh parece q algo mejor">
+      <created>1585183752539</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1585183752539</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -862,7 +861,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added options construction given price" />
     <MESSAGE value="Spreads done" />
     <MESSAGE value="Fixed infinite loops in implied volatility calculation" />
     <MESSAGE value="Added readable greeks" />
@@ -887,7 +885,8 @@
     <MESSAGE value="Some cleaning" />
     <MESSAGE value="YaY" />
     <MESSAGE value="Weeell some things done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Weeell some things done" />
+    <MESSAGE value="bueh parece q algo mejor" />
+    <option name="LAST_COMMIT_MESSAGE" value="bueh parece q algo mejor" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -905,75 +904,84 @@
     </state>
     <state x="307" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900@0.0.1440.900" timestamp="1584782390038" />
     <state x="825" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1585052963845" />
-    <state x="456" y="105" key="CommitChangelistDialog2" timestamp="1585173429169">
+    <state x="456" y="105" key="CommitChangelistDialog2" timestamp="1585183752321">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="456" y="105" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1585173429169" />
+    <state x="456" y="105" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1585183752321" />
     <state x="810" y="313" key="CommitChangelistDialog2/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584714892104" />
     <state width="430" height="466" key="DebuggerActiveHint" timestamp="1584979416997">
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state width="430" height="466" key="DebuggerActiveHint/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584979416997" />
-    <state x="100" y="100" width="2360" height="1240" key="DiffContextDialog" timestamp="1584973891862">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state x="56" y="63" width="1328" height="775" key="DiffContextDialog" timestamp="1585184461688">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="56" y="63" width="1328" height="775" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1584783383596" />
+    <state x="56" y="63" width="1328" height="775" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1585184461688" />
     <state x="56" y="63" width="1328" height="775" key="DiffContextDialog/0.23.1440.797@0.23.1440.797" timestamp="1584783941171" />
     <state x="100" y="100" width="2360" height="1240" key="DiffContextDialog/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584973891862" />
     <state x="100" y="100" width="2360" height="1240" key="DiffContextDialog/2560.284.1440.877/0.23.2560.1337@0.23.2560.1337" timestamp="1584695853308" />
-    <state width="1398" height="348" key="GridCell.Tab.0.bottom" timestamp="1585183724278">
+    <state width="1398" height="432" key="GridCell.Tab.0.bottom" timestamp="1585231860301">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="348" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1585183724278" />
+    <state width="1398" height="432" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1585231860301" />
+    <state width="1398" height="432" key="GridCell.Tab.0.bottom/0.23.1440.797@0.23.1440.797" timestamp="1585230842101" />
     <state width="2518" height="561" key="GridCell.Tab.0.bottom/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1585068240128" />
     <state width="2518" height="407" key="GridCell.Tab.0.bottom/2560.284.1440.877/0.0.2560.1360@0.0.2560.1360" timestamp="1585056963257" />
     <state width="2518" height="561" key="GridCell.Tab.0.bottom/2560.284.1440.877/0.23.2560.1337@0.23.2560.1337" timestamp="1585066415807" />
-    <state width="1398" height="348" key="GridCell.Tab.0.center" timestamp="1585183724277">
+    <state width="1398" height="432" key="GridCell.Tab.0.center" timestamp="1585231860300">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="348" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1585183724277" />
+    <state width="1398" height="432" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1585231860300" />
+    <state width="1398" height="432" key="GridCell.Tab.0.center/0.23.1440.797@0.23.1440.797" timestamp="1585230842096" />
     <state width="2518" height="561" key="GridCell.Tab.0.center/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1585068240126" />
     <state width="2518" height="407" key="GridCell.Tab.0.center/2560.284.1440.877/0.0.2560.1360@0.0.2560.1360" timestamp="1585056963255" />
     <state width="2518" height="561" key="GridCell.Tab.0.center/2560.284.1440.877/0.23.2560.1337@0.23.2560.1337" timestamp="1585066415806" />
-    <state width="1398" height="348" key="GridCell.Tab.0.left" timestamp="1585183724276">
+    <state width="1398" height="432" key="GridCell.Tab.0.left" timestamp="1585231860299">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="348" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1585183724276" />
+    <state width="1398" height="432" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1585231860299" />
+    <state width="1398" height="432" key="GridCell.Tab.0.left/0.23.1440.797@0.23.1440.797" timestamp="1585230842093" />
     <state width="2518" height="561" key="GridCell.Tab.0.left/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1585068240125" />
     <state width="2518" height="407" key="GridCell.Tab.0.left/2560.284.1440.877/0.0.2560.1360@0.0.2560.1360" timestamp="1585056963253" />
     <state width="2518" height="561" key="GridCell.Tab.0.left/2560.284.1440.877/0.23.2560.1337@0.23.2560.1337" timestamp="1585066415805" />
-    <state width="1398" height="348" key="GridCell.Tab.0.right" timestamp="1585183724278">
+    <state width="1398" height="432" key="GridCell.Tab.0.right" timestamp="1585231860301">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="348" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1585183724278" />
+    <state width="1398" height="432" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1585231860301" />
+    <state width="1398" height="432" key="GridCell.Tab.0.right/0.23.1440.797@0.23.1440.797" timestamp="1585230842100" />
     <state width="2518" height="561" key="GridCell.Tab.0.right/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1585068240127" />
     <state width="2518" height="407" key="GridCell.Tab.0.right/2560.284.1440.877/0.0.2560.1360@0.0.2560.1360" timestamp="1585056963256" />
     <state width="2518" height="561" key="GridCell.Tab.0.right/2560.284.1440.877/0.23.2560.1337@0.23.2560.1337" timestamp="1585066415807" />
-    <state width="1398" height="432" key="GridCell.Tab.1.bottom" timestamp="1585183562940">
+    <state width="1398" height="432" key="GridCell.Tab.1.bottom" timestamp="1585231980794">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="432" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1585183562940" />
+    <state width="1398" height="432" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1585231980794" />
+    <state width="1398" height="432" key="GridCell.Tab.1.bottom/0.23.1440.797@0.23.1440.797" timestamp="1585230842230" />
     <state width="2518" height="561" key="GridCell.Tab.1.bottom/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1585068239166" />
     <state width="2518" height="561" key="GridCell.Tab.1.bottom/2560.284.1440.877/0.0.2560.1360@0.0.2560.1360" timestamp="1585056963399" />
     <state width="2518" height="561" key="GridCell.Tab.1.bottom/2560.284.1440.877/0.23.2560.1337@0.23.2560.1337" timestamp="1585066415916" />
-    <state width="1398" height="432" key="GridCell.Tab.1.center" timestamp="1585183562939">
+    <state width="1398" height="432" key="GridCell.Tab.1.center" timestamp="1585231980793">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="432" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1585183562939" />
+    <state width="1398" height="432" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1585231980793" />
+    <state width="1398" height="432" key="GridCell.Tab.1.center/0.23.1440.797@0.23.1440.797" timestamp="1585230842228" />
     <state width="2518" height="561" key="GridCell.Tab.1.center/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1585068239163" />
     <state width="2518" height="561" key="GridCell.Tab.1.center/2560.284.1440.877/0.0.2560.1360@0.0.2560.1360" timestamp="1585056963396" />
     <state width="2518" height="561" key="GridCell.Tab.1.center/2560.284.1440.877/0.23.2560.1337@0.23.2560.1337" timestamp="1585066415914" />
-    <state width="1398" height="432" key="GridCell.Tab.1.left" timestamp="1585183562939">
+    <state width="1398" height="432" key="GridCell.Tab.1.left" timestamp="1585231980792">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="432" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1585183562939" />
+    <state width="1398" height="432" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1585231980792" />
+    <state width="1398" height="432" key="GridCell.Tab.1.left/0.0.1440.900@0.23.1440.797" timestamp="1585230842075" />
+    <state width="1398" height="432" key="GridCell.Tab.1.left/0.23.1440.797@0.23.1440.797" timestamp="1585230842227" />
     <state width="2518" height="561" key="GridCell.Tab.1.left/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1585068239161" />
     <state width="2518" height="561" key="GridCell.Tab.1.left/2560.284.1440.877/0.0.2560.1360@0.0.2560.1360" timestamp="1585056963382" />
     <state width="2518" height="561" key="GridCell.Tab.1.left/2560.284.1440.877/0.23.2560.1337@0.23.2560.1337" timestamp="1585066415913" />
-    <state width="1398" height="432" key="GridCell.Tab.1.right" timestamp="1585183562940">
+    <state width="1398" height="432" key="GridCell.Tab.1.right" timestamp="1585231980794">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="432" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1585183562940" />
+    <state width="1398" height="432" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1585231980794" />
+    <state width="1398" height="432" key="GridCell.Tab.1.right/0.23.1440.797@0.23.1440.797" timestamp="1585230842229" />
     <state width="2518" height="561" key="GridCell.Tab.1.right/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1585068239165" />
     <state width="2518" height="561" key="GridCell.Tab.1.right/2560.284.1440.877/0.0.2560.1360@0.0.2560.1360" timestamp="1585056963397" />
     <state width="2518" height="561" key="GridCell.Tab.1.right/2560.284.1440.877/0.23.2560.1337@0.23.2560.1337" timestamp="1585066415915" />
@@ -994,23 +1002,28 @@
     </state>
     <state x="637" y="401" key="VCS.ChangelistChooser/0.0.1440.900@0.0.1440.900" timestamp="1584783932065" />
     <state x="1132" y="642" key="VCS.ChangelistChooser/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584701920728" />
-    <state x="495" y="288" key="Vcs.Push.Dialog.v2" timestamp="1585173431871">
+    <state x="495" y="288" key="Vcs.Push.Dialog.v2" timestamp="1585183754430">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="495" y="288" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1585173431871" />
+    <state x="495" y="288" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1585183754430" />
     <state x="880" y="460" key="Vcs.Push.Dialog.v2/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1584714894164" />
-    <state x="938" y="342" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1585056902160">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state width="720" height="450" key="XDebugger.FullValuePopup" timestamp="1585225771344">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="528" y="144" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1584786985976" />
+    <state width="720" height="450" key="XDebugger.FullValuePopup/0.0.1440.900@0.0.1440.900" timestamp="1585225771343" />
+    <state x="528" y="144" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1585185005023">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="528" y="144" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1585185005023" />
     <state x="938" y="342" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1585056902160" />
     <state x="477" y="199" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1585175260921">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="477" y="199" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1440.900@0.0.1440.900" timestamp="1585175260921" />
-    <state x="1018" y="480" width="524" height="484" key="extract.method.dialog" timestamp="1585060542823">
-      <screen x="0" y="0" width="2560" height="1440" />
+    <state x="573" y="300" width="524" height="432" key="extract.method.dialog" timestamp="1585222696980">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="573" y="300" width="524" height="432" key="extract.method.dialog/0.0.1440.900@0.0.1440.900" timestamp="1585222696980" />
     <state x="1018" y="480" width="524" height="484" key="extract.method.dialog/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1585060542823" />
     <state x="527" y="298" width="733" height="486" key="find.popup" timestamp="1585152247834">
       <screen x="0" y="0" width="1440" height="900" />
@@ -1027,10 +1040,10 @@
       <screen x="0" y="0" width="2560" height="1440" />
     </state>
     <state x="1042" y="333" key="refactoring.ChangeSignatureDialog/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1585058865514" />
-    <state x="530" y="206" width="672" height="424" key="search.everywhere.popup" timestamp="1585183249055">
+    <state x="530" y="206" width="672" height="424" key="search.everywhere.popup" timestamp="1585221256114">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="530" y="206" width="672" height="424" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1585183249055" />
+    <state x="530" y="206" width="672" height="424" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1585221256114" />
     <state x="943" y="329" width="672" height="678" key="search.everywhere.popup/2560.261.1440.900/0.0.2560.1440@0.0.2560.1440" timestamp="1585066650969" />
     <state x="943" y="329" width="672" height="678" key="search.everywhere.popup/2560.284.1440.877/0.0.2560.1440@0.0.2560.1440" timestamp="1585049434601" />
   </component>
@@ -1059,34 +1072,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/options/src/test/java/com/assets/options/analyzers/SpreadAnalyzerTest.java</url>
-          <line>34</line>
+          <line>35</line>
           <option name="timeStamp" value="166" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/options/src/main/java/com/assets/options/analyzers/ProbabilityDistributionService.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="175" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/options/src/main/java/com/assets/options/analyzers/ProbabilityDistributionService.java</url>
-          <line>11</line>
-          <option name="timeStamp" value="177" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
-        <watch expression="Math.log(Math.pow(days, 2) + 1)" language="JAVA" />
-        <watch expression="Math.pow(1 + iv, 2)" language="JAVA" />
-        <watch expression="distribution.cumulativeProbability(220)" language="JAVA" />
+        <watch expression="current" language="JAVA" />
+        <watch expression="probabilities.get(current)" language="JAVA" />
+        <watch expression="spread.getMaxLoss()" language="JAVA" />
+        <watch expression="spread.getExpirationValue(BigDecimal.valueOf(200))" language="JAVA" />
       </configuration>
       <configuration name="Application">
-        <watch expression="book.getAvailableDates()" language="JAVA" />
-        <watch expression="Instant.ofEpochSecond(date)" language="JAVA" />
-        <watch expression="Instant.ofEpochSecond(date).atZone(ZoneId.of(&quot;UTC&quot;)).toLocalDate()" language="JAVA" />
-        <watch expression="date.compareTo(book.getNow()) &gt; 10" language="JAVA" />
-        <watch expression="book.getNow()" language="JAVA" />
-        <watch expression="date.compareTo(book.getNow())" language="JAVA" />
+        <watch expression="options.get(date)" language="JAVA" />
+        <watch expression="options.get(date).stream().filter(o -&gt; o.getStrikePrice().subtract(getCurrentPrice()).abs().compareTo(BigDecimal.valueOf(5)) &lt; 0).collect(Collectors.toList())" language="JAVA" custom="java.util.stream.Collectors" />
+        <watch expression="options.stream().filter(o -&gt; o.getStrikePrice().subtract(expectedPrice).abs().compareTo(BigDecimal.valueOf(5)) &lt; 0).collect(Collectors.toList())" language="JAVA" />
+        <watch expression="results.get(0).getSpread().getMaxLoss()" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>

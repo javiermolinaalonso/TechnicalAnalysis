@@ -125,8 +125,9 @@ public class OptionsHistorical {
                                     1
                             );
 
-                            final SpreadAnalyzerResult analyzerResult = spreadAnalyzer.analyze(spread, BigDecimal.valueOf(currentPrice), now);
+//                            final SpreadAnalyzerResult analyzerResult = spreadAnalyzer.analyze(spread, BigDecimal.valueOf(currentPrice), now);
 //                                System.out.println(analyzerResult);
+                            SpreadAnalyzerResult analyzerResult = null;//TODO TODO
                             if (analyzerResult.getExpectedTae().get().compareTo(BigDecimal.valueOf(0)) > 0) {
                                 if (pair == null || analyzerResult.getExpectedTae().get().compareTo(pair.getKey().getExpectedTae().get()) > 0) {
                                     pair = new ImmutablePair<>(analyzerResult, spread);

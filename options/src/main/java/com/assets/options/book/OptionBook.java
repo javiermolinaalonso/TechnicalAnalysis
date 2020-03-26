@@ -1,6 +1,7 @@
 package com.assets.options.book;
 
 import com.assets.options.entities.Option;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
 
@@ -48,6 +49,15 @@ public class OptionBook {
 
     public List<LocalDate> getAvailableDates() {
         return options.keySet().stream().sorted().collect(Collectors.toList());
+    }
+
+    @JsonIgnore
+    public double getVolatility(LocalDate date) {
+        return options.get(date).stream()
+                .filter(o -> o.getStrikePrice().subtract(getCurrentPrice()).abs().compareTo(BigDecimal.valueOf(5)) < 0)
+                .mapToDouble(o -> o.getImpliedVolatility())
+                .average()
+                .getAsDouble();
     }
 
     @JsonPOJOBuilder

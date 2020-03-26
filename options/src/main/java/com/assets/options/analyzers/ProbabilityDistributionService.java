@@ -1,19 +1,35 @@
 package com.assets.options.analyzers;
 
-import org.apache.commons.math3.distribution.NormalDistribution;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
+import static net.finmath.functions.NormalDistribution.cumulativeDistribution;
 
 public class ProbabilityDistributionService {
 
-    private static final double GOLDEN_RATIO = 1.6179775280898876;
-    private final NormalDistribution distribution;
+    private final BigDecimal price;
+    private final double mu;
+    private final double time;
+    private final double denom;
 
-    public ProbabilityDistributionService(double price, double iv, int days) {
-        final double stddev = Math.pow(Math.log(Math.pow(days, GOLDEN_RATIO) + 1), Math.pow(1 + iv, GOLDEN_RATIO));
-        this.distribution = new NormalDistribution(price, stddev);
+    public ProbabilityDistributionService(BigDecimal price, double iv, int days) {
+        this.mu = -0.5 * iv * iv;
+        this.price = price;
+        this.time = days / 365d;
+        this.denom = iv * Math.sqrt(time);
     }
 
-    public double calculate(double low, double high) {
-        return distribution.probability(low, high);
+    public BigDecimal calculate(double low, double up) {
+            return calculate(BigDecimal.valueOf(low), BigDecimal.valueOf(up));
     }
 
+    public BigDecimal calculate(BigDecimal low, BigDecimal up) {
+        final double zlb = Math.log(low.divide(price, 8, RoundingMode.HALF_UP).doubleValue() - mu * time) / denom;
+        final double zub = Math.log(up.divide(price, 8, RoundingMode.HALF_UP).doubleValue() - mu * time) / denom;
+        return BigDecimal.valueOf(cumulativeDistribution(zub) - cumulativeDistribution(zlb));
+    }
+
+    public double getYearsToExpiry() {
+        return time;
+    }
 }

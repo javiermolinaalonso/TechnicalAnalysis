@@ -1,6 +1,7 @@
 package com.assets.options.entities;
 
 import com.assets.options.blackscholes.BlackScholesGreeks;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.jetbrains.annotations.NotNull;
@@ -158,6 +159,11 @@ public abstract class Option implements Comparable<Option> {
 
     public Greeks getGreeks() {
         return greeks;
+    }
+
+    @JsonIgnore
+    public boolean isTradeable() {
+        return getBid().doubleValue() > 0.1 && getAsk().doubleValue() > 0.1 && getDaysToExpiry() > 0.1;
     }
 
     @Override

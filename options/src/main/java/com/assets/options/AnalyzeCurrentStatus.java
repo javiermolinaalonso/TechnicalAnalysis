@@ -1,11 +1,14 @@
 package com.assets.options;
 
-import com.assets.options.analyzers.SpreadAnalyzer;
+import com.assets.options.analyzers.ProbabilityDistributionService;
+import com.assets.options.analyzers.VerticalSpreadAnalyzer;
 import com.assets.options.entities.OptionBuilder;
-import com.assets.options.entities.spread.OptionSpread;
 import com.assets.options.entities.spread.SpreadFactory;
+import com.assets.options.entities.spread.vertical.VerticalSpread;
+import org.apache.commons.lang3.Range;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 
 public class AnalyzeCurrentStatus {
@@ -17,12 +20,12 @@ public class AnalyzeCurrentStatus {
      * @param args
      */
     public static void main(String[] args) {
-        OptionSpread spread = loadSpread(args);
+        VerticalSpread spread = loadSpread(args);
         PrintUtils.print(spread, 0.15);
         printAnalysis(spread, args);
     }
 
-    private static OptionSpread loadSpread(String[] args) {
+    private static VerticalSpread loadSpread(String[] args) {
         SpreadFactory spreadFactory = new SpreadFactory();
         String spreadType = args[0];
         int contracts = Integer.valueOf(args[1]);
@@ -61,7 +64,11 @@ public class AnalyzeCurrentStatus {
         }
     }
 
-    private static void printAnalysis(OptionSpread spread, String[] args) {
-        System.out.println(new SpreadAnalyzer().analyze(spread, new BigDecimal(args[3]), LocalDate.now()).toString());
+    private static void printAnalysis(VerticalSpread spread, String[] args) {
+        BigDecimal currentPrice = BigDecimal.valueOf(Double.parseDouble(args[3]));
+        ProbabilityDistributionService probabilityDistributionService = new ProbabilityDistributionService(currentPrice, spread.getVolatility(), Integer.valueOf(args[4]));
+        Range<BigDecimal> range = Range.between(currentPrice.divide(BigDecimal.valueOf(2), 2, RoundingMode.HALF_UP), currentPrice.multiply(BigDecimal.valueOf(2)));
+        VerticalSpreadAnalyzer verticalSpreadAnalyzer = new VerticalSpreadAnalyzer(range, LocalDate.now(), currentPrice, probabilityDistributionService);
+        System.out.println(verticalSpreadAnalyzer.analyze(spread).toString());
     }
 }
