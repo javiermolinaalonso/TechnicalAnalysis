@@ -1,0 +1,38 @@
+[
+  {
+    "conid": 406628075,
+    "symbol": "SPY",
+    "secType": "OPT",
+    "exchange": "SMART",
+    "listingExchange": null,
+    "right": "P",
+    "strike": "220.0",
+    "currency": "USD",
+    "cusip": null,
+    "coupon": "No Coupon",
+    "desc1": "SPY",
+    "desc2": "APR 01 '20 220 Put",
+    "maturiyDate": "20200401",
+    "multiplier": "100",
+    "tradingClass": "SPY",
+    "validExchanges": "SMART,AMEX,CBOE,PHLX,PSE,ISE,BOX,BATS,NASDAQOM,CBOE2,NASDAQBX,MIAX,GEMINI,EDGX,MERCURY,PEARL,EMERALD"
+  },
+  {
+    "conid": 392376410,
+    "symbol": "SPY",
+    "secType": "OPT",
+    "exchange": "SMART",
+    "listingExchange": null,
+    "right": "C",
+    "strike": "220.0",
+    "currency": "USD",
+    "cusip": null,
+    "coupon": "No Coupon",
+    "desc1": "SPY",
+    "desc2": "APR 17 '20 220 Call",
+    "maturiyDate": "20200417",
+    "multiplier": "100",
+    "tradingClass": "SPY",
+    "validExchanges": "SMART,AMEX,CBOE,PHLX,PSE,ISE,BOX,BATS,NASDAQOM,CBOE2,NASDAQBX,MIAX,GEMINI,EDGX,MERCURY,PEARL,EMERALD"
+  }
+]

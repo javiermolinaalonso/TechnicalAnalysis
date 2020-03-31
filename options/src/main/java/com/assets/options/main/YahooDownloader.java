@@ -3,26 +3,19 @@ package com.assets.options.main;
 import com.assets.options.book.OptionBook;
 import com.assets.options.book.loader.yahoo.OptionBookLoaderYahooOnline;
 import com.assets.options.book.loader.yahoo.YahooConverter;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
-import org.springframework.web.client.RestTemplate;
 
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.Arrays;
 
 import static com.assets.options.main.ObjectMapperProvider.objectMapper;
+import static com.assets.options.main.ObjectMapperProvider.restTemplate;
 
 public class YahooDownloader {
 
     public static void main(String[] args) throws IOException {
-        RestTemplate restTemplate = new RestTemplate();
 
-        final MappingJackson2HttpMessageConverter jacksonConverter = new MappingJackson2HttpMessageConverter();
-        jacksonConverter.setObjectMapper(objectMapper());
-        restTemplate.setMessageConverters(Arrays.asList(jacksonConverter));
-
-        OptionBookLoaderYahooOnline optionBookLoaderYahooOnline = new OptionBookLoaderYahooOnline(restTemplate, new YahooConverter());
+        OptionBookLoaderYahooOnline optionBookLoaderYahooOnline = new OptionBookLoaderYahooOnline(restTemplate(), new YahooConverter());
 
         OptionBook spy = optionBookLoaderYahooOnline.load("SPY");
         writeToFile(spy);

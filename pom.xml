@@ -23,7 +23,7 @@
         <hibernatevalidator.version>5.0.0.Final</hibernatevalidator.version>
         <portfolio.version>0.0.1</portfolio.version>
         <derivates.version>0.0.1-SNAPSHOT</derivates.version>
-        <junit.version>4.11</junit.version>
+        <junit.jupiter.version>5.6.1</junit.jupiter.version>
         <slf4j-log4j12.version>1.5.6</slf4j-log4j12.version>
     </properties>
 
@@ -157,16 +157,16 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit.jupiter.version}</version>
             <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.hamcrest</groupId>
-                    <artifactId>hamcrest-core</artifactId>
-                </exclusion>
-            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>

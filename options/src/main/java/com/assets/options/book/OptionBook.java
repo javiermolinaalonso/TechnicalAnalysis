@@ -67,6 +67,9 @@ public class OptionBook {
         private LocalDate now;
         private List<Option> options;
 
+        public static final Builder create() {
+            return new Builder();
+        }
         public Builder() {
         }
 
