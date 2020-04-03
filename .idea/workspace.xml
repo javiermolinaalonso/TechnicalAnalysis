@@ -2,38 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e42815d-2456-460e-847d-5e76ba9d8ceb" name="Default" comment="bueh parece q algo mejor">
-      <change afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/book/loader/ib/IBMarketDataResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/book/loader/ib/IBOptionDataResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/book/loader/ib/IBSearchResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/book/loader/ib/IBSearchSections.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/book/loader/ib/IBStrikesResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/book/loader/ib/OptionBookLoaderIB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/book/loader/OptionBookLoaderIBTestIT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/options/src/test/resources/ib/market_data_options.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/options/src/test/resources/ib/market_data_spy.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/options/src/test/resources/ib/search_spy_response.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/options/src/test/resources/ib/spy_data_for_month_and_strike.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/options/src/test/resources/ib/strikes.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/StatisticList/StatisticList.iml" beforeDir="false" afterPath="$PROJECT_DIR$/StatisticList/StatisticList.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bollinger/bollinger.iml" beforeDir="false" afterPath="$PROJECT_DIR$/bollinger/bollinger.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/correlation/correlation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/correlation/correlation.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-loader/data-loader.iml" beforeDir="false" afterPath="$PROJECT_DIR$/data-loader/data-loader.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data-loader/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/data-loader/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/derivates/assets.derivates.iml" beforeDir="false" afterPath="$PROJECT_DIR$/derivates/assets.derivates.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/entities/entities.iml" beforeDir="false" afterPath="$PROJECT_DIR$/entities/entities.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/investment-entities/investment-entities.iml" beforeDir="false" afterPath="$PROJECT_DIR$/investment-entities/investment-entities.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/investment-strategy/investment-strategy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/investment-strategy/investment-strategy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/options.iml" beforeDir="false" afterPath="$PROJECT_DIR$/options/options.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/options/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/book/OptionBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/book/OptionBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/main/ObjectMapperProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/main/ObjectMapperProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/main/YahooDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/main/YahooDownloader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio/portfolio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio/portfolio.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/techAnalysis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/techAnalysis.iml" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -153,13 +131,19 @@
       <recent name="$PROJECT_DIR$/data-loader" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager" selected="JUnit.OptionBookLoaderIBTestIT.givenSymbolRequest_whenRequest_expectDataIsLoaded">
-    <configuration default="true" type="Applet">
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
@@ -213,6 +197,51 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="PROJECT_INTERPRETER" value="false" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <module name="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <module name="assets.derivates" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <module name="assets.derivates" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;.&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="OptionBookAnalyzer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -276,17 +305,6 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="INTERPRETER_PATH" value="/bin/bash" />
-      <option name="PROJECT_INTERPRETER" value="false" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <module name="" />
-      <method v="2" />
     </configuration>
     <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
       <setting name="vmparams" value="" />
@@ -391,19 +409,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
-      <module name="assets.derivates" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="ADDITIONAL_ARGS" value="" />
-      <method v="2" />
-    </configuration>
     <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -431,26 +436,11 @@
       <pass-parent-envs>true</pass-parent-envs>
       <method v="2" />
     </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <module name="assets.derivates" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;.&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="JUnit.SpreadAnalyzerTest.test" />
-      <item itemvalue="JUnit.ProbabilityDistributionServiceTest.givenTenSteps_whenCalculateDistribution_expectCorrectPercentages2" />
       <item itemvalue="Application.YahooDownloader" />
       <item itemvalue="Application.OptionBookAnalyzer" />
+      <item itemvalue="JUnit.SpreadAnalyzerTest.test" />
+      <item itemvalue="JUnit.ProbabilityDistributionServiceTest.givenTenSteps_whenCalculateDistribution_expectCorrectPercentages2" />
       <item itemvalue="JUnit.OptionBookLoaderIBTestIT.givenSymbolRequest_whenRequest_expectDataIsLoaded" />
     </list>
     <recent_temporary>
@@ -556,6 +546,7 @@
       <workItem from="1585142336202" duration="1555000" />
       <workItem from="1585144838656" duration="3000" />
       <workItem from="1585145656235" duration="38624000" />
+      <workItem from="1585927100390" duration="251000" />
     </task>
     <task id="LOCAL-00001" summary="Added get and options interface">
       <created>1453363092145</created>
