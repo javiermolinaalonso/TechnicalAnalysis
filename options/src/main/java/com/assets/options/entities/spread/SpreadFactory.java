@@ -1,5 +1,6 @@
 package com.assets.options.entities.spread;
 
+import com.assets.options.book.OptionBook;
 import com.assets.options.entities.CallOption;
 import com.assets.options.entities.Option;
 import com.assets.options.entities.PutOption;
@@ -9,6 +10,9 @@ import com.assets.options.entities.spread.exceptions.TickerMissmatchException;
 import com.assets.options.entities.spread.exceptions.VerticalSpreadDifferentStrikePriceException;
 import com.assets.options.entities.spread.neutral.IronCondorSpread;
 import com.assets.options.entities.spread.vertical.*;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public class SpreadFactory {
 
@@ -44,6 +48,16 @@ public class SpreadFactory {
         return new IronCondorSpread(bearCallSpread(o3, o4, contracts), bullPutSpread(o1, o2, contracts));
     }
 
+    public IronCondorSpread ironCondor(OptionBook book, LocalDate strikeDate, double s1, double s2, double s3, double s4) {
+        return ironCondor(
+                book.getPutOption(strikeDate, BigDecimal.valueOf(s1)),
+                book.getPutOption(strikeDate, BigDecimal.valueOf(s2)),
+                book.getCallOption(strikeDate, BigDecimal.valueOf(s3)),
+                book.getCallOption(strikeDate, BigDecimal.valueOf(s4)),
+                1
+        );
+
+    }
     public CalendarCallSpread calendarCallSpread(CallOption closer, CallOption further, int contracts) {
         assert closer.getDaysToExpiry() < further.getDaysToExpiry();
         assert closer.getStrikePrice().equals(further.getStrikePrice());

@@ -1,6 +1,8 @@
 package com.assets.options.book;
 
+import com.assets.options.entities.CallOption;
 import com.assets.options.entities.Option;
+import com.assets.options.entities.PutOption;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
@@ -10,6 +12,7 @@ import java.time.LocalDate;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @JsonDeserialize(builder = OptionBook.Builder.class)
@@ -37,6 +40,22 @@ public class OptionBook {
 
     public LocalDate getNow() {
         return now;
+    }
+
+    public Optional<Option> getOption(LocalDate date, BigDecimal strike, boolean isCall) {
+        return getOptions(date)
+                .stream()
+                .filter(o -> o.isCall() == isCall)
+                .filter(o -> o.getStrikePrice().compareTo(strike) == 0)
+                .findAny();
+    }
+
+    public PutOption getPutOption(LocalDate date, BigDecimal strike) {
+        return getOption(date, strike, false).map(PutOption::new).orElseThrow();
+    }
+
+    public CallOption getCallOption(LocalDate date, BigDecimal strike) {
+        return getOption(date, strike, true).map(CallOption::new).orElseThrow();
     }
 
     public List<Option> getOptions(LocalDate date) {

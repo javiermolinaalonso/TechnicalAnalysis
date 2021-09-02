@@ -19,9 +19,9 @@ public class OptionTrade {
         this.ticker = ticker;
         this.mini = mini;
         this.premium = getPremium();
-        if (premium.compareTo(BigDecimal.ZERO) == 0) {
-            throw new OptionIsNotAvailableException();
-        }
+//        if (premium.compareTo(BigDecimal.ZERO) == 0) {
+//            throw new OptionIsNotAvailableException();
+//        }
         this.tradeComission = contractComission.multiply(BigDecimal.valueOf(Math.abs(contracts)));
         this.cost = BigDecimal.valueOf(contracts).multiply(premium).multiply(getAmountOfStocks()).add(tradeComission);
     }

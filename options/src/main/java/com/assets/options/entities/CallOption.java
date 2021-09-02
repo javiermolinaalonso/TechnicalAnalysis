@@ -21,6 +21,9 @@ public class CallOption extends Option {
         super(ticker, currentPrice, strikePrice, bid, ask, currentDate, expirationDate, impliedVolatility, riskFree);
     }
 
+    public CallOption(Option o) {
+        this(o.ticker, o.currentPrice, o.strikePrice, o.bid, o.ask, o.currentDate, o.expirationDate, o.impliedVolatility, o.riskFree);
+    }
     @Override
     public boolean isCall() {
         return true;

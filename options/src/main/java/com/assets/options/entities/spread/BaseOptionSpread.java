@@ -3,6 +3,7 @@ package com.assets.options.entities.spread;
 import com.assets.options.entities.Greeks;
 import com.assets.options.entities.OptionTrade;
 import com.assets.options.entities.portfolio.OptionPortfolio;
+import org.apache.commons.lang3.NotImplementedException;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -96,6 +97,11 @@ public abstract class BaseOptionSpread implements OptionSpread {
                 .mapToDouble(x -> x.getOption().getStrikePrice().doubleValue())
                 .average()
                 .orElse(0d));
+    }
+
+    @Override
+    public BigDecimal getMargin() {
+        throw new NotImplementedException("Missing implementation");
     }
 
     @Override

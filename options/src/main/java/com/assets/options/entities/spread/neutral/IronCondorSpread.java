@@ -43,6 +43,10 @@ public class IronCondorSpread extends BaseOptionSpread {
         return (callSpread.getVolatility() + putSpread.getVolatility()) / 2d;
     }
 
+    @Override
+    public BigDecimal getMargin() {
+        return putSpread.getHighStrike().subtract(putSpread.getLowStrike()).multiply(BigDecimal.valueOf(100));
+    }
 
     @Override
     public String toString() {

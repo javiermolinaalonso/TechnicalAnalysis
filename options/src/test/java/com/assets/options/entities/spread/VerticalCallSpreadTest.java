@@ -55,16 +55,35 @@ public class VerticalCallSpreadTest {
         VerticalSpread spread = new SpreadFactory().bullCallSpread(
                 OptionBuilder.create("INTC", 32.89)
                         .withDaysToExpiry(17)
-                        .withBidAsk(22.7,22.9)
+                        .withBidAsk(22.7, 22.9)
                         .withStrikePrice(10)
                         .buildCall(),
                 OptionBuilder.create("INTC", 32.89)
                         .withDaysToExpiry(17)
-                        .withBidAsk(17.7,17.9)
+                        .withBidAsk(17.7, 17.9)
                         .withStrikePrice(15)
                         .buildCall(),
                 1
         );
         assertThat("Max gain is negative", spread.getMaxGain(), lessThan(BigDecimal.ZERO));
+    }
+
+    @Test
+    public void name() {
+        double vol = 0.7;
+        VerticalSpread hiVol = new SpreadFactory().bearCallSpread(
+                OptionBuilder.create("Foo", 281)
+                        .withDaysToExpiry(25)
+                        .withIV(vol)
+                        .withStrikePrice(295)
+                        .buildCall(),
+                OptionBuilder.create("Foo", 281)
+                        .withDaysToExpiry(25)
+                        .withIV(vol)
+                        .withStrikePrice(300)
+                        .buildCall(),
+                1
+        );
+        System.out.println(hiVol.getMaxGain());
     }
 }

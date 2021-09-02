@@ -1,12 +1,13 @@
 package com.assets.data.loader.impl;
 
-import com.assets.entities.StockPrice;
+import com.assets.data.loader.DataLoader;
 import com.assets.data.loader.exceptions.DataLoaderEmptyFileException;
 import com.assets.data.loader.exceptions.DataLoaderFileNotFoundException;
 import com.assets.data.loader.exceptions.DataLoaderIOException;
-import com.assets.data.loader.DataLoader;
+import com.assets.entities.StockPrice;
 import com.assets.statistic.list.StockList;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.math.BigDecimal;
@@ -25,7 +26,7 @@ public class DataLoaderCsv implements DataLoader {
 
     private static final String READ_CSV_SEPARATOR = ",";
     
-    private final Logger logger = Logger.getLogger(DataLoaderCsv.class);
+    private final Logger logger = LogManager.getLogger(DataLoaderCsv.class);
     private final SimpleDateFormat dateFormatter;
     
     private String dataFile;

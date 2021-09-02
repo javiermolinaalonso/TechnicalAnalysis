@@ -29,4 +29,5 @@ public interface OptionSpread {
 
     double getVolatility();
 
+    BigDecimal getMargin();
 }
