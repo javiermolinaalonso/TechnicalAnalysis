@@ -10,6 +10,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Test;
 import org.ta4j.core.BarSeries;
+import org.ta4j.core.indicators.ChopIndicator;
 import org.ta4j.core.indicators.helpers.ClosePriceIndicator;
 import org.ta4j.core.indicators.statistics.StandardDeviationIndicator;
 import org.ta4j.core.num.DoubleNum;
@@ -28,28 +29,30 @@ public class OptionAnalyzeEvolution {
     private final NasdaqDailyLoaderCsv stockLoader = new NasdaqDailyLoaderCsv();
 
     private final LocalDate from = LocalDate.of(2021, 1, 1);
-    private final LocalDate targetExpirationDate = OptionUtils.getThirdFridayOfMonth(2021, Month.FEBRUARY);
+    private final LocalDate targetExpirationDate = OptionUtils.getThirdFridayOfMonth(2021, Month.MARCH);
 
     @Test
     void foo() throws IOException {
-        double s1 = 355;
-        double s2 = 365;
-        double s3 = 385;
-        double s4 = 395;
+        double s1 = 395;
+        double s2 = 400;
+        double s3 = 400;
+        double s4 = 405;
 
-        logger.info("Iron condor spread {}/{}/{}/{}", s1, s2, s3, s4);
-        logger.info("Price, Premium, ImpliedVol, HistVol, Delta, Gamma, Theta, Vega, Rho");
         BarSeries barSeries = stockLoader.loadData("/Users/javiermolina/stockHistory/SPY24.csv");
         StandardDeviationIndicator stdDevIndicator = new StandardDeviationIndicator(new ClosePriceIndicator(barSeries), 22);
-
+        ChopIndicator chop = new ChopIndicator(barSeries, 14, 1);
+        logger.info("Iron condor spread {}/{}/{}/{}", s1, s2, s3, s4);
+        logger.info("Date, Price, Premium, Chop, ImpliedVol, HistVol, Delta, Gamma, Theta, Vega, Rho");
         for (LocalDate date = from; date.isBefore(targetExpirationDate); date = date.plusDays(1)) {
             Optional<OptionBook> optBook = OptionBookLoaderYahooOffline.load(date);
             if (optBook.isPresent()) {
                 OptionBook book = optBook.get();
                 IronCondorSpread ic = spreadFactory.ironCondor(book, targetExpirationDate, s1, s2, s3, s4);
-                Num stdDev = stdDevIndicator.getValue(getIndexOf(barSeries, date));
+                int index = getIndexOf(barSeries, date);
+                Num stdDev = stdDevIndicator.getValue(index);
                 Num annualizedStdDev = stdDev.multipliedBy(DoubleNum.valueOf(Math.sqrt(12))).dividedBy(DoubleNum.valueOf(100));
-                logger.info("{}, {}, {}, {}, {}, {}", date, book.getCurrentPrice(), ic.getCost(), ic.getVolatility(), annualizedStdDev, ic.getGreeks().toString());
+                Num chopValue = chop.calculate(index);
+                logger.info("{}, {}, {}, {}, {}, {}, {}", date, book.getCurrentPrice(), ic.getCost(), chopValue, ic.getVolatility(), annualizedStdDev, ic.getGreeks().toString());
             }
         }
     }
