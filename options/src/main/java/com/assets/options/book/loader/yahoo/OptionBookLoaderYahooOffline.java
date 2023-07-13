@@ -20,12 +20,16 @@ import java.util.stream.Collectors;
 public class OptionBookLoaderYahooOffline {
 
     private static final String DEFAULT_SYMBOL = "SPY";
-    private static final String DEFAULT_FOLDER = "/Users/javiermolina/optionsHistory/";
+    private static final String DEFAULT_FOLDER = "/Users/javi/options/";
 
     private static final String format = "%s-%s-%s-%s.json";
 
     public static Optional<OptionBook> load(LocalDate when) {
         return load(DEFAULT_FOLDER, when, DEFAULT_SYMBOL);
+    }
+
+    public static Optional<OptionBook> load(LocalDate when, String symbol) {
+        return load(DEFAULT_FOLDER, when, symbol);
     }
 
     public static Optional<OptionBook> load(String folder, LocalDate when, String symbol) {

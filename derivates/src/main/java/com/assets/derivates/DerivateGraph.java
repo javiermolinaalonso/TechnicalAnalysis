@@ -1,5 +1,7 @@
 package com.assets.derivates;
 
+import com.assets.data.loader.DataLoader;
+import com.assets.data.loader.impl.DataLoaderCsv;
 import com.assets.derivates.service.ComputeEntranceService;
 import com.assets.derivates.service.ComputeExitsService;
 import com.assets.derivates.service.impl.ComputeBasicEntranceServiceImpl;
@@ -7,11 +9,8 @@ import com.assets.derivates.service.impl.ComputeExitsServicePercentAndDynamicSto
 import com.assets.investment.entities.InvestmentAction;
 import com.assets.investment.entities.InvestmentActionEnum;
 import com.assets.investment.entities.InvestmentActions;
-import com.assets.data.loader.DataLoader;
-import com.assets.data.loader.impl.DataLoaderCsv;
 import com.assets.statistic.list.StockList;
 import com.assets.trades.service.impl.BuyFixedAmountOfMoney;
-import org.apache.log4j.Logger;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -23,12 +22,9 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 public class DerivateGraph {
-
-    private static final Logger logger = Logger.getLogger(DerivateGraph.class);
 
     private static final String DEFAULT_PATH = "C:\\Users\\00556998\\Downloads\\quantquote_daily_sp500_83986\\daily";
     private static final String DEFAULT_OUTFILE = "C:\\Users\\00556998\\Downloads\\quantquote_daily_sp500_83986\\meansAndDerivates\\";
@@ -42,8 +38,6 @@ public class DerivateGraph {
     public static void main(String[] args) throws FileNotFoundException {
         
         DataLoader loader = new DataLoaderCsv(DEFAULT_PATH);
-
-        logger.info("Data loaded");
 
         for(String ticker : TICKERS){
             StockList inputData = new StockList(loader.loadData(ticker).parallelStream().filter(p -> (p.getInstant().compareTo(Instant.parse(FROM)) >= 0 && p.getInstant().compareTo(Instant.parse(TO)) <= 0)).sequential().collect(Collectors.toList()), ticker);

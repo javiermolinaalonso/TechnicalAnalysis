@@ -6,7 +6,6 @@ import com.assets.investment.entities.InvestmentAction;
 import com.assets.investment.entities.InvestmentActionEnum;
 import com.assets.statistic.list.StockList;
 import com.assets.statistics.correlation.CorrelationStrategy;
-import org.apache.log4j.Logger;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -19,8 +18,6 @@ public class CorrelationOnlyBuyStrategyImpl implements CorrelationStrategy {
 
     private static final Integer AMOUNT_OF_SHARES = 1;
     
-    private static final Logger logger = Logger.getLogger(CorrelationOnlyBuyStrategyImpl.class);
-
     @Override
     public List<InvestmentAction> calculateBenefit(Instant currentInstant, Instant nextInstant, Iterable<StockList> stocks) {
       //Must determine which stock to buy and sell
@@ -48,7 +45,6 @@ public class CorrelationOnlyBuyStrategyImpl implements CorrelationStrategy {
         }catch(StockNotFoundException snfe){
             //TODO This problem happens because of timezones and way to search...
         }catch(Exception e){
-            logger.error("Error calculating benefit");
         }
         return actions;
     }

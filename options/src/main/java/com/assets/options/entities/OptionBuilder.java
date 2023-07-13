@@ -17,6 +17,8 @@ public class OptionBuilder {
     private BigDecimal bid;
     private BigDecimal ask;
 
+    private String optionSymbol;
+
     private Double riskFree = 0.001d;
 
     public static OptionBuilder create(String ticker, double currentPrice) {
@@ -84,11 +86,16 @@ public class OptionBuilder {
         return this;
     }
 
+    public OptionBuilder withOptionSymbol(String optionSymbol) {
+        this.optionSymbol = optionSymbol;
+        return this;
+    }
+
     public CallOption buildCall() {
-        return new CallOption(ticker, currentPrice, strikePrice, bid, ask, currentDate, expirationDate, impliedVolatility, riskFree);
+        return new CallOption(ticker, optionSymbol, currentPrice, strikePrice, bid, ask, currentDate, expirationDate, impliedVolatility, riskFree);
     }
 
     public PutOption buildPut() {
-        return new PutOption(ticker, currentPrice, strikePrice, bid, ask, currentDate, expirationDate, impliedVolatility, riskFree);
+        return new PutOption(ticker, optionSymbol, currentPrice, strikePrice, bid, ask, currentDate, expirationDate, impliedVolatility, riskFree);
     }
 }

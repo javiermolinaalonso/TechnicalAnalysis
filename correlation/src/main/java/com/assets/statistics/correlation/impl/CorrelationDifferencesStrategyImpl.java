@@ -3,9 +3,8 @@ package com.assets.statistics.correlation.impl;
 import com.assets.entities.StockPrice;
 import com.assets.investment.entities.InvestmentAction;
 import com.assets.investment.entities.InvestmentActionEnum;
-import com.assets.statistics.correlation.CorrelationStrategy;
 import com.assets.statistic.list.StockList;
-import org.apache.log4j.Logger;
+import com.assets.statistics.correlation.CorrelationStrategy;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -17,8 +16,7 @@ import java.util.List;
 public class CorrelationDifferencesStrategyImpl implements CorrelationStrategy {
 
     private static final Integer AMOUNT_OF_SHARES = 1;
-    private static final Logger logger = Logger.getLogger(CorrelationDifferencesStrategyImpl.class);
-    
+
     public List<InvestmentAction> calculateBenefit(Instant currentInstant, Instant nextInstant, Iterable<StockList> stocks) {
         //Must determine which stock to buy and sell
         Iterator<StockList> it = stocks.iterator();
@@ -49,7 +47,7 @@ public class CorrelationDifferencesStrategyImpl implements CorrelationStrategy {
                 actions.add(new InvestmentAction(stockList2.getByInstant(nextInstant), InvestmentActionEnum.SELL, AMOUNT_OF_SHARES));
             }
         }catch(Exception e){
-            logger.error("Error calculating benefit");
+
         }
         return actions;
     }

@@ -1,11 +1,11 @@
 package com.assets.derivates.service;
 
+import com.assets.data.loader.DataLoader;
+import com.assets.data.loader.impl.DataLoaderCsv;
 import com.assets.derivates.service.impl.ComputeBasicEntranceServiceImpl;
 import com.assets.derivates.service.impl.ComputeExitsServiceBasicPercent;
 import com.assets.entities.StockPrice;
 import com.assets.investment.entities.InvestmentActions;
-import com.assets.data.loader.DataLoader;
-import com.assets.data.loader.impl.DataLoaderCsv;
 import com.assets.statistic.list.StockList;
 import com.assets.trades.service.impl.BuyFixedAmountOfMoney;
 import com.assets.trades.service.impl.BuyOneStockStrategy;
@@ -32,6 +32,7 @@ public class TestIntegrationIntel {
     
     StockList entryPoints;
     StockList exitPoints;
+
     @Before
     public void setUp() throws Exception {
         computeEntranceService = new ComputeBasicEntranceServiceImpl();

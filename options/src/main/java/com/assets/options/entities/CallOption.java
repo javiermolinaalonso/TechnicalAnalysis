@@ -10,6 +10,7 @@ public class CallOption extends Option {
 
     @JsonCreator
     CallOption(@JsonProperty("ticker") String ticker,
+               @JsonProperty("optionSymbol") String optionSymbol,
                @JsonProperty("currentPrice") BigDecimal currentPrice,
                @JsonProperty("strikePrice") BigDecimal strikePrice,
                @JsonProperty("bid") BigDecimal bid,
@@ -18,11 +19,11 @@ public class CallOption extends Option {
                @JsonProperty("expirationDate") LocalDate expirationDate,
                @JsonProperty("impliedVolatility") Double impliedVolatility,
                @JsonProperty("riskFree") double riskFree) {
-        super(ticker, currentPrice, strikePrice, bid, ask, currentDate, expirationDate, impliedVolatility, riskFree);
+        super(ticker, optionSymbol, currentPrice, strikePrice, bid, ask, currentDate, expirationDate, impliedVolatility, riskFree);
     }
 
     public CallOption(Option o) {
-        this(o.ticker, o.currentPrice, o.strikePrice, o.bid, o.ask, o.currentDate, o.expirationDate, o.impliedVolatility, o.riskFree);
+        this(o.ticker, o.optionSymbol, o.currentPrice, o.strikePrice, o.bid, o.ask, o.currentDate, o.expirationDate, o.impliedVolatility, o.riskFree);
     }
     @Override
     public boolean isCall() {

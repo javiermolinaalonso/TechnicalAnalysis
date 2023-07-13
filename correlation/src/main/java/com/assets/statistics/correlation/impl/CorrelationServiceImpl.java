@@ -9,7 +9,6 @@ import com.assets.statistics.correlation.CorrelationStrategy;
 import com.assets.statistics.entities.CorrelationIntervalInputData;
 import com.assets.statistics.entities.CorrelationTwoStocks;
 import com.assets.statistics.entities.StockCorrelation;
-import org.apache.log4j.Logger;
 
 import java.math.BigDecimal;
 import java.time.Instant;
@@ -18,9 +17,6 @@ import java.util.stream.Collectors;
 
 public class CorrelationServiceImpl implements CorrelationService {
     
-    //TODO AlertStrategy + CalculateBenefitStrategy
-    private static final Logger logger = Logger.getLogger(CorrelationServiceImpl.class);
-
     private CorrelationStrategy correlationStrategy;
     
     public CorrelationServiceImpl(){

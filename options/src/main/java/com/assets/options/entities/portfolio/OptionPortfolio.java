@@ -12,9 +12,11 @@ public class OptionPortfolio {
 
     //All trades should have the same ticker
     private List<OptionTrade> trades;
+    private Integer shares;
 
     public OptionPortfolio(List<OptionTrade> trades) {
         this.trades = trades;
+        this.shares = 0;
     }
 
     public List<OptionTrade> getTrades() {
@@ -70,6 +72,14 @@ public class OptionPortfolio {
 
     public void add(List<OptionTrade> optionTrades) {
         trades.addAll(optionTrades);
+    }
+
+    public void add(Integer shares) {
+        this.shares += shares;
+    }
+
+    public Integer getShares() {
+        return shares;
     }
 
     @Override

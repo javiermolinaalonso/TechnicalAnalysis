@@ -16,15 +16,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 
 public class YahooDataLoader implements DataLoader {
 
     private static final Logger logger = LoggerFactory.getLogger(YahooDataLoader.class);
 
-    private static final String BASE_URL = "https://l1-query.finance.yahoo.com/v8/finance/chart/";
+    private static final String BASE_URL = "https://yfapi.net/v8/finance/chart/";
+//    https://yfapi.net/v8/finance/chart/AAPL?comparisons=MSFT%2C%5EVIX&range=1mo&region=US&interval=1d&lang=en&events=div%2Csplit
 
     private final LocalDateTime to;
     private final LocalDateTime from;
@@ -42,7 +40,10 @@ public class YahooDataLoader implements DataLoader {
     public StockList loadData(String ticker) {
         System.out.println(String.format("Downloading data for %s", ticker));
         final String url = buildUrl(ticker);
-        final YahooData data = new RestTemplate().getForObject(url, YahooData.class);
+        Map<String, String> headers = new HashMap<>();
+        headers.put("x-api-key", "JyB3wDAO8c36KBvUMk1HY3ybO184IKe18sLuTcp2");
+        final YahooData data = new RestTemplate()
+                .getForObject(url, YahooData.class, headers);
         final YahooChartElement result = data.getChart().getResult().get(0);
 
         List<StockPrice> prices = new ArrayList<>();

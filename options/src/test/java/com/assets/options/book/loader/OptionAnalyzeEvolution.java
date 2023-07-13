@@ -1,60 +1,68 @@
 package com.assets.options.book.loader;
 
-import com.assets.data.loader.impl.NasdaqDailyLoaderCsv;
 import com.assets.options.OptionUtils;
 import com.assets.options.book.OptionBook;
 import com.assets.options.book.loader.yahoo.OptionBookLoaderYahooOffline;
-import com.assets.options.entities.spread.SpreadFactory;
-import com.assets.options.entities.spread.neutral.IronCondorSpread;
+import com.assets.options.entities.CallOption;
+import com.assets.options.entities.OptionTrade;
+import com.assets.options.entities.portfolio.OptionPortfolio;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Test;
 import org.ta4j.core.BarSeries;
-import org.ta4j.core.indicators.ChopIndicator;
-import org.ta4j.core.indicators.helpers.ClosePriceIndicator;
-import org.ta4j.core.indicators.statistics.StandardDeviationIndicator;
-import org.ta4j.core.num.DoubleNum;
-import org.ta4j.core.num.Num;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class OptionAnalyzeEvolution {
 
     private static final Logger logger = LogManager.getLogger(OptionAnalyzeEvolution.class);
 
-    private final SpreadFactory spreadFactory = new SpreadFactory();
-    private final NasdaqDailyLoaderCsv stockLoader = new NasdaqDailyLoaderCsv();
-
     private final LocalDate from = LocalDate.of(2021, 1, 1);
     private final LocalDate targetExpirationDate = OptionUtils.getThirdFridayOfMonth(2021, Month.MARCH);
+    private final BigDecimal profitRatio = BigDecimal.valueOf(1.02);
+    private final double minDelta = 30;
 
     @Test
     void foo() throws IOException {
-        double s1 = 395;
-        double s2 = 400;
-        double s3 = 400;
-        double s4 = 405;
-
-        BarSeries barSeries = stockLoader.loadData("/Users/javiermolina/stockHistory/SPY24.csv");
-        StandardDeviationIndicator stdDevIndicator = new StandardDeviationIndicator(new ClosePriceIndicator(barSeries), 22);
-        ChopIndicator chop = new ChopIndicator(barSeries, 14, 1);
-        logger.info("Iron condor spread {}/{}/{}/{}", s1, s2, s3, s4);
-        logger.info("Date, Price, Premium, Chop, ImpliedVol, HistVol, Delta, Gamma, Theta, Vega, Rho");
+        OptionPortfolio portfolio = new OptionPortfolio(new ArrayList<>());
         for (LocalDate date = from; date.isBefore(targetExpirationDate); date = date.plusDays(1)) {
             Optional<OptionBook> optBook = OptionBookLoaderYahooOffline.load(date);
             if (optBook.isPresent()) {
                 OptionBook book = optBook.get();
-                IronCondorSpread ic = spreadFactory.ironCondor(book, targetExpirationDate, s1, s2, s3, s4);
-                int index = getIndexOf(barSeries, date);
-                Num stdDev = stdDevIndicator.getValue(index);
-                Num annualizedStdDev = stdDev.multipliedBy(DoubleNum.valueOf(Math.sqrt(12))).dividedBy(DoubleNum.valueOf(100));
-                Num chopValue = chop.calculate(index);
-                logger.info("{}, {}, {}, {}, {}, {}, {}", date, book.getCurrentPrice(), ic.getCost(), chopValue, ic.getVolatility(), annualizedStdDev, ic.getGreeks().toString());
+                BigDecimal currentPrice = book.getCurrentPrice();
+                double currentDelta = getDelta(portfolio, book);
+                if (currentDelta > minDelta) {
+                    BigDecimal strike = currentPrice.multiply(profitRatio).setScale(0, RoundingMode.HALF_DOWN);
+                    CallOption callOption = book.getCallOption(targetExpirationDate, strike);
+                    portfolio.add(50);
+                    portfolio.add(List.of(new OptionTrade(callOption, -1, "SPY", BigDecimal.ZERO, false)));
+                    logger.info("Sold call {}. Purchased shares at {}", callOption, currentPrice);
+                }
+                logger.info("Current price {}. Current Delta {}", currentPrice, currentDelta);
             }
         }
+        logger.info("yay");
+    }
+
+    private double getDelta(OptionPortfolio portfolio, OptionBook book) {
+        Integer deltas = portfolio.getShares();
+        if (deltas < 1) {
+            return 100;
+        }
+        double delta = portfolio.getTrades().stream()
+                .map(OptionTrade::getOption)
+                .flatMap(o -> book.getOption(o.getExpirationDate(), o.getStrikePrice(), o.isCall()).stream())
+                .mapToDouble(k -> k.getGreeks().getDelta() * -1)
+                .sum() * 100;
+
+        return deltas + delta;
     }
 
     private int getIndexOf(BarSeries series, LocalDate date) {

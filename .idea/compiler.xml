@@ -7,13 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="data-loader" />
-        <module name="StatisticList" />
+        <module name="assets.derivates" />
         <module name="bollinger" />
         <module name="investment-entities" />
-        <module name="options" />
+        <module name="StatisticList" />
         <module name="investment-strategy" />
         <module name="entities" />
-        <module name="assets.derivates" />
+        <module name="options" />
         <module name="portfolio" />
         <module name="correlation" />
       </profile>
@@ -21,7 +21,7 @@
     <bytecodeTargetLevel>
       <module name="assets.derivates" target="1.8" />
       <module name="bollinger" target="1.8" />
-      <module name="correlation" target="1.8" />
+      <module name="correlation" target="9" />
       <module name="data-loader" target="1.8" />
       <module name="entities" target="1.8" />
       <module name="investment-entities" target="1.8" />

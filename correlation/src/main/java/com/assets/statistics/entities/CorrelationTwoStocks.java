@@ -3,9 +3,7 @@ package com.assets.statistics.entities;
 import com.assets.entities.StockPrice;
 import com.assets.statistic.exceptions.EmptyStatisticListException;
 import com.assets.statistic.exceptions.InvalidCorrelationDatesException;
-import com.assets.statistic.list.LambdaStatisticList;
 import com.assets.statistic.list.StockList;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.math.BigDecimal;
 import java.time.Instant;

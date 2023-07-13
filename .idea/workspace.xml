@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -39,8 +42,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e42815d-2456-460e-847d-5e76ba9d8ceb" name="Default" comment="Updates">
-      <change afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/book/loader/DoubleIron.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/correlation/src/test/java/com/assets/statistics/correlation/TestCorrelation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/correlation/correlation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/correlation/correlation.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/correlation/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/correlation/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/correlation/src/main/java/com/assets/statistics/correlation/impl/CorrelationDifferencesStrategyImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/correlation/src/main/java/com/assets/statistics/correlation/impl/CorrelationDifferencesStrategyImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/correlation/src/main/java/com/assets/statistics/correlation/impl/CorrelationOnlyBuyStrategyImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/correlation/src/main/java/com/assets/statistics/correlation/impl/CorrelationOnlyBuyStrategyImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/correlation/src/main/java/com/assets/statistics/correlation/impl/CorrelationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/correlation/src/main/java/com/assets/statistics/correlation/impl/CorrelationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/correlation/src/main/java/com/assets/statistics/entities/CorrelationTwoStocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/correlation/src/main/java/com/assets/statistics/entities/CorrelationTwoStocks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data-loader/src/main/java/com/assets/data/loader/yahoo/YahooDataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/data-loader/src/main/java/com/assets/data/loader/yahoo/YahooDataLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/derivates/assets.derivates.iml" beforeDir="false" afterPath="$PROJECT_DIR$/derivates/assets.derivates.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/derivates/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/derivates/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/derivates/src/main/java/com/assets/derivates/DerivateGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/derivates/src/main/java/com/assets/derivates/DerivateGraph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/derivates/src/test/java/com/assets/derivates/service/TestIntegrationIntel.java" beforeDir="false" afterPath="$PROJECT_DIR$/derivates/src/test/java/com/assets/derivates/service/TestIntegrationIntel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/options.iml" beforeDir="false" afterPath="$PROJECT_DIR$/options/options.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/book/loader/yahoo/OptionBookLoaderYahooOffline.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/book/loader/yahoo/OptionBookLoaderYahooOffline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/CallOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/CallOption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/Option.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/Option.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/OptionBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/OptionBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/PutOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/PutOption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/portfolio/OptionPortfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/main/java/com/assets/options/entities/portfolio/OptionPortfolio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/options/src/test/java/com/assets/options/book/loader/OptionAnalyzeEvolution.java" beforeDir="false" afterPath="$PROJECT_DIR$/options/src/test/java/com/assets/options/book/loader/OptionAnalyzeEvolution.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,6 +84,7 @@
         <option value="Interface" />
         <option value="JUnit4 Test Class" />
         <option value="Kotlin File" />
+        <option value="Kotlin Class" />
         <option value="Class" />
       </list>
     </option>
@@ -74,8 +98,19 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="HierarchyBrowserManager">
     <option name="SCOPE" value="All" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
@@ -88,28 +123,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="TF_FMT" value="false" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555568819387" />
-    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT&#10;AIDL&#10;JSON" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/options/src/test/resources" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/javi/IdeaProjects/TechnicalAnalysis/pom.xml&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;0c68b156f8c9b4609b4623f1054dc51c&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;JSON&quot;
+    ]
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.assets.options.main" />
@@ -157,95 +184,9 @@
       <recent name="com.assets.options.entities.spread.exceptions" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.OptionAnalyzeEvolution.foo">
+  <component name="RunManager" selected="JUnit.TestCorrelation.name">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
-      <module name="assets.derivates" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="ADDITIONAL_ARGS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <module name="assets.derivates" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;.&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
-      <option name="DEPLOY" value="true" />
-      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
-      <option name="DEPLOY_AS_INSTANT" value="false" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="PM_INSTALL_OPTIONS" value="" />
-      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
-      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="DEBUGGER_TYPE" value="Java" />
-      <Java />
-      <Profilers>
-        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
-      </Profilers>
-      <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
-      <option name="TESTING_TYPE" value="0" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="EXTRA_OPTIONS" value="" />
-      <option name="INCLUDE_GRADLE_EXTRA_OPTIONS" value="true" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="DEBUGGER_TYPE" value="Java" />
-      <Java />
-      <Profilers>
-        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
-      </Profilers>
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -300,6 +241,110 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method v="2" />
     </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <module name="assets.derivates" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <module name="assets.derivates" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;.&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <Java />
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
+      <option name="TESTING_TYPE" value="0" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_NAME_REGEX" value="" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="RETENTION_ENABLED" value="No" />
+      <option name="RETENTION_MAX_SNAPSHOTS" value="2" />
+      <option name="RETENTION_COMPRESS_SNAPSHOTS" value="false" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <Java />
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DoubleIron.foo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="options" />
       <extension name="coverage">
@@ -328,23 +373,6 @@
       <option name="PACKAGE_NAME" value="com.assets.options.book.loader" />
       <option name="MAIN_CLASS_NAME" value="com.assets.options.book.loader.OptionAnalyzeEvolution" />
       <option name="METHOD_NAME" value="foo" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OptionDailySellStrangleStrategy.sellIronCondorStrategy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="options" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.assets.options.book.loader.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.assets.options.book.loader" />
-      <option name="MAIN_CLASS_NAME" value="com.assets.options.book.loader.OptionDailySellStrangleStrategy" />
-      <option name="METHOD_NAME" value="sellIronCondorStrategy" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
@@ -385,6 +413,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestCorrelation.name" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="correlation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.assets.statistics.correlation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.assets.statistics.correlation" />
+      <option name="MAIN_CLASS_NAME" value="com.assets.statistics.correlation.TestCorrelation" />
+      <option name="METHOD_NAME" value="name" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -394,34 +439,6 @@
     </configuration>
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
       <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <module name="" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -444,32 +461,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="js.build_tools.gulp">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <pass-parent-envs>true</pass-parent-envs>
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="JUnit.OptionDailySellStrangleStrategy.sellIronCondorStrategy" />
-      <item itemvalue="JUnit.OptionDailySellStrangleStrategy.sellIronCondorStrategyForever" />
-      <item itemvalue="JUnit.OptionDailySellStrangleStrategy.sellIronCondorStrategyForeverMeh" />
-      <item itemvalue="JUnit.OptionAnalyzeEvolution.foo" />
       <item itemvalue="JUnit.DoubleIron.foo" />
+      <item itemvalue="JUnit.OptionAnalyzeEvolution.foo" />
+      <item itemvalue="JUnit.OptionDailySellStrangleStrategy.sellIronCondorStrategyForeverMeh" />
+      <item itemvalue="JUnit.OptionDailySellStrangleStrategy.sellIronCondorStrategyForever" />
+      <item itemvalue="JUnit.TestCorrelation.name" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestCorrelation.name" />
         <item itemvalue="JUnit.OptionAnalyzeEvolution.foo" />
         <item itemvalue="JUnit.DoubleIron.foo" />
         <item itemvalue="JUnit.OptionDailySellStrangleStrategy.sellIronCondorStrategyForeverMeh" />
         <item itemvalue="JUnit.OptionDailySellStrangleStrategy.sellIronCondorStrategyForever" />
-        <item itemvalue="JUnit.OptionDailySellStrangleStrategy.sellIronCondorStrategy" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -572,6 +581,33 @@
       <workItem from="1629220660006" duration="27381000" />
       <workItem from="1630535464479" duration="3497000" />
       <workItem from="1631735840471" duration="49000" />
+      <workItem from="1635799956125" duration="846000" />
+      <workItem from="1635801459563" duration="599000" />
+      <workItem from="1637014117977" duration="4000" />
+      <workItem from="1639858407255" duration="5624000" />
+      <workItem from="1642952373580" duration="13000" />
+      <workItem from="1644683217021" duration="272000" />
+      <workItem from="1649425186158" duration="1663000" />
+      <workItem from="1649597745376" duration="708000" />
+      <workItem from="1649599617546" duration="4000" />
+      <workItem from="1649630758921" duration="12000" />
+      <workItem from="1649797386583" duration="455000" />
+      <workItem from="1649859507019" duration="64000" />
+      <workItem from="1650038241317" duration="648000" />
+      <workItem from="1650226941266" duration="2133000" />
+      <workItem from="1650314256122" duration="837000" />
+      <workItem from="1650371757196" duration="175000" />
+      <workItem from="1650489434939" duration="17000" />
+      <workItem from="1650692728959" duration="182000" />
+      <workItem from="1650693751474" duration="95000" />
+      <workItem from="1651418399796" duration="34000" />
+      <workItem from="1651582577113" duration="1186000" />
+      <workItem from="1651606835870" duration="20000" />
+      <workItem from="1661886982563" duration="33000" />
+      <workItem from="1666809827345" duration="167000" />
+      <workItem from="1666860061471" duration="149000" />
+      <workItem from="1668542889650" duration="13000" />
+      <workItem from="1669149642537" duration="91000" />
     </task>
     <task id="LOCAL-00001" summary="Added get and options interface">
       <created>1453363092145</created>
@@ -907,7 +943,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -946,101 +981,13 @@
     <option name="LAST_COMMIT_MESSAGE" value="Updates" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="533" y="163" key="#com.intellij.ide.util.MemberChooser" timestamp="1630533382092">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="533" y="163" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1630533382092" />
-    <state width="412" height="466" key="DebuggerActiveHint" timestamp="1630534311250">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="412" height="466" key="DebuggerActiveHint/0.0.1440.900@0.0.1440.900" timestamp="1630534311250" />
-    <state width="1398" height="397" key="GridCell.Tab.0.bottom" timestamp="1631735735262">
-      <screen x="0" y="23" width="1440" height="793" />
-    </state>
-    <state width="1398" height="382" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1630876102796" />
-    <state width="1398" height="397" key="GridCell.Tab.0.bottom/0.23.1440.793@0.23.1440.793" timestamp="1631735735262" />
-    <state width="1398" height="397" key="GridCell.Tab.0.center" timestamp="1631735735261">
-      <screen x="0" y="23" width="1440" height="793" />
-    </state>
-    <state width="1398" height="382" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1630876102795" />
-    <state width="1398" height="397" key="GridCell.Tab.0.center/0.23.1440.793@0.23.1440.793" timestamp="1631735735261" />
-    <state width="1398" height="397" key="GridCell.Tab.0.left" timestamp="1631735735261">
-      <screen x="0" y="23" width="1440" height="793" />
-    </state>
-    <state width="1398" height="382" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1630876102794" />
-    <state width="1398" height="397" key="GridCell.Tab.0.left/0.23.1440.793@0.23.1440.793" timestamp="1631735735261" />
-    <state width="1398" height="397" key="GridCell.Tab.0.right" timestamp="1631735735262">
-      <screen x="0" y="23" width="1440" height="793" />
-    </state>
-    <state width="1398" height="382" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1630876102795" />
-    <state width="1398" height="397" key="GridCell.Tab.0.right/0.23.1440.793@0.23.1440.793" timestamp="1631735735262" />
-    <state width="1398" height="397" key="GridCell.Tab.1.bottom" timestamp="1631735735260">
-      <screen x="0" y="23" width="1440" height="793" />
-    </state>
-    <state width="1398" height="397" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1630875691194" />
-    <state width="1398" height="397" key="GridCell.Tab.1.bottom/0.23.1440.793@0.23.1440.793" timestamp="1631735735260" />
-    <state width="1398" height="397" key="GridCell.Tab.1.center" timestamp="1631735735259">
-      <screen x="0" y="23" width="1440" height="793" />
-    </state>
-    <state width="1398" height="397" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1630875691193" />
-    <state width="1398" height="397" key="GridCell.Tab.1.center/0.23.1440.793@0.23.1440.793" timestamp="1631735735259" />
-    <state width="1398" height="397" key="GridCell.Tab.1.left" timestamp="1631735735258">
-      <screen x="0" y="23" width="1440" height="793" />
-    </state>
-    <state width="1398" height="397" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1630875691192" />
-    <state width="1398" height="397" key="GridCell.Tab.1.left/0.23.1440.793@0.23.1440.793" timestamp="1631735735258" />
-    <state width="1398" height="397" key="GridCell.Tab.1.right" timestamp="1631735735260">
-      <screen x="0" y="23" width="1440" height="793" />
-    </state>
-    <state width="1398" height="397" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1630875691193" />
-    <state width="1398" height="397" key="GridCell.Tab.1.right/0.23.1440.793@0.23.1440.793" timestamp="1631735735260" />
-    <state x="208" y="31" key="SettingsEditor" timestamp="1629231611899">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="208" y="31" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1629231611899" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1630564854516">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1630564854516" />
-    <state x="308" y="67" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1630512238363">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="308" y="67" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.900@0.0.1440.900" timestamp="1630512238363" />
-    <state x="458" y="195" key="extract.method.dialog" timestamp="1629752002396">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="458" y="195" key="extract.method.dialog/0.0.1440.900@0.0.1440.900" timestamp="1629752002396" />
-    <state x="421" y="205" width="598" height="490" key="find.popup" timestamp="1629232327522">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="421" y="205" width="598" height="490" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1629232327522" />
-    <state x="385" y="210" key="run.anything.popup" timestamp="1629840259831">
-      <screen x="0" y="23" width="1440" height="793" />
-    </state>
-    <state x="385" y="210" key="run.anything.popup/0.23.1440.793@0.23.1440.793" timestamp="1629840259831" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1630513943281">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1630513943281" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/data-loader/src/main/java/com/assets/data/loader/impl/DataLoaderCsv.java</url>
-          <line>119</line>
-          <option name="timeStamp" value="134" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/data-loader/src/main/java/com/assets/data/loader/impl/DataLoaderCsv.java</url>
           <line>68</line>
           <option name="timeStamp" value="137" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/data-loader/src/main/java/com/assets/data/loader/impl/DataLoaderCsv.java</url>
-          <line>97</line>
-          <option name="timeStamp" value="139" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/options/src/test/java/com/assets/options/analyzers/SpreadAnalyzerTest.java</url>
@@ -1058,22 +1005,20 @@
           <option name="timeStamp" value="221" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/options/src/test/java/com/assets/options/book/loader/OptionAnalyzeEvolution.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="235" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/options/src/test/java/com/assets/options/book/loader/DoubleIron.java</url>
           <line>50</line>
           <option name="timeStamp" value="236" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/correlation/src/test/java/com/assets/statistics/correlation/TestCorrelation.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="238" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
-        <watch expression="date" language="JAVA" />
-        <watch expression="barSeries.getBar(2349)" language="JAVA" />
-        <watch expression="barSeries.getBar(2349).getEndTime().toLocalDate()" language="JAVA" />
+        <watch expression="deltas + delta" language="JAVA" />
       </configuration>
       <configuration name="Application">
         <watch expression="options.get(date)" language="JAVA" />

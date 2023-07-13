@@ -26,6 +26,7 @@ public abstract class Option implements Comparable<Option> {
     private static final int MAX_IV_STEPS = 25;
 
     protected final String ticker;
+    protected final String optionSymbol;
     protected final BigDecimal currentPrice;
     protected final BigDecimal strikePrice;
     protected final LocalDate currentDate;
@@ -40,7 +41,7 @@ public abstract class Option implements Comparable<Option> {
     protected Greeks greeks;
 
     Option(String ticker, BigDecimal currentPrice, BigDecimal strikePrice, LocalDate currentDate, LocalDate expirationDate, Double impliedVolatility, Double riskFree) {
-        this(ticker, currentPrice, strikePrice, currentDate, expirationDate, riskFree);
+        this(ticker, "", currentPrice, strikePrice, currentDate, expirationDate, riskFree);
         this.impliedVolatility = impliedVolatility;
         double yearsToExpiry = getDaysToExpiry() / 365d;
         double[] results = BlackScholesGreeks.calculate(isCall(), currentPrice.doubleValue(), strikePrice.doubleValue(), riskFree, yearsToExpiry, impliedVolatility);
@@ -50,8 +51,8 @@ public abstract class Option implements Comparable<Option> {
         greeks = new Greeks(results[1],results[2],results[3], results[4]/365d, results[5]);
     }
 
-    Option(String ticker, BigDecimal currentPrice, BigDecimal strikePrice, BigDecimal bid, BigDecimal ask, LocalDate currentDate, LocalDate expirationDate, Double impliedVolatility, Double riskFree) {
-        this(ticker, currentPrice, strikePrice, currentDate, expirationDate, riskFree);
+    Option(String ticker, String optionSymbol, BigDecimal currentPrice, BigDecimal strikePrice, BigDecimal bid, BigDecimal ask, LocalDate currentDate, LocalDate expirationDate, Double impliedVolatility, Double riskFree) {
+        this(ticker, optionSymbol, currentPrice, strikePrice, currentDate, expirationDate, riskFree);
         double yearsToExpiry = getDaysToExpiry() / 365d;
 
         if (bid == null) {
@@ -76,8 +77,9 @@ public abstract class Option implements Comparable<Option> {
         }
     }
 
-    private Option(String ticker, BigDecimal currentPrice, BigDecimal strikePrice, LocalDate currentDate, LocalDate expirationDate, Double riskFree) {
+    private Option(String ticker, String optionSymbol, BigDecimal currentPrice, BigDecimal strikePrice, LocalDate currentDate, LocalDate expirationDate, Double riskFree) {
         this.ticker = ticker;
+        this.optionSymbol = optionSymbol;
         this.currentPrice = currentPrice;
         this.strikePrice = strikePrice;
         this.riskFree = riskFree;
@@ -168,13 +170,21 @@ public abstract class Option implements Comparable<Option> {
 
     @Override
     public String toString() {
-        return String.format("[%s, %s, %.2f, %s] at %.2f, %s, [%.2f, %.2f], %s",
+        return String.format("[%s, %s, %.2f, %s] at %.2f, %s, [%.2f, %.2f, %.2f], %s, %s, %s",
                 ticker, isCall() ? "C" : "P", currentPrice, currentDate.toString(), strikePrice,
-                expirationDate.toString(), bid, ask, greeks);
+                expirationDate.toString(), bid, ask, getAvgBidAsk(), greeks, optionSymbol, impliedVolatility);
+    }
+
+    public String getOptionSymbol() {
+        return optionSymbol;
     }
 
     @Override
     public int compareTo(@NotNull Option o) {
         return getStrikePrice().compareTo(o.getStrikePrice());
+    }
+
+    public BigDecimal getAvgBidAsk() {
+        return bid.add(ask).divide(BigDecimal.valueOf(2.0), 2, RoundingMode.HALF_UP);
     }
 }
